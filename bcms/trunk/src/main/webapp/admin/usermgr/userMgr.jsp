@@ -8,12 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>数据统计</title>
-    <jsp:include page="../layout/adminheader.jsp"/>
-    <script src="../js/admin/usermgr.js" type="text/javascript"></script>
+    <title>用户管理</title>
+    <jsp:include page="../../layout/admin/adminheader.jsp"/>
+    <script src="../../js/admin/usermgr.js" type="text/javascript"></script>
 </head>
 <body class="easyui-layout">
-<jsp:include page="../layout/adminbody.jsp"/>
+<jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <div data-options="region:'west',split:true" title="系统菜单" style="width:150px;">
     <ul class="easyui-tree">
