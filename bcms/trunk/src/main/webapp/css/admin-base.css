@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+}
+
+#header-inner {
+    text-align: left;
+    margin: 0 auto;
+    width: 960px;
+    padding: 10px 0;
+}
+
+#footer-inner {
+    width: 960px;
+    height: 50px;
+    background: #666;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+}
+#footer-inner{
+    color:#fff;
+}
+#topmenu a:hover {
+    text-decoration: underline;
+}
+
+#topmenu a {
+    display: inline-block;
+    padding: 1px 3px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#topmenu {
+    text-align: right;
+}
+#user_toolbar{
+    float:right;
+    color:#FFF;
+}
