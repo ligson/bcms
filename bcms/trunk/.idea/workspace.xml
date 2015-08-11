@@ -2,843 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c76c02d8-7d0e-4ede-b179-2b214f6c7686" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/accordion" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/accordion_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/accordion_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/accordion_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/accordion_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/accordion_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/brms/action" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/animation" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/badge" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/blank.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/brms" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/button" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/calendar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/calendar_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/calendar_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/calendar_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/calendar_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/calendar_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/cancel.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/clear.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/combo_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/combo_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/combo_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/combo_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/combo_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combotree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/common" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/cut.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/datagrid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/datagrid_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/datagrid_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/datagrid_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/datagrid_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/datagrid_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datalist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/datalist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/datebox_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/datebox_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/datebox_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/datebox_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/datebox_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimebox" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimespinner" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/dialog" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/dialog" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/draggable" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/droppable" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/easyloader" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/edit_add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/edit_remove.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/filebox" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/filesave.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/filter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/fonts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/help.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/input" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/large_chart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/large_clipart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/large_picture.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/large_shapes.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/large_smartart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/layout" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/layout_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/layout_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/layout_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/layout_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/layout_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/linkbutton_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/linkbutton_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/linkbutton_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/linkbutton_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/linkbutton_bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/loading.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/images/login1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/man.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menu" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/menu" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/menu_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/menu_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/menu_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/menu_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/menu_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menubutton" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/messager" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/messager_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/messager_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/messager_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/messager_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/messager_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/mini_add.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/mini_edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/mini_refresh.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/images/modem.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/images/modem.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/images/more.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/more.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/no.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberbox" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberspinner" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/ok.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/pagination" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/pagination_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/pagination_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/pagination_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/pagination_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/pagination_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/panel" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/panel_tools.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/panel_tools.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/panel_tools.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/panel_tools.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/panel_tools.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/images/pda.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/images/pda.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/pencil.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/print.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/progressbar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/propertygrid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/redo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/reload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/resizable" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/images/scanner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/images/scanner.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/searchbox" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/searchbox_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/searchbox_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/searchbox_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/searchbox_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/searchbox_button.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/simplelist" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/slider" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/slider_handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/slider_handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/slider_handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/slider_handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/slider_handle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/spinner_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/spinner_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/spinner_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/spinner_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/spinner_arrows.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/splitbutton" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/sum.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/switchbutton" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/images/tablet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/images/tablet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/tabs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/tabs_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/tabs_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/tabs_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/tabs_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/tabs_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/timespinner" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/tip.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/toolbar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/tree" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/tree_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/tree_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/tree_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/tree_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/tree_icons.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icons/undo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/validatebox" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/images/validatebox_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/images/validatebox_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/images/validatebox_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/images/validatebox_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/images/validatebox_warning.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/window" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_lang_commons_lang_2_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_net_commons_net_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_beta1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_beta1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_asl_1_9_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_core_lgpl_1_9_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_asl_1_9_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jackson_jackson_mapper_lgpl_1_9_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/brms/action/Proxy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/accordion/_content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/panel/_content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/_content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/_content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel/_content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/_content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/_content.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/_dialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/droppable/accept.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/accordion.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/switchbutton/action.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combotree/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menubutton/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/splitbutton/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/timespinner/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/actions.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/addremove.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/panel/ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/ajax.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/messager/alert.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/aligncolumns.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menubutton/alignment.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combo/animation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/animation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/pagination/attaching.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/autoheight.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/autoheight.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/accordion/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/animation/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/badge/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/button/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/datagrid/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/datalist/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/dialog/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/form/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/layout/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/menu/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/panel/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/simplelist/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/tabs/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/toolbar/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/tree/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/calendar/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combo/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combotree/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datalist/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimebox/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimespinner/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/dialog/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/draggable/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/droppable/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/easyloader/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/filebox/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/form/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menu/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menubutton/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/messager/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberbox/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberspinner/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/pagination/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/progressbar/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/propertygrid/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/resizable/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/searchbox/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/slider/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/splitbutton/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/switchbutton/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/timespinner/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/validatebox/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/window/basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bcms.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/bcms_war.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/bcms_war_exploded.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/badge/button.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/simplelist/button.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/toolbar/button.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox/button.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/filebox/buttonalign.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/buttons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/cacheeditor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/calendar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/searchbox/category.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/cellediting.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/cellstyle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/changelog.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/checkbox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datalist/checkbox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/checkbox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimespinner/clearicon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox/clearicon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/clientpagination.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/clientpagination.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/clone.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/color.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/columngroup.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/combo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/combo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/combo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/combo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/combo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/combobox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/combobox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/combobox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/combobox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/combobox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/combobox_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/combobox_data2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/complex.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/complextoolbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/dialog/complextoolbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/draggable/constrain.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/contextmenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/contextmenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/contextmenu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/calendar/custom.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox/custom.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/pagination/custombuttons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/propertygrid/customcolumns.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/customcontent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/customformat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menu/customitem.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/custompager.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/customstyle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel/customtools.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/window/customtools.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/validatebox/customtooltip.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/datagrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/datagrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/datagrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/datagrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/datagrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/datagrid_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid/datagrid_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/datagrid_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/datagrid_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/datagrid_data2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/datalist.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/datalist.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/datalist.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/datalist.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/datalist.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datalist/datalist_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/datebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/datebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/datebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/datebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/datebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/dateformat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/demo.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/dialog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/calendar/disabledate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/tree/dnd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/dnd.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/dropdown.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/dynamicdata.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/easyloader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/easyloader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-af.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-am.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-ar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-bg.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-ca.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-cs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-cz.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-da.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-de.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-el.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-en.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-es.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-fr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-it.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-jp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-nl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-pl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-pt_BR.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-ru.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-sv_SE.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-tr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/locale/easyui-lang-zh_TW.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/easyui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/easyui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/easyui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/easyui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/easyui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/editable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/editable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/events.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menu/events.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/expandable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/animation/fade.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/filebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/filebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/filebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/filebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/filebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/calendar/firstday.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/fixedwidth.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/calendar/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combotree/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimebox/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimespinner/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/dialog/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/filebox/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberbox/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberspinner/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/progressbar/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/searchbox/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/slider/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/timespinner/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/window/fluid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/window/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/form/form_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimespinner/format.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberbox/format.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/formatcolumns.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/formatting.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/slider/formattip.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/frozencolumns.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/frozenrows.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/full.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/button/group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/datalist/group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/simplelist/group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datalist/group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton/group.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/propertygrid/groupformat.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/accordion/header.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/hover.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/icon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton/iconalign.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/icons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox/icons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/icons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/simplelist/image.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberspinner/increment.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid/initvalue.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combotree/initvalue.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimebox/initvalue.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menu/inline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/window/inlinewindow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/messager/interactive.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.accordion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.calendar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.combo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.combobox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.combobox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.combogrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.combotree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.datagrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.datalist.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.datebox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.datebox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.datetimebox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.datetimespinner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.draggable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.draggable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.droppable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.droppable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/jquery.easyui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/jquery.easyui.mobile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.filebox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.form.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.layout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.linkbutton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.linkbutton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.menu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.menu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.menubutton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.messager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.mobile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.numberbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.numberspinner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.pagination.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.panel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.parser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.progressbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.progressbar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.propertygrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.propertygrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.resizable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.resizable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.searchbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.slider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.slider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.spinner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.splitbutton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.switchbutton.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.tabs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.tabs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.textbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.timespinner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.treegrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.validatebox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/plugins/jquery.window.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/src/jquery.window.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/layout.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/pagination/layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/lazyload.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/licence_gpl.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/lines.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/lines.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/simplelist/link.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/linkbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/linkbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/linkbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/linkbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/linkbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/pagination/links.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/badge/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/form/load.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel/loadcontent.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/admin/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/toolbar/menu.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/menu/menubar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/menubutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/mergecells.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/dialog/message.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/messager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/messager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/messager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/messager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/messager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/mobile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/window/modalwindow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/multiline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox/multiline.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/multiple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/multiple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid/multiple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combotree/multiple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datalist/multiselect.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/multisorting.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/panel/nav.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/tabs/nav.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menu/nav.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/menubutton/nav.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/navigation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid/navigation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/nestedlayout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel/nestedpanel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/nestedtabs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/nocollapsible.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/slider/nonlinear.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/numberbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/numberbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/numberbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/numberbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/numberbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/input/numberspinner.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/pagination.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/panel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/panel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/panel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/panel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/panel.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/panel/paneltools.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/tabs/pill.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton/plain.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/animation/pop.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/messager/position.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/position.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/products.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/progressbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/progressbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/progressbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/progressbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/progressbar.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/propertygrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/propertygrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/propertygrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/propertygrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/propertygrid.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/propertygrid_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/propertygrid/propertygrid_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/common/proxy.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberbox/range.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/numberspinner/range.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/slider/range.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/timespinner/range.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/remotedata.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datalist/remotedata.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combobox/remotejsonp.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/reports.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/restrict.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/rowborder.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/datagrid/rowediting.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/rowediting.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/rowstyle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/slider/rule.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/searchbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/searchbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/searchbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/searchbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/searchbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/datalist/selection.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/selection.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combogrid/setvalue.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/sharedcalendar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datetimebox/showseconds.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/pagination/simple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/simpletoolbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton/size.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/textbox/size.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/animation/slide.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/slider.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/draggable/snap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/droppable/sort.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/spinner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/spinner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/spinner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/spinner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/spinner.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/splitbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/splitbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/splitbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/splitbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/splitbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/striptools.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/button/style.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton/style.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/style.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/button/switch.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/switchbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/switchbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/switchbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/switchbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/switchbutton.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/tabimage.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/tabposition.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/tabs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/tabs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/tabs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/tabs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/tabs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/badge/tabs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/tabstools.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/textbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/textbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/textbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/textbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/textbox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo-mobile/input/textbox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/linkbutton/toggle.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/toolbar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/dialog/toolbarbuttons.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/accordion/tools.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/tooltip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/tooltip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/tooltip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/tooltip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/tooltip.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tooltip/tooltipdialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datagrid/transform.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/tree.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/combotree/tree_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/layout/tree_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tabs/tree_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/tree_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/tree/tree_data2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/treegrid_data1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/treegrid_data2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/treegrid/treegrid_data3.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/datebox/validate.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/validatebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/validatebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/validatebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/validatebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/validatebox.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/validatebox/validateonblur.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/form/validateonsubmit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/slider/vertical.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/black/window.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/bootstrap/window.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/default/window.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/gray/window.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/themes/metro/window.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/window/windowlayout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bcms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -881,11 +46,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="npm.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="npm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/js/npm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48225468">
-              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33164558">
+              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -909,12 +94,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/webapp/admin/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -974,6 +167,100 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bcms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -985,6 +272,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Subversion" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -992,7 +281,7 @@
       <recent name="E:\workspace\my\idea\cs5\bcms\src\main\webapp\js\jquery-easyui-1.4.3" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings />
@@ -1147,6 +436,66 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
+    <configuration default="false" name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.62" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/bcms" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="bcms:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/bcms" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_bcms" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="57241" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="bcms:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
+    </list>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1193,11 +542,11 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3989432" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32893" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1225,6 +574,10 @@
     <breakpoint-manager />
     <watches-manager />
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/jquery-easyui-1.4.3/demo/form/load.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1244,8 +597,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/bootstrap-3.3.5-dist/js/npm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48225468">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33164558">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
           <folding />
         </state>
       </provider>
