@@ -9,3 +9,4 @@
 <jsp:include page="../../layout/admin/adminheader.jsp"/>
 <link type="text/css" href="../../js/Highcharts-4.1.7/js/themes/dark-blue.js" rel="stylesheet">
 <script type="text/javascript" src="../../js/Highcharts-4.1.7/js/highcharts.js"></script>
+<script type="text/javascript" src="../../js/Highcharts-4.1.7/js/modules/exporting.js"></script>
