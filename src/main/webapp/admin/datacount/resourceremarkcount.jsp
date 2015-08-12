@@ -19,7 +19,7 @@
 <div data-options="region:'center',title:'点播统计'">
     <%--<jsp:include page="_searchtoolbar.jsp"/>--%>
     <table id="dataGrid" class="easyui-datagrid"
-           data-options="fit:true,rownumbers:true,singleSelect:true,url:'remarkdata.json',method:'get',toolbar:toolbar">
+           data-options="fit:true,rownumbers:true,singleSelect:true,url:'remarkdata.json',method:'get',toolbar:toolbar,pagination:true">
     </table>
     <script type="text/javascript">
         var toolbar = [{
