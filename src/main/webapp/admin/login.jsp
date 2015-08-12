@@ -9,16 +9,15 @@
 <html>
 <head>
     <title>用户登陆</title>
-  <link href="<%=request.getContextPath() %>/js/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../js/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="../js/jquery-easyui-1.4.3/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/admin/login.js"></script>
   <style>
     .login_box{
       margin-top:50px;
     }
     .panel-pad{
       padding-top:30px;
-    }
-    .login-alert{
-      display:none;
     }
     .margT25{
       margin-bottom: 25px;
@@ -37,9 +36,9 @@
         <div class="panel-title"> 用户登陆 </div>
       </div>
       <div class="panel-body panel-pad">
-
+        <p class="center-block bg-danger" style="height: 40px;" id="return_message"></p>
         <form id="loginform" class="form-horizontal" role="form">
-          <p class="bg-warning">打发打发萨芬</p>
+
           <div class="input-group margT25">
 							<span class="input-group-addon">
 								<i class="glyphicon glyphicon-user"></i>
