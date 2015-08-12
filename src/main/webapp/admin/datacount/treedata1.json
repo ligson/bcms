@@ -1,0 +1,49 @@
+[{
+  "id":1,
+  "text":"全部分类",
+  "children":[{
+    "id":11,
+    "text":"学科分类",
+    "state":"closed",
+    "children":[{
+      "id":111,
+      "text":"哲学类"
+    },{
+      "id":112,
+      "text":"经济学类"
+    },{
+      "id":113,
+      "text":"经济学类"
+    }]
+  },{
+    "id":12,
+    "text":"素材类型分类",
+    "children":[{
+      "id":121,
+      "text":"文本"
+    },{
+      "id":122,
+      "text":"Java",
+      "attributes":{
+        "p1":"Custom Attribute1",
+        "p2":"Custom Attribute2"
+      }
+    },{
+      "id":123,
+      "text":"Microsoft Office"
+    },{
+      "id":124,
+      "text":"Games",
+      "checked":true
+    }]
+  },{
+    "id":13,
+    "text":"index.html"
+  },{
+    "id":14,
+    "text":"about.html"
+  },{
+    "id":15,
+    "text":"welcome.html"
+  }]
+}]

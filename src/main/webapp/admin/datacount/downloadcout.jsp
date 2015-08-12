@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>数据统计</title>
+    <title>下载统计</title>
     <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/datacount.js" type="text/javascript"></script>
+    <script src="../../js/admin/downloadcount.js" type="text/javascript"></script>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
