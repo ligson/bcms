@@ -10,4 +10,7 @@
 <link rel="stylesheet" type="text/css" href="../../js/jquery-easyui-1.4.3/themes/default/easyui.css"/>
 <link rel="stylesheet" type="text/css" href="../../js/jquery-easyui-1.4.3/themes/icon.css"/>
 <script src="../../js/jquery-easyui-1.4.3/jquery.min.js"></script>
+<script src="../../js/jquery.cookie.js" type="text/javascript"></script>
 <script src="../../js/jquery-easyui-1.4.3/jquery.easyui.min.js" type="text/javascript"></script>
+<script src="../../js/jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+<script src="../../js/admin/admin-base.js" type="text/javascript"></script>
