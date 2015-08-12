@@ -37,5 +37,10 @@
                 <li><span><a href="./useruploadcount.jsp">上传量统计</a></span></li>
             </ul>
         </div>
+        <div title="评论查询" style="overflow:auto;padding:10px;">
+            <ul class="easyui-tree">
+                <li><span><a href="./resourceremarkcount.jsp">资源评论列表</a></span></li>
+            </ul>
+        </div>
     </div>
 </div>
