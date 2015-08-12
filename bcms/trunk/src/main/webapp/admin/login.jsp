@@ -9,62 +9,27 @@
 <html>
 <head>
     <title>用户登陆</title>
-  <link href="../js/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script type="text/javascript" src="../js/jquery-easyui-1.4.3/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/admin/login.js"></script>
-  <style>
-    .login_box{
-      margin-top:50px;
-    }
-    .panel-pad{
-      padding-top:30px;
-    }
-    .margT25{
-      margin-bottom: 25px;
-    }
-    .margT10{
-      margin-top:10px;
-    }
-
-  </style>
+    <link href="../js/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="../css/admin-login.css"/>
+    <script type="text/javascript" src="../js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/admin/login.js"></script>
 </head>
 <body>
-<div class="container">
-  <div class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 login_box">
-    <div class="panel panel-info" >
-      <div class="panel-heading">
-        <div class="panel-title"> 用户登陆 </div>
-      </div>
-      <div class="panel-body panel-pad">
-        <p class="center-block bg-danger" style="height: 40px;" id="return_message"></p>
-        <form id="loginform" class="form-horizontal" role="form">
-
-          <div class="input-group margT25">
-							<span class="input-group-addon">
-								<i class="glyphicon glyphicon-user"></i>
-							</span>
-            <input id="login-username" type="text" class="form-control input-lg" name="username" value="" placeholder="请输入用户名">
-          </div>
-          <div class="input-group margT25">
+<div class="login-container">
+    <h2 style="padding-bottom:5px;font-size:14px;font-weight:bold;padding-left:10px;border-bottom:1px solid gainsboro;">后台登陆</h2>
+    <div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group" style="margin-top:10px;">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="login-password" type="password" class="form-control input-lg" name="password" placeholder="请输入密码">
-          </div>
-          <div class="input-group">
-            <div class="checkbox">
-              <label>
-                <input id="login-remember" type="checkbox" name="remember" value="1"> 记住我
-              </label>
-            </div>
-          </div>
-          <div class="form-group margT10">
-            <div class="col-sm-12 controls">
-              <a id="btn-login" href="#" class="btn btn-lg btn-block btn-success">立即登录 </a>
-            </div>
-          </div>
-        </form>
-      </div>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+        </div>
     </div>
-  </div>
+    <div style="margin-top:10px;">
+        <input class="btn btn-success" type="submit" value="登陆" style="float:right;margin-right:10px;">
+    </div>
 </div>
 </body>
 </html>
