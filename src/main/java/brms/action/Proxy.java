@@ -1,8 +1,7 @@
 package brms.action;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,14 +9,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
@@ -64,10 +68,29 @@ public class Proxy extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+     * response)
+     */
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response) throws ServletException, IOException {
         String url = request.getParameter("url");
-        Map result = new HashMap();
-        HttpGet httpGet = new HttpGet(BASE_URL + url);
-        CloseableHttpResponse httpResponse = (CloseableHttpResponse) httpClient.execute(httpGet, context);
+        Map<String, Object> result = new HashMap<String, Object>();
+        HttpPost httpPost = new HttpPost(BASE_URL + url);
+        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
+        Enumeration enumeration = request.getParameterNames();
+        while (enumeration.hasMoreElements()) {
+            String name = enumeration.nextElement().toString();
+            String value = request.getParameter(name);
+            NameValuePair nameValuePair = new BasicNameValuePair(name, value);
+            nameValuePairs.add(nameValuePair);
+        }
+        HttpEntity httpEntity = new UrlEncodedFormEntity(nameValuePairs);
+        httpPost.setEntity(httpEntity);
+        CloseableHttpResponse httpResponse = (CloseableHttpResponse) httpClient.execute(httpPost, context);
 
         if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
             result.put("success", true);
@@ -77,19 +100,6 @@ public class Proxy extends HttpServlet {
             result.put("msg", "请求失败，请稍候再试!");
         }
         objectMapper.writeValue(response.getOutputStream(), result);
-    }
-
-    /**
-     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-     * response)
-     */
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response) throws ServletException, IOException {
-
-        String url = request.getParameter("url");
-        Map params = request.getParameterMap();
-
-
     }
 
 
