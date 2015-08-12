@@ -8,16 +8,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>数据统计</title>
+    <title>资源类型统计</title>
     <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/datacount.js" type="text/javascript"></script>
+    <script src="../../js/admin/mediatypecount.js" type="text/javascript"></script>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
 <div data-options="region:'center',title:'点播统计'">
-    <jsp:include page="_searchtoolbar.jsp"/>
     <div id="container"></div>
 </div>
 
