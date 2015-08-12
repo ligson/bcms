@@ -24,7 +24,7 @@
                 <li><span><a href="./datacout.jsp">点播统计</a></span></li>
                 <li><span><a href="./downloadcout.jsp">下载统计</a></span></li>
                 <li><span><a href="./resourcecount.jsp">资源量统计</a></span></li>
-                <li><span><a href="./mediatypecount.jsp">资源类型统计</a></span></li>
+                <li><span><a href="./mediatypecount.jsp">类型统计</a></span></li>
                 <li><span><a href="./libcout.jsp">资源库统计</a></span></li>
 
             </ul>
