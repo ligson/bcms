@@ -27,7 +27,7 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="loadLocal()" plain="true" iconCls="icon-search"
        title="搜索"></a>
 </div>
-<div data-options="region:'center',title:'资源库统计'" iconCls="icon-page_world">
+<div data-options="region:'center',title:'课程管理'" iconCls="icon-page_world">
     <div id="container">
         <table id="rGrid" class="easyui-datagrid"
                data-options="rownumbers:true,singleSelect:true,url:'./caseliblist.json',method:'post'" pagination="true"
