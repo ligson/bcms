@@ -2,14 +2,14 @@
 
 $(function () {
      $("#btn-login").click(function () {
-        var username=$("#login-username").val();
-        var password = $("#login-password").val();
-         $("#return_message").text("干你妈逼");
-        $.post("/index/checkLogin", {url:"login/", username: username, password: password }, function (data) {
-            if(data.success){
-                location.href = "/user/index";
+        var username=$("#username").val();
+        var password = $("#password").val();
+        $.post("/bcms/proxy", {method:"post",url:"login/", username: username, password: password }, function (data) {
+            var result = jQuery.parseJSON(data);
+            if(result.success){
+                location.href = "/bcms/admin/usermgr/userMgr.jsp";
             }else{
-                $("#return_message").text("干你妈逼");
+                alert(result.msg);
             }
         });
     });

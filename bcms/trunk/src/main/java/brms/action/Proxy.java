@@ -1,5 +1,6 @@
 package brms.action;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.*;
 
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.output.StringBuilderWriter;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
@@ -15,6 +17,8 @@ import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.*;
+import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
@@ -24,6 +28,7 @@ import org.apache.http.util.EntityUtils;
 import org.codehaus.jackson.JsonEncoding;
 import org.codehaus.jackson.JsonGenerator;
 import org.codehaus.jackson.map.ObjectMapper;
+import sun.org.mozilla.javascript.internal.json.JsonParser;
 
 /**
  * Servlet implementation class Proxy
@@ -61,9 +66,9 @@ public class Proxy extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-        String uri = parseToUrl(request);
-        HttpGet get = new HttpGet(uri);
-        executeMethod(get, response);
+        String url = request.getParameter("url");
+        HttpGet httpGet = new HttpGet(BASE_URL + url);
+        executeMethod(httpGet, response);
     }
 
     /**
@@ -72,11 +77,20 @@ public class Proxy extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
-        String url = request.getParameter("url");
-        HttpPost httpPost = new HttpPost(BASE_URL + url);
-        HttpEntity entity = parseToEntity(request);
-        httpPost.setEntity(entity);
-        executeMethod(httpPost, response);
+        String method = request.getParameter("method");
+        if (method.equalsIgnoreCase("get")) {
+            doGet(request, response);
+        } else if (method.equalsIgnoreCase("put")) {
+            doPut(request, response);
+        } else if (method.equalsIgnoreCase("delete")) {
+            doDelete(request, response);
+        }else {
+            String url = request.getParameter("url");
+            HttpPost httpPost = new HttpPost(BASE_URL + url);
+            HttpEntity entity = parseToEntity(request);
+            httpPost.setEntity(entity);
+            executeMethod(httpPost, response);
+        }
     }
 
     @Override
@@ -90,15 +104,37 @@ public class Proxy extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String uri = parseToUrl(request);
-        HttpDelete httpDelete = new HttpDelete(uri);
+        //String uri = parseToUrl(request);
+        String url = request.getParameter("url");
+        HttpDelete httpDelete = new HttpDelete(BASE_URL+url);
         executeMethod(httpDelete, response);
     }
 
-    private HttpEntity parseToEntity(HttpServletRequest request) throws IOException {
+    private StringEntity parseToEntity(HttpServletRequest request) throws IOException {
         List<NameValuePair> nameValuePairs = dealParams(request);
-        HttpEntity httpEntity = new UrlEncodedFormEntity(nameValuePairs);
-        return httpEntity;
+        Map<String,Object> result = new HashMap<>();
+        for(NameValuePair nameValuePair:nameValuePairs){
+            if(nameValuePair.getName().indexOf("_ids")>0){
+                    String[] idList=nameValuePair.getValue().split(",");
+                    List<Integer> list=new ArrayList();
+                    for (int i=0;i<idList.length;i++){
+                        list.add(Integer.parseInt(idList[i]));
+                    }
+                result.put(nameValuePair.getName(), list);
+            }else {
+                result.put(nameValuePair.getName(), nameValuePair.getValue());
+            }
+        }
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        objectMapper.writeValue(byteArrayOutputStream,result);
+        String results = byteArrayOutputStream.toString();
+        StringEntity stringEntity = new StringEntity(results,"UTF-8");
+        stringEntity.setContentType("application/json");
+
+        //HttpEntity httpEntity = new UrlEncodedFormEntity(nameValuePairs);
+
+        return stringEntity;
     }
 
     private String parseToUrl(HttpServletRequest request) {
