@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>资源库统计</title>
+    <title>资源列表</title>
     <jsp:include page="_header.jsp"/>
     <script type="text/javascript" src="../../js/admin/rmgr.js"></script>
 </head>

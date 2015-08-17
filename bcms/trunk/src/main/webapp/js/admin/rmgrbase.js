@@ -6,6 +6,9 @@ function addCategory() {
     //var selectNode = tree.tree("getSelected");
     $("#addCategoryDlg").dialog("open");
 }
+function editCategory() {
+    $("#editCategoryDlg").dialog("open");
+}
 function showContextMenu(e, node) {
     e.preventDefault();
     $("#treeContextMenu").menu("show", {

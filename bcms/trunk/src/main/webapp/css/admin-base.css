@@ -19,10 +19,13 @@
     text-align: center;
     line-height: 50px;
 }
-#footer-inner{
-    color:#fff;
+
+#footer-inner {
+    color: #fff;
 }
+
 #topmenu a:hover {
+    color: #ffe48d;
     text-decoration: underline;
 }
 
@@ -37,7 +40,8 @@
 #topmenu {
     text-align: right;
 }
-#user_toolbar{
-    float:right;
-    color:#FFF;
+
+#user_toolbar {
+    float: right;
+    color: #FFF;
 }
