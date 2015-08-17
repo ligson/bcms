@@ -18,6 +18,10 @@
     background: url('icons/edit_remove.png') no-repeat center center;
 }
 
+.icon-application_side_expand {
+    background: url('icons/ext/application_side_expand.png') no-repeat center center;
+}
+
 .icon-save {
     background: url('icons/filesave.png') no-repeat center center;
 }
@@ -189,6 +193,11 @@
 .icon-user_comment {
     background: url("icons/ext/user_comment.png") no-repeat center center;
 }
-.icon-application_side_boxes{
+
+.icon-application_side_boxes {
     background: url("icons/ext/application_side_boxes.png") no-repeat center center;
+}
+
+.icon-folder_up {
+    background: url("icons/ext/folder_up.png") no-repeat center center;
 }
