@@ -9,7 +9,8 @@
 <style type="text/css">
 
 </style>
-<div data-options="region:'west',split:true" title="系统菜单" style="width:150px;" id="treeMenu">
+<div data-options="region:'west',split:true" title="系统菜单" style="width:150px;" id="treeMenu"
+     iconCls="icon-application_side_boxes">
     <ul class="easyui-tree">
         <li><a href="./userMgr.jsp"><span>用户</span></a></li>
         <li><span><a href="./groupMgr.jsp">用户组</a></span></li>

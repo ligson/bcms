@@ -16,7 +16,7 @@
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'点播统计'">
+<div data-options="region:'center',title:'下载量统计'" iconCls="icon-download">
     <jsp:include page="_searchtoolbar.jsp"/>
     <div id="container"></div>
 </div>

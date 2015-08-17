@@ -15,7 +15,7 @@
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'点播统计'">
+<div data-options="region:'center',title:'系统配置'" iconCls="icon-config">
     <div id="container" style="padding:10px;">
         <form id="ff" method="post">
             <table cellpadding="5">
@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                     <td>系统logo:</td>
-                    <td><input type="file" name="photo" />
+                    <td><input type="file" name="photo"/>
                     </td>
                 </tr>
             </table>

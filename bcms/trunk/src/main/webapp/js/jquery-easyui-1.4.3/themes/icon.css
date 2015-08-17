@@ -125,3 +125,70 @@
 .icon-user {
     background: url('icons/user/user.png') no-repeat center center;
 }
+
+.icon-config {
+    background: url("icons/ext/2012080404391.png") no-repeat center center;
+}
+
+.icon-cdr_go {
+    background: url("icons/ext/cdr_go.png") no-repeat center center;
+}
+
+.icon-control_equalizer_blue {
+    background: url("icons/ext/control_equalizer_blue.png") no-repeat center center;
+}
+
+.icon-drive_disk {
+    background: url("icons/ext/drive_disk.png") no-repeat center center;
+}
+
+.icon-chart_pie {
+    background: url("icons/ext/chart_pie.png") no-repeat center center;
+}
+
+.icon-chart_curve {
+    background: url("icons/ext/chart_curve.png") no-repeat center center;
+}
+
+.icon-package_down {
+    background: url("icons/ext/package_down.png") no-repeat center center;
+}
+
+.icon-cd_play {
+    background: url("icons/ext/cd_play.png") no-repeat center center;
+}
+
+.icon-page_world {
+    background: url("icons/ext/page_world.png") no-repeat center center;
+}
+
+.icon-control_play_blue {
+    background: url("icons/ext/control_play_blue.png") no-repeat center center;
+}
+
+.icon-download {
+    background: url("icons/ext/download.png") no-repeat center center;
+}
+
+.icon-chart_line {
+    background: url("icons/ext/chart_line.png") no-repeat center center;
+}
+
+.icon-disk_upload {
+    background: url("icons/ext/disk_upload.png") no-repeat center center;
+}
+
+.icon-comments {
+    background: url("icons/ext/comments.png") no-repeat center center;
+}
+
+.icon-cd_magnify {
+    background: url("icons/ext/cd_magnify.png") no-repeat center center;
+}
+
+.icon-user_comment {
+    background: url("icons/ext/user_comment.png") no-repeat center center;
+}
+.icon-application_side_boxes{
+    background: url("icons/ext/application_side_boxes.png") no-repeat center center;
+}

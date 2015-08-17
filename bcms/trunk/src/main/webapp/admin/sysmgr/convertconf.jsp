@@ -15,7 +15,7 @@
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'点播统计'">
+<div data-options="region:'center',title:'转码配置'" iconCls="icon-cdr_go">
     <div id="container">
         <form id="ff" method="post">
             <table cellpadding="5">
