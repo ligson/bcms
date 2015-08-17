@@ -10,7 +10,17 @@ $(function () {
             {field:'name',width:'30%',align:'center',title:'权限名称'},
             {field:'codename',width:'30%',align:'center',title:'权限缩写'},
             {field:'_operate',width:'32%',align:'center',title:'操作',formatter:formatOper}
-        ]]
+        ]],
+        toolbar:[{
+            text:'添加',iconCls:'icon-add',handler:function(){
+                addAuth();
+            }
+        },
+            {text:'删除',iconCls:'icon-cancel',handler:function(){
+                delAuths();
+            }
+            }
+        ]
     });
 
     initAuthGrid();
@@ -18,25 +28,33 @@ $(function () {
 
 
 function initAuthGrid() {
-    $.post("/index/httpGet", {url: "permission/"}, function (result) {
-        if (result.success) {
-            var obj = jQuery.parseJSON(result.data);
-            var json = {total: obj.length, rows: obj};
+    $.post("/bcms/proxy", {method:"get",url: "permission/"}, function (result) {
+        var obj=jQuery.parseJSON(result);
+        if (obj.success) {
+            var data = jQuery.parseJSON(obj.data);
+            var json = {total: data.length, rows: data};
             $("#auth_table").datagrid('loadData', json);
         } else {
-            alert(result.msg);
+            alert(obj.msg);
         }
     });
 }
 
-function clickModifyAuth(index){
-    var selectedRow = $('#auth_table').datagrid('getSelected');
-    if(selectedRow){
-        $("#modify_auth_dlg input[name=id]").val(selectedRow.id);
-        $("#modify_auth_dlg input[name=name]").val(selectedRow.name);
-        $("#modify_auth_dlg input[name=codename]").val(selectedRow.codename);
+function addAuth(){
+    $('#add_auth_dlg').dialog('open');
+}
+
+
+
+function editAuth(index) {
+    $('#auth_table').datagrid('selectRow', index);
+    var row = $('#auth_table').datagrid('getSelected');
+    if (row) {
+        $("#modify_auth_dlg input[name=id]").val(row.id);
+        $("#modify_auth_dlg input[name=name]").val(row.name);
+        $("#modify_auth_dlg input[name=codename]").val(row.codename);
         $('#modify_auth_dlg').dialog('open');
-    }else{
+    } else {
         $.messager.alert("提示", "请选择要编辑的行！", "info");
         return;
     }
@@ -59,7 +77,7 @@ function modifyAuth(){
 
 
 function formatOper(val, row, index) {
-    return '<a class="tablelink" href="#" onclick="clickModifyAuth(' + index + ');">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delAuth(' + index + ');">删除</a>';
+    return '<a class="tablelink" href="#" onclick="editAuth(' + index + ');">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delAuth(' + index + ');">删除</a>';
 }
 
 function delAuths() {
@@ -104,7 +122,7 @@ function delAuth(index) {
     }
 }
 
-function addAuth() {
+function saveAuth() {
     var name = $("#name").val();
     var codename = $("#codename").val();
     $.post("/index/httpPost", {url: "permission/", name: name, codename: codename}, function (result) {
