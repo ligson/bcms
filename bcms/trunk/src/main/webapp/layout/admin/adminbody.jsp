@@ -26,7 +26,7 @@
                 <td style="padding-right:5px;text-align:right;vertical-align:bottom;">
                     <div id="topmenu">
                         <a href="../../admin/usermgr/userMgr.jsp">用户管理</a>
-                        <a href="/demo/main/index.php">资源管理</a>
+                        <a href="../../admin/resourcemgr/rmgr.jsp">资源管理</a>
                         <a href="../../admin/metadata/metadataMgr.jsp">元数据管理</a>
                         <a href="/documentation/index.php">应用管理</a>
                         <a href="../../admin/datacount/datacout.jsp">数据统计</a>
