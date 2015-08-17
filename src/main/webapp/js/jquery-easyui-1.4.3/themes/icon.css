@@ -201,3 +201,27 @@
 .icon-folder_up {
     background: url("icons/ext/folder_up.png") no-repeat center center;
 }
+
+.icon-application_cascade {
+    background: url("icons/ext/application_cascade.png") no-repeat center center;
+}
+
+.icon-book_open {
+    background: url("icons/ext/book_open.png") no-repeat center center;
+}
+
+.icon-drive_cd {
+    background: url("icons/ext/drive_cd.png") no-repeat center center;
+}
+
+.icon-double_people {
+    background: url("icons/ext/2012081511913.png") no-repeat center center;
+}
+
+.icon-zhuanti {
+    background: url("icons/ext/2012081511767.png") no-repeat center center;
+}
+
+.icon-application_view_gallery {
+    background: url("icons/ext/application_view_gallery.png") no-repeat center center;
+}
