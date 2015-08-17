@@ -16,7 +16,7 @@
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'点播统计'">
+<div data-options="region:'center',title:'资源评论列表'" iconCls="icon-comments">
     <%--<jsp:include page="_searchtoolbar.jsp"/>--%>
     <table id="dataGrid" class="easyui-datagrid"
            data-options="fit:true,rownumbers:true,singleSelect:true,url:'remarkdata.json',method:'get',toolbar:toolbar,pagination:true">

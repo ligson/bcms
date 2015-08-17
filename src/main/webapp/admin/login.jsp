@@ -17,15 +17,18 @@
 </head>
 <body>
 <div class="login-container">
-    <h2 style="padding-bottom:5px;font-size:14px;font-weight:bold;padding-left:10px;border-bottom:1px solid gainsboro;">后台登陆</h2>
+    <h2 style="padding-bottom:5px;font-size:14px;font-weight:bold;padding-left:10px;border-bottom:1px solid gainsboro;">
+        后台登陆</h2>
+
     <div>
         <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="username" type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+            <input id="username" type="text" class="form-control" placeholder="请输入用户名" aria-describedby="basic-addon1">
         </div>
         <div class="input-group" style="margin-top:10px;">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="password" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+            <input id="password" type="password" class="form-control" placeholder="请输入密码"
+                   aria-describedby="basic-addon1">
         </div>
     </div>
     <div style="margin-top:10px;">

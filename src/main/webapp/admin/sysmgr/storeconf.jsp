@@ -11,8 +11,8 @@
     <title>存储配置</title>
     <jsp:include page="../../layout/admin/adminheader.jsp"/>
     <style type="text/css">
-        .combo-panel .panel-body .panel-body-noheader{
-            height:150px;
+        .combo-panel .panel-body .panel-body-noheader {
+            height: 150px;
         }
     </style>
 </head>
@@ -20,7 +20,7 @@
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'点播统计'">
+<div data-options="region:'center',title:'存储配置'" iconCls="icon-drive_disk">
     <div id="container">
         <form id="ff" method="post">
             <table cellpadding="5">
@@ -28,27 +28,27 @@
                     <td>存储协议:</td>
                     <td>
                         <select class="easyui-combobox" name="language">
-                            <option value="ar">HDFS</option>
-                            <option value="ar">HTTP</option>
-                            <option value="ar">百度云</option>
-                            <option value="ar">File(本地文件)</option>
+                            <option value="hdfs">HDFS</option>
+                            <option value="http">HTTP</option>
+                            <option value="bdcloud">百度云</option>
+                            <option value="local">File(本地文件)</option>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <td>地址:</td>
                     <td><input class="easyui-textbox" type="text" name="email"
-                               data-options="required:true,validType:'email'"/></td>
+                               data-options="required:true"/></td>
                 </tr>
                 <tr>
                     <td>端口:</td>
                     <td><input class="easyui-textbox" type="text" name="email"
-                               data-options="required:true,validType:'email'"/></td>
+                               data-options="required:true"/></td>
                 </tr>
                 <tr>
                     <td>参数:</td>
                     <td><input class="easyui-textbox" type="text" name="email"
-                               data-options="required:true,validType:'email'"/></td>
+                               data-options="required:true"/></td>
                 </tr>
             </table>
         </form>
