@@ -20,4 +20,7 @@ $(function () {
         var href = $(this).find("a").attr("href");
         $.cookie("menu-item", href);
     });
+    var items = $(".combo-panel").find(".combobox-item");
+    //var height = item
+    //$(".combo-panel").height();
 });

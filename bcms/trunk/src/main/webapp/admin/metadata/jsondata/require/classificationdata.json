@@ -1,0 +1,27 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "id": "11",
+      "name": "目的",
+      "enName": "Purpose",
+      "description": "字段描述",
+      "datatype": "vocabulary",
+      "lomId": "9.1",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10
+    },
+    {
+      "id": "12",
+      "name": "分类路径",
+      "enName": "TaxonPath",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "9.2",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10
+    }
+  ]
+}

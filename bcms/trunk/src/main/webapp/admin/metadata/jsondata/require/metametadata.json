@@ -1,0 +1,50 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "id": "6",
+      "name": "贡献",
+      "enName": "Contribute",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "3.2",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10
+    },
+    {
+      "id": "7",
+      "name": "元数据方案",
+      "enName": "MetadataScheme",
+      "description": "字段描述",
+      "datatype": "string",
+      "lomId": "3.3",
+      "code": "11121554",
+      "innercode": "010101",
+      "constraints": [
+        {
+          "type": "length",
+          "value": "30"
+        }
+      ],
+      "size": 10
+    },
+    {
+      "id": "8",
+      "name": "语种",
+      "enName": "Language",
+      "description": "字段描述",
+      "datatype": "string",
+      "lomId": "3.4",
+      "code": "11121554",
+      "innercode": "010101",
+      "constraints": [
+        {
+          "type": "length",
+          "value": "100"
+        }
+      ],
+      "size": 10
+    }
+  ]
+}
