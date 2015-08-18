@@ -7,3 +7,5 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="../../layout/admin/adminheader.jsp"/>
+<script src="../../js/admin/metadata/left_tree.js" type="text/javascript"></script>
+
