@@ -124,6 +124,7 @@
           {
             "id": 16,
             "text": "结构类型",
+            "href": "./jsondata/structure/structuredata.json",
             "children": [
               {
                 "id": 161,
@@ -158,6 +159,7 @@
           {
             "id": 17,
             "text": "词汇表",
+            "href":"./jsondata/vocabulary/vocabularydata.json",
             "children": [
               {
                 "id": 171,

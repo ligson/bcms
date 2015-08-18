@@ -1,0 +1,514 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "id": "1",
+      "name": "学习资源类型",
+      "enName": "Identifier",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "1.1",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10,
+      "children": [
+        {
+          "id": "101",
+          "name": "媒体素材",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        },
+        {
+          "id": "101",
+          "name": "试题",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        },
+        {
+          "id": "101",
+          "name": "试卷",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        },
+        {
+          "id": "101",
+          "name": "课件",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        },
+        {
+          "id": "101",
+          "name": "文献资料",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        },
+        {
+          "id": "101",
+          "name": "教学案例",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        },
+        {
+          "id": "101",
+          "name": "常见问题解答",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        },
+        {
+          "id": "101",
+          "name": "资源目录索引",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        },
+        {
+          "id": "101",
+          "name": "网络课程",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "目的",
+      "enName": "Contribute",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "1.1",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10,
+      "children": [
+        {
+          "id": "101",
+          "name": "角色",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "name": "实体",
+          "enName": "Entry",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.2",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "name": "日期",
+          "enName": "Entry",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.2",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "环境",
+      "enName": "Contribute",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "1.1",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10,
+      "children": [
+        {
+          "id": "101",
+          "name": "来源",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "id": "103",
+          "name": "分类单元",
+          "enName": "Contribute",
+          "description": "字段描述",
+          "datatype": "structure",
+          "lomId": "1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 10,
+          "children": [
+            {
+              "id": "101",
+              "name": "id",
+              "enName": "Catalog",
+              "description": "字段描述",
+              "datatype": "string",
+              "lomId": "1.1.1",
+              "code": "11121554",
+              "innercode": "010101",
+              "size": 1,
+              "constraints": [
+                {
+                  "type": "length",
+                  "value": "1000"
+                }
+              ]
+            },
+            {
+              "id": "102",
+              "name": "条目",
+              "enName": "Entry",
+              "description": "字段描述",
+              "datatype": "string",
+              "lomId": "1.1.2",
+              "code": "11121554",
+              "innercode": "010101",
+              "size": 1,
+              "constraints": [
+                {
+                  "type": "length",
+                  "value": "1000"
+                }
+              ]
+            },
+            {
+              "id": "102",
+              "name": "日期",
+              "enName": "Entry",
+              "description": "字段描述",
+              "datatype": "string",
+              "lomId": "1.1.2",
+              "code": "11121554",
+              "innercode": "010101",
+              "size": 1,
+              "constraints": [
+                {
+                  "type": "length",
+                  "value": "1000"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "贡献-角色",
+      "enName": "Contribute",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "1.1",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10,
+      "children": [
+        {
+          "id": "101",
+          "name": "id",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "name": "条目",
+          "enName": "Entry",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.2",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "name": "日期",
+          "enName": "Entry",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.2",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "技术要求-名称",
+      "enName": "Contribute",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "1.1",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10,
+      "children": [
+        {
+          "id": "71",
+          "name": "或组合",
+          "enName": "Contribute",
+          "description": "字段描述",
+          "datatype": "structure",
+          "lomId": "1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 10,
+          "children": [
+            {
+              "id": "101",
+              "name": "类型",
+              "enName": "Catalog",
+              "description": "字段描述",
+              "datatype": "string",
+              "lomId": "1.1.1",
+              "code": "11121554",
+              "innercode": "010101",
+              "size": 1,
+              "constraints": [
+                {
+                  "type": "length",
+                  "value": "1000"
+                }
+              ]
+            },
+            {
+              "id": "102",
+              "name": "名称",
+              "enName": "Entry",
+              "description": "字段描述",
+              "datatype": "string",
+              "lomId": "1.1.2",
+              "code": "11121554",
+              "innercode": "010101",
+              "size": 1,
+              "constraints": [
+                {
+                  "type": "length",
+                  "value": "1000"
+                }
+              ]
+            },
+            {
+              "id": "102",
+              "name": "最低版本",
+              "enName": "Entry",
+              "description": "字段描述",
+              "datatype": "string",
+              "lomId": "1.1.2",
+              "code": "11121554",
+              "innercode": "010101",
+              "size": 1,
+              "constraints": [
+                {
+                  "type": "length",
+                  "value": "1000"
+                }
+              ]
+            },
+            {
+              "id": "102",
+              "name": "最高版本",
+              "enName": "Entry",
+              "description": "字段描述",
+              "datatype": "string",
+              "lomId": "1.1.2",
+              "code": "11121554",
+              "innercode": "010101",
+              "size": 1,
+              "constraints": [
+                {
+                  "type": "length",
+                  "value": "1000"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "关系-类型",
+      "enName": "Contribute",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "1.1",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 10,
+      "children": [
+        {
+          "id": "101",
+          "name": "类型",
+          "enName": "Catalog",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.1",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "name": "名称",
+          "enName": "Entry",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.2",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "name": "最低版本",
+          "enName": "Entry",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.2",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "name": "最高版本",
+          "enName": "Entry",
+          "description": "字段描述",
+          "datatype": "string",
+          "lomId": "1.1.2",
+          "code": "11121554",
+          "innercode": "010101",
+          "size": 1,
+          "constraints": [
+            {
+              "type": "length",
+              "value": "1000"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
