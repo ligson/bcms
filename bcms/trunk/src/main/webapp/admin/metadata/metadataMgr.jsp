@@ -26,9 +26,14 @@
            pagination="true">
     </table>
 </div>
-<div id="selectItemDlg" title="选择字段" class="easyui-dialog" closed="true"
+<div id="ttbr">
+    <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addItemToDlg()">提交</a>
+    <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">取消</a>
+    <p></p>
+</div>
+<div toolbar="#ttbr" id="selectItemDlg" title="选择字段" class="easyui-dialog" closed="true"
      style="width:450px;height:400px;padding:10px;">
-    <ul id="metadata_tree" class="easyui-tree" url="./lefttree.json"></ul>
+    <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
 </div>
 <div id="addMetaItemDlg" title="增加字段" class="easyui-dialog" closed="true"
      style="width:450px;height:400px;padding:10px;">
@@ -72,7 +77,12 @@
                 </td>
             </tr>
             <tr>
-                <td>约束</td>
+                <td colspan="2" id="structureItems">
+
+                </td>
+            </tr>
+            <tr>
+                <td><label>约束</label></td>
                 <td style="padding:10px;line-height:30px;">
                     <div>是否唯一:<input type="checkbox"></div>
 

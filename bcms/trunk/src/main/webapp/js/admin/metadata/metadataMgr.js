@@ -26,10 +26,35 @@ var dataTypes = [{name: "langstring", value: "多语言字符串"}, {
     name: "value",
     value: "值"
 }, {name: "structure", value: "结构类型"}, {name: "date", value: "时间"}];
+
+function addItemToDlg() {
+    var aArr = $("#ttbr p").find("a");
+    $("#structureItems").empty();
+    for (var i = 0; i < aArr.length; i++) {
+        var aId = $(aArr[i]).attr("about");
+        var aText = $(aArr[i]).text();
+        //TODO input un add
+        $("#structureItems").append("<p>" + aText + "<p>");
+    }
+    $("#selectItemDlg").dialog("close");
+}
 $(function () {
+    $("#metadata_tree1").tree({
+        onCheck: function (node, checked) {
+            if (!node.children) {
+                if (checked) {
+                    $("#ttbr p").append("<a about='" + node.id + "'>" + node.text + "</a>");
+                } else {
+                    $("#ttbr p").find("a[about='" + node.id + "']").remove();
+                }
+            }
+
+        }
+    });
+
     $("#metaGrid").treegrid({
-        idField:'id',
-        treeField:'name',
+        idField: 'id',
+        treeField: 'name',
         columns: [
             [
                 {field: 'id', title: '编号', width: 100},
@@ -84,9 +109,13 @@ $(function () {
         onSelect: function (item) {
             if (item.value == "structure") {
                 $("#selectItemDlg").dialog("open");
+            }else{
+                $("#structureItems").empty();
             }
         }
     });
+
+
 });
 function showAddItemDlg() {
     $("#addMetaItemDlg").dialog("open");
