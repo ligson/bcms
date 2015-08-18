@@ -107,10 +107,13 @@ $(function () {
 
     $("#itemDateTypeSlt").combobox({
         onSelect: function (item) {
+            $("#structureItems").empty();
             if (item.value == "structure") {
                 $("#selectItemDlg").dialog("open");
-            }else{
-                $("#structureItems").empty();
+            } else if (item.value == "vocabulary") {
+                $("#metadata_tree1").tree({url: "./jsondata/vocabulary/vocabularytree.json"});
+                $("#metadata_tree1").tree("reload");
+                $("#selectItemDlg").dialog("open");
             }
         }
     });
