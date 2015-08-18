@@ -8,16 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>元数据管理</title>
+    <title>必选字段</title>
     <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/metadataMgr.js" type="text/javascript"></script>
+    <script src="../../js/admin/metadata/candata.js" type="text/javascript"></script>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
-<div id="tb" class="easyui-tabs" data-options="region:'center'">
-
+<div data-options="region:'center'" title="可选数据">
+    <div id="container">
+        <div id="candata_table"></div>
+    </div>
 </div>
 
 <div id="add_group_dlg" class="easyui-dialog" style="width: 400px; height: 280px; padding: 10px 20px;"

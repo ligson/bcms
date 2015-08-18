@@ -32,7 +32,6 @@ function initGroupTree() {
             var obj = jQuery.parseJSON(obj.data);
             gtreeData=handle(obj);
             $("#group_tree").tree({data: gtreeData});
-
         } else {
             alert(obj.msg);
         }
