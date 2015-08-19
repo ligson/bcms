@@ -19,7 +19,14 @@
 <div data-options="region:'center',title:'字段列表'" iconCls="icon-page_world">
     <div id="tbr" style="height:30px;line-height:30px;">
         <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg()">增加</a>
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除2</a>
+        <select class="easyui-combobox" editable="false" id="searchCondition">
+            <option>按名称</option>
+            <option>按编码</option>
+        </select>
+        <input type="text" class="easyui-textbox"/><a class="easyui-linkbutton" plain="true"
+                                                      iconCls="icon-search">搜索</a>
+
     </div>
     <table toolbar="#tbr" id="metaGrid" class="easyui-treegrid"
            data-options="singleSelect:true,collapsible:true,url:'./metalist.json',method:'post'" rownumbers="true"
@@ -29,6 +36,7 @@
 <div id="ttbr">
     <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addItemToDlg()">提交</a>
     <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">取消</a>
+
     <p></p>
 </div>
 <div toolbar="#ttbr" id="selectItemDlg" title="选择字段" class="easyui-dialog" closed="true"

@@ -24,7 +24,7 @@
                 <a href="#" class="easyui-linkbutton" iconCls="icon-add" title="增加资源库" plain="true"
                    onclick="addCategory()"></a>
                 <a href="#" class="easyui-linkbutton" iconCls="icon-remove" title="删除资源库" plain="true"></a>
-                <a href="#" class="easyui-linkbutton" iconCls="icon-folder_up" title="上传" plain="true"></a>
+                <a href="./createresource.jsp" class="easyui-linkbutton" iconCls="icon-folder_up" title="上传" plain="true"></a>
             </div>
             <div style="margin-top:5px;">
                 <ul class="easyui-tree" url="./lefttree.json" id="categoryTree">
@@ -45,11 +45,7 @@
             <tr>
                 <td>类库元数据标准:</td>
                 <td>
-                    <select class="easyui-combobox" name="language">
-                        <option value="celts">celts标准</option>
-                        <option value="china">国家标准</option>
-                        <option value="school">学校标准</option>
-                    </select>
+                    <input class="easyui-combotree" data-options="url:'../metadata/lefttree.json',method:'get',required:true" style="width:200px;"/>
                 </td>
             </tr>
             <tr>
@@ -79,11 +75,7 @@
                     标准
                 </td>
                 <td>
-                    <select class="easyui-combobox" name="language">
-                        <option value="celts">celts标准</option>
-                        <option value="china">国家标准</option>
-                        <option value="school">学校标准</option>
-                    </select>
+                    <input class="easyui-combotree" data-options="url:'../metadata/lefttree.json',method:'get',required:true" style="width:200px;"/>
                 </td>
             </tr>
             <tr>
