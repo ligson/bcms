@@ -10,7 +10,7 @@
 <head>
     <title>用户管理</title>
     <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/usermgr.js" type="text/javascript"></script>
+    <script src="../../js/admin/user/user.js" type="text/javascript"></script>
     <style type="text/css">
         #add_user_form #modify_user_form
         {

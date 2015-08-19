@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="../../css/admin-base.css">
-<link rel="stylesheet" type="text/css" href="../../js/jquery-easyui-1.4.3/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="../../js/jquery-easyui-1.4.3/themes/bootstrap/easyui.css"/>
 <link rel="stylesheet" type="text/css" href="../../js/jquery-easyui-1.4.3/themes/icon.css"/>
 <script src="../../js/jquery-easyui-1.4.3/jquery.min.js"></script>
 <script src="../../js/jquery.cookie.js" type="text/javascript"></script>

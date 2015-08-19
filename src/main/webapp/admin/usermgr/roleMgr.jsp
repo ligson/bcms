@@ -10,7 +10,7 @@
 <head>
     <title>用户组管理</title>
     <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/role.js" type="text/javascript"></script>
+    <script src="../../js/admin/user/role.js" type="text/javascript"></script>
     <style type="text/css">
         #add_role_form #modify_role_form
         {

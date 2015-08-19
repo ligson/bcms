@@ -12,10 +12,11 @@
 <div data-options="region:'west',split:true" title="系统菜单" style="width:150px;" id="treeMenu"
      iconCls="icon-application_side_boxes">
     <ul class="easyui-tree">
-        <li><a href="./userMgr.jsp"><span>用户</span></a></li>
-        <li><span><a href="./groupMgr.jsp">用户组</a></span></li>
-        <li><span><a href="./roleMgr.jsp">角色</a></span></li>
-        <li><span><a href="./authMgr.jsp">权限</a></span></li>
+        <li iconCls="icon-user"><a href="./userMgr.jsp"><span>用户管理</span></a></li>
+        <li iconCls="icon-organ"><a href="./departmentMgr.jsp"><span>部门管理</span></a></li>
+        <li iconCls="icon-group"><span><a href="./groupMgr.jsp">用户组管理</a></span></li>
+        <li iconCls="icon-group-key"><span><a href="./roleMgr.jsp">角色管理</a></span></li>
+        <li><span><a href="./authMgr.jsp">权限管理</a></span></li>
     </ul>
 
 </div>
