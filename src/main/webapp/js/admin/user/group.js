@@ -30,7 +30,7 @@ function initGroupTree() {
         var obj = jQuery.parseJSON(result);
         if (obj.success) {
             var obj = jQuery.parseJSON(obj.data);
-            gtreeData=handle(obj);
+            gtreeData=formatGroupListData(obj);
             $("#group_tree").tree({data: gtreeData});
         } else {
             alert(obj.msg);
@@ -48,51 +48,15 @@ function addGroup(){
 }
 
 
-function handle(list){
-        var map = {};
-        for(var i = 0; i < list.length; i++){
-            map[list[i].id] = list[i];
-        }
-        var fin = [];
-        for(var i = 0; i < list.length; i++){
-            var obj = list[i];
-            if(!obj.parent || obj.parent == null){
-                if(obj.children && obj.children.length>0){
-                    var children = obj.children;
-                    var childrenList = [];
-                    for(var j = 0; j < children.length; j++){
-                        childrenList.push(handleChildren(map[children[j]], map));
-                    }
-                    obj.children = childrenList;
-                }
-                obj.text=obj.name;
-                fin.push(obj);
-            }
-        }
-        return fin;
-    }
-    function handleChildren(childrenMap , map){
-        if(childrenMap.children && childrenMap.children.length > 0){
-            var children = childrenMap.children;
-            var childrenList = [];
-            for(var j = 0; j < children.length; j++){
-                childrenList.push(handleChildren(map[children[j]], map));
-            }
-            childrenMap.children = childrenList;
-            childrenMap.text=childrenMap.name;
-            return childrenMap;
-        }else{
-            var children = childrenMap.children;
-            var childrenList = [];
-            for(var j = 0; j < children.length; j++){
-                childrenList.push(map[children[j]]);
-            }
-            childrenMap.children = childrenList;
-            childrenMap.text=childrenMap.name;
-            return childrenMap;
-        }
-        return null;
-    }
 
-
+function formatGroupListData(data){
+    var fin = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = data[i];
+        obj.text = obj.name;
+        obj.children=[];
+        fin.push(obj);
+    }
+    return fin;
+}
 

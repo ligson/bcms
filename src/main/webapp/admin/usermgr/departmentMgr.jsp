@@ -38,7 +38,6 @@
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
 
 <div region="center" style="overflow-y: hidden">
@@ -62,32 +61,26 @@
 <div id="add_department_dlg" class="easyui-dialog" style="width: 400px; height: 280px; padding: 10px 20px;"
      closed="true" buttons="#add_group_dlg_buttons">
   <div class="ftitle">
-    信息编辑
+    添加部门
   </div>
   <form id="add_group_form" method="post">
     <div class="fitem">
       <label>
-        用户组名称
+        部门名称
       </label>
       <input name="name" class="easyui-validatebox" required="true" type="text" />
     </div>
     <div class="fitem">
       <label>
-        角色</label>
-      <input class="easyui-combobox" name="roles" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
-              />
-    </div>
-    <div class="fitem">
-      <label>
         上级菜单</label>
-      <input class="easyui-combobox" name="par" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+      <input class="easyui-combobox" name="parent" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
               />
     </div>
   </form>
 </div>
-<div id="add_group_dlg_buttons">
+<div id="add_department_dlg_buttons">
   <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveGroup()" iconcls="icon-save">保存</a>
-  <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_group_dlg').dialog('close')"
+  <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_department_dlg').dialog('close')"
      iconcls="icon-cancel">取消</a>
 </div>
 

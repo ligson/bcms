@@ -8,7 +8,7 @@ $(function () {
         columns:[[
             {field:'id',width:'8%',checkbox:true,title:'编号'},
             {field:'name',width:'30%',align:'center',title:'权限名称'},
-            {field:'codename',width:'30%',align:'center',title:'权限缩写'},
+            {field:'description',width:'30%',align:'center',title:'备注'},
             {field:'_operate',width:'32%',align:'center',title:'操作',formatter:formatOper}
         ]],
         toolbar:[{
@@ -52,7 +52,7 @@ function editAuth(index) {
     if (row) {
         $("#modify_auth_dlg input[name=id]").val(row.id);
         $("#modify_auth_dlg input[name=name]").val(row.name);
-        $("#modify_auth_dlg input[name=codename]").val(row.codename);
+        $("#modify_auth_dlg input[name=description]").val(row.description);
         $('#modify_auth_dlg').dialog('open');
     } else {
         $.messager.alert("提示", "请选择要编辑的行！", "info");
@@ -63,14 +63,15 @@ function editAuth(index) {
 function modifyAuth(){
     var id= $("#modify_auth_dlg input[name=id]").val();
     var name = $("#modify_auth_dlg input[name=name]").val();
-    var codename = $('#modify_auth_dlg input[name=codename]').val();
-    $.post("/index/httpPut", {url: "permission/"+id, name: name, codename:codename}, function (result) {
-        if (result.success) {
+    var description = $('#modify_auth_dlg input[name=description]').val();
+    $.post("/bcms/proxy", {method:"put",url: "permission/"+id, name: name, description:description}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
             $('#modify_auth_dlg').dialog('close');
             initAuthGrid();
         } else {
             $('#modify_auth_dlg').dialog('close');
-            alert(result.msg);
+            $.messager.alert("提示",obj.msg,"info");
         }
     });
 }
@@ -86,11 +87,12 @@ function delAuths() {
         $.messager.confirm('确认', '确认删除?', function (data) {
             if(data) {
                 for (var i = 0; i < rows.length; i++) {
-                    $.post("/index/httpDelete", {url: "permission/" + rows[i].id + "/"}, function (result) {
-                        if (result.success) {
+                    $.post("/bcms/proxy", {method: "delete", url: "permission/" + rows[i].id + "/"}, function (result) {
+                        var obj = jQuery.parseJSON(result);
+                        if (obj.success) {
                             initAuthGrid();
                         } else {
-                            alert("删除失败!");
+                            $.message.alert("提示",obj.msg,"info");
                         }
                     });
                 }
@@ -107,11 +109,12 @@ function delAuth(index) {
     if (row) {
         $.messager.confirm('确认', '确认删除?', function (data) {
             if (data) {
-                $.post("/index/httpDelete", {url: "permission/" + row.id + "/"}, function (result) {
-                    if (result.success) {
+                $.post("/bcms/proxy", {method:"delete",url: "permission/" + row.id + "/"}, function (result) {
+                    var obj = jQuery.parseJSON(result);
+                    if (obj.success) {
                         initAuthGrid();
                     } else {
-                        $.messager.alert("提示","删除失败!","error");
+                        $.messager.alert("提示",obj.msg,"error");
                     }
                 });
             }
@@ -124,14 +127,15 @@ function delAuth(index) {
 
 function saveAuth() {
     var name = $("#name").val();
-    var codename = $("#codename").val();
-    $.post("/index/httpPost", {url: "permission/", name: name, codename: codename}, function (result) {
-        if (result.success) {
+    var description = $("#description").val();
+    $.post("/bcms/proxy", {method:"post",url: "permission/", name: name, description: description}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
             $('#add_auth_dlg').dialog('close');
             initAuthGrid();
         } else {
             $('#add_auth_dlg').dialog('close');
-            alert(result.msg);
+            alert(obj.msg);
         }
     });
 

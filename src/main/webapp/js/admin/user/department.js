@@ -55,7 +55,6 @@ function initDepartmentTree(){
 }
 
 function initUserGridByDepartment(node){
-
     $("#department_user_grid").datagrid('loadData',node);
 }
 
@@ -78,4 +77,8 @@ function formatGroup(val, row) {
         result+="<span>"+val[i].name+"<span>";
     }
     return result;
+}
+
+function clickAddDepartment(){
+    $('#add_department_dlg').dialog('open');
 }

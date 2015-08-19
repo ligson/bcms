@@ -50,7 +50,7 @@ function initModify(node) {
             }
             $("#modify_role_dlg .easyui-combobox").combobox('setValues', t);
         } else {
-            alert(obj.msg);
+            $.message.alert("提示",obj.msg,"info");
         }
     });
 
@@ -72,6 +72,7 @@ function initAuthCombobox(){
 function initRoleTree() {
     $.post("/bcms/proxy", {method:"get",url: "role/"}, function (result) {
         var obj = jQuery.parseJSON(result);
+        console.log(obj);
         if (obj.success) {
             var data = jQuery.parseJSON(obj.data);
             $("#role_tree").tree({data: handle(data), onClick: function () {
@@ -99,7 +100,7 @@ function saveRole(){
             initRoleTree();
         } else {
             $('#add_role_dlg').dialog('close');
-            alert(obj.msg);
+            $.message.alert("提示",obj.msg,"info");
         }
     });
 }

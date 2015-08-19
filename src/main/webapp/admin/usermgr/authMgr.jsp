@@ -62,8 +62,8 @@
         </div>
         <div class="fitem">
             <label>
-                权限代码</label>
-            <input name="codename" class="easyui-validatebox" required="true" type="text" />
+                备注</label>
+            <input name="description" class="easyui-validatebox" required="true" type="text" />
         </div>
     </form>
 </div>
@@ -88,8 +88,8 @@
         </div>
         <div class="fitem">
             <label>
-                权限代码</label>
-            <input name="codename" class="easyui-validatebox" required="true" type="text" />
+                备注</label>
+            <input name="description" class="easyui-validatebox" required="true" type="text" />
         </div>
     </form>
 </div>

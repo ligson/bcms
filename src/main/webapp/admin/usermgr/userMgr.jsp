@@ -47,10 +47,10 @@
 </div>
 
 
-<div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: 400px; padding: 10px 20px;"
+<div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: 420px; padding: 10px 20px;"
      closed="true" buttons="#add_user_dlg_buttons">
     <div class="ftitle">
-        信息编辑
+        添加用户
     </div>
     <form id="add_user_form" method="post">
         <div class="fitem">
@@ -82,6 +82,11 @@
             <label>
                 用户组</label>
             <input class="easyui-combotree group_tree" required="true"  multiple="true" name="group"/>
+        </div>
+        <div class="fitem">
+            <label>
+                部门</label>
+            <input class="easyui-combotree department_tree" required="true"  multiple="true" name="department"/>
         </div>
         <div class="fitem">
             <label>
@@ -122,10 +127,10 @@
        iconcls="icon-cancel">取消</a>
 </div>
 
-<div id="modify_user_dlg" class="easyui-dialog" style="width: 400px; height: 400px; padding: 10px 20px;"
+<div id="modify_user_dlg" class="easyui-dialog" style="width: 400px; height: 420px; padding: 10px 20px;"
      closed="true" buttons="#modify_user_dlg_buttons">
     <div class="ftitle">
-        编辑用户
+        修改用户
     </div>
     <form id="modify_user_form" method="post">
         <div class="fitem">
@@ -152,6 +157,17 @@
             <label>
                 用户组</label>
             <input class="easyui-combotree group_tree" required="true"  multiple="true" name="group"/>
+        </div>
+        <div class="fitem">
+            <label>
+                部门</label>
+            <input class="easyui-combotree department_tree" required="true"  multiple="true" name="department"/>
+        </div>
+        <div class="fitem">
+            <label>
+                卡号
+            </label>
+            <input name="id_card" class="easyui-validatebox" required="true" type="text" />
         </div>
         <div class="fitem">
             <label>
