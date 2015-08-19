@@ -31,6 +31,7 @@
                         <a href="../../admin/appmgr/casemgr.jsp">应用管理</a>
                         <a href="../../admin/datacount/datacout.jsp">数据统计</a>
                         <a href="../../admin/sysmgr/sysconf.jsp">服务管理</a>
+                        <a href="../../admin/socialmgr/informationMgr.jsp">社会化功能管理</a>
                     </div>
 
                 </td>

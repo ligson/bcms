@@ -10,7 +10,7 @@
 <head>
     <title>用户组管理</title>
     <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/auth.js" type="text/javascript"></script>
+    <script src="../../js/admin/user/auth.js" type="text/javascript"></script>
     <style type="text/css">
         #add_auth_form #modify_auth_form
         {
