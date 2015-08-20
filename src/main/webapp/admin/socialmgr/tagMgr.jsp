@@ -23,7 +23,7 @@
         <a href="#" onclick="" class="easyui-linkbutton" plain="true" iconCls="icon-edit">修改</a>
         <a href="#" onclick="" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">删除</a>
         <br/>
-        <input type="text">
+        <input id="search" />
       </div>
       <ul id="tag_tree" class="easyui-tree" data-options="url:'../../js/admin/social/tag_test_tree.json'">
       </ul>
