@@ -18,7 +18,8 @@
 <jsp:include page="_leftmenu.jsp"/>
 <div data-options="region:'center',title:'字段列表'" iconCls="icon-page_world">
     <div id="tbr" style="height:30px;line-height:30px;">
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg()">增加</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddEncodeTypeDlg()">增加编码分类</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddEncodeItemDlg()">增加编码项</a>
         <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除2</a>
         <select class="easyui-combobox" editable="false" id="searchCondition">
             <option>按名称</option>
@@ -44,8 +45,8 @@
      style="width:450px;height:400px;padding:10px;">
     <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
 </div>
-<div id="addMetaItemDlg" title="增加字段" class="easyui-dialog" closed="true"
-     style="width:450px;height:400px;padding:10px;">
+<div id="addEncodeTypeDlg" title="增加编码分类" class="easyui-dialog" closed="true"
+     style="width:300px;height:150px;padding:10px;">
     <form>
         <table>
             <tr>
@@ -53,54 +54,31 @@
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td><label>英文名称</label></td>
+                <td><label>英文名称:</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td><label>解释:</label></td>
+                <td><label>编码</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
-            <tr>
-                <td><label>LOM编号</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
-            </tr>
-            <tr>
-                <td><label>编码:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
-            </tr>
-            <tr>
-                <td><label>取值数:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
-            </tr>
-            <tr>
-                <td><label>数据类型:</label></td>
-                <td>
-                    <select class="easyui-combobox" id="itemDateTypeSlt">
-                        <option value="langstring">多语言字符串</option>
-                        <option value="string">字符串</option>
-                        <option value="number">数值</option>
-                        <option value="vocabulary">词汇表</option>
-                        <option value="structure">结构类型</option>
-                        <option value="date">时间</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" id="structureItems">
+        </table>
+        <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
+        <a class="easyui-linkbutton" plain="false">取消</a>
+    </form>
+</div>
 
-                </td>
+
+<div id="addEncodeItemDlg" title="增加编码项" class="easyui-dialog" closed="true"
+     style="width:300px;height:150px;padding:10px;">
+    <form>
+        <table>
+            <tr>
+                <td><label>属性值:</label></td>
+                <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td><label>约束:</label></td>
-                <td style="padding:10px;line-height:30px;">
-                    <div>是否唯一:<input type="checkbox"></div>
-
-                    <div>范围:<input type="text" class="easyui-textbox"></div>
-
-                    <div>长度(start,end):<input type="text" class="easyui-textbox"></div>
-
-                    <div>是否必备:<input type="checkbox"></div>
-                </td>
+                <td><label>编码</label></td>
+                <td><input type="text" class="easyui-textbox"></td>
             </tr>
         </table>
         <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
