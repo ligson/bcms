@@ -19,7 +19,7 @@ $(function () {
                 }
             },
             {field:'email',width:'10%',align:'center',title:'邮箱'},
-            {field:'departments',width:'10%',align:'center',title:'单位'},
+            {field:'departments',width:'10%',align:'center',title:'部门'},
             {field:'phone',width:'10%',align:'center',title:'电话'},
             {field:'groups',width:'25%',align:'center',formatter:formatGroup,title:'用户组'},
             {field:'_operate',width:'15%',align:'center',title:'操作',

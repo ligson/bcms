@@ -90,12 +90,6 @@
         </div>
         <div class="fitem">
             <label>
-                卡号
-            </label>
-            <input name="id_card" class="easyui-validatebox" required="true" type="text" />
-        </div>
-        <div class="fitem">
-            <label>
                 性别
             </label>
             <input class="easyui-combobox gender_combobox" data-options="valueField:'id',textField:'text',panelHeight:'auto'" name="gender" required="true"  />
@@ -162,18 +156,6 @@
             <label>
                 部门</label>
             <input class="easyui-combotree department_tree" required="true"  multiple="true" name="department"/>
-        </div>
-        <div class="fitem">
-            <label>
-                卡号
-            </label>
-            <input name="id_card" class="easyui-validatebox" required="true" type="text" />
-        </div>
-        <div class="fitem">
-            <label>
-                卡号
-            </label>
-            <input name="id_card" class="easyui-validatebox" required="true" type="text" />
         </div>
         <div class="fitem">
             <label>
