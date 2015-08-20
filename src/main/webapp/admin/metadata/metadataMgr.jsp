@@ -72,7 +72,7 @@
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td>字段类型</td>
+                <td>数据类型</td>
                 <td>
                     <select class="easyui-combobox" id="itemDateTypeSlt">
                         <option value="langstring">多语言字符串</option>
