@@ -10,71 +10,78 @@
         "href": "./jsondata/require/metalist.json",
         "children": [
           {
-            "id": 13,
-            "text": "必须数据元素",
-            "href": "./jsondata/require/celtslist.json",
+            "id": 121,
+            "text": "元数据",
+            "href": "./jsondata/require/metalist.json",
             "children": [
               {
-                "id": 131,
-                "text": "通用",
-                "href": "./jsondata/require/general.json"
+                "id": 13,
+                "text": "必须数据元素",
+                "href": "./jsondata/require/celtslist.json",
+                "children": [
+                  {
+                    "id": 131,
+                    "text": "通用",
+                    "href": "./jsondata/require/general.json"
+                  },
+                  {
+                    "id": 132,
+                    "text": "生存期",
+                    "href": "./jsondata/require/lifecycle.json"
+                  },
+                  {
+                    "id": 133,
+                    "text": "元元数据",
+                    "href": "./jsondata/require/metametadata.json"
+                  },
+                  {
+                    "id": 134,
+                    "text": "技术",
+                    "href": "./jsondata/require/technicaldata.json"
+                  },
+                  {
+                    "id": 135,
+                    "text": "教育",
+                    "href": "./jsondata/require/educationalmeta.json"
+                  },
+                  {
+                    "id": 132,
+                    "text": "分类",
+                    "href": "./jsondata/require/classificationdata.json"
+                  }
+                ]
               },
               {
-                "id": 132,
-                "text": "生存期",
-                "href": "./jsondata/require/lifecycle.json"
-              },
-              {
-                "id": 133,
-                "text": "元元数据",
-                "href": "./jsondata/require/metametadata.json"
-              },
-              {
-                "id": 134,
-                "text": "技术",
-                "href": "./jsondata/require/technicaldata.json"
-              },
-              {
-                "id": 135,
-                "text": "教育",
-                "href": "./jsondata/require/educationalmeta.json"
-              },
-              {
-                "id": 132,
-                "text": "分类",
-                "href": "./jsondata/require/classificationdata.json"
-              }
-            ]
-          },
-          {
-            "id": 14,
-            "text": "可选数据元素",
-            "href": "./jsondata/optional/optionalmeta.json",
-            "children": [
-              {
-                "id": 141,
-                "text": "生存期",
-                "href": "./jsondata/optional/lifecycle.json"
-              },
-              {
-                "id": 142,
-                "text": "技术",
-                "href": "./jsondata/optional/technicaldata.json"
-              },
-              {
-                "id": 143,
-                "text": "教育",
-                "href": "./jsondata/optional/educationalmeta.json"
-              },
-              {
-                "id": 144,
-                "text": "权利",
-                "href": "./jsondata/optional/rights.json"
-              },
-              {
-                "id": 145,
-                "text": "评注",
-                "href": "./jsondata/optional/annotation.json"
+                "id": 14,
+                "text": "可选数据元素",
+                "href": "./jsondata/optional/optionalmeta.json",
+                "children": [
+                  {
+                    "id": 141,
+                    "text": "生存期",
+                    "href": "./jsondata/optional/lifecycle.json"
+                  },
+                  {
+                    "id": 142,
+                    "text": "技术",
+                    "href": "./jsondata/optional/technicaldata.json"
+                  },
+                  {
+                    "id": 143,
+                    "text": "教育",
+                    "href": "./jsondata/optional/educationalmeta.json"
+                  },
+                  {
+                    "id": 144,
+                    "text": "权利",
+                    "href": "./jsondata/optional/rights.json"
+                  },
+                  {
+                    "id": 145,
+                    "text": "评注",
+                    "href": "./jsondata/optional/annotation.json"
+                  }
+                ]
               }
             ]
           },
@@ -155,55 +162,20 @@
                 "text": "关系"
               }
             ]
-          },
-          {
-            "id": 17,
-            "text": "词汇表",
-            "href":"./jsondata/vocabulary/vocabularydata.json",
-            "children": [
-              {
-                "id": 171,
-                "text": "学习资源类型"
-              },
-              {
-                "id": 172,
-                "text": "目的"
-              },
-              {
-                "id": 173,
-                "text": "环境"
-              },
-              {
-                "id": 174,
-                "text": "贡献-角色"
-              },
-              {
-                "id": 175,
-                "text": "技术要求-名称"
-              },
-              {
-                "id": 176,
-                "text": "关系-类型"
-              }
-            ]
-          },
-          {
-            "id": 18,
-            "text": "编码表"
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": 1,
-    "text": "学校标准",
-    "href": "./metalist.json",
-    "children": [
+      },
       {
-        "id": 11,
-        "text": "通用",
-        "href": "./metalist.json"
+        "id": 1,
+        "text": "学校标准",
+        "href": "./metalist.json",
+        "children": [
+          {
+            "id": 11,
+            "text": "通用",
+            "href": "./metalist.json"
+          }
+        ]
       }
     ]
   }

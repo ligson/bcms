@@ -55,7 +55,7 @@ $(function () {
     $("#metaGrid").treegrid({
         idField: 'id',
         treeField: 'name',
-        fitColumns:true,
+        fitColumns: true,
         columns: [
             [
                 {field: 'id', title: '编号', width: 30},
@@ -76,7 +76,10 @@ $(function () {
                 {field: 'code', title: '编码', width: 100},
                 {field: 'innercode', title: '系统编码', width: 100, hidden: true},
                 {field: 'description', title: '解释', width: 100},
-                {field: 'size', title: '取值数', width: 100},
+                {field: 'isSort', title: '顺序', width: 50},
+                {field: 'example', title: '举例', width: 50},
+                {field: 'valueRang', title: '取值范围', width: 50},
+                {field: 'size', title: '取值数', width: 50},
                 {
                     field: 'constraints', title: '约束', width: 100, formatter: function (value, row, index) {
                     if (row.constraints) {
