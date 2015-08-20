@@ -55,9 +55,10 @@ $(function () {
     $("#metaGrid").treegrid({
         idField: 'id',
         treeField: 'name',
+        fitColumns:true,
         columns: [
             [
-                {field: 'id', title: '编号', width: 100},
+                {field: 'id', title: '编号', width: 30},
                 {field: 'name', title: '中文', width: 100},
                 {field: 'enName', title: '英文', width: 100},
                 {
@@ -100,7 +101,11 @@ $(function () {
                         return "--";
                     }
                 }
+                }, {
+                field: "edit", title: "编辑", formatter: function (value, row, index) {
+                    return "<a class='easyui-linkbutton' onclick='showAddItemDlg()'>编辑</a>";
                 }
+            }
             ]
         ]
     });

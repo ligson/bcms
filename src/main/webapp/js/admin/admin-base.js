@@ -32,7 +32,7 @@ $(function () {
             var cp = $(comboPanel[i]);
             var items = cp.find(".combobox-item");
             if (items.length > 0) {
-                var h = 20 * items.length;
+                var h = 25 * items.length;
                 //cp.css("height",h);
                 cp.height(h);
             }

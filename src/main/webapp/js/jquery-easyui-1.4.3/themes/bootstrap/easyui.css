@@ -529,6 +529,7 @@
   border: 0;
   margin: 0;
   padding: 4px;
+  padding-top:0;
   white-space: normal;
   vertical-align: top;
   outline-style: none;

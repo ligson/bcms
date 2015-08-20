@@ -10,6 +10,8 @@
 <head>
     <title>创建资源</title>
     <jsp:include page="_header.jsp"/>
+    <link type="text/css" rel="stylesheet" href="../../js/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <script type="text/javascript" src="../../js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
     <script type="text/javascript" src="../../js/admin/rmgr.js"></script>
 </head>
 <body class="easyui-layout">
@@ -19,13 +21,13 @@
 <div data-options="region:'center',title:'创建资源'" iconCls="icon-page_world">
     <div id="container" style="padding:10px;">
         <form>
-            <table>
+            <table style="line-height:30px;">
                 <tr>
-                    <td>资源名:</td>
+                    <td><label>资源名:</label></td>
                     <td><input type="text" class="easyui-textbox" required="true"/></td>
                 </tr>
                 <tr>
-                    <td>类型:</td>
+                    <td><label>类型:</label></td>
                     <td>
                         <select class="easyui-combobox" editable="false">
                             <option value="0">普通</option>
@@ -36,19 +38,25 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>资源库</td>
+                    <td><label>资源库</label></td>
                     <td><input class="easyui-combotree" data-options="url:'./lefttree.json',method:'get',required:true"
                                style="width:200px;"/></td>
                 </tr>
                 <tr>
-                    <td>父资源</td>
+                    <td><label>父资源:</label></td>
                     <td><input class="easyui-combotree" data-options="url:'./lefttree.json',method:'get',required:true"
                                style="width:200px;"/></td>
                 </tr>
 
                 <tr>
-                    <td>资源标签</td>
-                    <td><input class="easyui-textbox" style="width:200px;"/></td>
+                    <td><label>资源标签:</label></td>
+                    <td><input data-role="tagsinput" style="width:200px;" placeholder=" 输入后点击回车键添加 "/></td>
+                </tr>
+                <tr>
+                    <td><label>描述:</label></td>
+                    <td>
+                        <input type="text" class="easyui-textbox" multiline="true" style="height:50px;"/>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center;padding:10px;">

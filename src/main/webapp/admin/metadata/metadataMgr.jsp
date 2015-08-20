@@ -48,31 +48,31 @@
     <form>
         <table>
             <tr>
-                <td>中文名称</td>
+                <td><label>中文名称:</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td>英文名称</td>
+                <td><label>英文名称</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td>解释</td>
+                <td><label>解释:</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td>LOM编号</td>
+                <td><label>LOM编号</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td>编码</td>
+                <td><label>编码:</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td>取值数</td>
+                <td><label>取值数:</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
             </tr>
             <tr>
-                <td>数据类型</td>
+                <td><label>数据类型:</label></td>
                 <td>
                     <select class="easyui-combobox" id="itemDateTypeSlt">
                         <option value="langstring">多语言字符串</option>
@@ -90,7 +90,7 @@
                 </td>
             </tr>
             <tr>
-                <td><label>约束</label></td>
+                <td><label>约束:</label></td>
                 <td style="padding:10px;line-height:30px;">
                     <div>是否唯一:<input type="checkbox"></div>
 
