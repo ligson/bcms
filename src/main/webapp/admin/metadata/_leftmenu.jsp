@@ -15,6 +15,17 @@
         </div>
         <ul id="metadata_tree"></ul>
     </div>
+    <div title="结构类型">
+        <ul class="easyui-tree" id="structure_tree">
+            <li><span><a href="./structureMgr.jsp">标识</a></span></li>
+            <li><span><a>贡献</a></span></li>
+            <li><span><a>分类路径</a></span></li>
+            <li><span><a>分类单元</a></span></li>
+            <li><span><a>技术要求</a></span></li>
+            <li><span><a>或组合</a></span></li>
+            <li><span><a>关系</a></span></li>
+        </ul>
+    </div>
     <div title="词汇表">
         <ul id="vocabularydata_tree" class="easyui-tree">
             <li><span><a href="./dicmgr.jsp?type=1">学习资源类型</a></span></li>

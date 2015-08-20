@@ -127,41 +127,6 @@
                 "text": "网络课程"
               }
             ]
-          },
-          {
-            "id": 16,
-            "text": "结构类型",
-            "href": "./jsondata/structure/structuredata.json",
-            "children": [
-              {
-                "id": 161,
-                "text": "标识"
-              },
-              {
-                "id": 162,
-                "text": "贡献"
-              },
-              {
-                "id": 163,
-                "text": "分类路径"
-              },
-              {
-                "id": 164,
-                "text": "分类单元"
-              },
-              {
-                "id": 165,
-                "text": "技术要求"
-              },
-              {
-                "id": 166,
-                "text": "或组合"
-              },
-              {
-                "id": 167,
-                "text": "关系"
-              }
-            ]
           }
         ]
       },

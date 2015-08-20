@@ -20,13 +20,19 @@
  constraints:range,nullable,unique,length
  **********/
 
+function showAddDicItemDlg() {
+    $("#addDicItemDlg").dialog("open");
+}
+function showAddDicTypeDlg() {
+    $("#addDicTypeDlg").dialog("open");
+}
 $(function () {
     $("#metaGrid").datagrid({
         columns: [[
             {field: "id", title: "id", width: 100},
             {field: "name", title: "名称", width: 100},
             {
-                field: "edit", title: "编码", width: 100, formatter: function (value, row, index) {
+                field: "edit", title: "编辑", width: 100, formatter: function (value, row, index) {
                 return "<a>编辑</a>";
             }
             }

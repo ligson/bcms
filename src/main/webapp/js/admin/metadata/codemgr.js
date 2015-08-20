@@ -20,6 +20,13 @@
  constraints:range,nullable,unique,length
  **********/
 
+function showAddEncodeItemDlg() {
+    $("#addEncodeItemDlg").dialog("open");
+}
+function showAddEncodeTypeDlg() {
+    $("#addEncodeTypeDlg").dialog("open");
+}
+
 $(function () {
     $("#metaGrid").datagrid({
         columns: [[
