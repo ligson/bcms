@@ -29,7 +29,7 @@
                                                       iconCls="icon-search">搜索</a>
 
     </div>
-    <table toolbar="#tbr" id="metaGrid" class="easyui-datagrid"
+    <table toolbar="#tbr" id="metaGrid" class="easyui-treegrid"
            data-options="singleSelect:true,collapsible:true,url:'./codemgr.json',method:'post'" rownumbers="true"
            pagination="true">
 

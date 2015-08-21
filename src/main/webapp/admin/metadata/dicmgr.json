@@ -3,146 +3,97 @@
   "rows": [
     {
       "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
+      "zh_name": "学习资源类型",
+      "en_name": "Learning Resource Type",
       "lom_id": "5.2",
-      "source": "XXXXX",
+      "source": "教育资源建设技术规范",
       "words": [
-        "AAA",
-        "BBB",
-        "CCC"
+        "媒体类型",
+        "试题",
+        "试卷",
+        "课件",
+        "文献资料",
+        "教学案例",
+        "常见问题解答",
+        "资源目录索引",
+        "网络课程"
       ]
     },
     {
       "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
+      "zh_name": "目的",
+      "en_name": "Purpose",
+      "lom_id": "9.1",
+      "source": "教育资源建设技术规范",
       "words": [
-        "AAA",
-        "BBB",
-        "CCC"
+        "学科",
+        "理念",
+        "前需",
+        "教学目标",
+        "访问限制",
+        "教育程度",
+        "技能程度",
+        "安全程度"
       ]
     },
     {
       "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
+      "zh_name": "环境",
+      "en_name": "context",
+      "lom_id": "5.6",
+      "source": "教育资源建设技术规范",
       "words": [
-        "AAA",
-        "BBB",
-        "CCC"
+        "中小学校",
+        "高等教育",
+        "培训",
+        "其他"
       ]
     },
     {
       "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
+      "zh_name": "贡献-角色",
+      "en_name": "Role",
+      "lom_id": "2.3.1",
+      "source": "教育资源建设技术规范",
       "words": [
-        "AAA",
-        "BBB",
-        "CCC"
+        "作者",
+        "发行商",
+        "未定义",
+        "发起人",
+        "终结者",
+        "编辑",
+        "总审核人",
+        "图形设计",
+        "技术实现",
+        "内容提供者"
       ]
     },
     {
       "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
+      "zh_name": "技术要求-名称",
+      "en_name": "Name",
+      "lom_id": "4.4.2",
+      "source": "教育资源建设技术规范",
       "words": [
-        "AAA",
-        "BBB",
-        "CCC"
+        "pc-dos",
+        "ms-windows",
+        "macOS",
+        "unix",
+        "multi-os",
+        "none"
       ]
     },
     {
       "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
+      "zh_name": "关系-类型",
+      "en_name": "Kind",
+      "lom_id": "7.1",
+      "source": "教育资源检核技术规范",
       "words": [
-        "AAA",
-        "BBB",
-        "CCC"
-      ]
-    },
-    {
-      "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
-      "words": [
-        "AAA",
-        "BBB",
-        "CCC"
-      ]
-    },
-    {
-      "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
-      "words": [
-        "AAA",
-        "BBB",
-        "CCC"
-      ]
-    },
-    {
-      "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
-      "words": [
-        "AAA",
-        "BBB",
-        "CCC"
-      ]
-    },
-    {
-      "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
-      "words": [
-        "AAA",
-        "BBB",
-        "CCC"
-      ]
-    },
-    {
-      "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
-      "words": [
-        "AAA",
-        "BBB",
-        "CCC"
-      ]
-    },
-    {
-      "id": "FI-SW-01",
-      "zh_name": "Koi",
-      "en_name": "Koi",
-      "lom_id": "5.2",
-      "source": "XXXXX",
-      "words": [
-        "AAA",
-        "BBB",
-        "CCC"
+        "A是B的一部分",
+        "B是A的一部分",
+        "A是B的某个版本",
+        "B是A的某个版本"
       ]
     }
   ]

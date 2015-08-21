@@ -3,53 +3,314 @@
   "rows": [
     {
       "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
+      "name": "通用",
+      "code": "G",
+      "children":[
+        {
+          "id": "FI-SW-011",
+          "name": "适用对象",
+          "code": "O",
+          "children":[
+            {
+              "id": "FI-SW-011-1",
+              "name": "0~2岁",
+              "code": "GO001"
+            },
+            {
+              "id": "FI-SW-011-2",
+              "name": "2~6岁",
+              "code": "GO002"
+            },
+            {
+              "id": "FI-SW-011-3",
+              "name": "小学一年级",
+              "code": "GO003"
+            },
+            {
+              "id": "FI-SW-011-4",
+              "name": "小学二年级",
+              "code": "GO004"
+            }
+            ]
+        },{
+          "id": "FI-SW-012",
+          "name": "基础学科",
+          "code": "S",
+          "children":[
+            {
+              "id": "FI-SW-012-1",
+              "name": "语文",
+              "code": "GS001"
+            },
+            {
+              "id": "FI-SW-012-2",
+              "name": "数学",
+              "code": "GS002"
+            },
+            {
+              "id": "FI-SW-012-3",
+              "name": "物理",
+              "code": "GS003"
+            },
+            {
+              "id": "FI-SW-012-4",
+              "name": "化学",
+              "code": "GS004"
+            }
+          ]
+        },{
+          "id": "FI-SW-013",
+          "name": "高等学科",
+          "code": "GD",
+          "children":[
+            {
+              "id": "FI-SW-013-1",
+              "name": "哲学类",
+              "code": "0101"
+            },
+            {
+              "id": "FI-SW-013-2",
+              "name": "经济学类",
+              "code": "0201"
+            },
+            {
+              "id": "FI-SW-013-3",
+              "name": "法学类",
+              "code": "0301"
+            },
+            {
+              "id": "FI-SW-013-4",
+              "name": "马克思主义理论类",
+              "code": "0302"
+            }
+          ]
+        },
+        {
+          "id": "FI-SW-014",
+          "name": "教育类型",
+          "code": "E",
+          "children":[
+            {
+              "id": "FI-SW-014-1",
+              "name": "讲授",
+              "code": "GE001"
+            },
+            {
+              "id": "FI-SW-014-2",
+              "name": "作业",
+              "code": "GE002"
+            },
+            {
+              "id": "FI-SW-014-3",
+              "name": "讨论",
+              "code": "GE003"
+            },
+            {
+              "id": "FI-SW-014-4",
+              "name": "游戏",
+              "code": "GE004"
+            }
+          ]
+        },
+        {
+          "id": "FI-SW-015",
+          "name": "情感",
+          "code": "A",
+          "children":[
+            {
+              "id": "FI-SW-015-1",
+              "name": "欢快",
+              "code": "GA001"
+            },
+            {
+              "id": "FI-SW-015-2",
+              "name": "激昂",
+              "code": "GA002"
+            },
+            {
+              "id": "FI-SW-015-3",
+              "name": "平静",
+              "code": "GA003"
+            },
+            {
+              "id": "FI-SW-015-4",
+              "name": "忧伤",
+              "code": "G004"
+            }
+          ]
+        },
+        {
+          "id": "FI-SW-016",
+          "name": "知识单元",
+          "code": "K",
+          "children":[
+            {
+              "id": "FI-SW-016-1",
+              "name": "能量与动量",
+              "code": "GK001"
+            },
+            {
+              "id": "FI-SW-016-2",
+              "name": "力",
+              "code": "GK002"
+            },
+            {
+              "id": "FI-SW-016-3",
+              "name": "加速度",
+              "code": "GK003"
+            }
+          ]
+        },
+        {
+          "id": "FI-SW-017",
+          "name": "文件格式",
+          "code": "F",
+          "children":[
+            {
+              "id": "FI-SW-017-1",
+              "name": "application/activemessage",
+              "code": "GF001"
+            },
+            {
+              "id": "FI-SW-017-2",
+              "name": "application/andrew-insert",
+              "code": "GF002"
+            },
+            {
+              "id": "FI-SW-017-3",
+              "name": "application/applefile",
+              "code": "GF003"
+            },
+            {
+              "id": "FI-SW-017-4",
+              "name": "application/atomicmail",
+              "code": "GF004"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
+      "id": "FI-SW-02",
+      "name": "文本",
+      "code": "T",
+      "children":[
+        {
+          "id": "FI-SW-021",
+          "name": "类型",
+          "code": "S",
+          "children":[
+            {
+              "id": "FI-SW-021-1",
+              "name": "优秀教案",
+              "code": "TS001"
+            },
+            {
+              "id": "FI-SW-021-2",
+              "name": "教材文本",
+              "code": "TS002"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
+      "id": "FI-SW-03",
+      "name": "图形/图像",
+      "code": "P",
+      "children":[
+        {
+          "id": "FI-SW-031",
+          "name": "类型",
+          "code": "S",
+          "children":[
+            {
+              "id": "FI-SW-031-1",
+              "name": "学科符号",
+              "code": "PS001"
+            },
+            {
+              "id": "FI-SW-031-2",
+              "name": "学科仪器",
+              "code": "PS002"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
+      "id": "FI-SW-04",
+      "name": "音频",
+      "code": "A",
+      "children":[
+        {
+          "id": "FI-SW-041",
+          "name": "类型",
+          "code": "S",
+          "children":[
+            {
+              "id": "FI-SW-041-1",
+              "name": "音乐",
+              "code": "AS001"
+            },
+            {
+              "id": "FI-SW-041-2",
+              "name": "生效",
+              "code": "AS002"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
-    },
-    {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
-    },
-    {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
-    },
-    {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
-    },
-    {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
-    },
-    {
-      "id": "FI-SW-01",
-      "name": "Koi",
-      "code": "111"
+      "id": "FI-SW-05",
+      "name": "文献资料",
+      "code": "L",
+      "children":[
+        {
+          "id": "FI-SW-051",
+          "name": "类型",
+          "code": "S",
+          "children":[
+            {
+              "id": "FI-SW-051-1",
+              "name": "图书",
+              "code": "LS001",
+              "children":[
+                {
+                  "id": "FI-SW-0511",
+                  "name": "马克思主义/列宁主义/毛泽东思想/邓小平理论",
+                  "code": "A",
+                  "children":[
+                    {
+                      "id": "FI-SW-05111",
+                      "name": "马克思主义/恩格斯著作",
+                      "code": "A1"
+                    }
+                  ]
+                },
+                {
+                  "id": "FI-SW-0512",
+                  "name": "哲学/宗教",
+                  "code": "B",
+                  "children":[
+                    {
+                      "id": "FI-SW-05121",
+                      "name": "哲学理论",
+                      "code": "B0"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "FI-SW-051-2",
+              "name": "期刊",
+              "code": "LS002"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
