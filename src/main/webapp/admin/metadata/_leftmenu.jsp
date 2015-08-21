@@ -28,12 +28,7 @@
     </div>
     <div title="词汇表">
         <ul id="vocabularydata_tree" class="easyui-tree">
-            <li><span><a href="./dicmgr.jsp?type=1">学习资源类型</a></span></li>
-            <li><span><a href="./dicmgr.jsp?type=2">目的</a></span></li>
-            <li><span><a href="./dicmgr.jsp?type=3">环境</a></span></li>
-            <li><span><a href="./dicmgr.jsp?type=4">贡献-角色</a></span></li>
-            <li><span><a href="./dicmgr.jsp?type=5">技术要求-名称</a></span></li>
-            <li><span><a href="./dicmgr.jsp?type=6">关系-类型</a></span></li>
+            <li><span><a href="./dicmgr.jsp?type=1">列表</a></span></li>
         </ul>
     </div>
     <div title="编码表">
