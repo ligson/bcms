@@ -28,7 +28,10 @@ function showAddEncodeTypeDlg() {
 }
 
 $(function () {
-    $("#metaGrid").datagrid({
+    $("#metaGrid").treegrid({
+        idField: 'id',
+        treeField: 'name',
+        fitColumns: true,
         columns: [[
             {field: "id", title: "id", width: 100},
             {field: "name", title: "属性", width: 100},

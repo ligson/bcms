@@ -4,7 +4,22 @@
     {
       "id": "FI-SW-01",
       "name": "Koi",
-      "code": "111"
+      "code": "111",
+      "children":[
+        {
+          "id": "FI-SW-011",
+          "name": "Koi",
+          "code": "111"
+        },{
+          "id": "FI-SW-012",
+          "name": "Koi",
+          "code": "111"
+        },{
+          "id": "FI-SW-013",
+          "name": "Koi",
+          "code": "111"
+        }
+      ]
     },
     {
       "id": "FI-SW-01",
