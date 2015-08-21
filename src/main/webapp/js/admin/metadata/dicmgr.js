@@ -26,11 +26,35 @@ function showAddDicItemDlg() {
 function showAddDicTypeDlg() {
     $("#addDicTypeDlg").dialog("open");
 }
+
+/****
+ * "id": "FI-SW-01",
+ "zh_name": "Koi",
+ "en_name": "Koi",
+ "lom_id": "5.2",
+ "source": "XXXXX",
+ "words"
+ */
 $(function () {
     $("#metaGrid").datagrid({
         columns: [[
             {field: "id", title: "id", width: 100},
-            {field: "name", title: "名称", width: 100},
+            {field: "zh_name", title: "中文名称", width: 100},
+            {field: "en_name", title: "英文名称", width: 100},
+            {field: "lom_id", title: "lom编号", width: 100},
+            {field: "source", title: "来源", width: 100},
+            {
+                field: "words", title: "词汇表", width: 100, formatter: function (value, row, idx) {
+                var words = "";
+                for (var i = 0; i < row.words.length; i++) {
+                    words += row.words[i];
+                    if (i != row.words.length - 1) {
+                        words += ",";
+                    }
+                }
+                return words;
+            }
+            },
             {
                 field: "edit", title: "编辑", width: 100, formatter: function (value, row, index) {
                 return "<a>编辑</a>";
@@ -40,3 +64,28 @@ $(function () {
     });
 
 });
+
+function submitDicForm() {
+    var form = $("#addDicForm");
+    var zh_name = form.find("input[name='zh_name']").val();
+    var en_name = form.find("input[name='en_name']").val();
+    var lom_id = form.find("input[name='lom_id']").val();
+    var source = form.find("input[name='source']").val();
+    var words = form.find("input[name='words']").val();
+    $.post("/bcms/proxy", {
+        method: "post",
+        url: "/vocabulary/",
+        zh_name: zh_name,
+        en_name: en_name,
+        lom_id: lom_id,
+        source: source,
+        words: words
+    }, function (data) {
+        var result = JSON.parse(data);
+        if (result.success) {
+            $("#addDicTypeDlg").dialog("close");
+        } else {
+            alert("创建失败!");
+        }
+    });
+}

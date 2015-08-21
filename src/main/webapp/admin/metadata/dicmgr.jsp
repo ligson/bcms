@@ -18,8 +18,8 @@
 <jsp:include page="_leftmenu.jsp"/>
 <div data-options="region:'center',title:'字段列表'" iconCls="icon-page_world">
     <div id="tbr" style="height:30px;line-height:30px;">
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddDicTypeDlg()">增加词汇分类</a>
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddDicItemDlg()">增加词汇</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddDicTypeDlg()">增加词汇表</a>
+        <%--<a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddDicItemDlg()">增加词汇</a>--%>
         <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除</a>
         <select class="easyui-combobox" editable="false" id="searchCondition">
             <option>按名称</option>
@@ -47,23 +47,31 @@
 </div>
 
 <div id="addDicTypeDlg" title="增加词汇" class="easyui-dialog" closed="true"
-     style="width:300px;height:150px;padding:10px;">
-    <form>
+     style="width:300px;height:200px;padding:10px;">
+    <form id="addDicForm">
         <table>
             <tr>
                 <td><label>中文名称:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><input type="text" class="easyui-textbox" name="zh_name"></td>
             </tr>
             <tr>
                 <td><label>英文名称:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><input type="text" class="easyui-textbox" name="en_name"></td>
             </tr>
             <tr>
-                <td><label>编码</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><label>LOM编码</label></td>
+                <td><input type="text" class="easyui-textbox" name="lom_id"></td>
+            </tr>
+            <tr>
+                <td><label>来源</label></td>
+                <td><input type="text" class="easyui-textbox" name="source"></td>
+            </tr>
+            <tr>
+                <td><label>词汇</label></td>
+                <td><input type="text" class="easyui-textbox" name="words"></td>
             </tr>
         </table>
-        <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
+        <a class="easyui-linkbutton" plain="false" onclick="submitDicForm()">提交</a>
         <a class="easyui-linkbutton" plain="false">取消</a>
     </form>
 </div>

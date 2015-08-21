@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <title>111</title>
+    <script type="text/javascript" src="../js/jquery-easyui-1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/spark-md5.js"></script>
+    <script type="text/javascript">
+        function upload() {
+            var blobSlice = File.prototype.mozSlice || File.prototype.webkitSlice || File.prototype.slice;
+            var file = document.getElementById("file");
+            var t = file.files[0];
+            alert(t.type);
+
+            var isEnd = false;
+            var reader = new FileReader();
+            var spark = new SparkMD5();
+            reader.onload = function (e) {
+                var bb = e.target.result;
+                spark.appendBinary(bb);
+                if (isEnd) {
+                    var md = spark.end();
+                    $("p").empty().append(md);
+                } else {
+                    $("p").empty().append("正在计算!");
+                }
+            };
+            var blockSize = 2048;
+            var start = 0;
+            while (start < t.size) {
+                var end = (start + blockSize) > t.size ? t.size : (start + blockSize);
+                var blob = blobSlice.call(t, start, end);
+                start = end;
+                //reader.readAsBinaryString(blob);
+                spark.appendBinary(blob);
+            }
+            var md = spark.end();
+            $("p").empty().append(md);
+            isEnd = true;
+        }
+    </script>
+</head>
+<body>
+<input type="file" name="file" onchange="upload();" id="file">
+
+MD5:<p></p>
+</body>
+</html>
