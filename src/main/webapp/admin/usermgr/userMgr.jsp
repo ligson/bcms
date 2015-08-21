@@ -47,7 +47,7 @@
 </div>
 
 
-<div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: 470px; padding: 10px 20px;"
+<div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_user_dlg_buttons">
     <div class="ftitle">
         添加用户
@@ -138,7 +138,7 @@
        iconcls="icon-cancel">取消</a>
 </div>
 
-<div id="modify_user_dlg" class="easyui-dialog" style="width: 400px; height: 450px; padding: 10px 20px;"
+<div id="modify_user_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#modify_user_dlg_buttons">
     <div class="ftitle">
         修改用户

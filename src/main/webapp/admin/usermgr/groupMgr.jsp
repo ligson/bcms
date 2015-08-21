@@ -44,7 +44,7 @@
     <div region="center" style="overflow-y: hidden">
        <div class="easyui-layout" fit="true">
            <div region="west" title="用户组列表" style="width: 200px;">
-               <div style="padding:5px;background:#fafafa;width:185px;border:1px solid #ccc">
+               <div style="padding:5px;background:#fafafa;width:100%;border:1px solid #ccc">
                    <a href="#" onclick="clickAddGroup();" class="easyui-linkbutton" plain="true" iconCls="icon-add">添加</a>
                    <a href="#" onclick="clickModifyGroup();" class="easyui-linkbutton" plain="true" iconCls="icon-edit">修改</a>
                    <a href="#" onclick="delGroups();" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">删除</a>

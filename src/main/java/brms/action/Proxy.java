@@ -116,7 +116,7 @@ public class Proxy extends HttpServlet {
         List<NameValuePair> nameValuePairs = dealParams(request);
         Map<String,Object> result = new HashMap<>();
         for(NameValuePair nameValuePair:nameValuePairs){
-            if(nameValuePair.getName()!="url"&&nameValuePair.getName()!="method") {
+            if(!nameValuePair.getName().contains("url")&&!nameValuePair.getName().contains("method")) {
                 if (nameValuePair.getName().indexOf("_ids") > 0) {
                     String[] idList = nameValuePair.getValue().split(",");
                     List<Integer> list = new ArrayList();
