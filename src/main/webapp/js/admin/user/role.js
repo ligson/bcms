@@ -1,7 +1,7 @@
 $(function () {
     initRoleTree();
     $('#role_auth_grid').datagrid({
-        title: '角色权限列表',
+        title: '角色对应权限列表',
         pageSize: 30,
         columns: [[
             {field: 'id', title: 'ID', width: '5%'},

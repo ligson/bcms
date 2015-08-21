@@ -47,7 +47,7 @@
 </div>
 
 
-<div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: 420px; padding: 10px 20px;"
+<div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: 470px; padding: 10px 20px;"
      closed="true" buttons="#add_user_dlg_buttons">
     <div class="ftitle">
         添加用户
@@ -61,6 +61,12 @@
         </div>
         <div class="fitem">
             <label>
+                中文名
+            </label>
+            <input name="cn_name"  class="easyui-validatebox" type="text"  />
+        </div>
+        <div class="fitem">
+            <label>
                 密码
             </label>
             <input name="password" class="easyui-validatebox" required="true" type="text" />
@@ -69,7 +75,7 @@
             <label>
                 邮箱
             </label>
-            <input name="email" class="easyui-validatebox" required="true" type="text" />
+            <input name="email" class="easyui-validatebox" type="text" />
         </div>
         <div class="fitem">
             <label>
@@ -77,16 +83,27 @@
             </label>
             <input name="phone" class="easyui-validatebox" required="true" type="text" />
         </div>
-
+        <div class="fitem">
+            <label>
+                编号
+            </label>
+            <input name="number" class="easyui-validatebox" type="text" />
+        </div>
+        <div class="fitem">
+            <label>
+                身份
+            </label>
+            <input class="easyui-combobox identity_combobox" data-options="valueField:'id',textField:'text',panelHeight:'auto'" name="identity"   />
+        </div>
         <div class="fitem">
             <label>
                 用户组</label>
-            <input class="easyui-combotree group_tree" required="true"  multiple="true" name="group"/>
+            <input class="easyui-combotree group_tree" multiple="true" name="group"/>
         </div>
         <div class="fitem">
             <label>
                 部门</label>
-            <input class="easyui-combotree department_tree" required="true"  multiple="true" name="department"/>
+            <input class="easyui-combotree department_tree" name="department"/>
         </div>
         <div class="fitem">
             <label>
@@ -104,7 +121,7 @@
             <label>
                 存储(G)
             </label>
-            <input name="disk_size" class="easyui-validatebox" required="true" type="text" />
+            <input name="disk_size" class="easyui-validatebox" type="text" />
         </div>
         <div class="fitem">
             <label>
@@ -121,7 +138,7 @@
        iconcls="icon-cancel">取消</a>
 </div>
 
-<div id="modify_user_dlg" class="easyui-dialog" style="width: 400px; height: 420px; padding: 10px 20px;"
+<div id="modify_user_dlg" class="easyui-dialog" style="width: 400px; height: 450px; padding: 10px 20px;"
      closed="true" buttons="#modify_user_dlg_buttons">
     <div class="ftitle">
         修改用户
@@ -133,20 +150,36 @@
             </label>
             <input name="name" disabled="true" class="easyui-validatebox" required="true" type="text" />
         </div>
-
+        <div class="fitem">
+            <label>
+                中文名
+            </label>
+            <input name="cn_name"  class="easyui-validatebox" type="text"  />
+        </div>
         <div class="fitem">
             <label>
                 邮箱
             </label>
-            <input name="email" class="easyui-validatebox" required="true" type="text" />
+            <input name="email" class="easyui-validatebox" type="text" />
         </div>
         <div class="fitem">
             <label>
                 手机
             </label>
-            <input name="phone" class="easyui-validatebox" required="true" type="text" />
+            <input name="phone" class="easyui-validatebox" type="text" />
         </div>
-
+        <div class="fitem">
+            <label>
+                编号
+            </label>
+            <input name="number" class="easyui-validatebox" type="text" />
+        </div>
+        <div class="fitem">
+            <label>
+                身份
+            </label>
+            <input class="easyui-combobox identity_combobox" data-options="valueField:'id',textField:'text',panelHeight:'auto'" name="identity"   />
+        </div>
         <div class="fitem">
             <label>
                 用户组</label>
@@ -155,7 +188,7 @@
         <div class="fitem">
             <label>
                 部门</label>
-            <input class="easyui-combotree department_tree" required="true"  multiple="true" name="department"/>
+            <input class="easyui-combotree department_tree" name="department_id"/>
         </div>
         <div class="fitem">
             <label>
@@ -167,13 +200,13 @@
             <label>
                 学历
             </label>
-            <input class="easyui-combobox grade_combobox" data-options="valueField:'id',textField:'text',panelHeight:'auto'" name="grade" required="true" />
+            <input class="easyui-combobox grade_combobox" data-options="valueField:'id',textField:'text',panelHeight:'auto'" name="grade" />
         </div>
         <div class="fitem">
             <label>
                 存储(G)
             </label>
-            <input name="disk_size" class="easyui-validatebox" required="true" type="text" />
+            <input name="disk_size" class="easyui-validatebox" type="text" />
         </div>
         <div class="fitem">
             <label>

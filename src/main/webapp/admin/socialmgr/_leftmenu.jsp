@@ -12,7 +12,7 @@
 <div data-options="region:'west',split:true" title="系统菜单" style="width:150px;" id="treeMenu"
      iconCls="icon-application_side_boxes">
     <div class="easyui-accordion" >
-        <div title="用户管理" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+        <div title="社会化管理" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
         <ul class="easyui-tree" style="display:block">
             <li iconCls="icon-user"><a href="./informationMgr.jsp"><span>资讯管理</span></a></li>
             <li iconCls="icon-organ"><a href="./tagMgr.jsp"><span>标签管理</span></a></li>

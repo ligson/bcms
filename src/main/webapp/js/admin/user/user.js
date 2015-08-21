@@ -1,12 +1,13 @@
 $(function () {
-
     $('#user_table').datagrid({
         rownumbers: true,
         singleSelect:false,
         pagination:true,
         columns:[[
-            {field:'id',width:'10%',checkbox:true,title:'ID'},
+            {field:'id',width:'1%',checkbox:true,title:'ID'},
             {field:'username',width:'10%',align:'center',title:'用户名'},
+            {field:'cn_name',width:'10%',align:'center',title:'中文名'},
+            {field:'number',width:'10%',align:'center',title:'编号'},
             {field:'gender',width:'5%',align:'center',title:'性别',
                 formatter: function (value,row,index) {
                     var result = "";
@@ -19,23 +20,28 @@ $(function () {
                 }
             },
             {field:'email',width:'10%',align:'center',title:'邮箱'},
-            {field:'departments',width:'10%',align:'center',title:'部门'},
+            {field:'department_id',width:'10%',align:'center',title:'部门'},
             {field:'phone',width:'10%',align:'center',title:'电话'},
-            {field:'groups',width:'25%',align:'center',formatter:formatGroup,title:'用户组'},
-            {field:'_operate',width:'15%',align:'center',title:'操作',
+            {field:'groups',width:'20%',align:'center',formatter:formatGroup,title:'用户组'},
+            {field:'_operate',width:'10%',align:'center',title:'操作',
                  formatter: function (value, row,index) {
                      return '<a class="tablelink" href="#" onclick="editUser('+ index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delUser(' + index + ')">删除</a>';
                  }
             }
         ]],
         toolbar:[{
-            text:'添加',iconCls:'icon-add',handler:function(){
+            text: '添加',
+            iconCls: 'icon-add',
+            handler: function () {
                 newUser();
             }
         },
-            {text:'删除',iconCls:'icon-cancel',handler:function(){
-                delUsers();
-            }
+            {
+                text: '删除',
+                iconCls: 'icon-cancel',
+                handler: function () {
+                    delUsers();
+                }
             }
         ]
     });
@@ -43,8 +49,8 @@ $(function () {
 });
 
 function initUserGrid() {
-    $.get("/bcms/proxy", {url: "user/"}, function (result) {
-        var obj = jQuery.parseJSON(result);
+    $.post("/bcms/proxy", {method:"get",url: "user/"}, function (result) {
+        var obj = $.parseJSON(result);
         if (obj.success) {
             var obj = jQuery.parseJSON(obj.data);
             var json = {total: obj.length, rows: obj};
@@ -67,14 +73,16 @@ function saveUser(){
     var password = $('#add_user_dlg input[name=password]').val();
     var email = $('#add_user_dlg input[name=email]').val();
     var phone = $('#add_user_dlg input[name=phone]').val();
+    var cn_name=$("#add_user_dlg input[name=cn_name]").val();
     var groups = $('#add_user_dlg .group_tree').combotree('getValues');
-    var departments= $('#add_user_dlg .department_tree').combotree('getValues');
-    var id_card=$('#add_user_dlg input[name=id_card]').val();
     var gender=$("#add_user_dlg .gender_combobox").combobox("getValue");
     var grade=$("#add_user_dlg .grade_combobox").combobox("getValue");
     var disk_size=$('#add_user_dlg input[name=disk_size]').val();
     var description=$('#add_user_dlg input[name=description]').val();
-    $.post("/bcms/proxy", {method:"post",url: "user/", username: username, password:password,email:email,phone:phone,group_ids:groups.toString(),department_ids:departments.toString(),id_card:id_card,gender:gender,grade:grade,disk_size:disk_size,description:description}, function (result) {
+    var identity=$('#add_user_dlg .identity_combobox').combobox("getValue");
+    var number=$('#add_user_dlg input[name=number]').val();
+    var department_id=$('#add_user_dlg .department_tree').combotree("getValue");
+    $.post("/bcms/proxy", {method:"post",url: "user/",number:number,identity:identity,department_id:department_id, username: username,cn_name:cn_name, password:password,email:email,phone:phone,group_ids:groups.toString(),gender:gender,grade:grade,disk_size:disk_size,description:description}, function (result) {
         var obj= $.parseJSON(result);
         if (obj.success) {
             $('#add_user_dlg').dialog('close');
@@ -102,8 +110,12 @@ function initModify(row) {
     $("#modify_user_form").form("clear");
     $("#modify_user_dlg input[name=id]").val(row.id);
     $("#modify_user_dlg input[name=name]").val(row.username);
+    $("#modify_user_dlg input[name=cn_name]").val(row.cn_name);
     $('#modify_user_dlg input[name=email]').val(row.email);
     $('#modify_user_dlg input[name=phone]').val(row.phone);
+    $('#modify_user_dlg input[name=number]').val(row.number);
+    $("#modify_user_dlg .identity_combobox").combobox('loadData', [{"id": 1, "text": "学生"}, {"id": 2, "text": "老师"}]);
+    $("#modify_user_dlg .identity_combobox").combobox('setValues', [row.identity]);
     $("#modify_user_dlg .gender_combobox").combobox('loadData', [{"id": 1, "text": "男"}, {"id": 2, "text": "女"}]);
     $("#modify_user_dlg .gender_combobox").combobox('setValues', [row.gender]);
     $("#modify_user_dlg .grade_combobox").combobox('loadData', [{'id': 1, 'text': '大专'}, {
@@ -132,12 +144,8 @@ function initModify(row) {
         var obj = $.parseJSON(result);
         if (obj.success) {
             var data = $.parseJSON(obj.data);
-            $("#modify_user_dlg .department_tree").combotree('loadData', formatDepartmentTreeData(data));
-            /*var t = [];
-            for (var i = 0; i < row.groups.length; i++) {
-                t[i] = row.groups[i].id;
-            }
-            $("#modify_user_dlg .group_tree").combotree('setValues', t);*/
+            $("#modify_user_dlg .department_tree").combotree('loadData', formatTreeData(data));
+            $("#modify_user_dlg .department_tree").combotree('setValue', row.department_id);
         } else {
             alert(obj.msg);
         }
@@ -149,12 +157,14 @@ function modifyUser(){
     var email = $('#modify_user_dlg input[name=email]').val();
     var phone = $('#modify_user_dlg input[name=phone]').val();
     var groups = $('#modify_user_dlg .group_tree').combotree('getValues');
-    var id_card=$('#modify_user_dlg input[name=id_card]').val();
     var gender=$("#modify_user_dlg .gender_combobox").combobox("getValue");
     var grade=$("#modify_user_dlg .grade_combobox").combobox("getValue");
     var disk_size=$('#modify_user_dlg input[name=disk_size]').val();
     var description=$('#modify_user_dlg input[name=description]').val();
-    $.post("/bcms/proxy", {method:"put",url: "user/", email:email,phone:phone,group_ids:groups.toString(),id_card:id_card,gender:gender,grade:grade,disk_size:disk_size,description:description}, function (result) {
+    var identity=$('#modify_user_dlg .identity_combobox').combobox("getValue");
+    var number=$('#modify_user_dlg input[name=number]').val();
+    var department_id=$('#modify_user_dlg .department_tree').combotree("getValue");
+    $.post("/bcms/proxy", {method:"put",url: "user/",identity:identity,department_id:department_id, email:email,phone:phone,group_ids:groups.toString(),number:number,gender:gender,grade:grade,disk_size:disk_size,description:description}, function (result) {
         var obj= $.parseJSON(result);
         if (obj.success) {
             $('#modify_user_dlg').dialog('close');
@@ -167,6 +177,7 @@ function modifyUser(){
 }
 
 function initAddGroupCombotree() {
+    $("#add_user_dlg .identity_combobox").combobox('loadData', [{"id": 1, "text": "学生"}, {"id": 2, "text": "老师"}]);
     $("#add_user_dlg .gender_combobox").combobox('loadData', [{"id": 1, "text": "男"}, {"id": 2, "text": "女"}]);
     $("#add_user_dlg .grade_combobox").combobox('loadData', [{'id': 1, 'text': '大专'}, {'id': 2, 'text': '本科'}, {
         'id': 3,

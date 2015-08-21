@@ -2,6 +2,7 @@
  * Created by Ruby on 2015/8/18.
  */
 $(function () {
+    var departmentTree;
     initDepartmentTree();
     $('#department_user_grid').datagrid({
         rownumbers: true,
@@ -38,24 +39,29 @@ $(function () {
     });
 });
 
-function initDepartmentTree(){
-        $.post("/bcms/proxy", {method:"get",url: "department/"}, function (result) {
-            var obj = jQuery.parseJSON(result);
-            if (obj.success) {
-                var data = jQuery.parseJSON(obj.data);
-                $("#department_tree").tree({
-                    data: formatTreeData(data), onClick: function (node) {
-                        initUserGridByDepartment(node);
-                    }
-                });
-            } else {
-                alert(obj.msg);
-            }
-        });
+function initDepartmentTree() {
+    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
+            var data = jQuery.parseJSON(obj.data);
+            departmentTree = formatTreeData(data)
+            $("#department_tree").tree({
+                data: departmentTree, onClick: function (node) {
+                    initUserGridByDepartment(node);
+                }
+            });
+        } else {
+            alert(obj.msg);
+        }
+    });
 }
 
 function initUserGridByDepartment(node){
-    $("#department_user_grid").datagrid('loadData',node);
+    if(node){
+
+        //$("#department_user_grid").datagrid('loadData',node);
+
+    }
 }
 
 function formatTreeData(data){
@@ -80,5 +86,33 @@ function formatGroup(val, row) {
 }
 
 function clickAddDepartment(){
+    $('#add_department_dlg .department_tree').combotree('loadData', departmentTree);
     $('#add_department_dlg').dialog('open');
+}
+
+function clickModifyDepartment(){
+    $('#modify_department_dlg').dialog('open');
+}
+
+function initMoidfyDepartment(){
+
+}
+
+function saveDepartment(){
+    var name = $("#add_department_dlg input[name=name]").val();
+    var parent_id=$("#add_department_dlg .department_tree").combotree("getValue");
+    $.post("/bcms/proxy", {method:"post",url: "department/", name: name,parent_id:parent_id}, function (result) {
+        var obj= $.parseJSON(result);
+        if (obj.success) {
+            $('#add_user_dlg').dialog('close');
+            initDepartmentTree();
+        } else {
+            $('#add_user_dlg').dialog('close');
+            alert(obj.msg);
+        }
+    });
+}
+
+function modifyGroup(){
+
 }

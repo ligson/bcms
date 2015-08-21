@@ -59,7 +59,7 @@
 </div>
 
 <div id="add_department_dlg" class="easyui-dialog" style="width: 400px; height: 280px; padding: 10px 20px;"
-     closed="true" buttons="#add_group_dlg_buttons">
+     closed="true" buttons="#add_department_dlg_buttons">
   <div class="ftitle">
     添加部门
   </div>
@@ -73,14 +73,38 @@
     <div class="fitem">
       <label>
         上级菜单</label>
-      <input class="easyui-combobox" name="parent" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
-              />
+      <input class="easyui-combotree department_tree" name="parent_id"/>
     </div>
   </form>
 </div>
 <div id="add_department_dlg_buttons">
-  <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveGroup()" iconcls="icon-save">保存</a>
+  <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveDepartment()" iconcls="icon-save">保存</a>
   <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_department_dlg').dialog('close')"
+     iconcls="icon-cancel">取消</a>
+</div>
+
+<div id="modify_department_dlg" class="easyui-dialog" style="width: 400px; height: 280px; padding: 10px 20px;"
+     closed="true" buttons="#modify_department_dlg_buttons">
+  <div class="ftitle">
+    修改部门
+  </div>
+  <form id="modify_group_form" method="post">
+    <div class="fitem">
+      <label>
+        部门名称
+      </label>
+      <input name="name" class="easyui-validatebox" required="true" type="text" />
+    </div>
+    <div class="fitem">
+      <label>
+        上级菜单</label>
+      <input class="easyui-combotree department_tree" name="parent"/>
+    </div>
+  </form>
+</div>
+<div id="modify_department_dlg_buttons">
+  <a href="javascript:void(0)" class="easyui-linkbutton" onclick="modifyDepartment()" iconcls="icon-save">保存</a>
+  <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#modify_department_dlg').dialog('close')"
      iconcls="icon-cancel">取消</a>
 </div>
 

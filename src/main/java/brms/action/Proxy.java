@@ -157,14 +157,20 @@ public class Proxy extends HttpServlet {
 
     private void executeMethod(HttpUriRequest httpUriRequest, HttpServletResponse response) throws IOException {
         Map<String, Object> result = new HashMap<String, Object>();
-        CloseableHttpResponse httpResponse = (CloseableHttpResponse) httpClient.execute(httpUriRequest, context);
-        if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-            result.put("success", true);
-            result.put("data", EntityUtils.toString(httpResponse.getEntity()));
-        } else {
-            result.put("success", false);
-            result.put("msg", "请求失败，请稍候再试!");
+        try {
+            CloseableHttpResponse httpResponse = (CloseableHttpResponse) httpClient.execute(httpUriRequest, context);
+            if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
+                result.put("success", true);
+                result.put("data", EntityUtils.toString(httpResponse.getEntity()));
+            } else {
+                result.put("success", false);
+                result.put("msg", "请求失败，请稍候再试!");
+            }
+           httpResponse.close();
+        }catch (IOException e) {
+            e.printStackTrace();
         }
+
         objectMapper.writeValue(response.getOutputStream(), result);
     }
 

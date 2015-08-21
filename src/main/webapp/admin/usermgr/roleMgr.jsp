@@ -42,7 +42,7 @@
 <jsp:include page="_leftmenu.jsp"/>
 <div region="center" style="overflow-y: hidden">
     <div class="easyui-layout" fit="true">
-        <div region="west" title="角色结构树" style="width: 200px;">
+        <div region="west" title="角色列表" style="width: 200px;">
             <div style="padding:5px;background:#fafafa;width:185px;border:1px solid #ccc">
                 <a href="#" onclick="clickAddRole();" class="easyui-linkbutton" plain="true" iconCls="icon-add">添加</a>
                 <a href="#" onclick="clickModifyRole();" class="easyui-linkbutton" plain="true" iconCls="icon-edit">修改</a>
@@ -58,7 +58,7 @@
     </div>
 </div>
 
-<div id="add_role_dlg" class="easyui-dialog" style="width: 400px; height: 280px; padding: 10px 20px;"
+<div id="add_role_dlg" class="easyui-dialog" style="width: 400px; height: 200px; padding: 10px 20px;"
      closed="true" buttons="#add_role_dlg_buttons">
     <div class="ftitle">
         信息编辑
@@ -85,7 +85,7 @@
        iconcls="icon-cancel">取消</a>
 </div>
 
-<div id="modify_role_dlg" class="easyui-dialog" style="width: 400px; height: 280px; padding: 10px 20px;"
+<div id="modify_role_dlg" class="easyui-dialog" style="width: 400px; height: 200px; padding: 10px 20px;"
      closed="true" buttons="#modify_role_dlg_buttons">
     <div class="ftitle">
         信息编辑
