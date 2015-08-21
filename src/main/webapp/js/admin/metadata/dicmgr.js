@@ -49,7 +49,7 @@ $(function () {
                 for (var i = 0; i < row.words.length; i++) {
                     words += row.words[i];
                     if (i != row.words.length - 1) {
-                        words += "<br/>";
+                        words += ";";
                     }
                 }
                 return words;
