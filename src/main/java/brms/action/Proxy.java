@@ -77,6 +77,7 @@ public class Proxy extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String method = request.getParameter("method");
         if (method.equalsIgnoreCase("get")) {
             doGet(request, response);
@@ -111,24 +112,27 @@ public class Proxy extends HttpServlet {
     }
 
     private StringEntity parseToEntity(HttpServletRequest request) throws IOException {
+
         List<NameValuePair> nameValuePairs = dealParams(request);
         Map<String,Object> result = new HashMap<>();
         for(NameValuePair nameValuePair:nameValuePairs){
-            if(nameValuePair.getName().indexOf("_ids")>0){
-                    String[] idList=nameValuePair.getValue().split(",");
-                    List<Integer> list=new ArrayList();
-                    for (int i=0;i<idList.length;i++){
+            if(nameValuePair.getName()!="url"&&nameValuePair.getName()!="method") {
+                if (nameValuePair.getName().indexOf("_ids") > 0) {
+                    String[] idList = nameValuePair.getValue().split(",");
+                    List<Integer> list = new ArrayList();
+                    for (int i = 0; i < idList.length; i++) {
                         list.add(Integer.parseInt(idList[i]));
                     }
-                result.put(nameValuePair.getName(), list);
-            }else {
-                result.put(nameValuePair.getName(), nameValuePair.getValue());
+                    result.put(nameValuePair.getName(), list);
+                } else {
+                    result.put(nameValuePair.getName(), nameValuePair.getValue());
+                }
             }
         }
 
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         objectMapper.writeValue(byteArrayOutputStream,result);
-        String results = byteArrayOutputStream.toString();
+        String results = byteArrayOutputStream.toString("UTF-8");
         StringEntity stringEntity = new StringEntity(results,"UTF-8");
         stringEntity.setContentType("application/json");
 

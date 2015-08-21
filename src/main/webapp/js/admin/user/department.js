@@ -101,14 +101,14 @@ function initMoidfyDepartment(){
 function saveDepartment(){
     var name = $("#add_department_dlg input[name=name]").val();
     var parent_id=$("#add_department_dlg .department_tree").combotree("getValue");
-    $.post("/bcms/proxy", {method:"post",url: "department/", name: name,parent_id:parent_id}, function (result) {
-        var obj= $.parseJSON(result);
+    $.post("/bcms/proxy", {method:"post",url: "department/",dataType:"json",  name: name,parent_id:parent_id}, function (result) {
+        var obj = jQuery.parseJSON(result);
         if (obj.success) {
-            $('#add_user_dlg').dialog('close');
+            $('#add_department_dlg').dialog('close');
             initDepartmentTree();
         } else {
-            $('#add_user_dlg').dialog('close');
-            alert(obj.msg);
+            $('#add_department_dlg').dialog('close');
+            $.message.alert("提示",obj.msg,"info");
         }
     });
 }
