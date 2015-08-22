@@ -1,0 +1,49 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "id": "1",
+      "name": "采用频率",
+      "enName": "Sampling",
+      "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
+      "datatype": "vocabulary",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 8
+    },
+    {
+      "id": "2",
+      "name": "量化位数",
+      "enName": "Quantization",
+      "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
+      "datatype": "vocabulary",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 8
+    },
+    {
+      "id": "3",
+      "name": "声道数",
+      "enName": "Track",
+      "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
+      "datatype": "vocabulary",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 8
+    },
+    {
+      "id": "4",
+      "name": "持续时间",
+      "enName": "Duration",
+      "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
+      "datatype": "date",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 8
+    }
+  ]
+}

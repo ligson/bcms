@@ -3,14 +3,14 @@
   "rows": [
     {
       "id": "1",
-      "name": "版本",
-      "enName": "Version",
+      "name": "题类",
+      "enName": "Item category",
       "description": "字段描述",
-      "datatype": "Langstring",
-      "lomId": "2.1",
+      "datatype": "vocabulary",
+      "lomId": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 50
+      "size": 8
     }
   ]
 }

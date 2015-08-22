@@ -1,0 +1,27 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "id": "1",
+      "name": "关联资源",
+      "enName": "Relation",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "7",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 100
+    },
+    {
+      "id": "2",
+      "name": "类型",
+      "enName": "Case type",
+      "description": "字段描述",
+      "datatype": "vocabulary",
+      "lomId": "1.7",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 8
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "id": "1",
+      "name": "题类",
+      "enName": "Item category",
+      "description": "字段描述",
+      "datatype": "vocabulary",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 8
+    },
+    {
+      "id": "2",
+      "name": "题型",
+      "enName": "Item Type",
+      "description": "字段描述",
+      "datatype": "vocabulary",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 8
+    },
+    {
+      "id": "3",
+      "name": "难度",
+      "enName": "Difficulty",
+      "description": "字段描述",
+      "datatype": "number",
+      "lomId": "5.8",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 1
+    },
+    {
+      "id": "4",
+      "name": "区分度",
+      "enName": "Discrimination",
+      "description": "字段描述",
+      "datatype": "number",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 1
+    },
+    {
+      "id": ",5",
+      "name": "考试要求",
+      "enName": "Test requirement",
+      "description": "字段描述",
+      "datatype": "langstring",
+      "lomId": "5.10",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 1000
+    },
+    {
+      "id": "6",
+      "name": "试题正文",
+      "enName": "Item content",
+      "description": "字段描述",
+      "datatype": "langstring",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 5000
+    },
+    {
+      "id": "7",
+      "name": "参考答案",
+      "enName": "Answer",
+      "description": "字段描述",
+      "datatype": "langstring",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 5000
+    },
+    {
+      "id": "8",
+      "name": "评分标准",
+      "enName": "Criterion",
+      "description": "试题的评分细则",
+      "datatype": "langstring",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 1000
+    },
+    {
+      "id": ",9",
+      "name": "建议的考试得分",
+      "enName": "score",
+      "description": "字段描述",
+      "datatype": "number",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 5
+    },
+    {
+      "id": "10",
+      "name": "保密度",
+      "enName": "secrecy",
+      "description": "字段描述",
+      "datatype": "vocabulary",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 5
+    },
+    {
+      "id": "11",
+      "name": "试题附件",
+      "enName": "Attachment",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 5000
+    },
+    {
+      "id": "12",
+      "name": "实测难度",
+      "enName": "Modified difficulty",
+      "description": "字段描述",
+      "datatype": "number",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 5000
+    },
+    {
+      "id": "13",
+      "name": "实测区分度",
+      "enName": "Modified discrimination",
+      "description": "字段描述",
+      "datatype": "number",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 1
+    },
+    {
+      "id": "14",
+      "name": "使用次数",
+      "enName": "Used time",
+      "description": "字段描述",
+      "datatype": "number",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 6
+    },
+    {
+      "id": "15",
+      "name": "曝光时间",
+      "enName": "Exposal date",
+      "description": "本道试题被公开的时间",
+      "datatype": "date",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 5000
+    }
+  ]
+}

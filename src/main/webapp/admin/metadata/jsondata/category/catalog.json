@@ -1,0 +1,27 @@
+{
+  "total": 28,
+  "rows": [
+    {
+      "id": "1",
+      "name": "问题条目",
+      "enName": "Question count",
+      "description": "字段描述",
+      "datatype": "number",
+      "lomId": "-",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 100
+    },
+    {
+      "id": "2",
+      "name": "关联",
+      "enName": "Relation Question",
+      "description": "字段描述",
+      "datatype": "structure",
+      "lomId": "7",
+      "code": "11121554",
+      "innercode": "010101",
+      "size": 8
+    }
+  ]
+}
