@@ -9,33 +9,27 @@ $(function () {
         singleSelect: false,
         pagination: true,
         columns: [[
-            {field: 'id', width: '10%', checkbox: true, title: 'ID'},
-            {field: 'id_card', width: '15%', title: '编号'},
-            {field: 'username', width: '10%', align: 'center', title: '姓名'},
-            {field: 'email', width: '10%', align: 'center', title: '邮箱'},
-            {field: 'department', width: '10%', align: 'center', title: '单位'},
-            {field: 'phone', width: '10%', align: 'center', title: '电话'},
-            {field: 'groups', width: '25%', align: 'center', formatter: formatGroup, title: '用户组'},
-            {
-                field: '_operate', width: '15%', align: 'center', title: '操作',
-                formatter: function (value, row, index) {
-                    return '<a class="tablelink" href="#" onclick="editUser(' + index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delUser(' + index + ')">删除</a>';
+            {field:'id',width:'1%',checkbox:true,title:'ID'},
+            {field:'username',width:'10%',align:'center',title:'用户名'},
+            {field:'cn_name',width:'10%',align:'center',title:'中文名'},
+            {field:'number',width:'10%',align:'center',title:'编号'},
+            {field:'gender',width:'5%',align:'center',title:'性别',
+                formatter: function (value,row,index) {
+                    var result = "";
+                    if (value == "1") {
+                        result = "男"
+                    } else {
+                        result = "女"
+                    }
+                    return result;
                 }
-            }
-        ]],
-        toolbar: [{
-            text: '添加',
-            iconCls: 'icon-add',
-            handler: function () {
-            }
-        },
-            {
-                text: '删除',
-                iconCls: 'icon-cancel',
-                handler: function () {
-                }
-            }
-        ]
+            },
+            {field:'email',width:'10%',align:'center',title:'邮箱'},
+            {field:'department_id',width:'10%',align:'center',title:'部门'},
+            {field:'phone',width:'10%',align:'center',title:'电话'},
+            {field:'groups',width:'20%',align:'center',formatter:formatGroup,title:'用户组'}
+
+        ]]
     });
 });
 
@@ -56,12 +50,18 @@ function initDepartmentTree() {
     });
 }
 
-function initUserGridByDepartment(node){
-    if(node){
-
-        //$("#department_user_grid").datagrid('loadData',node);
-
-    }
+function initUserGridByDepartment(node) {
+    $.post("/bcms/proxy", {method: "get", url: "department/" + node.id + "/user/page/1"}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        console.log(result);
+        if (obj.success) {
+            var data = jQuery.parseJSON(obj.data);
+            var json = {total: data.length, rows: data};
+            $("#department_user_grid").datagrid('loadData', json);
+        } else {
+            alert(obj.msg);
+        }
+    });
 }
 
 function formatTreeData(data){
@@ -87,21 +87,36 @@ function formatGroup(val, row) {
 
 function clickAddDepartment(){
     $('#add_department_dlg .department_tree').combotree('loadData', departmentTree);
-    $('#add_department_dlg').dialog('open');
+    $('#add_department_dlg').dialog('open').dialog('setTitle', '添加新部门');;
 }
 
 function clickModifyDepartment(){
-    $('#modify_department_dlg').dialog('open');
+    var node=$('#department_tree').tree('getSelected');
+    if(node) {
+        initMoidfyDepartment(node);
+        $('#modify_department_dlg').dialog('open').dialog('setTitle', '编辑部门');;
+    }else{
+        $.messager.alert("提示", "请选择要编辑的行！", "info");
+        return;
+    }
+
 }
 
-function initMoidfyDepartment(){
+function initMoidfyDepartment(node){
+    $("#modify_department_dlg input[name=id]").val(node.id);
+    $("#modify_department_dlg input[name=name]").val(node.name);
+    $('#modify_department_dlg .department_tree').combotree('loadData', departmentTree);
+    var parent_node=$('#department_tree').tree('getParent',node.target);
+    if(parent_node) {
+        $('#modify_department_dlg .department_tree').combotree("setValue", parent_node.id);
+    }
 
 }
 
 function saveDepartment(){
     var name = $("#add_department_dlg input[name=name]").val();
     var parent_id=$("#add_department_dlg .department_tree").combotree("getValue");
-    $.post("/bcms/proxy", {method:"post",url: "department/",dataType:"json",  name: name,parent_id:parent_id}, function (result) {
+    $.post("/bcms/proxy", {method:"post",url: "department/", name: name,parent_id:parent_id}, function (result) {
         var obj = jQuery.parseJSON(result);
         if (obj.success) {
             $('#add_department_dlg').dialog('close');
@@ -113,6 +128,39 @@ function saveDepartment(){
     });
 }
 
-function modifyGroup(){
+function modifyDepartment(){
+    var id= $("#modify_department_dlg input[name=id]").val();
+    var name = $("#modify_department_dlg input[name=name]").val();
+    var parent_id=$("#modify_department_dlg .department_tree").combotree("getValue");
+    $.post("/bcms/proxy", {method:"put",url: "department/"+id, name: name,parent_id:parent_id}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
+            $('#modify_department_dlg').dialog('close');
+            initDepartmentTree();
+        } else {
+            $('#modify_department_dlg').dialog('close');
+            $.message.alert("提示",obj.msg,"info");
+        }
+    });
+}
 
+function delDepartment(){
+    var node = $('#department_tree').tree('getSelected');
+    if(node) {
+        $.messager.confirm('确认', '确认删除?', function (data) {
+            if(data) {
+                $.post("/bcms/proxy", {method: "delete", url: "department/" + node.id }, function (result) {
+                    var obj= $.parseJSON(result);
+                    if (obj.success) {
+                        initDepartmentTree();
+                    } else {
+                        alert("删除失败!");
+                    }
+                });
+            }
+        })
+    }else{
+        $.messager.alert("提示", "请选择要删除的行！", "info");
+        return;
+    }
 }

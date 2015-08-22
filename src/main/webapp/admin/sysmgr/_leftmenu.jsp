@@ -23,5 +23,7 @@
         <li iconCls="icon-cdr_go"><span><a href="./convertconf.jsp">转码配置</a></span></li>
         <li iconCls="icon-control_equalizer_blue"><span><a href="./mediaserverconf.jsp">流媒体配置</a></span></li>
         <li iconCls="icon-drive_disk"><span><a href="./storeconf.jsp">存储配置</a></span></li>
+        <li iconCls="icon-drive_disk"><span><a href="./convertservice.jsp">转码服务</a></span></li>
+        <li iconCls="icon-drive_disk"><span><a href="./mediaserver.jsp">流媒体服务</a></span></li>
     </ul>
 </div>

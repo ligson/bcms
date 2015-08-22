@@ -1,6 +1,10 @@
 $(function () {
     var groupTree;
     initGroupTree();
+    $("#group_tabs").tabs({
+        fit:true,
+        plain:true
+    })
     $('#group_user_grid').datagrid({
         rownumbers: true,
         title: '用户组对应用户列表',
@@ -9,48 +13,27 @@ $(function () {
         columns:[[
             {field:'id',width:'10%',checkbox:true,title:'ID'},
             {field:'name',width:'10%',align:'center',title:'用户名'}
-/*            {field:'gender',width:'5%',align:'center',title:'性别',
-                formatter: function (value,row,index) {
-                    var result = "";
-                    if (value == "1") {
-                        result = "男"
-                    } else {
-                        result = "女"
-                    }
-                    return result;
-                }
-            },
-            {field:'email',width:'10%',align:'center',title:'邮箱'},
-            {field:'department_id',width:'10%',align:'center',title:'部门'},
-            {field:'phone',width:'10%',align:'center',title:'电话'},
-            {field:'groups',width:'25%',align:'center',formatter:formatGroup,title:'用户组'},
-            {field:'_operate',width:'15%',align:'center',title:'操作',
-                formatter: function (value, row,index) {
-                    return '<a class="tablelink" href="#" onclick="editUser('+ index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delUser(' + index + ')">删除</a>';
-                }
-            }*/
         ]]
     });
 
     $('#group_role_grid').datagrid({
-        title: '用户组对应角色列表',
-        iconCls: 'icon-save',
-        sortOrder: 'desc',
-        pageSize: 30,
-        columns: [[
-            {field: 'id', title: 'ID', width: '5%'},
-            {field: 'name', title: '用户组名称', width: '20%', align: 'center'},
-            {
-                field: '_operate', width: '15%', align: 'center', title: '操作',
-                formatter: function (value, row, index) {
-                    return '<a class="tablelink" href="#" onclick="delUser(' + index + ')">移除角色</a>';
-                }
-            }
-        ]],
-        pagination: true,
         rownumbers: true,
-        singleSelect: false
+        title: '用户组对应角色列表',
+        singleSelect:false,
+        pagination:true,
+        columns:[[
+            {field:'id',width:'10%',checkbox:true,title:'ID'},
+            {field:'name',width:'10%',align:'center',title:'用户名'}
+        ]],
+        toolbar:[{
+            text: '添加用户组角色',
+            iconCls: 'icon-add',
+            handler: function () {
+                clickAddGroupRole();
+            }
+        }]
     });
+
 });
 
 
@@ -71,23 +54,38 @@ function initGroupTree() {
     });
 }
 
+
 function initGridByGroup(node){
     var user_json = {total: node.users.length, rows: node.users};
-    var role_json={total:node.roles.length,row:node.roles};
-    $("#group_user_grid").datagrid('loadData',user_json);
+    var role_json={total:node.roles.length,rows:node.roles};
     $("#group_role_grid").datagrid('loadData',role_json);
+    $("#group_user_grid").datagrid('loadData',user_json);
 }
 
 function clickAddGroup(){
-    $("#add_group_dlg .roles").combobox({data: groupTree});
-    $('#add_group_dlg').dialog('open');
+    $('#add_group_dlg').dialog('open').dialog("setTitle","添加用户组");
 }
+
+function clickAddGroupRole(){
+    var node=$('#group_tree').tree('getSelected');
+    if(node){
+        initRoleTree();
+        $("#add_group_role_dlg input[name=name]").val(node.name);
+        $("#add_group_role_dlg input[name=group_id]").val(node.id);
+        $('#add_group_role_dlg').dialog('open').dialog("setTitle","添加用户组角色");
+    }else{
+        $.messager.alert("提示", "请选择左侧用户组后再操作！", "info");
+        return;
+    }
+
+}
+
 
 function clickModifyGroup(){
     var node=$('#group_tree').tree('getSelected');
     if(node) {
         initModifyGroup(node);
-        $("#modify_group_dlg").dialog("open");
+        $("#modify_group_dlg").dialog("open").dialog("setTitle","编辑用户组");;
     }else{
         $.messager.alert("提示", "请选择要编辑的行！", "info");
         return;
@@ -95,14 +93,70 @@ function clickModifyGroup(){
 }
 
 function initModifyGroup(node){
-
+    $("#modify_group_dlg input[name=name]").val(node.name);
+    $("#modify_group_dlg input[name=id]").val(node.id);
 }
 
-function addGroup(){
-
+function saveGroup(){
+    var name = $("#add_group_dlg input[name=name]").val();
+    $.post("/bcms/proxy", {method:"post",url: "group/", name: name}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
+            $('#add_group_dlg').dialog('close');
+            initGroupTree();
+        } else {
+            $('#add_group_dlg').dialog('close');
+            $.message.alert("提示",obj.msg,"info");
+        }
+    });
 }
 
+function saveGroupRole(){
+    var role_id = $("#add_group_role_dlg .role_tree").combotree("getValue");
+    var group_id= $("#add_group_role_dlg input[name=group_id]").val();
+    $.post("/bcms/proxy", {method:"post",url: "group/"+group_id+"/role/"+role_id}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
+            initGroupTree();
+            $('#add_group_role_dlg').dialog('close');
+            $.message.alert("提示","保存成功！","info");
+            var groupNode=$("#group_tree").tree("find",group_id);
+            console.log(groupNode);
+            $('#group_tree').tree('select',groupNode.target);
+            initGridByGroup(groupNode);
+        } else {
+            $('#add_group_role_dlg').dialog('close');
+            $.message.alert("提示",obj.msg,"info");
+        }
+    });
+}
 
+function modifyGroup(){
+    var id= $("#modify_group_dlg input[name=id]").val();
+    var name = $("#modify_group_dlg input[name=name]").val();
+    $.post("/bcms/proxy", {method:"put",url: "group/"+id, name: name}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
+            $('#modify_group_dlg').dialog('close');
+            initGroupTree();
+        } else {
+            $('#modify_group_dlg').dialog('close');
+            $.message.alert("提示",obj.msg,"info");
+        }
+    });
+}
+
+function initRoleTree() {
+    $.post("/bcms/proxy", {method:"get",url: "role/"}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
+            var data = jQuery.parseJSON(obj.data);
+            $('#add_group_role_dlg .role_tree').combotree('loadData', formatGroupListData(data));
+        } else {
+            alert(obj.msg);
+        }
+    });
+}
 
 function formatGroupListData(data){
     var fin = [];

@@ -53,7 +53,7 @@
                </ul>
            </div>
            <div region="center">
-               <div class="easyui-tabs" data-options="fit:true,plain:true">
+               <div id="group_tabs">
                    <div title="用户组对应用户列表" style="padding:10px">
                        <div id="group_user_grid" fit="true">
                        </div>
@@ -68,7 +68,7 @@
        </div>
     </div>
 
-<div id="add_group_dlg" class="easyui-dialog" style="width: 400px; height: 280px; padding: 10px 20px;"
+<div id="add_group_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_group_dlg_buttons">
     <div class="ftitle">
         添加用户组
@@ -80,12 +80,6 @@
             </label>
             <input name="name" class="easyui-validatebox" required="true" type="text" />
         </div>
-        <div class="fitem">
-            <label>
-                角色</label>
-            <input class="easyui-combobox roles" name="roles" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
-                    />
-        </div>
     </form>
 </div>
 <div id="add_group_dlg_buttons">
@@ -94,7 +88,7 @@
        iconcls="icon-cancel">取消</a>
 </div>
 
-<div id="modify_group_dlg" class="easyui-dialog" style="width: 400px; height: 280px; padding: 10px 20px;"
+<div id="modify_group_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#modify_group_dlg_buttons">
     <div class="ftitle">
         修改用户组
@@ -105,18 +99,40 @@
                 用户组名称
             </label>
             <input name="name" class="easyui-validatebox" required="true" type="text" />
-        </div>
-        <div class="fitem">
-            <label>
-                角色</label>
-            <input class="easyui-combobox roles" name="roles" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
-                    />
+            <input type="hidden" name="id" />
         </div>
     </form>
 </div>
 <div id="modify_group_dlg_buttons">
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="modifyGroup()" iconcls="icon-save">保存</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#modify_group_dlg').dialog('close')"
+       iconcls="icon-cancel">取消</a>
+</div>
+
+<div id="add_group_role_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
+     closed="true" buttons="#add_group_role_dlg_buttons">
+    <div class="ftitle">
+        添加用户组角色
+    </div>
+    <form id="add_group_role_form" method="post">
+        <div class="fitem">
+            <label>
+                用户组名称
+            </label>
+            <input name="name" class="easyui-validatebox" disabled="true" type="text" />
+        </div>
+        <div class="fitem">
+            <label>
+                角色
+            </label>
+            <input class="easyui-combotree role_tree"/>
+            <input type="hidden" name="group_id"/>
+        </div>
+    </form>
+</div>
+<div id="add_group_role_dlg_buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveGroupRole()" iconcls="icon-save">保存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_group_role_dlg').dialog('close')"
        iconcls="icon-cancel">取消</a>
 </div>
 

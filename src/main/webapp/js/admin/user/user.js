@@ -234,7 +234,7 @@ function delUser(index){
     if(row) {
         $.messager.confirm('确认', '确认删除?', function (data) {
             if(data) {
-                $.post("/bcms/proxy", {method: "delete", url: "user/" + row.id + "/"}, function (result) {
+                $.post("/bcms/proxy", {method: "delete", url: "user/" + row.id }, function (result) {
                     var obj= $.parseJSON(result);
                     if (obj.success) {
                         initUserGrid();

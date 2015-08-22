@@ -46,7 +46,7 @@
       <div style="padding:5px;background:#fafafa;width:100%;border:1px solid #ccc">
         <a href="#" onclick="clickAddDepartment();" class="easyui-linkbutton" plain="true" iconCls="icon-add">添加</a>
         <a href="#" onclick="clickModifyDepartment();" class="easyui-linkbutton" plain="true" iconCls="icon-edit">修改</a>
-        <a href="#" onclick="delDepartments();" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">删除</a>
+        <a href="#" onclick="delDepartment();" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">删除</a>
       </div>
       <ul id="department_tree">
       </ul>
@@ -100,6 +100,7 @@
         上级菜单</label>
       <input class="easyui-combotree department_tree" name="parent"/>
     </div>
+    <input type="hidden" name="id" />
   </form>
 </div>
 <div id="modify_department_dlg_buttons">

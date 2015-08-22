@@ -8,10 +8,10 @@ $(function () {
         columns:[[
             {field:'id',width:'8%',checkbox:true,title:'编号'},
             {field:'name',width:'30%',align:'center',title:'权限名称'},
-            {field:'description',width:'30%',align:'center',title:'备注'},
-            {field:'_operate',width:'32%',align:'center',title:'操作',formatter:formatOper}
-        ]],
-        toolbar:[{
+            {field:'description',width:'30%',align:'center',title:'备注'}
+            /*{field:'_operate',width:'32%',align:'center',title:'操作',formatter:formatOper}*/
+        ]]
+      /*  toolbar:[{
             text:'添加',iconCls:'icon-add',handler:function(){
                 addAuth();
             }
@@ -20,7 +20,7 @@ $(function () {
                 delAuths();
             }
             }
-        ]
+        ]*/
     });
 
     initAuthGrid();
@@ -39,6 +39,7 @@ function initAuthGrid() {
         }
     });
 }
+/*
 
 function addAuth(){
     $('#add_auth_dlg').dialog('open');
@@ -140,3 +141,4 @@ function saveAuth() {
     });
 
 }
+*/
