@@ -10,7 +10,7 @@
 <head>
     <title>专题管理</title>
     <jsp:include page="_header.jsp"/>
-    <script type="text/javascript" src="../../js/admin/casemgr.js"></script>
+    <script type="text/javascript" src="../../js/admin/topicmgr.js"></script>
     <style type="text/css">
         #add_topic_form #modify_topic_form
         {
@@ -41,7 +41,7 @@
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
 <div id="rGridTbr" style="height:30px;line-height:30px;">
-    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="loadLocal()" plain="true"
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addTopic()" plain="true"
        iconCls="icon-add"
        title="添加">添加</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="loadLocal()" plain="true" iconCls="icon-ok"
@@ -70,11 +70,35 @@
     <form id="add_tag_form" method="post">
         <div class="fitem">
             <label>
-                标签名
+                专题名称
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" />
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
         </div>
-
+        <div class="fitem">
+            <label>
+                描述
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+        </div>
+        <div class="fitem">
+            <label>
+                状态
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+        </div>
+        <div class="fitem">
+            <label>
+                专题海报
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+        </div>
+        <div class="fitem">
+            <label>
+                检索
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+        </div>
+        </div>
     </form>
 </div>
 
@@ -94,31 +118,31 @@
             <label>
                 专题名称
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
         </div>
         <div class="fitem">
             <label>
                 描述
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
         </div>
         <div class="fitem">
             <label>
                 状态
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
         </div>
         <div class="fitem">
             <label>
                 专题海报
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
         </div>
         <div class="fitem">
             <label>
                 检索
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
         </div>
     </form>
 </div>
