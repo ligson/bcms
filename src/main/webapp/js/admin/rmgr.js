@@ -52,4 +52,21 @@ $(function () {
             ]
         ]
     });
+
+    $("#fileIpt").change(function () {
+        var fileIpt = document.getElementById("fileIpt");
+        var files = fileIpt.files;
+        var fileList = $("#fileList");
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            fileList.append("<li class=\"list-group-item\">" + file.name + "(文件大小:" + file.size + "字节)</li>");
+        }
+    });
 });
+function addMetaItems() {
+    $(".items-container").append("<div class='items'>" + $(".items").html() + "</div>");
+}
+
+function addField(){
+    $("#fieldHref").before("<br/><input type=\"text\" class=\"easyui-textbox\">");
+}

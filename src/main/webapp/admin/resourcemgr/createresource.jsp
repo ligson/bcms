@@ -53,14 +53,36 @@
                     <td><input data-role="tagsinput" style="width:200px;" placeholder=" 输入后点击回车键添加 "/></td>
                 </tr>
                 <tr>
+                    <td><label>转码策略:</label></td>
+                    <td>
+                        <select id="cc" class="easyui-combobox" name="dept" style="width:200px;" editable="editable">
+                            <option>默认</option>
+                            <option>策略1</option>
+                            <option>策略2</option>
+                            <option>策略3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td><label>描述:</label></td>
                     <td>
                         <input type="text" class="easyui-textbox" multiline="true" style="height:50px;"/>
                     </td>
                 </tr>
                 <tr>
+                    <td><label>文件:</label></td>
+                    <td><input type="file" style="width:300px" multiple="multiple" id="fileIpt"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <ul class="list-group" id="fileList">
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2" style="text-align: center;padding:10px;">
-                        <a class="easyui-linkbutton">提交</a>
+                        <a class="easyui-linkbutton" href="./editmeta.jsp">提交</a>
                     </td>
                 </tr>
             </table>
