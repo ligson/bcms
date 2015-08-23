@@ -42,7 +42,7 @@
 
 <div region="center" style="overflow-y: hidden">
   <div class="easyui-layout" fit="true">
-    <div region="west" title="部门组结构树" style="width: 200px;">
+    <div region="west" title="部门组结构树" style="width: 240px;">
       <div style="padding:5px;background:#fafafa;width:100%;border:1px solid #ccc">
         <a href="#" onclick="clickAddDepartment();" class="easyui-linkbutton" plain="true" iconCls="icon-add">添加</a>
         <a href="#" onclick="clickModifyDepartment();" class="easyui-linkbutton" plain="true" iconCls="icon-edit">修改</a>

@@ -118,11 +118,6 @@ function initModify(row) {
     $("#modify_user_dlg .identity_combobox").combobox('setValues', [row.identity]);
     $("#modify_user_dlg .gender_combobox").combobox('loadData', [{"id": 1, "text": "男"}, {"id": 2, "text": "女"}]);
     $("#modify_user_dlg .gender_combobox").combobox('setValues', [row.gender]);
-    $("#modify_user_dlg .grade_combobox").combobox('loadData', [{'id': 1, 'text': '大专'}, {
-        'id': 2,
-        'text': '本科'
-    }, {'id': 3, 'text': '研究生'}, {'id': 4, 'text': '博士生'}, {'id': 5, 'text': '其他', "selected": true}]);
-    $("#modify_user_dlg .grade_combobox").combobox('setValues', [row.grade]);
     $('#modify_user_dlg input[name=id_card]').val(row.id_card);
     $('#modify_user_dlg input[name=disk_size]').val(row.disk_size);
     $('#modify_user_dlg input[name=description]').val(row.description);
@@ -154,6 +149,9 @@ function initModify(row) {
 }
 
 function modifyUser(){
+    var id=$('#modify_user_dlg input[name=id]').val();
+    var username= $('#modify_user_dlg input[name=name]').val();
+    var cn_name = $('#modify_user_dlg input[name=cn_name]').val();
     var email = $('#modify_user_dlg input[name=email]').val();
     var phone = $('#modify_user_dlg input[name=phone]').val();
     var groups = $('#modify_user_dlg .group_tree').combotree('getValues');
@@ -163,7 +161,7 @@ function modifyUser(){
     var identity=$('#modify_user_dlg .identity_combobox').combobox("getValue");
     var number=$('#modify_user_dlg input[name=number]').val();
     var department_id=$('#modify_user_dlg .department_tree').combotree("getValue");
-    $.post("/bcms/proxy", {method:"put",url: "user/",identity:identity,department_id:department_id, email:email,phone:phone,group_ids:groups.toString(),number:number,gender:gender,disk_size:disk_size,description:description}, function (result) {
+    $.post("/bcms/proxy", {method:"put",url: "user/"+id,username:username,cn_name:cn_name,identity:identity,department_id:department_id, email:email,phone:phone,group_ids:groups.toString(),number:number,gender:gender,disk_size:disk_size,description:description}, function (result) {
         var obj= $.parseJSON(result);
         if (obj.success) {
             $('#modify_user_dlg').dialog('close');
@@ -178,10 +176,6 @@ function modifyUser(){
 function initAddGroupCombotree() {
     $("#add_user_dlg .identity_combobox").combobox('loadData', [{"id": 1, "text": "学生"}, {"id": 2, "text": "老师"}]);
     $("#add_user_dlg .gender_combobox").combobox('loadData', [{"id": 1, "text": "男"}, {"id": 2, "text": "女"}]);
-    $("#add_user_dlg .grade_combobox").combobox('loadData', [{'id': 1, 'text': '大专'}, {'id': 2, 'text': '本科'}, {
-        'id': 3,
-        'text': '研究生'
-    }, {'id': 4, 'text': '博士生'}, {'id': 5, 'text': '其他', "selected": true}]);
     $.post("/bcms/proxy", {method: "get", url: "group/"}, function (result) {
         var obj = $.parseJSON(result);
         if (obj.success) {

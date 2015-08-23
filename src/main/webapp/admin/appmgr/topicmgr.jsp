@@ -11,6 +11,30 @@
     <title>专题管理</title>
     <jsp:include page="_header.jsp"/>
     <script type="text/javascript" src="../../js/admin/casemgr.js"></script>
+    <style type="text/css">
+        #add_topic_form #modify_topic_form
+        {
+            margin: 0;
+            padding: 10px 30px;
+        }
+        .ftitle
+        {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .fitem
+        {
+            margin-bottom: 5px;
+        }
+        .fitem label
+        {
+            display: inline-block;
+            width: 80px;
+        }
+    </style>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
@@ -36,6 +60,73 @@
             </thead>
         </table>
     </div>
+</div>
+
+<div id="add_topic_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
+     closed="true" buttons="#add_topic_dlg_buttons">
+    <div class="ftitle">
+        添加标签
+    </div>
+    <form id="add_tag_form" method="post">
+        <div class="fitem">
+            <label>
+                标签名
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" />
+        </div>
+
+    </form>
+</div>
+
+<div id="add_topic_dlg_buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_topic_dlg').dialog('close')" iconcls="icon-save">保存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_topic_dlg').dialog('close')"
+       iconcls="icon-cancel">取消</a>
+</div>
+
+<div id="modify_topic_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
+     closed="true" buttons="#modify_topic_dlg_buttons">
+    <div class="ftitle">
+        编辑标签
+    </div>
+    <form id="modify_topic_form" method="post">
+        <div class="fitem">
+            <label>
+                专题名称
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+        </div>
+        <div class="fitem">
+            <label>
+                描述
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+        </div>
+        <div class="fitem">
+            <label>
+                状态
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+        </div>
+        <div class="fitem">
+            <label>
+                专题海报
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+        </div>
+        <div class="fitem">
+            <label>
+                检索
+            </label>
+            <input name="name" class="easyui-validatebox" required="true" type="text" value="标签1234" />
+        </div>
+    </form>
+</div>
+
+<div id="modify_topic_dlg_buttons">
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#modify_tag_dlg').dialog('close')" iconcls="icon-save">保存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#modify_tag_dlg').dialog('close')"
+       iconcls="icon-cancel">取消</a>
 </div>
 
 </body>

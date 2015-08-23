@@ -47,7 +47,7 @@
                <div style="padding:5px;background:#fafafa;width:100%;border:1px solid #ccc">
                    <a href="#" onclick="clickAddGroup();" class="easyui-linkbutton" plain="true" iconCls="icon-add">添加</a>
                    <a href="#" onclick="clickModifyGroup();" class="easyui-linkbutton" plain="true" iconCls="icon-edit">修改</a>
-                   <a href="#" onclick="delGroups();" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">删除</a>
+                   <a href="#" onclick="delGroup();" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">删除</a>
                </div>
                <ul id="group_tree">
                </ul>
@@ -136,5 +136,27 @@
        iconcls="icon-cancel">取消</a>
 </div>
 
+<div id="add_group_user_dlg" class="easyui-dialog" style="width: 720px; height: auto; padding: 10px 20px;"
+     closed="true" buttons="#add_group_user_dlg_buttons">
+    <div id="cc"  class="easyui-layout" style="width:660px;height:400px;">
+        <div data-options="region:'west',title:'部门',split:true" style="width:220px;">
+            <div id="department_tree"></div>
+        </div>
+        <div data-options="region:'center',title:'待选用户'" style="padding:5px;background:#eee;">
+           <%-- <div id="user_list" class="easyui-datalist"></div>--%>
+               <ul id="user_list" class="easyui-datalist">
+               </ul>
+        </div>
+        <div data-options="region:'east',title:'已选用户',split:true" style="width:220px;padding:5px;background:#eee;">
+            <ul id="select_user_list" class="easyui-datalist">
+            </ul>
+        </div>
+    </div>
+    <div id="add_group_user_dlg_buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveGroupUser()" iconcls="icon-save">保存</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_group_user_dlg').dialog('close')"
+           iconcls="icon-cancel">取消</a>
+    </div>
+</div>
 </body>
 </html>

@@ -113,12 +113,6 @@
         </div>
         <div class="fitem">
             <label>
-                学历
-            </label>
-            <input class="easyui-combobox grade_combobox" data-options="valueField:'id',textField:'text',panelHeight:'auto'" name="grade" required="true" />
-        </div>
-        <div class="fitem">
-            <label>
                 存储(G)
             </label>
             <input name="disk_size" class="easyui-validatebox" type="text" />
@@ -195,12 +189,6 @@
                 性别
             </label>
             <input class="easyui-combobox gender_combobox" data-options="valueField:'id',textField:'text',panelHeight:'auto'" name="gender" required="true"  />
-        </div>
-        <div class="fitem">
-            <label>
-                学历
-            </label>
-            <input class="easyui-combobox grade_combobox" data-options="valueField:'id',textField:'text',panelHeight:'auto'" name="grade" />
         </div>
         <div class="fitem">
             <label>

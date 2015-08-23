@@ -10,7 +10,7 @@ $(function () {
             {
                 field: '_operate', width: '15%', align: 'center', title: '操作',
                 formatter: function (value, row, index) {
-                    return '<a class="tablelink" href="#" onclick="delUser(' + index + ')">移除权限</a>';
+                    return '<a class="tablelink" href="#" onclick="clickModifyRole();">移除权限</a>';
                 }
             }
         ]],

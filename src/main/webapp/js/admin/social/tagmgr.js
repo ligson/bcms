@@ -15,3 +15,47 @@ $(function () {
         }
     });
 });
+
+function clickAddTag() {
+    var node = $('#tag_tree').tree('getSelected');
+    if (node) {
+        $('#add_tag_dlg').dialog('open').dialog("setTitle", "添加标签");
+    }else{
+        $.messager.alert("提示", "请选择同级标签！", "info");
+        return;
+    }
+}
+
+function clickAddNextTag(){
+    var node = $('#tag_tree').tree('getSelected');
+    if (node) {
+        $('#add_tag_dlg').dialog('open').dialog("setTitle", "添加下级标签");
+    }else{
+        $.messager.alert("提示", "请选择上级标签！", "info");
+        return;
+    }
+}
+
+function clickModifyTag(){
+    var node=$('#tag_tree').tree('getSelected');
+    if(node) {
+        $('#modify_tag_dlg').dialog('open').dialog('setTitle', '编辑标签');;
+    }else{
+        $.messager.alert("提示", "请选择要编辑的行！", "info");
+        return;
+    }
+}
+
+function delTag(){
+    var node = $('#tag_tree').tree('getSelected');
+    if (node) {
+        $.messager.confirm('确认', '确认删除?', function (data) {
+            if (data) {
+
+            }
+        });
+    } else {
+        $.messager.alert("提示", "请选择要删除的行！", "info");
+        return;
+    }
+}

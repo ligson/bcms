@@ -53,7 +53,6 @@ function initDepartmentTree() {
 function initUserGridByDepartment(node) {
     $.post("/bcms/proxy", {method: "get", url: "department/" + node.id + "/user/page/1"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        console.log(result);
         if (obj.success) {
             var data = jQuery.parseJSON(obj.data);
             var json = {total: data.length, rows: data};
@@ -80,7 +79,7 @@ function formatTreeData(data){
 function formatGroup(val, row) {
     var result="";
     for(var i=0;i<val.length;i++){
-        result+="<span>"+val[i].name+"<span>";
+        result+="<span>"+val[i].name+"|<span>";
     }
     return result;
 }
