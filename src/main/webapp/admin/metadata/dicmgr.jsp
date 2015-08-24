@@ -11,6 +11,11 @@
     <title>词汇表管理</title>
     <jsp:include page="_header.jsp"/>
     <script src="../../js/admin/metadata/dicmgr.js" type="text/javascript"></script>
+    <style type="text/css">
+        #addDicForm tr td{
+            padding:5px;
+        }
+    </style>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
@@ -47,7 +52,7 @@
 </div>
 
 <div id="addDicTypeDlg" title="增加词汇" class="easyui-dialog" closed="true"
-     style="width:300px;height:200px;padding:10px;">
+     style="width:300px;height:250px;padding:10px;">
     <form id="addDicForm">
         <table>
             <tr>
