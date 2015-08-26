@@ -52,8 +52,8 @@ function initUserGrid() {
     $.post("/bcms/proxy", {method:"get",url: "user/"}, function (result) {
         var obj = $.parseJSON(result);
         if (obj.success) {
-            var obj = jQuery.parseJSON(obj.data);
-            var json = {total: obj.length, rows: obj};
+            var data = jQuery.parseJSON(obj.data);
+            var json = {total: data.length, rows: data};
             $("#user_table").datagrid('loadData', json);
         } else {
             alert(obj.msg);

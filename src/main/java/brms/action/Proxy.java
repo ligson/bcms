@@ -164,13 +164,12 @@ public class Proxy extends HttpServlet {
                 result.put("data", EntityUtils.toString(httpResponse.getEntity()));
             } else {
                 result.put("success", false);
-                result.put("msg", "请求失败，请稍候再试!");
+                result.put("msg",  EntityUtils.toString(httpResponse.getEntity()));
             }
            httpResponse.close();
         }catch (IOException e) {
             e.printStackTrace();
         }
-
         objectMapper.writeValue(response.getOutputStream(), result);
     }
 
