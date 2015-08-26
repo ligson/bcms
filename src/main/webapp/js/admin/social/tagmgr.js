@@ -104,20 +104,7 @@ function saveTagLib(){
     });
 }
 
-//点击编辑标签
-function clickModifyTag(id){
-    $('#tag_tree_grid').treegrid('select', "tag"+id);
-    var row = $('#tag_tree_grid').treegrid('getSelected');
-    alert(row.library_id);
-    if(row) {
-        $('#modify_tag_dlg input[name=name]').val(row.name);
-        $('#modify_tag_dlg input[name=id]').val(id);
-        $('#modify_tag_dlg').dialog('open').dialog('setTitle', '编辑标签');
-    }else{
-        $.messager.alert("提示", "请选择要编辑的行！", "info");
-        return;
-    }
-}
+
 
 function clickModifyTagLib(id){
     $('#tag_tree_grid').treegrid('select', "lib"+id);
@@ -147,10 +134,26 @@ function modifyTagLib(){
     });
 }
 
+//点击编辑标签
+function clickModifyTag(id){
+    $('#tag_tree_grid').treegrid('select', "tag"+id);
+    var row = $('#tag_tree_grid').treegrid('getSelected');
+    if(row) {
+        $('#modify_tag_dlg input[name=name]').val(row.name);
+        $('#modify_tag_dlg input[name=id]').val(id);
+        $('#modify_tag_dlg input[name=library_id]').val(row.library_id);
+        $('#modify_tag_dlg').dialog('open').dialog('setTitle', '编辑标签');
+    }else{
+        $.messager.alert("提示", "请选择要编辑的行！", "info");
+        return;
+    }
+}
+
 function modifyTag(){
     var id=$("#modify_tag_dlg input[name=id]").val();
     var name=$("#modify_tag_dlg input[name=name]").val();
-    $.post("/bcms/proxy", {method:"put",url: "tag/"+id,name:name}, function (result) {
+    var library_id=$("#modify_tag_dlg input[name=library_id]").val();
+    $.post("/bcms/proxy", {method:"put",url: "tag/"+id,name:name,library_id:library_id}, function (result) {
         var obj= $.parseJSON(result);
         if (obj.success) {
             $('#modify_tag_dlg').dialog('close');
