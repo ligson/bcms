@@ -1,3 +1,8 @@
+/***
+ * String方法扩展
+ * @author ligson
+ */
+
 String.prototype.trim = function () {
     return this.replace(/(^\s*)|(\s*$)/g, "");
 };
@@ -100,6 +105,6 @@ String.prototype.ascW = function () {
 
 String.prototype.replaceAll = function (s1, s2) {
     return this.replace(new RegExp(s1, "gm"), s2);
-}
+};
 
 

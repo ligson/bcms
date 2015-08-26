@@ -6,7 +6,14 @@ $(function () {
         url: "../../admin/metadata/lefttree.json",
         lines: true,
         onClick: function (node) {
-            $("#metaGrid").treegrid({url:node.href})
+            if (window.location.href.indexOf("metadataMgr.jsp") == -1) {
+                $.cookie("meteMenuState","open");
+                window.location.href = "/bcms/admin/metadata/metadataMgr.jsp";
+            }
+            var mg = $("#metaGrid");
+            if (mg) {
+                mg.treegrid({url: node.href});
+            }
         }
     });
 });

@@ -121,5 +121,10 @@
             <artifactId>sitemesh</artifactId>
             <version>3.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20070829</version>
+        </dependency>
     </dependencies>
 </project>

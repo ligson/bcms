@@ -10,7 +10,7 @@
 <head>
     <title>结构类型管理</title>
     <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/metadata/metadataMgr.js" type="text/javascript"></script>
+    <script src="../../js/admin/metadata/structureMgr.js" type="text/javascript"></script>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
@@ -50,19 +50,19 @@
         <table>
             <tr>
                 <td><label>中文名称:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><input type="text" class="easyui-textbox" name="zh_name" id="zh_name1"></td>
             </tr>
             <tr>
                 <td><label>英文名称</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><input type="text" class="easyui-textbox" name="en_name" id="en_name1"></td>
             </tr>
             <tr>
                 <td><label>解释:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><input type="text" class="easyui-textbox" name="description" id="description1"></td>
             </tr>
             <tr>
                 <td><label>LOM编号</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><input type="text" class="easyui-textbox" name="lom_id" id="lom_id1"></td>
             </tr>
             <tr>
                 <td><label>编码:</label></td>
@@ -70,18 +70,18 @@
             </tr>
             <tr>
                 <td><label>取值数:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><input type="text" class="easyui-textbox" name="val_num" id="val_num1"></td>
             </tr>
             <tr>
                 <td><label>数据类型:</label></td>
                 <td>
-                    <select class="easyui-combobox" id="itemDateTypeSlt">
+                    <select class="easyui-combobox" name="kind" id="kind1">
                         <option value="langstring">多语言字符串</option>
-                        <option value="string">字符串</option>
-                        <option value="number">数值</option>
-                        <option value="vocabulary">词汇表</option>
-                        <option value="structure">结构类型</option>
-                        <option value="date">时间</option>
+                        <%--<option value="string">字符串</option>--%>
+                        <option value="1">数值</option>
+                        <option value="2">词汇表</option>
+                        <option value="3">结构类型</option>
+                        <option value="4">时间</option>
                     </select>
                 </td>
             </tr>
@@ -103,8 +103,8 @@
                 </td>
             </tr>
         </table>
-        <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
-        <a class="easyui-linkbutton" plain="false">取消</a>
+        <a class="easyui-linkbutton" plain="false" onclick="submitStructureForm()">提交</a>
+        <a class="easyui-linkbutton" plain="false" onclick="$('#addMetaItemDlg').dialog('close')">取消</a>
     </form>
 </div>
 </body>

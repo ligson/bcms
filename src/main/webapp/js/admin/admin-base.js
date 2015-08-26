@@ -14,6 +14,9 @@ $(function () {
         var accordion = tree.parent().parent();
         var index = accordion.index();
         $(".easyui-accordion").accordion("select", index);
+        if(window.location.href.indexOf("metadataMgr.jsp")>-1){
+            $(".easyui-accordion").accordion("select", 0);
+        }
 
     }
     $(".tree-node").click(function () {

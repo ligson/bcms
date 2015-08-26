@@ -46,10 +46,12 @@ $(function () {
             {
                 field: "words", title: "词汇表", width: 100, formatter: function (value, row, idx) {
                 var words = "";
-                for (var i = 0; i < row.words.length; i++) {
-                    words += row.words[i];
-                    if (i != row.words.length - 1) {
-                        words += ";";
+                if (row.words) {
+                    for (var i = 0; i < row.words.length; i++) {
+                        words += row.words[i];
+                        if (i != row.words.length - 1) {
+                            words += ";";
+                        }
                     }
                 }
                 return words;
@@ -57,7 +59,7 @@ $(function () {
             },
             {
                 field: "edit", title: "编辑", width: 100, formatter: function (value, row, index) {
-                return "<a>编辑</a>";
+                return "<a onclick='showEditDicItemDlg(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\",\"" + row.lom_id + "\",\"" + row.source + "\",\"" + row.words + "\")'>编辑</a>";
             }
             }
         ]]
@@ -65,6 +67,17 @@ $(function () {
 
 });
 
+function showEditDicItemDlg(id, zh_name, en_name, lom_id, source, words) {
+    //var row = $("#metaGrid").datagrid("getSelected");
+    var dlg = $("#editDicItemDlg");
+    $("#zh_name1").textbox("setText", zh_name);
+    $("#en_name1").textbox("setText", en_name);
+    $("#lom_id1").textbox("setText", lom_id);
+    $("#source1").textbox("setText", source);
+    $("#words1").textbox("setText", words);
+    //dlg.find("input[name='zh_name']").val(zh_name);
+    dlg.dialog("open");
+}
 function submitDicForm() {
     var form = $("#addDicForm");
     var zh_name = form.find("input[name='zh_name']").val();

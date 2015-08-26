@@ -12,8 +12,8 @@
     <jsp:include page="_header.jsp"/>
     <script src="../../js/admin/metadata/dicmgr.js" type="text/javascript"></script>
     <style type="text/css">
-        #addDicForm tr td{
-            padding:5px;
+        #addDicForm tr td {
+            padding: 5px;
         }
     </style>
 </head>
@@ -95,5 +95,36 @@
         <a class="easyui-linkbutton" plain="false">取消</a>
     </form>
 </div>
+
+<div id="editDicItemDlg" title="编辑词汇" class="easyui-dialog" closed="true"
+     style="width:300px;height:250px;padding:10px;">
+    <form>
+        <table>
+            <tr>
+                <td><label>中文名称:</label></td>
+                <td><input type="text" class="easyui-textbox" name="zh_name" id="zh_name1"></td>
+            </tr>
+            <tr>
+                <td><label>英文名称:</label></td>
+                <td><input type="text" class="easyui-textbox" name="en_name" id="en_name1"></td>
+            </tr>
+            <tr>
+                <td><label>LOM编码</label></td>
+                <td><input type="text" class="easyui-textbox" name="lom_id" id="lom_id1"></td>
+            </tr>
+            <tr>
+                <td><label>来源</label></td>
+                <td><input type="text" class="easyui-textbox" name="source" id="source1"></td>
+            </tr>
+            <tr>
+                <td><label>词汇</label></td>
+                <td><input type="text" class="easyui-textbox" name="words" id="words1"></td>
+            </tr>
+        </table>
+        <a class="easyui-linkbutton" plain="false" onclick="editDicItemForm()">提交</a>
+        <a class="easyui-linkbutton" plain="false" onclick="$('#editDicItemDlg').dialog('close')">取消</a>
+    </form>
+</div>
+
 </body>
 </html>
