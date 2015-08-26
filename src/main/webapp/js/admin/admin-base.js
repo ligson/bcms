@@ -5,7 +5,9 @@ window.alert = function (msg) {
     $.messager.alert('提示信息', msg);
 };
 $(function () {
-
+    $(window).load(function(){
+        $(".ui-mask").hide();
+    });
     var menuItem = $.cookie("menu-item");
     if (menuItem) {
         var aHref = $(".tree-node").find("a[href='" + menuItem + "']");

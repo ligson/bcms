@@ -8,6 +8,9 @@
 
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<div class="ui-mask">
+    <p>正在加载页面,请稍后...</p>
+</div>
 <div data-options="region:'north',border:false" style="height:72px;background:#666;text-align:center">
     <div id="header-inner">
         <table cellpadding="0" cellspacing="0" style="width:100%;">
