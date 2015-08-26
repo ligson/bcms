@@ -3,43 +3,40 @@
   "rows": [
     {
       "id": "1",
-      "name": "发布日期",
-      "enName": "createDate",
+      "zh_name": "发布日期",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "date",
-      "lomId": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
-      "constraints": [
-        {
-          "type": "range",
-          "value": "201012121212,201112121212"
-        },
-        {
-          "type": "nullable",
-          "value": "true"
-        }
-      ],
-      "size": 10
+      "kind": "date",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
+      "val_num": 10
     },
     {
       "id": "2",
-      "name": "采样格式",
-      "enName": "createDate",
+      "zh_name": "采样格式",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "1.1",
+      "kind": "vocabulary",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "3",
-      "name": "采样频率",
-      "enName": "createDate",
+      "zh_name": "采样频率",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "1.1",
+      "kind": "number",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -48,15 +45,18 @@
           "value": "0,10"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "10",
-      "name": "来源",
-      "enName": "createDate",
+      "zh_name": "来源",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "1.1",
+      "kind": "langstring",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -69,15 +69,18 @@
           "value": "true"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "4",
-      "name": "分辨率",
-      "enName": "createDate",
+      "zh_name": "分辨率",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "string",
-      "lomId": "1.1",
+      "kind": "string",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -90,26 +93,32 @@
           "value": "true"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "5",
-      "name": "关键帧",
-      "enName": "createDate",
+      "zh_name": "关键帧",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "1.1",
+      "kind": "structure",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "6",
-      "name": "标题",
-      "enName": "createDate",
+      "zh_name": "标题",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "1.1",
+      "kind": "langstring",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -122,26 +131,32 @@
           "value": "true"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "7",
-      "name": "参考答案",
-      "enName": "createDate",
+      "zh_name": "参考答案",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "1.1",
+      "kind": "structure",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "8",
-      "name": "语种",
-      "enName": "createDate",
+      "zh_name": "语种",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "string",
-      "lomId": "1.1",
+      "kind": "string",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -154,15 +169,18 @@
           "value": "true"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "9",
-      "name": "平均区分名",
-      "enName": "createDate",
+      "zh_name": "平均区分名",
+      "en_name": "createDate",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "1.1",
+      "kind": "number",
+      "lom_id": "1.1",
+      "domain": "xxxx",
+      "example": "xxxx",
+      "collection": 0,
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -171,7 +189,7 @@
           "value": "0,255"
         }
       ],
-      "size": 10
+      "val_num": 10
     }
   ]
 }

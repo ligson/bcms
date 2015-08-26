@@ -3,14 +3,14 @@
   "rows": [
     {
       "id": "9",
-      "name": "格式",
-      "enName": "Format",
+      "zh_name": "格式",
+      "en_name": "Format",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "4.1",
+      "kind": "vocabulary",
+      "lom_id": "4.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     }
   ]
 }

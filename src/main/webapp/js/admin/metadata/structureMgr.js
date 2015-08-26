@@ -4,7 +4,7 @@
  "name": "字段名",
  "description": "字段描述",
  "datatype": "数据类型",
- "lomId": "1.1",
+ "lom_id": "1.1",
  "code": "11121554",
  "innercode": "010101"
  langstring:多语言字符串
@@ -19,13 +19,37 @@
 
  constraints:range,nullable,unique,length
  **********/
-var dataTypes = [{name: "langstring", value: "多语言字符串"}, {
-    name: "string",
-    value: "字符串"
-}, {name: "number", value: "数值"}, {name: "vocabulary", value: "词汇表"}, {
-    name: "value",
-    value: "值"
-}, {name: "structure", value: "结构类型"}, {name: "date", value: "时间"}];
+
+
+/*{
+ field: 'constraints', title: '约束', width: 100, formatter: function (value, row, index) {
+ if (row.constraints) {
+ var dataType = row.datatype;
+ //range,nullable,unique,length
+ var hString = "";
+ for (var i = 0; i < row.constraints.length; i++) {
+ var con = row.constraints[i];
+ var type = con.type;
+ if (type == "range") {
+ hString += "范围:" + con.value + "<br/>";
+ } else if (type == "nullable") {
+ hString += "必备元素:" + con.value + "<br/>";
+ } else if (type == "unique") {
+ hString += "唯一元素:" + con.value + "<br/>";
+ } else {
+ hString += "长度:" + con.value + "<br/>";
+ }
+ }
+ return hString;
+ } else {
+ return "--";
+ }
+ }
+ }*/
+var dataTypes = [{name: "0", value: "多语言字符串"}, {name: "1", value: "数值"}, {
+    name: "2",
+    value: "词汇表"
+}, {name: "3", value: "结构类型"}, {name: "4", value: "时间"}];
 
 function addItemToDlg() {
     var aArr = $("#ttbr p").find("a");
@@ -54,59 +78,36 @@ $(function () {
 
     $("#metaGrid").treegrid({
         idField: 'id',
-        treeField: 'name',
+        treeField: 'zh_name',
         fitColumns: true,
         columns: [
             [
+                {field: 'ckId', width: 30, checkbox: true},
                 {field: 'id', title: '编号', width: 30},
-                {field: 'name', title: '中文', width: 100},
-                {field: 'enName', title: '英文', width: 100},
+                {field: 'zh_name', title: '中文', width: 100},
+                {field: 'en_name', title: '英文', width: 100},
                 {
-                    field: 'datatype', title: '字段类型', width: 100, formatter: function (value, row, index) {
+                    field: 'kind', title: '字段类型', width: 100, formatter: function (value, row, index) {
                     for (var i = 0; i < dataTypes.length; i++) {
                         var data = dataTypes[i];
-                        if (row.datatype == data.name) {
-                            return data.value + "(" + data.name + ")";
+                        if (row.kind == data.name) {
+                            return data.value;
                         }
                     }
                     return "未知数据类型";
                 }
                 },
-                {field: 'lomId', title: 'LOM编号', width: 100},
-                {field: 'code', title: '编码', width: 100},
-                {field: 'innercode', title: '系统编码', width: 100, hidden: true},
+                {field: 'lom_id', title: 'LOM编号', width: 100},
+                /*{field: 'code', title: '编码', width: 100},*/
+                /*{field: 'innercode', title: '系统编码', width: 100, hidden: true},*/
                 {field: 'description', title: '解释', width: 100},
-                {field: 'isSort', title: '顺序', width: 50},
+                {field: 'is_sorted', title: '顺序', width: 50},
                 {field: 'example', title: '举例', width: 50},
-                {field: 'valueRang', title: '取值范围', width: 50},
-                {field: 'size', title: '取值数', width: 50},
-                {
-                    field: 'constraints', title: '约束', width: 100, formatter: function (value, row, index) {
-                    if (row.constraints) {
-                        var dataType = row.datatype;
-                        //range,nullable,unique,length
-                        var hString = "";
-                        for (var i = 0; i < row.constraints.length; i++) {
-                            var con = row.constraints[i];
-                            var type = con.type;
-                            if (type == "range") {
-                                hString += "范围:" + con.value + "<br/>";
-                            } else if (type == "nullable") {
-                                hString += "必备元素:" + con.value + "<br/>";
-                            } else if (type == "unique") {
-                                hString += "唯一元素:" + con.value + "<br/>";
-                            } else {
-                                hString += "长度:" + con.value + "<br/>";
-                            }
-                        }
-                        return hString;
-                    } else {
-                        return "--";
-                    }
-                }
-                }, {
+                {field: 'domain', title: '值域', width: 50},
+                {field: 'val_num', title: '取值数', width: 50},
+                {field: 'parent_id', title: '父类型id', width: 50}, {
                 field: "edit", title: "编辑", formatter: function (value, row, index) {
-                    return "<a class='easyui-linkbutton' onclick='showAddItemDlg()'>编辑</a>";
+                    return "<a class='easyui-linkbutton' onclick='showEditItemDlg(" + row.id + ")'>编辑</a>";
                 }
             }
             ]
@@ -132,6 +133,26 @@ function showAddItemDlg() {
     $("#addMetaItemDlg").dialog("open");
 }
 
+function showEditItemDlg(rowId) {
+    var mg = $("#metaGrid");
+    var data = mg.datagrid("getData");
+    mg.datagrid("selectRecord", rowId);
+    var row = mg.datagrid("getSelected");
+    if (row) {
+        $("#id2").val(row.id);
+        $("#zh_name2").textbox("setValue", row.zh_name);
+        $("#en_name2").textbox("setValue", row.en_name);
+        $("#description2").textbox("setValue", row.description);
+        $("#lom_id2").textbox("setValue", row.lom_id);
+        $("#val_num2").textbox("setValue", row.val_num);
+        $("#example2").textbox("setValue", row.example);
+        $("#is_sorted2").combobox("setValue", row.is_sorted);
+        $("#domain2").textbox("setValue", row.domain);
+        $("#kind2").textbox("setValue", row.kind);
+        $("#editMetaItemDlg").dialog("open");
+    }
+}
+
 function submitStructureForm() {
     //var dlg = $("#addMetaItemDlg");
     var zh_name = $("#zh_name1").textbox("getValue");
@@ -140,16 +161,19 @@ function submitStructureForm() {
     var lom_id = $("#lom_id1").textbox("getValue");
     var val_num = $("#val_num1").textbox("getValue");
     var kind = $("#kind1").combobox("getValue");
+    var domain = $("#domain1").textbox("getValue");
+    var example = $("#example1").textbox("getValue");
+    var is_sorted = $("#is_sorted1").combobox("getValue");
     $.post("/bcms/proxy", {
         method: "POST",
-        url:"/metatype/",
+        url: "/metatype/",
         zh_name: zh_name,
         en_name: en_name,
         description: description,
-        domain: "what?",
+        domain: domain,
         val_num: val_num,
-        is_sorted: true,
-        example: "xx",
+        is_sorted: is_sorted,
+        example: example,
         lom_id: lom_id,
         collection: 3,
         kind: kind

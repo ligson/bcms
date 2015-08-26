@@ -3,25 +3,25 @@
   "rows": [
     {
       "id": "1",
-      "name": "关联资源",
-      "enName": "Relation",
+      "zh_name": "关联资源",
+      "en_name": "Relation",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "7",
+      "kind": "structure",
+      "lom_id": "7",
       "code": "11121554",
       "innercode": "010101",
-      "size": 100
+      "val_num": 100
     },
     {
       "id": "2",
-      "name": "类型",
-      "enName": "Case type",
+      "zh_name": "类型",
+      "en_name": "Case type",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "1.7",
+      "kind": "vocabulary",
+      "lom_id": "1.7",
       "code": "11121554",
       "innercode": "010101",
-      "size": 8
+      "val_num": 8
     }
   ]
 }

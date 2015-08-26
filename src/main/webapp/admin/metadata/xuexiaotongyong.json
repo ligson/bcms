@@ -7,7 +7,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "date",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -28,7 +28,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "vocabulary",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "size": 10
@@ -39,7 +39,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "number",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -56,7 +56,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "langstring",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -77,7 +77,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "string",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -98,7 +98,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "structure",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "size": 10
@@ -109,7 +109,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "langstring",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -130,7 +130,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "structure",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "size": 10
@@ -141,7 +141,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "string",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -162,7 +162,7 @@
       "enName": "createDate",
       "description": "字段描述",
       "datatype": "number",
-      "lomId": "1.1",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [

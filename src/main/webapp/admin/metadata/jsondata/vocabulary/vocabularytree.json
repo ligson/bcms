@@ -2,136 +2,136 @@
   {
     "id": "1",
     "text": "学习资源类型",
-    "enName": "Identifier",
+    "en_name": "Identifier",
     "description": "字段描述",
-    "datatype": "structure",
-    "lomId": "1.1",
+    "kind": "structure",
+    "lom_id": "1.1",
     "code": "11121554",
     "innercode": "010101",
-    "size": 10,
+    "val_num": 10,
     "children": [
       {
         "id": "101",
         "text": "媒体素材",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       },
       {
         "id": "101",
         "text": "试题",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       },
       {
         "id": "101",
         "text": "试卷",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       },
       {
         "id": "101",
         "text": "课件",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       },
       {
         "id": "101",
         "text": "文献资料",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       },
       {
         "id": "101",
         "text": "教学案例",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       },
       {
         "id": "101",
         "text": "常见问题解答",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       },
       {
         "id": "101",
         "text": "资源目录索引",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       },
       {
         "id": "101",
         "text": "网络课程",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1
+        "val_num": 1
       }
     ]
   },
   {
     "id": "2",
     "text": "目的",
-    "enName": "Contribute",
+    "en_name": "Contribute",
     "description": "字段描述",
-    "datatype": "structure",
-    "lomId": "1.1",
+    "kind": "structure",
+    "lom_id": "1.1",
     "code": "11121554",
     "innercode": "010101",
-    "size": 10,
+    "val_num": 10,
     "children": [
       {
         "id": "101",
         "text": "角色",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -142,13 +142,13 @@
       {
         "id": "102",
         "text": "实体",
-        "enName": "Entry",
+        "en_name": "Entry",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.2",
+        "kind": "string",
+        "lom_id": "1.1.2",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -159,13 +159,13 @@
       {
         "id": "102",
         "text": "日期",
-        "enName": "Entry",
+        "en_name": "Entry",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.2",
+        "kind": "string",
+        "lom_id": "1.1.2",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -178,24 +178,24 @@
   {
     "id": "3",
     "text": "环境",
-    "enName": "Contribute",
+    "en_name": "Contribute",
     "description": "字段描述",
-    "datatype": "structure",
-    "lomId": "1.1",
+    "kind": "structure",
+    "lom_id": "1.1",
     "code": "11121554",
     "innercode": "010101",
-    "size": 10,
+    "val_num": 10,
     "children": [
       {
         "id": "101",
         "text": "来源",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -206,24 +206,24 @@
       {
         "id": "103",
         "text": "分类单元",
-        "enName": "Contribute",
+        "en_name": "Contribute",
         "description": "字段描述",
-        "datatype": "structure",
-        "lomId": "1.1",
+        "kind": "structure",
+        "lom_id": "1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 10,
+        "val_num": 10,
         "children": [
           {
             "id": "101",
             "text": "id",
-            "enName": "Catalog",
+            "en_name": "Catalog",
             "description": "字段描述",
-            "datatype": "string",
-            "lomId": "1.1.1",
+            "kind": "string",
+            "lom_id": "1.1.1",
             "code": "11121554",
             "innercode": "010101",
-            "size": 1,
+            "val_num": 1,
             "constraints": [
               {
                 "type": "length",
@@ -234,13 +234,13 @@
           {
             "id": "102",
             "text": "条目",
-            "enName": "Entry",
+            "en_name": "Entry",
             "description": "字段描述",
-            "datatype": "string",
-            "lomId": "1.1.2",
+            "kind": "string",
+            "lom_id": "1.1.2",
             "code": "11121554",
             "innercode": "010101",
-            "size": 1,
+            "val_num": 1,
             "constraints": [
               {
                 "type": "length",
@@ -251,13 +251,13 @@
           {
             "id": "102",
             "text": "日期",
-            "enName": "Entry",
+            "en_name": "Entry",
             "description": "字段描述",
-            "datatype": "string",
-            "lomId": "1.1.2",
+            "kind": "string",
+            "lom_id": "1.1.2",
             "code": "11121554",
             "innercode": "010101",
-            "size": 1,
+            "val_num": 1,
             "constraints": [
               {
                 "type": "length",
@@ -272,24 +272,24 @@
   {
     "id": "4",
     "text": "贡献-角色",
-    "enName": "Contribute",
+    "en_name": "Contribute",
     "description": "字段描述",
-    "datatype": "structure",
-    "lomId": "1.1",
+    "kind": "structure",
+    "lom_id": "1.1",
     "code": "11121554",
     "innercode": "010101",
-    "size": 10,
+    "val_num": 10,
     "children": [
       {
         "id": "101",
         "text": "id",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -300,13 +300,13 @@
       {
         "id": "102",
         "text": "条目",
-        "enName": "Entry",
+        "en_name": "Entry",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.2",
+        "kind": "string",
+        "lom_id": "1.1.2",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -317,13 +317,13 @@
       {
         "id": "102",
         "text": "日期",
-        "enName": "Entry",
+        "en_name": "Entry",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.2",
+        "kind": "string",
+        "lom_id": "1.1.2",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -336,35 +336,35 @@
   {
     "id": "5",
     "text": "技术要求-名称",
-    "enName": "Contribute",
+    "en_name": "Contribute",
     "description": "字段描述",
-    "datatype": "structure",
-    "lomId": "1.1",
+    "kind": "structure",
+    "lom_id": "1.1",
     "code": "11121554",
     "innercode": "010101",
-    "size": 10,
+    "val_num": 10,
     "children": [
       {
         "id": "71",
         "text": "或组合",
-        "enName": "Contribute",
+        "en_name": "Contribute",
         "description": "字段描述",
-        "datatype": "structure",
-        "lomId": "1.1",
+        "kind": "structure",
+        "lom_id": "1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 10,
+        "val_num": 10,
         "children": [
           {
             "id": "101",
             "text": "类型",
-            "enName": "Catalog",
+            "en_name": "Catalog",
             "description": "字段描述",
-            "datatype": "string",
-            "lomId": "1.1.1",
+            "kind": "string",
+            "lom_id": "1.1.1",
             "code": "11121554",
             "innercode": "010101",
-            "size": 1,
+            "val_num": 1,
             "constraints": [
               {
                 "type": "length",
@@ -375,13 +375,13 @@
           {
             "id": "102",
             "text": "名称",
-            "enName": "Entry",
+            "en_name": "Entry",
             "description": "字段描述",
-            "datatype": "string",
-            "lomId": "1.1.2",
+            "kind": "string",
+            "lom_id": "1.1.2",
             "code": "11121554",
             "innercode": "010101",
-            "size": 1,
+            "val_num": 1,
             "constraints": [
               {
                 "type": "length",
@@ -392,13 +392,13 @@
           {
             "id": "102",
             "text": "最低版本",
-            "enName": "Entry",
+            "en_name": "Entry",
             "description": "字段描述",
-            "datatype": "string",
-            "lomId": "1.1.2",
+            "kind": "string",
+            "lom_id": "1.1.2",
             "code": "11121554",
             "innercode": "010101",
-            "size": 1,
+            "val_num": 1,
             "constraints": [
               {
                 "type": "length",
@@ -409,13 +409,13 @@
           {
             "id": "102",
             "text": "最高版本",
-            "enName": "Entry",
+            "en_name": "Entry",
             "description": "字段描述",
-            "datatype": "string",
-            "lomId": "1.1.2",
+            "kind": "string",
+            "lom_id": "1.1.2",
             "code": "11121554",
             "innercode": "010101",
-            "size": 1,
+            "val_num": 1,
             "constraints": [
               {
                 "type": "length",
@@ -430,24 +430,24 @@
   {
     "id": "7",
     "text": "关系-类型",
-    "enName": "Contribute",
+    "en_name": "Contribute",
     "description": "字段描述",
-    "datatype": "structure",
-    "lomId": "1.1",
+    "kind": "structure",
+    "lom_id": "1.1",
     "code": "11121554",
     "innercode": "010101",
-    "size": 10,
+    "val_num": 10,
     "children": [
       {
         "id": "101",
         "text": "类型",
-        "enName": "Catalog",
+        "en_name": "Catalog",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.1",
+        "kind": "string",
+        "lom_id": "1.1.1",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -458,13 +458,13 @@
       {
         "id": "102",
         "text": "名称",
-        "enName": "Entry",
+        "en_name": "Entry",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.2",
+        "kind": "string",
+        "lom_id": "1.1.2",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -475,13 +475,13 @@
       {
         "id": "102",
         "text": "最低版本",
-        "enName": "Entry",
+        "en_name": "Entry",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.2",
+        "kind": "string",
+        "lom_id": "1.1.2",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",
@@ -492,13 +492,13 @@
       {
         "id": "102",
         "text": "最高版本",
-        "enName": "Entry",
+        "en_name": "Entry",
         "description": "字段描述",
-        "datatype": "string",
-        "lomId": "1.1.2",
+        "kind": "string",
+        "lom_id": "1.1.2",
         "code": "11121554",
         "innercode": "010101",
-        "size": 1,
+        "val_num": 1,
         "constraints": [
           {
             "type": "length",

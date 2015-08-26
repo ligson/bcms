@@ -3,14 +3,14 @@
   "rows": [
     {
       "id": "6",
-      "name": "贡献",
-      "enName": "Contribute",
+      "zh_name": "贡献",
+      "en_name": "Contribute",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "2.3",
+      "kind": "structure",
+      "lom_id": "2.3",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     }
   ]
 }

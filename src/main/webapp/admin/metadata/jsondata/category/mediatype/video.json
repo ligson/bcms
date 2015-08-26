@@ -3,80 +3,80 @@
   "rows": [
     {
       "id": "1",
-      "name": "帧数",
-      "enName": "Framecount",
+      "zh_name": "帧数",
+      "en_name": "Framecount",
       "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5
+      "val_num": 5
     },
     {
       "id": "2",
-      "name": "关键帧",
-      "enName": "Key frame",
+      "zh_name": "关键帧",
+      "en_name": "Key frame",
       "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
-      "datatype": "structure",
-      "lomId": "-",
+      "kind": "structure",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 100
+      "val_num": 100
     },
     {
       "id": "3",
-      "name": "分辨率",
-      "enName": "Resolution",
+      "zh_name": "分辨率",
+      "en_name": "Resolution",
       "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
-      "datatype": "string",
-      "lomId": "-",
+      "kind": "string",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 20
+      "val_num": 20
     },
     {
       "id": "4",
-      "name": "采样频率",
-      "enName": "Sampling",
+      "zh_name": "采样频率",
+      "en_name": "Sampling",
       "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 4
+      "val_num": 4
     },
     {
       "id": "5",
-      "name": "采样格式",
-      "enName": "Sampling format",
+      "zh_name": "采样格式",
+      "en_name": "Sampling format",
       "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
-      "datatype": "vocabulary",
-      "lomId": "-",
+      "kind": "vocabulary",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 4
+      "val_num": 4
     },
     {
       "id": "6",
-      "name": "颜色数",
-      "enName": "Color",
+      "zh_name": "颜色数",
+      "en_name": "Color",
       "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "6",
-      "name": "持续时间",
-      "enName": "Duration",
+      "zh_name": "持续时间",
+      "en_name": "Duration",
       "description": "数字化音频数字化过程的采样频率,以KHZ为单位",
-      "datatype": "date",
-      "lomId": "-",
+      "kind": "date",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     }
   ]
 }

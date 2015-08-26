@@ -30,7 +30,7 @@
 
     </div>
     <table toolbar="#tbr" id="metaGrid" class="easyui-treegrid"
-           data-options="singleSelect:true,collapsible:true,url:'./metalist.json',method:'post'" rownumbers="true"
+           data-options="singleSelect:true,collapsible:true,url:'./structure.json',method:'post'" rownumbers="true"
            pagination="true">
     </table>
 </div>
@@ -44,8 +44,8 @@
      style="width:450px;height:400px;padding:10px;">
     <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
 </div>
-<div id="addMetaItemDlg" title="增加字段" class="easyui-dialog" closed="true"
-     style="width:450px;height:400px;padding:10px;">
+<div id="addMetaItemDlg" title="增加结构类型" class="easyui-dialog" closed="true"
+     style="width:450px;height:450px;padding:10px;">
     <form>
         <table>
             <tr>
@@ -64,19 +64,36 @@
                 <td><label>LOM编号</label></td>
                 <td><input type="text" class="easyui-textbox" name="lom_id" id="lom_id1"></td>
             </tr>
-            <tr>
+            <%--<tr>
                 <td><label>编码:</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td><label>取值数:</label></td>
                 <td><input type="text" class="easyui-textbox" name="val_num" id="val_num1"></td>
             </tr>
             <tr>
+                <td><label>举例:</label></td>
+                <td><input type="text" class="easyui-textbox" name="example" id="example1"></td>
+            </tr>
+            <tr>
+                <td><label>是否排序:</label></td>
+                <td>
+                    <select class="easyui-combobox" name="is_sorted" id="is_sorted1" editable="false">
+                        <option value="true">是</option>
+                        <option value="false">否</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>值域:</label></td>
+                <td><input type="text" class="easyui-textbox" name="domain" id="domain1"></td>
+            </tr>
+            <tr>
                 <td><label>数据类型:</label></td>
                 <td>
                     <select class="easyui-combobox" name="kind" id="kind1">
-                        <option value="langstring">多语言字符串</option>
+                        <option value="0">多语言字符串</option>
                         <%--<option value="string">字符串</option>--%>
                         <option value="1">数值</option>
                         <option value="2">词汇表</option>
@@ -87,6 +104,87 @@
             </tr>
             <tr>
                 <td colspan="2" id="structureItems">
+
+                </td>
+            </tr>
+            <tr>
+                <td><label>约束:</label></td>
+                <td style="padding:10px;line-height:30px;">
+                    <div>是否唯一:<input type="checkbox"></div>
+
+                    <div>范围:<input type="text" class="easyui-textbox"></div>
+
+                    <div>长度(start,end):<input type="text" class="easyui-textbox"></div>
+
+                    <div>是否必备:<input type="checkbox"></div>
+                </td>
+            </tr>
+        </table>
+        <a class="easyui-linkbutton" plain="false" onclick="submitStructureForm()">提交</a>
+        <a class="easyui-linkbutton" plain="false" onclick="$('#addMetaItemDlg').dialog('close')">取消</a>
+    </form>
+</div>
+<div id="editMetaItemDlg" title="编辑结构类型" class="easyui-dialog" closed="true"
+     style="width:450px;height:450px;padding:10px;">
+    <form>
+        <input type="hidden" name="id" value="" id="id2">
+        <table>
+            <tr>
+                <td><label>中文名称:</label></td>
+                <td><input type="text" class="easyui-textbox" name="zh_name" id="zh_name2"></td>
+            </tr>
+            <tr>
+                <td><label>英文名称</label></td>
+                <td><input type="text" class="easyui-textbox" name="en_name" id="en_name2"></td>
+            </tr>
+            <tr>
+                <td><label>解释:</label></td>
+                <td><input type="text" class="easyui-textbox" name="description" id="description2"></td>
+            </tr>
+            <tr>
+                <td><label>LOM编号</label></td>
+                <td><input type="text" class="easyui-textbox" name="lom_id" id="lom_id2"></td>
+            </tr>
+            <%--<tr>
+                <td><label>编码:</label></td>
+                <td><input type="text" class="easyui-textbox"></td>
+            </tr>--%>
+            <tr>
+                <td><label>取值数:</label></td>
+                <td><input type="text" class="easyui-textbox" name="val_num" id="val_num2"></td>
+            </tr>
+            <tr>
+                <td><label>举例:</label></td>
+                <td><input type="text" class="easyui-textbox" name="example" id="example2"></td>
+            </tr>
+            <tr>
+                <td><label>是否排序:</label></td>
+                <td>
+                    <select class="easyui-combobox" name="is_sorted" id="is_sorted2" editable="false">
+                        <option value="true">是</option>
+                        <option value="false">否</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>值域:</label></td>
+                <td><input type="text" class="easyui-textbox" name="domain" id="domain2"></td>
+            </tr>
+            <tr>
+                <td><label>数据类型:</label></td>
+                <td>
+                    <select class="easyui-combobox" name="kind" id="kind2">
+                        <option value="0">多语言字符串</option>
+                        <%--<option value="string">字符串</option>--%>
+                        <option value="1">数值</option>
+                        <option value="2">词汇表</option>
+                        <option value="3">结构类型</option>
+                        <option value="4">时间</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="structureItems2">
 
                 </td>
             </tr>

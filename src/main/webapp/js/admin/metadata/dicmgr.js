@@ -4,7 +4,7 @@
  "name": "字段名",
  "description": "字段描述",
  "datatype": "数据类型",
- "lomId": "1.1",
+ "lom_id": "1.1",
  "code": "11121554",
  "innercode": "010101"
  langstring:多语言字符串

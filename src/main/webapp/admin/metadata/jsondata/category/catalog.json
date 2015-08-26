@@ -3,25 +3,25 @@
   "rows": [
     {
       "id": "1",
-      "name": "问题条目",
-      "enName": "Question count",
+      "zh_name": "问题条目",
+      "en_name": "Question count",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 100
+      "val_num": 100
     },
     {
       "id": "2",
-      "name": "关联",
-      "enName": "Relation Question",
+      "zh_name": "关联",
+      "en_name": "Relation Question",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "7",
+      "kind": "structure",
+      "lom_id": "7",
       "code": "11121554",
       "innercode": "010101",
-      "size": 8
+      "val_num": 8
     }
   ]
 }

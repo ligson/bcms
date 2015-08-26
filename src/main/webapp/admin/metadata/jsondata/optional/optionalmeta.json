@@ -3,22 +3,22 @@
   "rows": [
     {
       "id": "1",
-      "name": "版本",
-      "enName": "Version",
+      "zh_name": "版本",
+      "en_name": "Version",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "2.1",
+      "kind": "structure",
+      "lom_id": "2.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "2",
-      "name": "大小",
-      "enName": "Title",
+      "zh_name": "大小",
+      "en_name": "Title",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "1.2",
+      "kind": "langstring",
+      "lom_id": "1.2",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -27,15 +27,15 @@
           "value": "1000"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "3",
-      "name": "位置",
-      "enName": "language",
+      "zh_name": "位置",
+      "en_name": "language",
       "description": "字段描述",
-      "datatype": "string",
-      "lomId": "1.3",
+      "kind": "string",
+      "lom_id": "1.3",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -44,15 +44,15 @@
           "value": "100"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "4",
-      "name": "终端用户类型",
-      "enName": "description",
+      "zh_name": "终端用户类型",
+      "en_name": "description",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "1.1",
+      "kind": "langstring",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -61,37 +61,37 @@
           "value": "2000"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "5",
-      "name": "适用对象",
-      "enName": "Keyword",
+      "zh_name": "适用对象",
+      "en_name": "Keyword",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "1.1",
+      "kind": "langstring",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "6",
-      "name": "典型学习时间",
-      "enName": "Contribute",
+      "zh_name": "典型学习时间",
+      "en_name": "Contribute",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "1.1",
+      "kind": "structure",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "7",
-      "name": "费用",
-      "enName": "MetadataScheme",
+      "zh_name": "费用",
+      "en_name": "MetadataScheme",
       "description": "字段描述",
-      "datatype": "string",
-      "lomId": "1.1",
+      "kind": "string",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -100,15 +100,15 @@
           "value": "30"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "8",
-      "name": "版本和权利",
-      "enName": "Language",
+      "zh_name": "版本和权利",
+      "en_name": "Language",
       "description": "字段描述",
-      "datatype": "string",
-      "lomId": "1.1",
+      "kind": "string",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
       "constraints": [
@@ -117,51 +117,51 @@
           "value": "100"
         }
       ],
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "9",
-      "name": "描述",
-      "enName": "Format",
+      "zh_name": "描述",
+      "en_name": "Format",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "4.1",
+      "kind": "vocabulary",
+      "lom_id": "4.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "10",
-      "name": "实体",
-      "enName": "LearningResourceType",
+      "zh_name": "实体",
+      "en_name": "LearningResourceType",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "1.1",
+      "kind": "vocabulary",
+      "lom_id": "1.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "11",
-      "name": "日期",
-      "enName": "Purpose",
+      "zh_name": "日期",
+      "en_name": "Purpose",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "9.1",
+      "kind": "vocabulary",
+      "lom_id": "9.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "12",
-      "name": "描述",
-      "enName": "TaxonPath",
+      "zh_name": "描述",
+      "en_name": "TaxonPath",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "9.2",
+      "kind": "structure",
+      "lom_id": "9.2",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     }
   ]
 }

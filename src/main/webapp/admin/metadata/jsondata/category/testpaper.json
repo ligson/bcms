@@ -3,168 +3,168 @@
   "rows": [
     {
       "id": "1",
-      "name": "题类",
-      "enName": "Item category",
+      "zh_name": "题类",
+      "en_name": "Item category",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "-",
+      "kind": "vocabulary",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 8
+      "val_num": 8
     },
     {
       "id": "2",
-      "name": "题型",
-      "enName": "Item Type",
+      "zh_name": "题型",
+      "en_name": "Item Type",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "-",
+      "kind": "vocabulary",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 8
+      "val_num": 8
     },
     {
       "id": "3",
-      "name": "难度",
-      "enName": "Difficulty",
+      "zh_name": "难度",
+      "en_name": "Difficulty",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "5.8",
+      "kind": "number",
+      "lom_id": "5.8",
       "code": "11121554",
       "innercode": "010101",
-      "size": 1
+      "val_num": 1
     },
     {
       "id": "4",
-      "name": "区分度",
-      "enName": "Discrimination",
+      "zh_name": "区分度",
+      "en_name": "Discrimination",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 1
+      "val_num": 1
     },
     {
       "id": ",5",
-      "name": "考试要求",
-      "enName": "Test requirement",
+      "zh_name": "考试要求",
+      "en_name": "Test requirement",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "5.10",
+      "kind": "langstring",
+      "lom_id": "5.10",
       "code": "11121554",
       "innercode": "010101",
-      "size": 1000
+      "val_num": 1000
     },
     {
       "id": "6",
-      "name": "试题正文",
-      "enName": "Item content",
+      "zh_name": "试题正文",
+      "en_name": "Item content",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "-",
+      "kind": "langstring",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5000
+      "val_num": 5000
     },
     {
       "id": "7",
-      "name": "参考答案",
-      "enName": "Answer",
+      "zh_name": "参考答案",
+      "en_name": "Answer",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "-",
+      "kind": "langstring",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5000
+      "val_num": 5000
     },
     {
       "id": "8",
-      "name": "评分标准",
-      "enName": "Criterion",
+      "zh_name": "评分标准",
+      "en_name": "Criterion",
       "description": "试题的评分细则",
-      "datatype": "langstring",
-      "lomId": "-",
+      "kind": "langstring",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 1000
+      "val_num": 1000
     },
     {
       "id": ",9",
-      "name": "建议的考试得分",
-      "enName": "score",
+      "zh_name": "建议的考试得分",
+      "en_name": "score",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5
+      "val_num": 5
     },
     {
       "id": "10",
-      "name": "保密度",
-      "enName": "secrecy",
+      "zh_name": "保密度",
+      "en_name": "secrecy",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "-",
+      "kind": "vocabulary",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5
+      "val_num": 5
     },
     {
       "id": "11",
-      "name": "试题附件",
-      "enName": "Attachment",
+      "zh_name": "试题附件",
+      "en_name": "Attachment",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "-",
+      "kind": "structure",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5000
+      "val_num": 5000
     },
     {
       "id": "12",
-      "name": "实测难度",
-      "enName": "Modified difficulty",
+      "zh_name": "实测难度",
+      "en_name": "Modified difficulty",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5000
+      "val_num": 5000
     },
     {
       "id": "13",
-      "name": "实测区分度",
-      "enName": "Modified discrimination",
+      "zh_name": "实测区分度",
+      "en_name": "Modified discrimination",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 1
+      "val_num": 1
     },
     {
       "id": "14",
-      "name": "使用次数",
-      "enName": "Used time",
+      "zh_name": "使用次数",
+      "en_name": "Used time",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 6
+      "val_num": 6
     },
     {
       "id": "15",
-      "name": "曝光时间",
-      "enName": "Exposal date",
+      "zh_name": "曝光时间",
+      "en_name": "Exposal date",
       "description": "本道试题被公开的时间",
-      "datatype": "date",
-      "lomId": "-",
+      "kind": "date",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5000
+      "val_num": 5000
     }
   ]
 }

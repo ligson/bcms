@@ -3,14 +3,14 @@
   "rows": [
     {
       "id": "1",
-      "name": "版本",
-      "enName": "Version",
+      "zh_name": "版本",
+      "en_name": "Version",
       "description": "字段描述",
-      "datatype": "Langstring",
-      "lomId": "2.1",
+      "kind": "Langstring",
+      "lom_id": "2.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 50
+      "val_num": 50
     }
   ]
 }

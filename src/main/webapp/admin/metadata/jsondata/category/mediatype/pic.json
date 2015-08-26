@@ -3,47 +3,47 @@
   "rows": [
     {
       "id": "1",
-      "name": "颜色数",
-      "enName": "Color",
+      "zh_name": "颜色数",
+      "en_name": "Color",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 10
+      "val_num": 10
     },
     {
       "id": "2",
-      "name": "分辨率",
-      "enName": "Resolution",
+      "zh_name": "分辨率",
+      "en_name": "Resolution",
       "description": "图形/图像的长度/宽度,以像素为单位计.",
-      "datatype": "string",
-      "lomId": "-",
+      "kind": "string",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 20
+      "val_num": 20
     },
     {
       "id": "3",
-      "name": "扫描分辨率",
-      "enName": "Scan resolution",
+      "zh_name": "扫描分辨率",
+      "en_name": "Scan resolution",
       "description": "字段描述",
-      "datatype": "number",
-      "lomId": "-",
+      "kind": "number",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 5
+      "val_num": 5
     },
     {
       "id": "3",
-      "name": "灰度阶",
-      "enName": "Brightness level",
+      "zh_name": "灰度阶",
+      "en_name": "Brightness level",
       "description": "字段描述",
-      "datatype": "string",
-      "lomId": "-",
+      "kind": "string",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 20
+      "val_num": 20
     }
   ]
 }

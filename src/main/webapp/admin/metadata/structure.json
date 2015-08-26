@@ -1,0 +1,385 @@
+[
+  {
+    "id": "1",
+    "zh_name": "标识",
+    "en_name": "createDate",
+    "description": "字段描述",
+    "kind": 3,
+    "collection": 3,
+    "parent_id": 11,
+    "example": "1.1",
+    "is_sorted": true,
+    "val_num": 10,
+    "domain": "xxxxxxxxxxx",
+    "children": [
+      {
+        "id": "1-1",
+        "zh_name": "类型",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 0,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "1-2",
+        "zh_name": "值",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 0,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "zh_name": "贡献",
+    "en_name": "createDate",
+    "description": "字段描述",
+    "kind": 1,
+    "collection": 3,
+    "parent_id": 11,
+    "example": "1.1",
+    "is_sorted": true,
+    "val_num": 10,
+    "domain": "xxxxxxxxxxx",
+    "children": [
+      {
+        "id": "2-1",
+        "zh_name": "角色",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 2,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "2-2",
+        "zh_name": "实体",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "2-3",
+        "zh_name": "日期",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 4,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "zh_name": "分类路径",
+    "en_name": "createDate",
+    "description": "字段描述",
+    "kind": 3,
+    "collection": 3,
+    "parent_id": 11,
+    "example": "1.1",
+    "is_sorted": true,
+    "val_num": 10,
+    "domain": "xxxxxxxxxxx",
+    "children": [
+      {
+        "id": "3-1",
+        "zh_name": "来源",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 0,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "3-2",
+        "zh_name": "分类单元",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx",
+        "children": [
+          {
+            "id": "3-2-1",
+            "zh_name": "Id",
+            "en_name": "createDate",
+            "description": "字段描述",
+            "kind": 1,
+            "collection": 3,
+            "parent_id": 11,
+            "example": "1.1",
+            "is_sorted": true,
+            "val_num": 10,
+            "domain": "xxxxxxxxxxx"
+          },
+          {
+            "id": "3-2-2",
+            "zh_name": "条目",
+            "en_name": "createDate",
+            "description": "字段描述",
+            "kind": 1,
+            "collection": 3,
+            "parent_id": 11,
+            "example": "1.1",
+            "is_sorted": true,
+            "val_num": 10,
+            "domain": "xxxxxxxxxxx"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "zh_name": "分类单元",
+    "en_name": "createDate",
+    "description": "字段描述",
+    "kind": 1,
+    "collection": 3,
+    "parent_id": 11,
+    "example": "1.1",
+    "is_sorted": true,
+    "val_num": 10,
+    "domain": "xxxxxxxxxxx",
+    "children": [
+      {
+        "id": "4-1",
+        "zh_name": "Id",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "4-2",
+        "zh_name": "条目",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "zh_name": "技术要求",
+    "en_name": "createDate",
+    "description": "字段描述",
+    "kind": 1,
+    "collection": 3,
+    "parent_id": 11,
+    "example": "1.1",
+    "is_sorted": true,
+    "val_num": 10,
+    "domain": "xxxxxxxxxxx",
+    "children": [
+      {
+        "id": "5-1",
+        "zh_name": "或组合",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "zh_name": "或组合",
+    "en_name": "createDate",
+    "description": "字段描述",
+    "kind": 1,
+    "collection": 3,
+    "parent_id": 11,
+    "example": "1.1",
+    "is_sorted": true,
+    "val_num": 10,
+    "domain": "xxxxxxxxxxx",
+    "children": [
+      {
+        "id": "6-1",
+        "zh_name": "类型",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "6-2",
+        "zh_name": "名称",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "6-3",
+        "zh_name": "最低版本",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "6-4",
+        "zh_name": "最高版本",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "zh_name": "关系",
+    "en_name": "createDate",
+    "description": "字段描述",
+    "kind": 1,
+    "collection": 3,
+    "parent_id": 11,
+    "example": "1.1",
+    "is_sorted": true,
+    "val_num": 10,
+    "domain": "xxxxxxxxxxx",
+    "children": [
+      {
+        "id": "7-1",
+        "zh_name": "类型",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "7-2",
+        "zh_name": "资源",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "zh_name": "资源",
+    "en_name": "createDate",
+    "description": "字段描述",
+    "kind": 1,
+    "collection": 3,
+    "parent_id": 11,
+    "example": "1.1",
+    "is_sorted": true,
+    "val_num": 10,
+    "domain": "xxxxxxxxxxx",
+    "children": [
+      {
+        "id": "8-1",
+        "zh_name": "标识",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      },
+      {
+        "id": "8-2",
+        "zh_name": "描述",
+        "en_name": "createDate",
+        "description": "字段描述",
+        "kind": 1,
+        "collection": 3,
+        "parent_id": 11,
+        "example": "1.1",
+        "is_sorted": true,
+        "val_num": 10,
+        "domain": "xxxxxxxxxxx"
+      }
+    ]
+  }
+]
+

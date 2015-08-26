@@ -3,69 +3,69 @@
   "rows": [
     {
       "id": "1",
-      "name": "版型",
-      "enName": "Version type",
+      "zh_name": "版型",
+      "en_name": "Version type",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "-",
+      "kind": "vocabulary",
+      "lom_id": "-",
       "code": "11121554",
       "innercode": "010101",
-      "size": 8
+      "val_num": 8
     },
     {
       "id": "2",
-      "name": "结构",
-      "enName": "structure",
+      "zh_name": "结构",
+      "en_name": "structure",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "1.7",
+      "kind": "vocabulary",
+      "lom_id": "1.7",
       "code": "11121554",
       "innercode": "010101",
-      "size": 8
+      "val_num": 8
     },
     {
       "id": "3",
-      "name": "要求",
-      "enName": "Requirements",
+      "zh_name": "要求",
+      "en_name": "Requirements",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "4.4",
+      "kind": "structure",
+      "lom_id": "4.4",
       "code": "11121554",
       "innercode": "010101",
-      "size": 1
+      "val_num": 1
     },
     {
       "id": "4",
-      "name": "安装描述",
-      "enName": "Installation Remark",
+      "zh_name": "安装描述",
+      "en_name": "Installation Remark",
       "description": "字段描述",
-      "datatype": "langstring",
-      "lomId": "4.5",
+      "kind": "langstring",
+      "lom_id": "4.5",
       "code": "11121554",
       "innercode": "010101",
-      "size": 1
+      "val_num": 1
     },
     {
       "id": ",5",
-      "name": "交互类型",
-      "enName": "Interactivity type",
+      "zh_name": "交互类型",
+      "en_name": "Interactivity type",
       "description": "字段描述",
-      "datatype": "vocabulary",
-      "lomId": "5.1",
+      "kind": "vocabulary",
+      "lom_id": "5.1",
       "code": "11121554",
       "innercode": "010101",
-      "size": 1000
+      "val_num": 1000
     },
     {
       "id": "6",
-      "name": "关联资源",
-      "enName": "Relation",
+      "zh_name": "关联资源",
+      "en_name": "Relation",
       "description": "字段描述",
-      "datatype": "structure",
-      "lomId": "7",
+      "kind": "structure",
+      "lom_id": "7",
       "code": "11121554",
       "innercode": "010101",
-      "size": 100
+      "val_num": 100
     }
   ]
 }
