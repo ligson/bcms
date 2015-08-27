@@ -13,7 +13,7 @@ $(function () {
         idField: "id",
         treeField: "zh_name",
         fitColumns: true,
-        onContextMenu: onContextMenu,
+        //onContextMenu: onContextMenu,
         columns: [
             [
                 {
@@ -41,9 +41,14 @@ $(function () {
                     field: "example", title: "举例", width: 50
                 },
                 {
+                    field: "val_num", title: "取值数", width: 50
+                },
+                {
                     field: "增加", title: "增加", width: 50, formatter: function (value, row, idx) {
-                    console.log(row.id);
-                    return "<a class='easyui-linkbutton' onclick='appendMetaRow()'>增加</a>";
+                    //console.log(JSON.stringify(row));
+                    var jsonString = JSON.stringify(row);
+                    //id, zh_name, en_name, kind, val_num, collection
+                    return "<a class='easyui-linkbutton' onclick='appendMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>增加</a>";
                 }
                 }
 
@@ -57,7 +62,59 @@ $(function () {
         }
     });
 });
-function appendMetaRow() {
+
+/****
+ *  "id": "1",
+ "zh_name": "多语言字符串类型",
+ "en_name": "多语言字符串类型",
+ "description": "字段描述",
+ "kind": 0,
+ "lom_id": "9.2",
+ "domain": "xxxx",
+ "example": "xxxx",
+ "collection": 0,
+ "val_num": 10
+ * @param jsonString
+ */
+var idIndex = 1;
+function dealChildren(nodeId, children) {
+    if (children) {
+        for (var i = 0; i < children.length; i++) {
+            children[i].id = nodeId + "-" + idIndex++;
+            //col.push(children[i]);
+            dealChildren(children[i].id, children[i].children);
+        }
+    }
+}
+function appendMetaRow(id, zh_name, en_name, kind, val_num, collection, example) {
+    //console.log(jsonString);
+    var data1 = $('#metaGrid').treegrid("find", id);
+    //if (data) {
+    //console.log(data);
+    //data.id = id + "-" + idIndex;
+    idIndex++;
+
+    //console.log(data1.children);
+
+    var nodeId = id + "-" + idIndex;
+    var clone1 = data1.children;
+    dealChildren(nodeId, clone1);
+    var d = {
+        id: nodeId,
+        zh_name: zh_name,
+        en_name: en_name,
+        kind: kind,
+        val_num: val_num,
+        collection: collection,
+        example: example,
+        children: clone1
+    };
+
+    $('#metaGrid').treegrid('insert', {
+        after: id,
+        data: d
+    });
+    //}
 
 }
 
