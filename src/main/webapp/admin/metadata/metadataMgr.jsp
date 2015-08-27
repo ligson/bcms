@@ -46,9 +46,9 @@
     <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
 </div>
 <div id="addMetaItemDlg" title="增加字段" class="easyui-dialog" closed="true"
-     style="width:450px;height:400px;padding:10px;">
+     style="width:450px;">
     <form>
-        <table>
+        <table class="table">
             <tr>
                 <td><label>中文名称:</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
@@ -85,24 +85,6 @@
                     </select>
                 </td>
             </tr>
-            <tr style="display:none;" id="dicBlock">
-                <td><label>选择词汇表：</label></td>
-                <td>
-                    <select class="easyui-combobox" multiple="true" panelHeight="auto" editable="true">
-                        <option>学习资源类型</option>
-                        <option>目的</option>
-                        <option>环境</option>
-                        <option>贡献-角色</option>
-                        <option>技术要求-名称</option>
-                        <option>关系-类型</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" id="structureItems">
-
-                </td>
-            </tr>
             <tr>
                 <td><label>约束:</label></td>
                 <td style="padding:10px;line-height:30px;">
@@ -116,8 +98,6 @@
                 </td>
             </tr>
         </table>
-        <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
-        <a class="easyui-linkbutton" plain="false">取消</a>
     </form>
 </div>
 <div id="addStructureItemDlg" class="easyui-dialog" title="选择结构类型" closed="true"

@@ -164,6 +164,22 @@ $(function () {
     });
 
 
+    $("#addMetaItemDlg").dialog({
+        buttons: [
+            {
+                text: "提交",
+                handler: function () {
+                    showAddItemDlg();
+                }
+
+            },
+            {
+                text: "关闭"
+            }
+        ]
+    });
+
+
 });
 function showAddItemDlg() {
     $("#addMetaItemDlg").dialog("open");
