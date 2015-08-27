@@ -50,10 +50,11 @@
 <div data-options="region:'center',title:'流媒体配置'" iconCls="icon-control_equalizer_blue" style="padding:10px;">
     <div id="container">
         <form id="ff" method="post">
-            <table cellpadding="5">
+            <table class="table">
                 <tr>
-                    <td>转码服务器IP:</td>
-                    <td><input class="easyui-textbox" type="text" name="name" data-options="required:true"/></td>
+                    <td class="col-md-2">转码服务器IP:</td>
+                    <td class="col-md-10"><input class="easyui-textbox" type="text" name="name"
+                                                 data-options="required:true"/></td>
                 </tr>
                 <tr>
                     <td>端口:</td>
@@ -62,8 +63,9 @@
                 </tr>
                 <tr>
                     <td>服务状态:</td>
-                    <td><img src="../../images/red.gif" style="width:25px;height:25px;"></td>
-                    <td><a class="easyui-linkbutton" href="./msmonitor.jsp">查看详情</a></td>
+                    <td><img src="../../images/red.gif" style="width:25px;height:25px;"><a class="easyui-linkbutton"
+                                                                                           href="./msmonitor.jsp">查看详情</a>
+                    </td>
                 </tr>
                 <tr>
                     <td>服务重启</td>
@@ -72,9 +74,9 @@
                 </tr>
                 <tr>
                     <td>测试链接</td>
-                    <td><a iconCls="icon-control_repeat_blue" class="easyui-linkbutton" onclick="testService()">测试</a>
+                    <td><a iconCls="icon-control_equalizer_blue" class="easyui-linkbutton"
+                           onclick="testService()">测试</a>
                     </td>
-                    <td></td>
                 </tr>
             </table>
         </form>

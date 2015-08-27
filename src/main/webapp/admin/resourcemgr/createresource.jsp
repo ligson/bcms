@@ -21,10 +21,10 @@
 <div data-options="region:'center',title:'创建资源'" iconCls="icon-page_world">
     <div id="container" style="padding:10px;">
         <form>
-            <table style="line-height:30px;">
+            <table class="table">
                 <tr>
-                    <td><label>资源名:</label></td>
-                    <td><input type="text" class="easyui-textbox" required="true"/></td>
+                    <td class="col-md-2"><label>资源名:</label></td>
+                    <td class="col-md-10"><input type="text" class="easyui-textbox" required="true"/></td>
                 </tr>
                 <tr>
                     <td><label>类型:</label></td>
@@ -50,7 +50,7 @@
 
                 <tr>
                     <td><label>资源标签:</label></td>
-                    <td><input data-role="tagsinput" style="width:200px;" placeholder=" 输入后点击回车键添加 "/></td>
+                    <td><input data-role="tagsinput" style="width:200px;" placeholder="回车输入" title="输入后点击回车键添加"/></td>
                 </tr>
                 <tr>
                     <td><label>转码策略:</label></td>

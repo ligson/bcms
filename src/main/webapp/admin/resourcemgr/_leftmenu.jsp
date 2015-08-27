@@ -24,7 +24,8 @@
                 <a href="#" class="easyui-linkbutton" iconCls="icon-add" title="增加资源库" plain="true"
                    onclick="addCategory()"></a>
                 <a href="#" class="easyui-linkbutton" iconCls="icon-remove" title="删除资源库" plain="true"></a>
-                <a href="./createresource.jsp" class="easyui-linkbutton" iconCls="icon-folder_up" title="上传" plain="true"></a>
+                <a href="./createresource.jsp" class="easyui-linkbutton" iconCls="icon-folder_up" title="上传"
+                   plain="true"></a>
             </div>
             <div style="margin-top:5px;">
                 <ul class="easyui-tree" url="./lefttree.json" id="categoryTree">
@@ -35,9 +36,9 @@
     </div>
 </div>
 <div id="addCategoryDlg" class="easyui-dialog" title="添加类库" data-options="iconCls:'icon-save'"
-     style="width:300px;height:250px;padding:10px" closed="true">
+     style="width:400px;height:300px;padding:10px" closed="true">
     <form>
-        <table>
+        <table class="table">
             <tr>
                 <td>类库名称:</td>
                 <td><input class="easyui-textbox" required="true" type="text" name="name"/></td>
@@ -45,7 +46,9 @@
             <tr>
                 <td>类库元数据标准:</td>
                 <td>
-                    <input class="easyui-combotree" data-options="url:'../metadata/lefttree.json',method:'get',required:true" style="width:200px;"/>
+                    <input class="easyui-combotree"
+                           data-options="url:'../metadata/lefttree.json',method:'get',required:true"
+                           style="width:200px;"/>
                 </td>
             </tr>
             <tr>
@@ -75,7 +78,9 @@
                     标准
                 </td>
                 <td>
-                    <input class="easyui-combotree" data-options="url:'../metadata/lefttree.json',method:'get',required:true" style="width:200px;"/>
+                    <input class="easyui-combotree"
+                           data-options="url:'../metadata/lefttree.json',method:'get',required:true"
+                           style="width:200px;"/>
                 </td>
             </tr>
             <tr>
