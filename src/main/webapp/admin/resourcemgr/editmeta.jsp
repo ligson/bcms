@@ -265,7 +265,7 @@
            url="../metadata/jsondata/fitmeta.json">
     </table>
     <div id="tbr">
-        <a class="easyui-linkbutton">提交</a>
+        <a class="easyui-linkbutton" onclick="submitMetaForm()">提交</a>
         <a class="easyui-linkbutton">跳过</a>
     </div>
 </div>

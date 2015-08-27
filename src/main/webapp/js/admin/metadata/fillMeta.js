@@ -26,15 +26,15 @@ $(function () {
                 {
                     field: "value", title: "值", width: 200, formatter: function (value, row, idx) {
                     if (row.kind == 0) {
-                        return "<input type='text' class='easyui-textbox'>";
+                        return "<input type='text' class='easyui-textbox etextbox'>";
                     } else if (row.kind == 1) {
-                        return "<input type='text' class='easyui-textbox'>";
+                        return "<input type='text' class='easyui-textbox etextbox'>";
                     } else if (row.kind == 2) {
-                        return "<select class='easyui-combobox'><option>xxxx</option><option>xxxx</option></select>";
+                        return "<select class='easyui-combobox ecombobox'><option>xxxx</option><option>xxxx</option></select>";
                     } else if (row.kind == 3) {
                         return "";
                     } else if (row.kind == 4) {
-                        return "<input type='text' class='easyui-datebox'>";
+                        return "<input type='text' class='easyui-datebox edatebox'>";
                     }
                 }
                 },
@@ -45,13 +45,25 @@ $(function () {
                     field: "val_num", title: "取值数", width: 50
                 },
                 {
-                    field: "增加", title: "增加", width: 50, formatter: function (value, row, idx) {
+                    field: "add", title: "增加", width: 50, formatter: function (value, row, idx) {
                     //console.log(JSON.stringify(row));
-                    var jsonString = JSON.stringify(row);
+                    //var jsonString = JSON.stringify(row);
                     //id, zh_name, en_name, kind, val_num, collection
-                    return "<a class='easyui-linkbutton' onclick='appendMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>增加</a>";
+                    if (row.id.toString().indexOf("-") > -1) {
+                        return "--";
+                    } else {
+                        return "<a class='easyui-linkbutton' onclick='appendMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>增加</a>";
+                    }
                 }
+                }, {
+                field: "remove", title: "移除", width: 50, formatter: function (value, row, idx) {
+                    if (row.id.toString().indexOf("-") == -1) {
+                        return "--";
+                    } else {
+                        return "<a class='easyui-linkbutton' onclick='removeMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>移除</a>";
+                    }
                 }
+            }
 
             ]
         ],
@@ -70,7 +82,16 @@ $(function () {
 
 function loadDatas(data) {
     for (var i = 0; i < data.length; i++) {
-        datas.push(data[i]);
+        var isExist = false;
+        for (var j = 0; j < datas.length; j++) {
+            if (datas[j].id == data[i].id) {
+                isExist = true;
+                break;
+            }
+        }
+        if (!isExist) {
+            datas.push(data[i]);
+        }
         if (data.children) {
             loadDatas(data.children);
         }
@@ -101,10 +122,48 @@ function dealChildren(nodeId, children) {
         }
     }
 }
+
+function removeMetaRow(id, zh_name, en_name, kind, val_num, collection, example) {
+    var count = 0;
+    for (var i = 0; i < datas.length; i++) {
+        var data = datas[i];
+        if ((data.zh_name == zh_name) && (data.en_name == en_name) && (data.kind == kind) && (data.val_num == val_num) && (data.collection == collection) && (data.example == example)) {
+            count = count + 1;
+        }
+    }
+    if (count > 1) {
+        var index = -1;
+        for (var i = 0; i < datas.length; i++) {
+            var data = datas[i];
+            if (data.id == id) {
+                index = i;
+            }
+        }
+        if (index >= 0) {
+            datas.splice(index, 1);
+        }
+        $('#metaGrid').treegrid("remove", id);
+    } else {
+        alert(zh_name + "项的取值数最少1个");
+    }
+
+}
 function appendMetaRow(id, zh_name, en_name, kind, val_num, collection, example) {
     //console.log(jsonString);
-    var data1 = $('#metaGrid').treegrid("find", id);
 
+    var count = 0;
+    for (var i = 0; i < datas.length; i++) {
+        var data = datas[i];
+        if ((data.zh_name == zh_name) && (data.en_name == en_name) && (data.kind == kind) && (data.val_num == val_num) && (data.collection == collection) && (data.example == example)) {
+            count = count + 1;
+        }
+    }
+    if (count >= val_num) {
+        alert(zh_name + "项的取值数最多" + val_num + "个");
+        return;
+    }
+
+    var data1 = $('#metaGrid').treegrid("find", id);
 
     //if (data) {
     //console.log(data);
@@ -162,4 +221,13 @@ function append() {
             progress: parseInt(Math.random() * 100)
         }]
     })
+}
+
+function submitMetaForm() {
+    var tboxes = $(".etextbox");
+    var tbx = $(tboxes[0]);
+    alert(tbx.textbox("getValue"));
+    var id = $($($(".etextbox")[0]).parent().parent().parent()).find("td[field='id']").text();
+    alert(id);
+
 }

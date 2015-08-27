@@ -48,7 +48,7 @@
     "val_num": 10,
     "children": [
       {
-        "id": "4-1",
+        "id": "41",
         "zh_name": "时间",
         "en_name": "时间",
         "description": "字段描述",
@@ -60,7 +60,7 @@
         "val_num": 10
       },
       {
-        "id": "4-2",
+        "id": "42",
         "zh_name": "时间",
         "en_name": "时间",
         "description": "字段描述",
