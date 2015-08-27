@@ -1,0 +1,7 @@
+thead:hover {
+    cursor: pointer;
+    background:#f5e79e;
+}
+.structureBody{
+    display:none;
+}

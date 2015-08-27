@@ -1,0 +1,88 @@
+[
+  {
+    "id": "1",
+    "zh_name": "多语言字符串类型",
+    "en_name": "多语言字符串类型",
+    "description": "字段描述",
+    "kind": 0,
+    "lom_id": "9.2",
+    "domain": "xxxx",
+    "example": "xxxx",
+    "collection": 0,
+    "val_num": 10
+  },
+  {
+    "id": "2",
+    "zh_name": "数值",
+    "en_name": "数值",
+    "description": "字段描述",
+    "kind": 1,
+    "lom_id": "9.2",
+    "domain": "xxxx",
+    "example": "xxxx",
+    "collection": 0,
+    "val_num": 10
+  },
+  {
+    "id": "3",
+    "zh_name": "词汇表",
+    "en_name": "词汇表",
+    "description": "字段描述",
+    "kind": 2,
+    "lom_id": "9.2",
+    "domain": "xxxx",
+    "example": "xxxx",
+    "collection": 0,
+    "val_num": 10
+  },
+  {
+    "id": "4",
+    "zh_name": "结构类型",
+    "en_name": "结构类型",
+    "description": "字段描述",
+    "kind": 3,
+    "lom_id": "9.2",
+    "domain": "xxxx",
+    "example": "xxxx",
+    "collection": 0,
+    "val_num": 10,
+    "children": [
+      {
+        "id": "4-1",
+        "zh_name": "时间",
+        "en_name": "时间",
+        "description": "字段描述",
+        "kind": 4,
+        "lom_id": "9.2",
+        "domain": "xxxx",
+        "example": "xxxx",
+        "collection": 0,
+        "val_num": 10
+      },
+      {
+        "id": "4-2",
+        "zh_name": "时间",
+        "en_name": "时间",
+        "description": "字段描述",
+        "kind": 4,
+        "lom_id": "9.2",
+        "domain": "xxxx",
+        "example": "xxxx",
+        "collection": 0,
+        "val_num": 10
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "zh_name": "时间",
+    "en_name": "时间",
+    "description": "字段描述",
+    "kind": 4,
+    "lom_id": "9.2",
+    "domain": "xxxx",
+    "example": "xxxx",
+    "collection": 0,
+    "val_num": 10
+  }
+]

@@ -18,8 +18,10 @@
 <jsp:include page="_leftmenu.jsp"/>
 <div data-options="region:'center',title:'字段列表'" iconCls="icon-page_world">
     <div id="tbr" style="height:30px;line-height:30px;">
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg()">增加</a>
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除2</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddStructureItemDlg()">选择结构类型</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddDicItemDlg()">选择词汇表类型</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg()">增加普通类型</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除</a>
         <select class="easyui-combobox" editable="false" id="searchCondition">
             <option>按名称</option>
             <option>按编码</option>
@@ -74,13 +76,25 @@
             <tr>
                 <td><label>数据类型:</label></td>
                 <td>
-                    <select class="easyui-combobox" id="itemDateTypeSlt">
-                        <option value="langstring">多语言字符串</option>
-                        <option value="string">字符串</option>
-                        <option value="number">数值</option>
-                        <option value="vocabulary">词汇表</option>
-                        <option value="structure">结构类型</option>
-                        <option value="date">时间</option>
+                    <select class="easyui-combobox" id="kind1" name="kind">
+                        <option value="0">多语言字符串</option>
+                        <option value="1">数值</option>
+                        <%--<option value="2">词汇表</option>
+                        <option value="3">结构类型</option>--%>
+                        <option value="4">时间</option>
+                    </select>
+                </td>
+            </tr>
+            <tr style="display:none;" id="dicBlock">
+                <td><label>选择词汇表：</label></td>
+                <td>
+                    <select class="easyui-combobox" multiple="true" panelHeight="auto" editable="true">
+                        <option>学习资源类型</option>
+                        <option>目的</option>
+                        <option>环境</option>
+                        <option>贡献-角色</option>
+                        <option>技术要求-名称</option>
+                        <option>关系-类型</option>
                     </select>
                 </td>
             </tr>
@@ -105,6 +119,32 @@
         <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
         <a class="easyui-linkbutton" plain="false">取消</a>
     </form>
+</div>
+<div id="addStructureItemDlg" class="easyui-dialog" title="选择结构类型" closed="true"
+     style="width:250px;height:150px;padding:10px;">
+    <select class="easyui-combobox" name="state" data-options="multiple:true,multiline:true"
+            style="width:200px;height:50px" editable="true">
+        <option>标识</option>
+        <option>贡献</option>
+        <option>分类路径</option>
+        <option>分类单元</option>
+        <option>技术要求</option>
+        <option>或组合</option>
+        <option>关系</option>
+        <option>资源</option>
+    </select>
+</div>
+<div id="addDicItemDlg" class="easyui-dialog" title="选择词汇表类型" closed="true"
+     style="width:250px;height:150px;padding:10px;">
+    <select class="easyui-combobox" name="state" data-options="multiple:true,multiline:true"
+            style="width:200px;height:50px" editable="true">
+        <option>学习资源类型</option>
+        <option>目的</option>
+        <option>环境</option>
+        <option>贡献-角色</option>
+        <option>技术要求-名称</option>
+        <option>关系-类型</option>
+    </select>
 </div>
 </body>
 </html>

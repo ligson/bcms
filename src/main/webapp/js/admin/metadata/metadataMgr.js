@@ -111,21 +111,67 @@ $(function () {
         ]
     });
 
-    $("#itemDateTypeSlt").combobox({
+    $("#kind1").combobox({
         onSelect: function (item) {
-            $("#structureItems").empty();
-            if (item.value == "structure") {
-                $("#selectItemDlg").dialog("open");
-            } else if (item.value == "vocabulary") {
-                $("#metadata_tree1").tree({url: "./jsondata/vocabulary/vocabularytree.json"});
-                $("#metadata_tree1").tree("reload");
-                $("#selectItemDlg").dialog("open");
+            if (item.value == 2) {
+                $("#dicBlock").show();
+            } else {
+                $("#dicBlock").hide();
             }
+            /* $("#structureItems").empty();
+             if (item.value == "structure") {
+             $("#selectItemDlg").dialog("open");
+             } else if (item.value == "vocabulary") {
+             $("#metadata_tree1").tree({url: "./jsondata/vocabulary/vocabularytree.json"});
+             $("#metadata_tree1").tree("reload");
+             $("#selectItemDlg").dialog("open");
+             }*/
         }
+    });
+
+    //增加结构类型字段
+    $("#addStructureItemDlg").dialog({
+        buttons: [{
+            text: '确定',
+            iconCls: 'icon-ok',
+            handler: function () {
+                //alert('ok');
+            }
+        }, {
+            text: '关闭',
+            handler: function () {
+                $("#addStructureItemDlg").dialog("close");
+
+            }
+        }]
+    });
+
+    //增加词汇表类型字段
+    $("#addDicItemDlg").dialog({
+        buttons: [{
+            text: '确定',
+            iconCls: 'icon-ok',
+            handler: function () {
+                //alert('ok');
+            }
+        }, {
+            text: '关闭',
+            handler: function () {
+                $("#addDicItemDlg").dialog("close");
+
+            }
+        }]
     });
 
 
 });
 function showAddItemDlg() {
     $("#addMetaItemDlg").dialog("open");
+}
+function showAddStructureItemDlg() {
+    $("#addStructureItemDlg").dialog("open");
+}
+
+function showAddDicItemDlg() {
+    $("#addDicItemDlg").dialog("open");
 }

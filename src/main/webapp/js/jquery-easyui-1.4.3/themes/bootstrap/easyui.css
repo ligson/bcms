@@ -1476,7 +1476,7 @@
 }
 .datagrid-row-selected {
   background: #0081c2;
-  color: #fff;
+  /*color: #fff;*/
 }
 .datagrid-row-editing .textbox,
 .datagrid-row-editing .textbox-text {
