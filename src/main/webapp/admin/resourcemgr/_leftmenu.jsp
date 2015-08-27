@@ -17,7 +17,7 @@
         font-weight: bold;
     }
 </style>
-<div data-options="region:'west',split:true" title="系统菜单" style="width:150px;" iconCls="icon-application_side_boxes">
+<div data-options="region:'west',split:true" title="系统菜单" style="width:200px;" iconCls="icon-application_side_boxes">
     <div class="easyui-accordion" style="width:100%;" id="treeMenu">
         <div title="资源管理" style="overflow:auto;padding:5px;padding-top:0px;" iconCls="icon-cd_magnify">
             <div style="height:30px;line-height:30px;border-bottom:1px solid #95B8E7;">
@@ -32,7 +32,11 @@
                 </ul>
             </div>
         </div>
-
+        <div title="资源日志">
+            <ul class="easyui-tree">
+                <li><span><a href="roplog.jsp">操作日志</a></span></li>
+            </ul>
+        </div>
     </div>
 </div>
 <div id="addCategoryDlg" class="easyui-dialog" title="添加类库" data-options="iconCls:'icon-save'"
