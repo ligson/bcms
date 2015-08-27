@@ -15,7 +15,7 @@
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'流媒体配置'" iconCls="icon-control_equalizer_blue">
+<div data-options="region:'center',title:'流媒体配置'" iconCls="icon-control_equalizer_blue" style="padding:10px;">
     <div id="container">
         <form id="ff" method="post">
             <table cellpadding="5">
@@ -27,6 +27,11 @@
                     <td>端口:</td>
                     <td><input class="easyui-textbox" type="text" name="email"
                                data-options="required:true,validType:'email'"/></td>
+                </tr>
+                <tr>
+                    <td>服务状态:</td>
+                    <td><img src="../../images/red.gif" style="width:25px;height:25px;"></td>
+                    <td><a class="easyui-linkbutton" href="./msmonitor.jsp">查看详情</a></td>
                 </tr>
             </table>
         </form>
