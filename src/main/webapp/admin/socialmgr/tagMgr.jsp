@@ -83,6 +83,7 @@
             </label>
             <input name="name" class="easyui-validatebox" required="true" type="text" />
             <input name="id" type="hidden"/>
+            <input name="library_id" type="hidden"/>
         </div>
     </form>
 </div>
