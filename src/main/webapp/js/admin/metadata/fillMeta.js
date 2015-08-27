@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2015/8/26.
  */
+var datas = [];
 $(function () {
     $("thead").dblclick(function () {
         $(this).next().toggle();
@@ -59,9 +60,23 @@ $(function () {
             $(".easyui-datebox").datebox();
             $(".easyui-combobox").combobox();
             $(".easyui-linkbutton").linkbutton();
+            var data = $('#metaGrid').treegrid("getData");
+            $('#metaGrid').treegrid("loading");
+            loadDatas(data);
+            $('#metaGrid').treegrid("loaded");
         }
     });
 });
+
+function loadDatas(data) {
+    for (var i = 0; i < data.length; i++) {
+        datas.push(data[i]);
+        if (data.children) {
+            loadDatas(data.children);
+        }
+    }
+
+}
 
 /****
  *  "id": "1",
@@ -89,6 +104,8 @@ function dealChildren(nodeId, children) {
 function appendMetaRow(id, zh_name, en_name, kind, val_num, collection, example) {
     //console.log(jsonString);
     var data1 = $('#metaGrid').treegrid("find", id);
+
+
     //if (data) {
     //console.log(data);
     //data.id = id + "-" + idIndex;
