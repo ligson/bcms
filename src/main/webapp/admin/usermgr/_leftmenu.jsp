@@ -9,14 +9,14 @@
 <style type="text/css">
 
 </style>
-<div data-options="region:'west',split:true" title="系统菜单" style="width:150px;" id="treeMenu"
+<div data-options="region:'west',split:true" title="系统菜单" style="width:200px;" id="treeMenu"
      iconCls="icon-application_side_boxes">
     <ul class="easyui-tree">
         <li iconCls="icon-user"><a href="./userMgr.jsp"><span>用户管理</span></a></li>
-        <li iconCls="icon-organ"><a href="./departmentMgr.jsp"><span>部门管理</span></a></li>
-        <li iconCls="icon-group"><span><a href="./groupMgr.jsp">用户组管理</a></span></li>
-        <li iconCls="icon-group-key"><span><a href="./roleMgr.jsp">角色管理</a></span></li>
-        <li><span><a href="./authMgr.jsp">权限管理</a></span></li>
+        <li iconCls="icon-zhuanti"><a href="./departmentMgr.jsp"><span>部门管理</span></a></li>
+        <li iconCls="icon-user_home"><span><a href="./groupMgr.jsp">用户组管理</a></span></li>
+        <li iconCls="icon-user_suit"><span><a href="./roleMgr.jsp">角色管理</a></span></li>
+        <li iconCls="icon-table_key"><span><a href="./authMgr.jsp">权限管理</a></span></li>
     </ul>
 
 </div>

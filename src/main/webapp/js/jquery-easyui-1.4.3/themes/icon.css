@@ -230,10 +230,24 @@
     background: url("icons/ext/control_repeat_blue.png") no-repeat center center;
 }
 
+.icon-script {
+    background: url("icons/ext/script.png") no-repeat center center;
+}
+
 .icon-control_equalizer_blue {
     background: url("icons/ext/control_equalizer_blue.png") no-repeat center center;
 }
 
 .icon-control_power_blue {
     background: url("icons/ext/control_power_blue.png") no-repeat center center;
+}
+
+.icon-user_home {
+    background: url("icons/ext/user_home.png") no-repeat center center;
+}
+.icon-user_suit{
+    background: url("icons/ext/user_suit.png") no-repeat center center;
+}
+.icon-table_key{
+    background: url("icons/ext/table_key.png") no-repeat center center;
 }

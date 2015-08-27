@@ -32,7 +32,7 @@
                 </ul>
             </div>
         </div>
-        <div title="资源日志">
+        <div iconCls="icon-script" title="资源日志">
             <ul class="easyui-tree">
                 <li><span><a href="roplog.jsp">操作日志</a></span></li>
             </ul>

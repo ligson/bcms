@@ -18,18 +18,18 @@
 <div data-options="region:'center',title:'系统配置'" iconCls="icon-config">
     <div id="container" style="padding:10px;">
         <form id="ff" method="post">
-            <table cellpadding="5">
+            <table class="table">
                 <tr>
-                    <td>系统名称:</td>
+                    <td><label>系统名称:</label></td>
                     <td><input class="easyui-textbox" type="text" name="name" data-options="required:true"/></td>
                 </tr>
                 <tr>
-                    <td>域名:</td>
+                    <td><label>域名:</label></td>
                     <td><input class="easyui-textbox" type="text" name="email"
                                data-options="required:true,validType:'email'"/></td>
                 </tr>
                 <tr>
-                    <td>系统logo:</td>
+                    <td><label>系统logo:</label></td>
                     <td><input type="file" name="photo"/>
                     </td>
                 </tr>
