@@ -10,10 +10,15 @@
 <head>
     <title>评分管理</title>
   <jsp:include page="_header.jsp"/>
+  <script src="../../js/admin/social/scoremgr.js" type="text/javascript"></script>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <jsp:include page="_leftmenu.jsp"/>
-
+<div data-options="region:'center',title:'评分管理'">
+  <div id="container">
+    <table id="score_table"></table>
+  </div>
+</div>
 </body>
 </html>

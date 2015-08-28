@@ -18,6 +18,9 @@
             <li iconCls="icon-group"><span><a href="./commentMgr.jsp">评论管理</a></span></li>
             <li iconCls="icon-group-key"><span><a href="./scoreMgr.jsp">评分管理</a></span></li>
             <li iconCls="icon-organ"><a href="./tagMgr.jsp"><span>标签管理</span></a></li>
+            <li iconCls="icon-organ"><a href="./noteMgr.jsp"><span>笔记管理</span></a></li>
+            <li iconCls="icon-organ"><a href="./questionMgr.jsp"><span>提问管理</span></a></li>
+            <li iconCls="icon-organ"><a href="./messageMgr.jsp"><span>站内消息管理</span></a></li>
         </ul>
             </div>
     </div>

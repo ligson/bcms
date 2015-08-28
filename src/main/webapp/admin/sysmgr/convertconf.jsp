@@ -28,6 +28,11 @@
                     <td><input class="easyui-textbox" type="text" name="email"
                                data-options="required:true,validType:'email'"/></td>
                 </tr>
+                <tr>
+                    <td>服务状态:</td>
+                    <td><img src="../../images/red.gif" style="width:25px;height:25px;"></td>
+                    <td><a class="easyui-linkbutton" href="./convmonitor.jsp">查看详情</a></td>
+                </tr>
             </table>
         </form>
         <div style="text-align:left;">

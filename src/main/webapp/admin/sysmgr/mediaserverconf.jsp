@@ -63,9 +63,9 @@
                 </tr>
                 <tr>
                     <td>服务状态:</td>
-                    <td><img src="../../images/red.gif" style="width:25px;height:25px;"><a class="easyui-linkbutton"
-                                                                                           href="./msmonitor.jsp">查看详情</a>
-                    </td>
+                    <td><img src="../../images/red.gif" style="width:25px;height:25px;"></td>
+                    <td><a class="easyui-linkbutton" href="./mediaservermonitor.jsp">查看详情</a></td>
+
                 </tr>
                 <tr>
                     <td>服务重启</td>

@@ -46,6 +46,49 @@
   </div>
 </div>
 
+<div id="add_information_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
+     closed="true" buttons="#add_information_dlg_buttons">
+  <div class="ftitle">
+    编辑标签
+  </div>
+  <form id="add_information_form" method="post">
+    <div class="fitem">
+      <label>
+        专题名称
+      </label>
+      <input name="name" class="easyui-validatebox" required="true" type="text" />
+    </div>
+    <div class="fitem">
+      <label>
+        描述
+      </label>
+      <input name="name" class="easyui-validatebox" required="true" type="text" />
+    </div>
+    <div class="fitem">
+      <label>
+        状态
+      </label>
+      <input name="name" class="easyui-validatebox" required="true" type="text" />
+    </div>
+    <div class="fitem">
+      <label>
+        专题海报
+      </label>
+      <input name="name" class="easyui-validatebox" required="true" type="text" />
+    </div>
+    <div class="fitem">
+      <label>
+        检索
+      </label>
+      <input name="name" class="easyui-validatebox" required="true" type="text" />
+    </div>
+  </form>
+</div>
 
+<div id="add_information_dlg_buttons">
+  <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_information_dlg').dialog('close')" iconcls="icon-save">保存</a>
+  <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_information_dlg').dialog('close')"
+     iconcls="icon-cancel">取消</a>
+</div>
 </body>
 </html>

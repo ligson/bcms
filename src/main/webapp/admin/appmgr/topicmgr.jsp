@@ -45,7 +45,7 @@
        iconCls="icon-add"
        title="添加">添加</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="loadLocal()" plain="true" iconCls="icon-ok"
-       title="审核">审核</a>
+       title="修改">修改</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="loadLocal()" plain="true" iconCls="icon-remove"
        title="删除">删除</a>|<label>名称:<input type="text" class="easyui-textbox" name="name"/></label>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="loadLocal()" plain="true" iconCls="icon-search"
@@ -65,7 +65,7 @@
 <div id="add_topic_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_topic_dlg_buttons">
     <div class="ftitle">
-        添加标签
+        添加专题
     </div>
     <form id="add_tag_form" method="post">
         <div class="fitem">
@@ -97,7 +97,6 @@
                 检索
             </label>
             <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
-        </div>
         </div>
     </form>
 </div>

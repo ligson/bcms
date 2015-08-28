@@ -36,10 +36,10 @@
                 <li iconCls="icon-disk_upload"><span><a href="./useruploadcount.jsp">上传量统计</a></span></li>
             </ul>
         </div>
-        <div title="评论查询" style="overflow:auto;padding:10px;" iconCls="icon-user_comment">
+       <%-- <div title="评论查询" style="overflow:auto;padding:10px;" iconCls="icon-user_comment">
             <ul class="easyui-tree">
                 <li iconCls="icon-comments"><span><a href="./resourceremarkcount.jsp">资源评论列表</a></span></li>
             </ul>
-        </div>
+        </div>--%>
     </div>
 </div>

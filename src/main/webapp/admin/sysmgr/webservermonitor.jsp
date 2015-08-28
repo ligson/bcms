@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>流媒体配置</title>
+    <title>Web服务器状态监测</title>
     <jsp:include page="../../layout/admin/adminheader.jsp"/>
     <script type="text/javascript" src="../../js/Highcharts-4.1.7/js/highcharts.js"></script>
     <script type="text/javascript">
@@ -20,6 +20,7 @@
          * To change this template use File | Settings | File Templates.
          */
         $(function () {
+
             Highcharts.setOptions({
                 global: {
                     useUTC: false
@@ -35,22 +36,18 @@
                     marginRight: 10
                 },
                 title: {
-                    text: 'cpu使用动态曲线图'
+                    text: '用户访问量统计'
                 },
                 xAxis: {
                     title: {
                         text: '时间'
                     },
-                    //linear" or "datetime"
-                    type: 'datetime',
-                    //坐标间隔
-                    tickPixelInterval: 150
+                    categories: ['15年8月18','15年8月19','15年8月20','15年8月21','15年8月22','15年8月23','15年8月24','15年8月25']
                 },
                 yAxis: {
                     title: {
-                        text: 'cpu使用(单位:%)'
+                        text: '访问用户(单位:人)'
                     },
-                    //指定y=3直线的样式
                     plotLines: [
                         {
                             value: 0,
@@ -79,33 +76,13 @@
                 //放入数据
                 series: [
                     {
-                        name: 'cpu使用',
-                        data: (function () {
-                            // 初始化数据
-                            var data = [],
-                                    time = (new Date()).getTime(),
-                                    i;
-                            for (i = -19; i <= 0; i++) {
-                                data.push({
-                                    x: time + i * 1000,
-                                    y: Math.random() * 100
-                                });
-                            }
-                            return data;
-                        })()
+                        name: '每个月文件数量',
+                        data: [1232,140,3452,1287,3587,7867,9357]
                     }
                 ]
             });
-            getCpuInfo();
-        });
 
-        function getCpuInfo() {
-            var x = (new Date()).getTime();
-            var y = parseInt(Math.random() * 100);
-            var series = chart.series[0];
-            series.addPoint([x, y], true, true);
-        }
-        setInterval(getCpuInfo, 1000);
+        });
     </script>
 </head>
 <body class="easyui-layout">
@@ -113,9 +90,10 @@
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
 <div data-options="region:'center',title:'流媒体配置'" iconCls="icon-control_equalizer_blue" style="padding:10px;">
-    <div id="container">
+            <div id="container">
+            </div>
 
-    </div>
+
 </div>
 </body>
 </html>

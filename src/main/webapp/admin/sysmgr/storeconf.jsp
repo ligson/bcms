@@ -10,19 +10,26 @@
 <head>
     <title>存储配置</title>
     <jsp:include page="../../layout/admin/adminheader.jsp"/>
-    <style type="text/css">
-        .combo-panel .panel-body .panel-body-noheader {
-            height: 150px;
-        }
-    </style>
+    <script type="text/javascript">
+        $(function () {
+            $('#p').progressbar('setValue', 50);
+        })
+
+    </script>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
 <div data-options="region:'center',title:'存储配置'" iconCls="icon-drive_disk">
-    <div id="container">
-        <form id="ff" method="post">
+
+    <div style="padding:5px 0;">
+        <div class="easyui-progressbar" data-options="value:50" style="width: 400px;"></div>
+总容量：100T,已用容量：50T，可用容量：50T，使用百分比：50%
+        </div>
+<div class="easyui-panel" title="存储配置" style="width:400px">
+    <div style="padding:10px 60px 20px 60px">
+        <form method="post">
             <table cellpadding="5">
                 <tr>
                     <td>存储协议:</td>
@@ -52,11 +59,13 @@
                 </tr>
             </table>
         </form>
-        <div style="text-align:left;">
-            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">保存</a>
-            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">重置</a>
+        <div style="text-align:center;padding:5px">
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">Submit</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">Clear</a>
         </div>
     </div>
 </div>
+    </div>
 </body>
 </html>
+

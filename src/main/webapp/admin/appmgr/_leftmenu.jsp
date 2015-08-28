@@ -22,7 +22,7 @@
         <div title="应用管理" style="overflow:auto;padding:5px;padding-top:0px;" iconCls="icon-application_cascade">
             <div style="margin-top:5px;">
                 <ul class="easyui-tree">
-                    <li iconCls="icon-book_open">
+                  <%--  <li iconCls="icon-book_open">
                         <span>
                             <a href="casemgr.jsp">案例库管理</a>
                         </span>
@@ -36,7 +36,7 @@
                         <span>
                             <a href="coursemgr.jsp">课程管理</a>
                         </span>
-                    </li>
+                    </li>--%>
                     <li iconCls="icon-zhuanti">
                         <span>
                             <a href="topicmgr.jsp">专题管理</a>
