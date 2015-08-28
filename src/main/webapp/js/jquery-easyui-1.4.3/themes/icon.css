@@ -245,9 +245,31 @@
 .icon-user_home {
     background: url("icons/ext/user_home.png") no-repeat center center;
 }
-.icon-user_suit{
+
+.icon-user_suit {
     background: url("icons/ext/user_suit.png") no-repeat center center;
 }
-.icon-table_key{
+
+.icon-databases {
+    background: url("icons/ext/databases.png") no-repeat center center;
+}
+
+.icon-table_key {
     background: url("icons/ext/table_key.png") no-repeat center center;
+}
+
+.icon-folder {
+    background: url("icons/ext/folder.png") no-repeat center center;
+}
+
+.icon-star {
+    background: url("icons/ext/star.png") no-repeat center center;
+}
+
+.icon-01 {
+    background: url("icons/ext/01.png") no-repeat center center;
+}
+
+.icon-film {
+    background: url("icons/ext/film.png") no-repeat center center;
 }
