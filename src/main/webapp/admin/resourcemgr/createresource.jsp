@@ -13,6 +13,9 @@
     <link type="text/css" rel="stylesheet" href="../../js/bootstrap-tagsinput/bootstrap-tagsinput.css">
     <script type="text/javascript" src="../../js/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
     <script type="text/javascript" src="../../js/admin/rmgr.js"></script>
+    <script type="text/javascript" src="../../js/spark-md5.js"></script>
+    <script type="text/javascript" src="../../js/common/fileutils.js"></script>
+    <script type="text/javascript" src="../../js/admin/resourcemgr/createresource.js"></script>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>

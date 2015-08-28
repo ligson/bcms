@@ -4,9 +4,119 @@
     <title>111</title>
     <script type="text/javascript" src="../js/jquery-easyui-1.4.3/jquery.min.js"></script>
     <script type="text/javascript" src="../js/spark-md5.js"></script>
+    <script type="text/javascript" src="../js/common/fileutils.js"></script>
     <script type="text/javascript">
+        function intToBytes(value) {
+            var buf2 = [];
+            buf2.push(value >> 56 & 0xFF);
+            buf2.push(value >> 48 & 0xFF);
+            buf2.push(value >> 40 & 0xFF);
+            buf2.push(value >> 32 & 0xFF);
+            buf2.push(value >> 24 & 0xFF);
+            buf2.push(value >> 16 & 0xFF);
+            buf2.push(value >> 8 & 0xFF);
+            buf2.push(value & 0xFF);
+            return buf2;
+
+        }
+        function bytesToBinString(bytes) {
+            var str = "";
+            for (var i = 0; i < bytes.length; i++) {
+                str += String.fromCharCode(bytes[i]);
+            }
+            return str;
+        }
+
+        function calcBobMd5(blobDataArray) {
+            var spark = new SparkMD5();
+            for (var i = 0; i < blobDataArray.length; i++) {
+                spark.appendBinary(blobDataArray[i]);
+            }
+            var md5 = spark.end();
+            console.log(md5);
+            return md5;
+        }
+
+        function readFileBlob(file, callback) {
+            var data = [];
+            var arrayBuffer = new ArrayBuffer(intToBytes(file.size));
+            //var int32Buffer = new Int64Array([file.size]);
+            var headBlob = new Blob(intToBytes(file.size));
+
+            data.push(headBlob);
+            //data.push(sizeTag);
+            if (file.size < 1024) {
+                //小于1024字节全部做hash
+                var fullData = file.slice(0, file.length);
+                data.push(fullData);
+            } else {
+
+                //大于1024取文件首、中、尾的16个字节做hash
+                var headData = file.slice(0, 16);
+                var midPos = parseInt(file.size / 2);
+                var midData = file.slice(midPos, midPos + 16);
+                var tailData = file.slice(file.size - 16, file.size);
+                data.push(headData);
+                data.push(midData);
+                data.push(tailData);
+            }
+
+            var result = [];
+            //var sizeTag = bytesToBinString(intToBytes(file.size));
+            //result.push(sizeTag);
+            var isFinish = false;
+            var successCount = 0;
+            for (var i = 0; i < data.length; i++) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var str = e.target.result;
+                    result.push(str);
+                    console.log(str.length);
+                    successCount++;
+                    console.log(successCount + "=====" + data.length);
+                    if (successCount == data.length) {
+                        isFinish = true;
+                        console.log(result[0].length);
+                        for (var j = 0; j < result.length; j++) {
+                            var spark = new SparkMD5();
+                            spark.appendBinary(result[j]);
+                            console.log(j + "====" + spark.end());
+                        }
+                        callback(result);
+                    }
+                };
+                reader.readAsBinaryString(data[i]);
+            }
+        }
+
+        function calcFullMD5(file) {
+            var fileReader = new FileReader();
+            fileReader.readAsBinaryString(file);
+            fileReader.onload = function (e) {
+                var spark = new SparkMD5();
+                spark.appendBinary(e.target.result);
+                var md5 = spark.end();
+
+                console.log("==========" + md5);
+            };
+        }
         function upload() {
+            var fileIpt = document.getElementById("file");
+            var file = fileIpt.files[0];
+            calFile48Hash(file,function(hash){
+                console.log(hash);
+            });
+            //readFileBlob(file, calcBobMd5);
+            //calcFullMD5(file);
+            //var md5 = calcBobMd5(blobArray);
+            //console.log(md5);
+            //var buffer = new ArrayBuffer(12);
+            //var dv = new DataView(buffer,0);
+        }
+
+        function monitor() {
             var blobSlice = File.prototype.mozSlice || File.prototype.webkitSlice || File.prototype.slice;
+
             var file = document.getElementById("file");
             var t = file.files[0];
             alert(t.type);
