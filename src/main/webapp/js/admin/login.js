@@ -1,4 +1,10 @@
+
 $(function () {
+    if (typeof(Worker) == "undefined") {
+        $(".login-container").hide();
+        $(".ui-mask-box").show();
+    }
+
     $("#btn-login").click(function () {
         var username = $("#username").val();
         var password = $("#password").val();

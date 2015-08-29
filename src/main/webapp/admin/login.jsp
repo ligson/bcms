@@ -35,5 +35,21 @@
         <input id="btn-login" class="btn btn-success" type="submit" value="登陆" style="float:right;margin-right:10px;">
     </div>
 </div>
+<div class="ui-mask-box">
+
+
+    <div class="ui-mask-container">
+        <h1>您的浏览器有点古董了,换个新的吧!</h1>
+
+        <div class="ui-mask-list">
+            <a href="http://chrome.360.cn/" title="360极速浏览器"><img src="../images/browser/360chrome.png"/></a>
+            <a href="http://rj.baidu.com/soft/detail/14744.html?ald" title="谷歌chrome极速浏览器"><img
+                    src="../images/browser/compatible_chrome.gif"/></a>
+            <a href="http://www.firefox.com.cn/download/" title="火狐浏览器"><img src="../images/browser/compatible_firefox.gif"/></a>
+            <a href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-9-worldwide-languages"  title="IE9浏览器"><img
+                    src="../images/browser/compatible_ie.gif"/></a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
