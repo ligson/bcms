@@ -266,7 +266,7 @@
     </table>
     <div id="tbr">
         <a class="easyui-linkbutton" onclick="submitMetaForm()">提交</a>
-        <a class="easyui-linkbutton">跳过</a>
+        <a class="easyui-linkbutton" href="rmgr.jsp">跳过</a>
     </div>
 </div>
 

@@ -21,7 +21,7 @@
 <div data-options="region:'center',title:'创建资源'" iconCls="icon-page_world">
     <div id="container" style="padding:10px;">
         <form>
-            <table style="line-height:30px;">
+            <table class="table">
                 <tr>
                     <td><label>资源名:</label></td>
                     <td><input type="text" class="easyui-textbox" required="true"/></td>
@@ -60,7 +60,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center;padding:10px;">
-                        <a class="easyui-linkbutton">提交</a>
+                        <a class="easyui-linkbutton" href="editmeta.jsp">提交</a>
                     </td>
                 </tr>
             </table>
