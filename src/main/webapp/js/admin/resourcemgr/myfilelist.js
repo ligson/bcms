@@ -8,32 +8,29 @@
  "creator_name": "xxxxx",
  "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
  */
+function reloadFileList(folderId) {
+    $("#fileGrid").datagrid("reload");
+}
+function playFile(fileId) {
+    alert("点播文件");
+}
 $(function () {
     $("#fileGrid").datagrid({
         autoRowHeight: true,
+        rownumbers: false,
         fitColumns: true,
         columns: [
             [
-                {field: 'id', title: 'id', width: 50},
-                {field: 'name', title: '名称', width: 100, sortable: true},
-                {field: 'size', title: '大小', width: 100, sortable: true},
                 {
-                    field: 'media_type', title: '媒体类型', width: 50, formatter: function (value, row, idx) {
-                    return "<a plain='true' class='easyui-linkbutton' iconCls='icon-film'></a>";
+                    field: 'name', title: '名称', width: 100, formatter: function (value, row, idx) {
+                    if (row.is_dir) {
+                        return "<a onclick='reloadFileList(\"" + row.id + "\")' class='easyui-linkbutton' plain='true' iconCls='icon-folder'>" + row.name + "</a>";
+                    } else {
+                        return "<a  onclick='playFile(\"" + row.id + "\")'  class='easyui-linkbutton' plain='true' iconCls='icon-film'>" + row.name + "</a>";
+                    }
                 }
                 },
-                {field: 'creator_name', title: '创建者', width: 100, sortable: true},
-                {field: 'create_date', title: '上传日期', width: 100, sortable: true},
-                {
-                    field: 'playOperator', title: '点播', width: 50, formatter: function (value, row, idx) {
-                    return "<a plain='true' class='easyui-linkbutton' iconCls='icon-control_play_blue'></a>";
-                }
-                },
-                {
-                    field: 'shieldOperator', title: '屏蔽', width: 50, formatter: function (value, row, idx) {
-                    return "<a plain='true' class='easyui-linkbutton' iconCls='icon-01'></a>";
-                }
-                }
+                {field: 'create_date', title: '上传日期', width: 100, sortable: true}
             ]
         ],
         onLoadSuccess: function (data) {

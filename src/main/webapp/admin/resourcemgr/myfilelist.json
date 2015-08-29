@@ -1,0 +1,131 @@
+{
+  "total": 899,
+  "rows": [
+    {
+      "id": 1,
+      "name": "文件夹1",
+      "is_dir": true,
+      "create_date": "201212121212"
+    },
+    {
+      "id": 2,
+      "name": "文件夹1",
+      "is_dir": true,
+      "create_date": "201212121212"
+    },
+    {
+      "id": 3,
+      "name": "文件夹1",
+      "is_dir": true,
+      "create_date": "201212121212"
+    },
+    {
+      "id": 4,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 5,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 6,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 7,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 8,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 9,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 10,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 11,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 12,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 13,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 14,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    },
+    {
+      "id": 15,
+      "name": "文件1",
+      "media_type": 1,
+      "is_dir": false,
+      "size": 100001,
+      "create_date": "201212121212",
+      "play_url": "/bcms/admin/resourcemgr/filelist.jsp"
+    }
+  ]
+}
