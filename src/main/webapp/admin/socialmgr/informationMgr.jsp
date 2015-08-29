@@ -49,18 +49,18 @@
 <div id="add_information_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_information_dlg_buttons">
   <div class="ftitle">
-    编辑标签
+    添加资讯
   </div>
   <form id="add_information_form" method="post">
     <div class="fitem">
       <label>
-        专题名称
+        标题
       </label>
       <input name="name" class="easyui-validatebox" required="true" type="text" />
     </div>
     <div class="fitem">
       <label>
-        描述
+        内容
       </label>
       <input name="name" class="easyui-validatebox" required="true" type="text" />
     </div>

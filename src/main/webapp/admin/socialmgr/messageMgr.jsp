@@ -132,31 +132,27 @@
   </div>
 </div>
 
-<div id="add_message_dlg" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+<div id="add_message_dlg" class="easyui-dialog" style="width:400px;height:auto;padding:10px 20px"
      closed="true" buttons="#add_message_dlg-buttons">
-  <div class="ftitle">User Information</div>
+  <div class="ftitle">添加站内消息</div>
   <form id="fm" method="post" novalidate>
     <div class="fitem">
       <label>名称</label>
       <input name="firstname" class="easyui-textbox" required="true">
     </div>
     <div class="fitem">
+      <label>接收对象</label>
+      <input name="phone" class="easyui-textbox" required="true">
+    </div>
+    <div class="fitem">
       <label>内容</label>
       <input name="lastname" class="easyui-textbox" required="true">
-    </div>
-    <div class="fitem">
-      <label>接收对象</label>
-      <input name="phone" class="easyui-textbox">
-    </div>
-    <div class="fitem">
-      <label>Email:</label>
-      <input name="email" class="easyui-textbox" validType="email">
     </div>
   </form>
 </div>
 <div id="add_message_dlg-buttons">
-  <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="javascript:$('#add_message_dlg').dialog('close')" style="width:90px">Save</a>
-  <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#add_message_dlg').dialog('close')" style="width:90px">Cancel</a>
+  <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="javascript:$('#add_message_dlg').dialog('close')" style="width:90px">保存</a>
+  <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#add_message_dlg').dialog('close')" style="width:90px">取消</a>
 </div>
 </body>
 </html>

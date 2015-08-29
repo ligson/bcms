@@ -21,11 +21,11 @@
            rownumbers="true" fitColumns="true" singleSelect="true">
       <thead>
       <tr>
-        <th field="firstname" width="10%">提交者</th>
-        <th field="lastname" width="40%">内容</th>
-        <th field="phone" width="10%">关联资源</th>
-        <th field="email" width="10%">提交时间</th>
-        <th field="playDate" width="10%">关联资源播放时间</th>
+        <th field="create_user" width="10%">提交者</th>
+        <th field="content" width="40%">内容</th>
+        <th field="resouce_name" width="10%">关联资源</th>
+        <th field="create_date" width="10%">提交时间</th>
+        <th field="play_date" width="10%">关联资源播放时间</th>
         <th field="statu" width="5%">状态</th>
         <th field="_opear" width="10%">操作</th>
       </tr>
