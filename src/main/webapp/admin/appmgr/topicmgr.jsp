@@ -76,12 +76,6 @@
         </div>
         <div class="fitem">
             <label>
-                描述
-            </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
-        </div>
-        <div class="fitem">
-            <label>
                 状态
             </label>
             <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
@@ -96,7 +90,13 @@
             <label>
                 检索
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+            <input name="name" class="easyui-validatebox" required="true" type="text" />
+        </div>
+        <div class="fitem">
+            <label>
+                描述
+            </label>
+            <input class="easyui-textbox" data-options="multiline:true" style="height:100px">
         </div>
     </form>
 </div>
@@ -123,7 +123,7 @@
             <label>
                 描述
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+            <input class="easyui-textbox" data-options="multiline:true" style="width:300px;height:100px">
         </div>
         <div class="fitem">
             <label>
