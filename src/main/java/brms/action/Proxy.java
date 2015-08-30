@@ -11,11 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.*;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.BasicHttpContext;
@@ -33,7 +31,7 @@ public class Proxy extends HttpServlet {
     private static String BASE_URL = "http://42.62.52.40:8000/";
     private static HttpClient httpClient = HttpClientBuilder.create().build();
     private static HttpContext context = new BasicHttpContext();
-    private static CookieStore cookieStore = new BasicCookieStore();
+
 
     /**
      * @see HttpServlet#HttpServlet()
