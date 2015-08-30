@@ -2,6 +2,7 @@ $(function () {
     $('#user_table').datagrid({
         rownumbers: true,
         singleSelect:false,
+        toolbar:"#tb",
         pagination:true,
         columns:[[
             {field:'id',width:'1%',checkbox:true,title:'ID'},
@@ -28,23 +29,9 @@ $(function () {
                      return '<a class="tablelink" href="#" onclick="editUser('+ index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delUser(' + index + ')">删除</a>';
                  }
             }
-        ]],
-        toolbar:[{
-            text: '添加',
-            iconCls: 'icon-add',
-            handler: function () {
-                newUser();
-            }
-        },
-            {
-                text: '删除',
-                iconCls: 'icon-cancel',
-                handler: function () {
-                    delUsers();
-                }
-            }
-        ]
+        ]]
     });
+
     initUserGrid();
 });
 

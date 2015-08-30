@@ -45,7 +45,11 @@
         <table id="user_table"></table>
     </div>
 </div>
-
+<div id="tb" style="padding:3px">
+    <input class="easyui-searchbox" data-options="prompt:'请输入用户名或者邮箱'" style="width:200px;">
+    <a href="#" onclick=" newUser();" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
+    <a href="#" onclick="delUsers();" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">删除</a>
+</div>
 
 <div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_user_dlg_buttons">
