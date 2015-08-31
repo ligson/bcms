@@ -45,16 +45,17 @@
                     <td><input class="easyui-combotree" data-options="url:'./lefttree.json',method:'get',required:true"
                                style="width:200px;"/></td>
                 </tr>
-                <tr>
+                <tr id="parentResource">
                     <td><label>父资源:</label></td>
                     <td><input class="easyui-combotree" data-options="url:'./lefttree.json',method:'get',required:true"
                                style="width:200px;"/></td>
                 </tr>
 
-                <tr>
+
+                <%--<tr>
                     <td><label>资源标签:</label></td>
                     <td><input data-role="tagsinput" style="width:200px;" placeholder="回车输入" title="输入后点击回车键添加"/></td>
-                </tr>
+                </tr>--%>
                 <tr>
                     <td><label>转码策略:</label></td>
                     <td>

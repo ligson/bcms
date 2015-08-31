@@ -20,17 +20,17 @@
 <div data-options="region:'west',split:true" title="系统菜单" style="width:200px;" iconCls="icon-application_side_boxes">
     <div class="easyui-accordion" style="width:100%;" id="treeMenu">
         <div title="资源管理" style="overflow:auto;padding:5px;padding-top:0px;" iconCls="icon-cd_magnify">
-            <div style="height:30px;line-height:30px;border-bottom:1px solid #95B8E7;">
+            <div id="categoryTreeTbr">
                 <a href="#" class="easyui-linkbutton" iconCls="icon-add" title="增加资源库" plain="true"
-                   onclick="addCategory()"></a>
-                <a href="#" class="easyui-linkbutton" iconCls="icon-remove" title="删除资源库" plain="true"></a>
+                   onclick="addCategory()">增加</a>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-remove" title="删除资源库" plain="true">删除</a>
                 <a href="./createresource.jsp" class="easyui-linkbutton" iconCls="icon-folder_up" title="上传"
-                   plain="true"></a>
+                   plain="true">上传</a>
             </div>
-            <div style="margin-top:5px;">
-                <ul class="easyui-tree" url="./lefttree.json" id="categoryTree">
-                </ul>
-            </div>
+
+            <ul class="easyui-tree" url="./lefttree.json" id="categoryTree" toolbar="#categoryTreeTbr">
+            </ul>
+
         </div>
         <div iconCls="icon-script" title="资源日志">
             <ul class="easyui-tree">
