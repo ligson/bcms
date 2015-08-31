@@ -17,7 +17,8 @@
         font-weight: bold;
     }
 </style>
-<div data-options="region:'west',split:true" title="系统菜单" style="width:150px;height: 100%;" collapsible="false" split="true" iconCls="icon-application_side_boxes">
+<div data-options="region:'west',split:true" title="系统菜单" style="width:150px;height: 100%;" collapsible="false"
+     split="true" iconCls="icon-application_side_boxes">
     <div class="easyui-accordion" id="treeMenu">
         <div title="资源统计" style="overflow:auto;padding:10px;" iconCls="icon-cd_magnify">
             <ul class="easyui-tree">
@@ -26,6 +27,8 @@
                 <li iconCls="icon-chart_curve"><span><a href="./resourcecount.jsp">资源量统计</a></span></li>
                 <li iconCls="icon-chart_pie"><span><a href="./mediatypecount.jsp">类型统计</a></span></li>
                 <li iconCls="icon-page_world"><span><a href="./libcout.jsp">资源库统计</a></span></li>
+                <li iconCls="icon-page_world"><span><a href="./libcout.jsp">收藏量统计</a></span></li>
+                <li iconCls="icon-page_world"><span><a href="./libcout.jsp">评论量统计</a></span></li>
             </ul>
         </div>
         <div title="用户统计" style="overflow:auto;padding:10px;" iconCls="icon-user">
@@ -36,10 +39,10 @@
                 <li iconCls="icon-disk_upload"><span><a href="./useruploadcount.jsp">上传量统计</a></span></li>
             </ul>
         </div>
-       <%-- <div title="评论查询" style="overflow:auto;padding:10px;" iconCls="icon-user_comment">
-            <ul class="easyui-tree">
-                <li iconCls="icon-comments"><span><a href="./resourceremarkcount.jsp">资源评论列表</a></span></li>
-            </ul>
-        </div>--%>
+        <%-- <div title="评论查询" style="overflow:auto;padding:10px;" iconCls="icon-user_comment">
+             <ul class="easyui-tree">
+                 <li iconCls="icon-comments"><span><a href="./resourceremarkcount.jsp">资源评论列表</a></span></li>
+             </ul>
+         </div>--%>
     </div>
 </div>
