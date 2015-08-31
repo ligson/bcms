@@ -75,7 +75,7 @@
                 </tr>
                 <tr>
                     <td><label>文件:</label></td>
-                    <td><input type="file" style="width:300px" multiple="multiple" id="fileIpt"></td>
+                    <td><input type="text" class="easyui-filebox" buttonText="选择文件" id="fileIpt"></td>
                 </tr>
                 <tr>
                     <td></td>
@@ -83,6 +83,14 @@
                         <ul class="list-group" id="fileList">
                         </ul>
                     </td>
+                </tr>
+                <tr>
+                    <td><label>横版海报:</label></td>
+                    <td><input type="text" class="easyui-filebox" buttonText="选择文件">(建议尺寸:120x90)</td>
+                </tr>
+                <tr>
+                    <td><label>竖版海报:</label></td>
+                    <td><input type="text" class="easyui-filebox" buttonText="选择文件">(建议尺寸:121x161)</td>
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center;padding:10px;">
