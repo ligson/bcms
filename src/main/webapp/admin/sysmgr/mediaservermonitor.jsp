@@ -193,7 +193,7 @@
             </div>
         </div>
         <div title="用户并发" style="padding:10px;">
-            <div id="container1">
+            <div id="container1" style="width: 100%;">
             </div>
         </div>
         <div title="连接用户详情" style="padding:10px;">

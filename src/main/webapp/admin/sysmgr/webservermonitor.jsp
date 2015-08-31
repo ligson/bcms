@@ -39,10 +39,7 @@
                     text: '用户访问量统计'
                 },
                 xAxis: {
-                    title: {
-                        text: '时间'
-                    },
-                    categories: ['15年8月18','15年8月19','15年8月20','15年8月21','15年8月22','15年8月23','15年8月24','15年8月25']
+                    categories: ['8月18','8月19','8月20','8月21','8月22','8月23','8月24','8月25','8月26','8月27','8月28','8月29']
                 },
                 yAxis: {
                     title: {
@@ -61,8 +58,8 @@
                 tooltip: {
                     formatter: function () {
                         return '<b>' + this.series.name + '</b><br/>' +
-                                Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' +
-                                Highcharts.numberFormat(this.y, 2);
+                                this.x + '<br/>' +
+                                Highcharts.numberFormat(this.y, 0)+"人";
                     }
                 },
                 //曲线的示例说明，像地图上得图标说明一样
@@ -76,8 +73,8 @@
                 //放入数据
                 series: [
                     {
-                        name: '每个月文件数量',
-                        data: [1232,140,3452,1287,3587,7867,9357]
+                        name: '用户',
+                        data: [1232,140,3452,1287,3587,7867,9357,5142,3214,1452,1475]
                     }
                 ]
             });

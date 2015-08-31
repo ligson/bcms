@@ -62,7 +62,7 @@
     </div>
 </div>
 
-<div id="add_topic_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
+<div id="add_topic_dlg" class="easyui-dialog" style="width: 700px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_topic_dlg_buttons">
     <div class="ftitle">
         添加专题
@@ -84,19 +84,45 @@
             <label>
                 专题海报
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+            <input name="name" class="easyui-validatebox" required="true" type="file" value="" />
         </div>
         <div class="fitem">
             <label>
-                检索
+                资源检索
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" />
+            <div class="easyui-layout" style="width:630px;height:300px;">
+                <div data-options="region:'west',title:'资源库',split:true" style="width:210px;">
+                    <div class="easyui-datalist">
+                        <li value="AL">案例库</li>
+                        <li value="AK">视频库</li>
+                        <li value="AZ">课程中心</li>
+                        <li value="AR">精品课程库</li>
+                        <li value="CA">虚拟仿真库</li>
+                    </div>
+                </div>
+                <div data-options="region:'center',title:'待选资源'" style="padding:5px;">
+                    <ul class="easyui-datalist">
+                        <li value="AL"><input type="checkbox">好声音.mp4</li>
+                        <li value="AK"><input type="checkbox">music.mp3</li>
+                        <li value="AZ"><input type="checkbox">image.png</li>
+                        <li value="AR"><input type="checkbox">document.doc</li>
+                    </ul>
+                </div>
+                <div data-options="region:'east',title:'已选资源',split:true" style="width:210px;">
+                    <ul class="easyui-datalist">
+                        <li value="AL">好声音.mp4</li>
+                        <li value="AK">music.mp3</li>
+                        <li value="AZ">image.png</li>
+                        <li value="AR">document.doc</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="fitem">
             <label>
                 描述
             </label>
-            <input class="easyui-textbox" data-options="multiline:true" style="height:100px">
+            <input class="easyui-textbox" data-options="multiline:true" style="width:630px;height: 100px;">
         </div>
     </form>
 </div>
@@ -139,10 +165,33 @@
         </div>
         <div class="fitem">
             <label>
-                检索
+                资源检索
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+            <div id="cc"  class="easyui-layout" style="width:630px;height:300px;">
+                <div data-options="region:'west',title:'资源库',split:true" style="width:210px;">
+                    <div class="easyui-datalist">
+                        <li value="AL">Alabama</li>
+                        <li value="AK">Alaska</li>
+                        <li value="AZ">Arizona</li>
+                        <li value="AR">Arkansas</li>
+                        <li value="CA">California</li>
+                        <li value="CO">Colorado</li>
+                        <li value="CT">Connecticut</li>
+                        <li value="DE">Delaware</li>
+                        <li value="FL">Florida</li>
+                    </div>
+                </div>
+                <div data-options="region:'center',title:'待选用户'" style="padding:5px;">
+                    <ul class="easyui-datalist">
+                    </ul>
+                </div>
+                <div data-options="region:'east',title:'已选用户',split:true" style="width:210px;">
+                    <ul id="select_user_list" class="easyui-datalist">
+
+                    </ul>
+                </div>
         </div>
+            </div>
     </form>
 </div>
 

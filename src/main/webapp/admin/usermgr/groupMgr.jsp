@@ -142,12 +142,12 @@
         <div data-options="region:'west',title:'部门',split:true" style="width:220px;">
             <div id="department_tree"></div>
         </div>
-        <div data-options="region:'center',title:'待选用户'" style="padding:5px;background:#eee;">
+        <div data-options="region:'center',title:'待选用户'" style="padding:5px;">
            <%-- <div id="user_list" class="easyui-datalist"></div>--%>
                <ul id="user_list" class="easyui-datalist">
                </ul>
         </div>
-        <div data-options="region:'east',title:'已选用户',split:true" style="width:220px;padding:5px;background:#eee;">
+        <div data-options="region:'east',title:'已选用户',split:true" style="width:220px;padding:5px;">
             <ul id="select_user_list" class="easyui-datalist">
             </ul>
         </div>

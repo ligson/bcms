@@ -17,26 +17,9 @@
         font-weight: bold;
     }
 </style>
-<div data-options="region:'west',split:true" title="系统菜单" style="width:150px;" iconCls="icon-application_side_boxes">
-    <div class="easyui-accordion" style="width:100%;" id="treeMenu">
-        <div title="应用管理" style="overflow:auto;padding:5px;padding-top:0px;" iconCls="icon-application_cascade">
-            <div style="margin-top:5px;">
+<div class="easyui-accordion" data-options="region:'west',split:true" title="应用管理" style="width:240px;">
+    <div title="应用管理" iconCls="icon-cd_magnify">
                 <ul class="easyui-tree">
-                  <%--  <li iconCls="icon-book_open">
-                        <span>
-                            <a href="casemgr.jsp">案例库管理</a>
-                        </span>
-                    </li>
-                    <li iconCls="icon-drive_cd">
-                        <span>
-                            <a href="videomgr.jsp">视频库管理</a>
-                        </span>
-                    </li>
-                    <li iconCls="icon-double_people">
-                        <span>
-                            <a href="coursemgr.jsp">课程管理</a>
-                        </span>
-                    </li>--%>
                     <li iconCls="icon-zhuanti">
                         <span>
                             <a href="topicmgr.jsp">专题管理</a>
@@ -49,7 +32,5 @@
                     </li>
                 </ul>
             </div>
-        </div>
 
-    </div>
 </div>

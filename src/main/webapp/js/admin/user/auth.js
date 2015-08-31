@@ -7,9 +7,15 @@ $(function () {
         pagination:true,
         columns:[[
             {field:'id',width:'8%',checkbox:true,title:'编号'},
-            {field:'name',width:'30%',align:'center',title:'权限名称'},
-            {field:'description',width:'30%',align:'center',title:'备注'}
-            /*{field:'_operate',width:'32%',align:'center',title:'操作',formatter:formatOper}*/
+            {field:'name',width:'10%',align:'center',title:'权限名称'},
+            {field:'department',width:'20%',align:'center',title:'目标部门'},
+            {field:'resource_lib',width:'20%',align:'center',title:'目标资源库'},
+            {field:'description',width:'30%',align:'center',title:'备注'},
+            {field:'_operate',width:'12%',align:'center',title:'操作',
+                formatter: function (value, row,index) {
+                    return '<a class="tablelink" href="#" onclick="editAuth('+ index + ')">修改</a>';
+                }
+            }
         ]]
       /*  toolbar:[{
             text:'添加',iconCls:'icon-add',handler:function(){
@@ -39,13 +45,6 @@ function initAuthGrid() {
         }
     });
 }
-/*
-
-function addAuth(){
-    $('#add_auth_dlg').dialog('open');
-}
-
-
 
 function editAuth(index) {
     $('#auth_table').datagrid('selectRow', index);
@@ -54,12 +53,49 @@ function editAuth(index) {
         $("#modify_auth_dlg input[name=id]").val(row.id);
         $("#modify_auth_dlg input[name=name]").val(row.name);
         $("#modify_auth_dlg input[name=description]").val(row.description);
+        initAddDepartmentTree();
+        $("#modify_auth_dlg .resourcelib_tree").combotree('loadData', [{"id": 1, "text": "案例库",children:[{"id":11,"text":"分类1"}]}, {"id": 2, "text": "视频库",children:[{"id":21,"text":"电影"},{"id":22,"text":"电视剧"}]},{"id":3,"text":"课程中心库"},{"id":4,"text":"精品课程库"},{"id":5,"text":"虚拟仿真库"}]);
         $('#modify_auth_dlg').dialog('open');
     } else {
         $.messager.alert("提示", "请选择要编辑的行！", "info");
         return;
     }
 }
+
+function initAddDepartmentTree() {
+    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+        var obj = $.parseJSON(result);
+        if (obj.success) {
+            var data = $.parseJSON(obj.data);
+            $("#modify_auth_dlg .department_tree").combotree('loadData', formatTreeData(data));
+        } else {
+            alert(obj.msg);
+        }
+    });
+}
+
+function formatTreeData(data){
+    var fin = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = data[i];
+        obj.text = obj.name;
+        if (obj.children && obj.children.length > 0) {
+            obj.children = formatTreeData(obj.children);
+        }
+        fin.push(obj);
+    }
+    return fin;
+}
+
+/*
+
+function addAuth(){
+    $('#add_auth_dlg').dialog('open');
+}
+
+
+
+
 
 function modifyAuth(){
     var id= $("#modify_auth_dlg input[name=id]").val();

@@ -76,18 +76,6 @@
             <input class="easyui-combobox" name="auths" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
                     />
         </div>
-        <div class="fitem">
-                <label>
-                    目标部门</label>
-                <input class="easyui-combotree department_tree" name="departments" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
-                        />
-            </div>
-            <div class="fitem">
-                <label>
-                    目标资源库</label>
-                <input class="easyui-combotree resourcelib_tree" name="resources" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
-                        />
-            </div>
     </form>
 </div>
 
@@ -115,18 +103,7 @@
             <input class="easyui-combobox" name="auths" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
                     />
         </div>
-        <div class="fitem">
-            <label>
-                目标部门</label>
-            <input class="easyui-combotree department_tree" name="departments" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
-                    />
-        </div>
-        <div class="fitem">
-            <label>
-                目标资源库</label>
-            <input class="easyui-combotree resourcelib_tree" name="resources" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
-                    />
-        </div>
+
         <input type="hidden" name="id"  />
     </form>
 </div>

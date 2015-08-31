@@ -181,7 +181,7 @@
       </div>
     </div>
     <div title="转码数量监控" style="padding:10px;">
-      <div id="conv_count">
+      <div id="conv_count" style="width: 100%;">
 
       </div>
     </div>

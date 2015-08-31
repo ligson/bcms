@@ -2,6 +2,7 @@
  * Created by Ruby on 2015/8/26.
  */
 $(function () {
+    initDepartmentTree();
     $('#information_table').datagrid({
         rownumbers: true,
         singleSelect:false,
@@ -23,7 +24,7 @@ $(function () {
             text: '添加',
             iconCls: 'icon-add',
             handler: function () {
-                $("#add_information_dlg").dialog("open");
+                $("#add_information_dlg").dialog("open").dialog('setTitle', '添加资讯');
             }
         },
             {
@@ -36,3 +37,27 @@ $(function () {
         ]
     });
 });
+
+function initDepartmentTree(){
+    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+        var obj = jQuery.parseJSON(result);
+        if (obj.success) {
+            var data = jQuery.parseJSON(obj.data);
+            $(".department_tree").combotree({multiple:true,data: formatTreeData(data)});
+        } else {
+            alert(obj.msg);
+        }
+    });
+}
+function formatTreeData(data){
+    var fin = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = data[i];
+        obj.text = obj.name;
+        if (obj.children && obj.children.length > 0) {
+            obj.children = formatTreeData(obj.children);
+        }
+        fin.push(obj);
+    }
+    return fin;
+}
