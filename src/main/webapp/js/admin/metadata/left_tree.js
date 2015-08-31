@@ -7,7 +7,7 @@ $(function () {
         lines: true,
         onClick: function (node) {
             if (window.location.href.indexOf("metadataMgr.jsp") == -1) {
-                $.cookie("meteMenuState","open");
+                $.cookie("meteMenuState", "open");
                 window.location.href = "/bcms/admin/metadata/metadataMgr.jsp";
             }
             var mg = $("#metaGrid");
@@ -20,4 +20,6 @@ $(function () {
 function addMetaLib() {
     $("#addMetaLibDlg").dialog("open");
 }
-
+function addMetaCategory() {
+    $("#addMetaCategoryDlg").dialog("open");
+}

@@ -1,0 +1,147 @@
+[
+  {
+    "id": 1,
+    "text": "国家标准",
+    "href": "./jsondata/require/metalist.json",
+    "children": [
+      {
+        "id": 11,
+        "text": "CELTS标准",
+        "href": "./jsondata/require/metalist.json",
+        "children": [
+          {
+            "id": 121,
+            "text": "元数据",
+            "href": "./jsondata/require/metalist.json",
+            "children": [
+              {
+                "id": 13,
+                "text": "必须数据元素",
+                "href": "./jsondata/require/celtslist.json",
+                "children": [
+                  {
+                    "id": 131,
+                    "text": "通用",
+                    "href": "./jsondata/require/general.json"
+                  },
+                  {
+                    "id": 132,
+                    "text": "生存期",
+                    "href": "./jsondata/require/lifecycle.json"
+                  },
+                  {
+                    "id": 133,
+                    "text": "元元数据",
+                    "href": "./jsondata/require/metametadata.json"
+                  },
+                  {
+                    "id": 134,
+                    "text": "技术",
+                    "href": "./jsondata/require/technicaldata.json"
+                  },
+                  {
+                    "id": 135,
+                    "text": "教育",
+                    "href": "./jsondata/require/educationalmeta.json"
+                  },
+                  {
+                    "id": 132,
+                    "text": "分类",
+                    "href": "./jsondata/require/classificationdata.json"
+                  }
+                ]
+              },
+              {
+                "id": 14,
+                "text": "可选数据元素",
+                "href": "./jsondata/optional/optionalmeta.json",
+                "children": [
+                  {
+                    "id": 141,
+                    "text": "生存期",
+                    "href": "./jsondata/optional/lifecycle.json"
+                  },
+                  {
+                    "id": 142,
+                    "text": "技术",
+                    "href": "./jsondata/optional/technicaldata.json"
+                  },
+                  {
+                    "id": 143,
+                    "text": "教育",
+                    "href": "./jsondata/optional/educationalmeta.json"
+                  },
+                  {
+                    "id": 144,
+                    "text": "权利",
+                    "href": "./jsondata/optional/rights.json"
+                  },
+                  {
+                    "id": 145,
+                    "text": "评注",
+                    "href": "./jsondata/optional/annotation.json"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 15,
+            "text": "分类数据元素",
+            "href": "./jsondata/optional/annotation.json",
+            "children": [
+              {
+                "id": 151,
+                "text": "媒体素材"
+              },
+              {
+                "id": 152,
+                "text": "试题"
+              },
+              {
+                "id": 153,
+                "text": "试卷"
+              },
+              {
+                "id": 154,
+                "text": "课件"
+              },
+              {
+                "id": 155,
+                "text": "案例"
+              },
+              {
+                "id": 156,
+                "text": "文献资料"
+              },
+              {
+                "id": 157,
+                "text": "常见问题解答"
+              },
+              {
+                "id": 158,
+                "text": "资源目录索引"
+              },
+              {
+                "id": 159,
+                "text": "网络课程"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "text": "学校标准",
+        "href": "./metalist.json",
+        "children": [
+          {
+            "id": 11,
+            "text": "通用",
+            "href": "./metalist.json"
+          }
+        ]
+      }
+    ]
+  }
+]

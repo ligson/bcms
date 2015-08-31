@@ -8,12 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="easyui-accordion" data-options="region:'west',split:true" title="元数据管理" style="width:240px;">
     <div title="元数据">
-        <div style="padding:5px;background:#fafafa;width:220px;border:1px solid #ccc">
-            <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addMetaLib()">添加</a>
-            <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-cancel">删除</a>
-            <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-edit">修改</a>
+        <div id="metatreebar">
+            <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-application_add"
+               onclick="addMetaCategory()">分类</a>
+            <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addMetaLib()">标准</a>
+            <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-20130408025545236_easyicon_net_30"
+               onclick="addMetaLib()">删除</a>
+            <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-edit"
+               onclick="addMetaLib()">编辑</a>
         </div>
-        <ul id="metadata_tree"></ul>
+        <ul id="metadata_tree" toolbar="#metatreebar">
+        </ul>
     </div>
     <div title="结构类型">
         <ul class="easyui-tree" id="structure_tree">
@@ -31,9 +36,9 @@
         </ul>
     </div>
 </div>
-<div id="addMetaLibDlg" class="easyui-dialog" title="添加元数据标准" style="width:300px;height:150px;" closed="true">
+<div id="addMetaLibDlg" class="easyui-dialog" title="添加元数据标准" style="width:300px;height:250px;" closed="true">
     <form>
-        <table>
+        <table class="table">
             <tr>
                 <td><label>标准名称:</label></td>
                 <td><input type="text" required="true" class="easyui-textbox"/></td>
@@ -43,8 +48,35 @@
                 <td><input type="text" required="true" class="easyui-textbox" multiline="true" style="height:60px"/>
                 </td>
             </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <a class="easyui-linkbutton">提交</a>
+                    <a class="easyui-linkbutton">取消</a>
+                </td>
+            </tr>
         </table>
-        <input type="button" class="easyui-linkbutton" value="提交"/>
-        <input type="button" class="easyui-linkbutton" value="取消"/>
+    </form>
+</div>
+
+<div id="addMetaCategoryDlg" class="easyui-dialog" title="添加元数据标准分类" style="width:350px;height:250px;" closed="true">
+    <form>
+        <table class="table">
+            <tr>
+                <td><label>元数据分类名称:</label></td>
+                <td><input type="text" required="true" class="easyui-textbox"/></td>
+            </tr>
+            <tr>
+                <td><label>元数据分类描述:</label></td>
+                <td><input type="text" required="true" class="easyui-textbox" multiline="true" style="height:60px"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <a class="easyui-linkbutton">提交</a>
+                    <a class="easyui-linkbutton">取消</a>
+                </td>
+            </tr>
+        </table>
     </form>
 </div>

@@ -77,7 +77,20 @@ $(function () {
                 {field: 'example', title: '举例', width: 50},
                 {field: 'domain', title: '值域', width: 50},
                 {field: 'val_num', title: '取值数', width: 50},
-                {field: 'parent_id', title: 'parent_id', width: 50}
+                {field: 'parent_id', title: 'parent_id', width: 50},
+                {
+                    field: 'collection', title: '类别', width: 50, formatter: function (value, row, idx) {
+                    if (row.collection == 3) {
+                        return "结构";
+                    } else if (row.collection == 2) {
+                        return "分类数据";
+                    } else if (row.collection == 1) {
+                        return "通用可选数据";
+                    } else {
+                        return "必选数据";
+                    }
+                }
+                }
                 /* ,{
                  field: 'constraints', title: '约束', width: 100, formatter: function (value, row, index) {
                  if (row.constraints) {

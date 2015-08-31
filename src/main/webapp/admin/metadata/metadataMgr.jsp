@@ -22,6 +22,11 @@
         <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddDicItemDlg()">选择词汇表类型</a>
         <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg()">增加普通类型</a>
         <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除</a>
+        <select class="easyui-combobox" editable="false">
+            <option>必须元素</option>
+            <option>可选元素</option>
+            <option>分类元素</option>
+        </select>
         <select class="easyui-combobox" editable="false" id="searchCondition">
             <option>按名称</option>
             <option>按编码</option>

@@ -8,8 +8,7 @@
       "description": "字段描述",
       "kind": "date",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "constraints": [
         {
           "type": "range",
@@ -29,8 +28,7 @@
       "description": "字段描述",
       "kind": "vocabulary",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "val_num": 10
     },
     {
@@ -40,8 +38,7 @@
       "description": "字段描述",
       "kind": "number",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "constraints": [
         {
           "type": "range",
@@ -57,8 +54,7 @@
       "description": "字段描述",
       "kind": "langstring",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "constraints": [
         {
           "type": "length",
@@ -78,8 +74,7 @@
       "description": "字段描述",
       "kind": "string",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "constraints": [
         {
           "type": "length",
@@ -99,8 +94,7 @@
       "description": "字段描述",
       "kind": "structure",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "val_num": 10
     },
     {
@@ -110,8 +104,7 @@
       "description": "字段描述",
       "kind": "langstring",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "constraints": [
         {
           "type": "length",
@@ -131,8 +124,7 @@
       "description": "字段描述",
       "kind": "structure",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "val_num": 10
     },
     {
@@ -142,8 +134,7 @@
       "description": "字段描述",
       "kind": "string",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "constraints": [
         {
           "type": "length",
@@ -163,8 +154,7 @@
       "description": "字段描述",
       "kind": "number",
       "lom_id": "1.1",
-      "code": "11121554",
-      "innercode": "010101",
+      "collection": 1,
       "constraints": [
         {
           "type": "range",

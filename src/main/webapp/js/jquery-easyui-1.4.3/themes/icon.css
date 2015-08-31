@@ -270,6 +270,21 @@
     background: url("icons/ext/01.png") no-repeat center center;
 }
 
+.icon-06 {
+    background: url("icons/ext/06.png") no-repeat center center;
+}
+
+.icon-application_add {
+    background: url("icons/ext/application_add.png") no-repeat center center;
+}
+.icon-application_edit {
+    background: url("icons/ext/application_edit.png") no-repeat center center;
+}
+
+.icon-20130408025545236_easyicon_net_30{
+    background: url("icons/ext/20130408025545236_easyicon_net_30.png") no-repeat center center;
+}
+
 .icon-film {
     background: url("icons/ext/film.png") no-repeat center center;
 }
