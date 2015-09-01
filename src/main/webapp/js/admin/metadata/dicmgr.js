@@ -37,7 +37,8 @@ function showAddDicTypeDlg() {
  */
 $(function () {
     $("#metaGrid").datagrid({
-        url: "/bcms/proxy?url=/vocabulary&method=GET",
+        url: "/bcms/proxy?url=vocabulary&method=GET",
+        fitColumns: true,
         columns: [[
             {field: "id", title: "id", width: 100},
             {field: "zh_name", title: "中文名称", width: 100},
@@ -46,16 +47,13 @@ $(function () {
             {field: "source", title: "来源", width: 100},
             {
                 field: "words", title: "词汇表", width: 100, formatter: function (value, row, idx) {
-                var words = "";
+                var words1 = "";
                 if (row.words) {
                     for (var i = 0; i < row.words.length; i++) {
-                        words += row.words[i];
-                        if (i != row.words.length - 1) {
-                            words += ";";
-                        }
+                        words1 += "<span style='margin-left:2px;' about='" + row.words[i].id + "' class=\"label label-info\">" + row.words[i].name + "</span>";
                     }
                 }
-                return words;
+                return words1;
             }
             },
             {
@@ -66,7 +64,7 @@ $(function () {
         ]],
         onLoadSuccess: function (data) {
             //alert(data);
-           // $("#metaGrid").datagrid("loadData", {"rows": data.rows, "total": data.total});
+            // $("#metaGrid").datagrid("loadData", {"rows": data.rows, "total": data.total});
         }
     });
 
@@ -90,18 +88,22 @@ function submitDicForm() {
     var lom_id = form.find("input[name='lom_id']").val();
     var source = form.find("input[name='source']").val();
     var words = form.find("input[name='words']").val();
+    var wdArr = words.split(",");
+    var ht = JSON.stringify(wdArr);
     $.post("/bcms/proxy", {
         method: "post",
         url: "/vocabulary/",
+        //arrayEls:["words"],
         zh_name: zh_name,
         en_name: en_name,
         lom_id: lom_id,
         source: source,
-        words: words
+        words: ht
     }, function (data) {
         var result = JSON.parse(data);
-        if (result.success) {
+        if (!result.success) {
             $("#addDicTypeDlg").dialog("close");
+            $("#metaGrid").datagrid("reload");
         } else {
             alert("创建失败!");
         }

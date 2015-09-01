@@ -20,6 +20,7 @@ import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,8 +53,8 @@ public class Proxy extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-        String url = request.getParameter("url");
-        HttpGet httpGet = new HttpGet(BASE_URL + url);
+        //String url = request.getParameter("url");
+        HttpGet httpGet = new HttpGet(parseToUrl(request));
         executeMethod(httpGet, response);
     }
 
@@ -113,7 +114,16 @@ public class Proxy extends HttpServlet {
                     }
                     result.put(nameValuePair.getName(), list);
                 } else {
-                    result.put(nameValuePair.getName(), nameValuePair.getValue());
+                    if (nameValuePair.getValue().startsWith("[") && nameValuePair.getValue().endsWith("]")) {
+                        try {
+                            JSONArray jsonArray = new JSONArray(nameValuePair.getValue());
+                            result.put(nameValuePair.getName(), jsonArray);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        result.put(nameValuePair.getName(), nameValuePair.getValue());
+                    }
                 }
             }
         }
@@ -158,7 +168,10 @@ public class Proxy extends HttpServlet {
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 //result.put("success", true);
                 //result.put("data", EntityUtils.toString(httpResponse.getEntity()));
-                response.getWriter().println(EntityUtils.toString(httpResponse.getEntity()));
+                logger.debug("返回结果:");
+                String content = EntityUtils.toString(httpResponse.getEntity());
+                logger.debug(content);
+                response.getWriter().println(content);
                 return;
             } else {
                 result.put("success", false);

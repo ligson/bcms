@@ -35,7 +35,7 @@
 
     </div>
     <table toolbar="#tbr" id="metaGrid" class="easyui-datagrid"
-           data-options="singleSelect:true,collapsible:true,url:'./dicmgr.json',method:'post'" rownumbers="true"
+           data-options="singleSelect:true,collapsible:true,method:'post'" rownumbers="true"
            pagination="true">
 
     </table>
