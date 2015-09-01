@@ -37,6 +37,7 @@ function showAddDicTypeDlg() {
  */
 $(function () {
     $("#metaGrid").datagrid({
+        url: "/bcms/proxy?url=/vocabulary&method=GET",
         columns: [[
             {field: "id", title: "id", width: 100},
             {field: "zh_name", title: "中文名称", width: 100},
@@ -62,7 +63,11 @@ $(function () {
                 return "<a onclick='showEditDicItemDlg(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\",\"" + row.lom_id + "\",\"" + row.source + "\",\"" + row.words + "\")'>编辑</a>";
             }
             }
-        ]]
+        ]],
+        onLoadSuccess: function (data) {
+            //alert(data);
+           // $("#metaGrid").datagrid("loadData", {"rows": data.rows, "total": data.total});
+        }
     });
 
 });

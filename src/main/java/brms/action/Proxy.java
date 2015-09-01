@@ -20,6 +20,7 @@ import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -155,8 +156,10 @@ public class Proxy extends HttpServlet {
             CloseableHttpResponse httpResponse = (CloseableHttpResponse) httpClient.execute(httpUriRequest, context);
             logger.debug("返回http状态码:" + httpResponse.getStatusLine().getStatusCode());
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-                result.put("success", true);
-                result.put("data", EntityUtils.toString(httpResponse.getEntity()));
+                //result.put("success", true);
+                //result.put("data", EntityUtils.toString(httpResponse.getEntity()));
+                response.getWriter().println(EntityUtils.toString(httpResponse.getEntity()));
+                return;
             } else {
                 result.put("success", false);
                 result.put("msg", EntityUtils.toString(httpResponse.getEntity()));
