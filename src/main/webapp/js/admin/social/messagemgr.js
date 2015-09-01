@@ -4,8 +4,7 @@
 $(function () {
     $("#select_user_list").datalist({
         textField: 'name',
-        valueField: 'id',
-        data:[{'id': 01, 'name':"我是谁"}]
+        valueField: 'id'
     });
     initDepartmentTree();
 
@@ -15,15 +14,14 @@ $(function () {
 function initDepartmentTree() {
     $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
             $("#add_message_dlg #department_tree").tree({
-                data: formatTreeData(data), onClick: function (node) {
+                data: formatTreeData(obj), onClick: function (node) {
                     initUserListByDepartment(node);
                 }
             });
-        } else {
-            alert(obj.msg);
         }
     });
 }
@@ -31,13 +29,14 @@ function initDepartmentTree() {
 function initUserListByDepartment(node) {
     $.post("/bcms/proxy", {method: "get", url: "department/" + node.id + "/user/page/1"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
             var rows = $('#select_user_list').datalist("getData").rows;
             for (var j = 0; j < rows.length; j++) {
-                for (var x = 0; x < data.length; x++) {
-                    if (rows[j].id == data[x].id) {
-                        data[x].checked = true;
+                for (var x = 0; x < obj.length; x++) {
+                    if (rows[j].id == obj[x].id) {
+                        obj[x].checked = true;
                     }
                 }
             }
@@ -46,7 +45,7 @@ function initUserListByDepartment(node) {
                 singleSelect:false,
                 textField: 'cn_name',
                 valueField: 'id',
-                data: data,
+                data: obj,
                 onCheck: function (index, row) {
                     $("#add_message_dlg #select_user_list").datalist('appendRow', {'id': row.id, 'name': row.cn_name});
                 },
@@ -60,8 +59,6 @@ function initUserListByDepartment(node) {
                     }
                 }
             });
-        } else {
-            alert(obj.msg);
         }
     });
 }

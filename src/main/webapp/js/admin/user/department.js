@@ -36,16 +36,15 @@ $(function () {
 function initDepartmentTree() {
     $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
-            departmentTree = formatTreeData(data)
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
+            departmentTree = formatTreeData(obj)
             $("#department_tree").tree({
                 data: departmentTree, onClick: function (node) {
                     initUserGridByDepartment(node);
                 }
             });
-        } else {
-            alert(obj.msg);
         }
     });
 }
@@ -53,12 +52,11 @@ function initDepartmentTree() {
 function initUserGridByDepartment(node) {
     $.post("/bcms/proxy", {method: "get", url: "department/" + node.id + "/user/page/1"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
-            var json = {total: data.length, rows: data};
-            $("#department_user_grid").datagrid('loadData', json);
-        } else {
+        if (obj.success==false) {
             alert(obj.msg);
+        } else {
+            var json = {total: obj.length, rows: obj};
+            $("#department_user_grid").datagrid('loadData', json);
         }
     });
 }
@@ -117,12 +115,12 @@ function saveDepartment(){
     var parent_id=$("#add_department_dlg .department_tree").combotree("getValue");
     $.post("/bcms/proxy", {method:"post",url: "department/", name: name,parent_id:parent_id}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            $('#add_department_dlg').dialog('close');
-            initDepartmentTree();
-        } else {
+        if (obj.success==false) {
             $('#add_department_dlg').dialog('close');
             $.message.alert("提示",obj.msg,"info");
+        } else {
+            $('#add_department_dlg').dialog('close');
+            initDepartmentTree();
         }
     });
 }
@@ -133,12 +131,12 @@ function modifyDepartment(){
     var parent_id=$("#modify_department_dlg .department_tree").combotree("getValue");
     $.post("/bcms/proxy", {method:"put",url: "department/"+id, name: name,parent_id:parent_id}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            $('#modify_department_dlg').dialog('close');
-            initDepartmentTree();
-        } else {
+        if (obj.success==false) {
             $('#modify_department_dlg').dialog('close');
             $.message.alert("提示",obj.msg,"info");
+        } else {
+            $('#modify_department_dlg').dialog('close');
+            initDepartmentTree();
         }
     });
 }
@@ -150,10 +148,10 @@ function delDepartment(){
             if(data) {
                 $.post("/bcms/proxy", {method: "delete", url: "department/" + node.id }, function (result) {
                     var obj= $.parseJSON(result);
-                    if (obj.success) {
-                        initDepartmentTree();
-                    } else {
+                    if (obj.success==false) {
                         alert("删除失败!");
+                    } else {
+                        initDepartmentTree();
                     }
                 });
             }

@@ -11,7 +11,7 @@
     <title>Web服务器状态监测</title>
     <jsp:include page="../../layout/admin/adminheader.jsp"/>
     <script type="text/javascript" src="../../js/Highcharts-4.1.7/js/highcharts.js"></script>
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         /**
          * Created with IntelliJ IDEA.
          * User: ligson
@@ -80,16 +80,16 @@
             });
 
         });
-    </script>
+    </script>--%>
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
 <jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'流媒体配置'" iconCls="icon-control_equalizer_blue" style="padding:10px;">
-            <div id="container">
-            </div>
-
+<div data-options="region:'center',title:'Web服务状态监测'" iconCls="icon-control_equalizer_blue" style="padding:10px;">
+           <%-- <div id="container">
+            </div>--%>
+<iframe style="width:100%;height: 100%" src="http://42.62.52.40:8001/#/accounts"></iframe>
 
 </div>
 </body>

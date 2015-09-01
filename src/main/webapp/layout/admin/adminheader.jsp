@@ -20,4 +20,5 @@
 <script src="../../js/jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
 <script src="../../js/common/string.js" type="text/javascript"></script>
 <script src="../../js/common/date.js" type="text/javascript"></script>
+<script src="../../js/common/array.js" type="text/javascript"></script>
 <script src="../../js/admin/admin-base.js" type="text/javascript"></script>

@@ -44,11 +44,10 @@ $(function () {
 function initTagTree(){
     $.post("/bcms/proxy", {method:"get",url: "taglibrary/"}, function (result) {
         var obj = $.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
-            $("#tag_tree_grid").treegrid('loadData', formatTagLibTreeGridData(data));
-        } else {
+        if (obj.success==false) {
             alert(obj.msg);
+        } else {
+            $("#tag_tree_grid").treegrid('loadData', formatTagLibTreeGridData(obj));
         }
     });
 }
@@ -94,12 +93,12 @@ function saveTagLib(){
     var name=$("#add_taglib_dlg input[name=name]").val();
     $.post("/bcms/proxy", {method:"post",url: "taglibrary/",name:name}, function (result) {
         var obj= $.parseJSON(result);
-        if (obj.success) {
-            $('#add_taglib_dlg').dialog('close');
-            initTagTree();
-        } else {
+        if (obj.success==false) {
             $('#add_taglib_dlg').dialog('close');
             alert(obj.msg);
+        } else {
+            $('#add_taglib_dlg').dialog('close');
+            initTagTree();
         }
     });
 }
@@ -124,12 +123,12 @@ function modifyTagLib(){
     var name=$("#modify_tag_lib_dlg input[name=name]").val();
     $.post("/bcms/proxy", {method:"put",url: "taglibrary/"+id,name:name}, function (result) {
         var obj= $.parseJSON(result);
-        if (obj.success) {
-            $('#modify_tag_lib_dlg').dialog('close');
-            initTagTree();
-        } else {
+        if (obj.success==false) {
             $('#modify_tag_lib_dlg').dialog('close');
             alert(obj.msg);
+        } else {
+            $('#modify_tag_lib_dlg').dialog('close');
+            initTagTree();
         }
     });
 }
@@ -155,12 +154,12 @@ function modifyTag(){
     var library_id=$("#modify_tag_dlg input[name=library_id]").val();
     $.post("/bcms/proxy", {method:"put",url: "tag/"+id,name:name,library_id:library_id}, function (result) {
         var obj= $.parseJSON(result);
-        if (obj.success) {
-            $('#modify_tag_dlg').dialog('close');
-            initTagTree();
-        } else {
+        if (obj.success==false) {
             $('#modify_tag_dlg').dialog('close');
             alert(obj.msg);
+        } else {
+            $('#modify_tag_dlg').dialog('close');
+            initTagTree();
         }
     });
 }
@@ -173,10 +172,10 @@ function delTag(id){
             if(data) {
                 $.post("/bcms/proxy", {method: "delete", url: "tag/" + id }, function (result) {
                     var obj= $.parseJSON(result);
-                    if (obj.success) {
-                        initTagTree();
-                    } else {
+                    if (obj.success==false) {
                         alert("删除失败!");
+                    } else {
+                        initTagTree();
                     }
                 });
             }
@@ -195,10 +194,10 @@ function delTagLib(id){
             if(data) {
                 $.post("/bcms/proxy", {method: "delete", url: "taglibrary/" + id }, function (result) {
                     var obj= $.parseJSON(result);
-                    if (obj.success) {
-                        initTagTree();
-                    } else {
+                    if (obj.success==false) {
                         alert("删除失败!");
+                    } else {
+                        initTagTree();
                     }
                 });
             }

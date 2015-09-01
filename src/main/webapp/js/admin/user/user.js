@@ -37,13 +37,12 @@ $(function () {
 
 function initUserGrid() {
     $.post("/bcms/proxy", {method:"get",url: "user/"}, function (result) {
-        var obj = $.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
+        var data = jQuery.parseJSON(result);
+        if (data.success==false) {
+            alert(data.msg);
+        } else {
             var json = {total: data.length, rows: data};
             $("#user_table").datagrid('loadData', json);
-        } else {
-            alert(obj.msg);
         }
     });
 }
@@ -69,14 +68,14 @@ function saveUser(){
     var identity=$('#add_user_dlg .identity_combobox').combobox("getValue");
     var number=$('#add_user_dlg input[name=number]').val();
     var department_id=$('#add_user_dlg .department_tree').combotree("getValue");
-    $.post("/bcms/proxy", {method:"post",url: "user/",number:number,identity:identity,department_id:department_id, username: username,cn_name:cn_name, password:password,email:email,phone:phone,group_ids:groups.toString(),gender:gender,disk_size:disk_size,description:description}, function (result) {
+    $.post("/bcms/proxy", {method:"post",url: "user/",number:number,identity:identity,department_id:department_id, username: username,cn_name:cn_name, password:password,email:email,phone:phone,group_ids:JSON.stringify(groups),gender:gender,disk_size:disk_size,description:description}, function (result) {
         var obj= $.parseJSON(result);
-        if (obj.success) {
-            $('#add_user_dlg').dialog('close');
-            initUserGrid();
-        } else {
+        if (obj.success==false) {
             $('#add_user_dlg').dialog('close');
             alert(obj.msg);
+        } else {
+            $('#add_user_dlg').dialog('close');
+            initUserGrid();
         }
     });
 }
@@ -110,26 +109,24 @@ function initModify(row) {
     $('#modify_user_dlg input[name=description]').val(row.description);
     $.post("/bcms/proxy", {method: "get", url: "group/"}, function (result) {
         var obj = $.parseJSON(result);
-        if (obj.success) {
-            var data = $.parseJSON(obj.data);
-            $("#modify_user_dlg .group_tree").combotree('loadData', formatGroupListData(data));
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
+            $("#modify_user_dlg .group_tree").combotree('loadData', formatGroupListData(obj));
             var t = [];
             for (var i = 0; i < row.groups.length; i++) {
                 t[i] = row.groups[i].id;
             }
             $("#modify_user_dlg .group_tree").combotree('setValues', t);
-        } else {
-            alert(obj.msg);
         }
     });
     $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
         var obj = $.parseJSON(result);
-        if (obj.success) {
-            var data = $.parseJSON(obj.data);
-            $("#modify_user_dlg .department_tree").combotree('loadData', formatTreeData(data));
-            $("#modify_user_dlg .department_tree").combotree('setValue', row.department_id);
-        } else {
+        if (obj.success==false) {
             alert(obj.msg);
+        } else {
+            $("#modify_user_dlg .department_tree").combotree('loadData', formatTreeData(obj));
+            $("#modify_user_dlg .department_tree").combotree('setValue', row.department_id);
         }
     });
 
@@ -148,14 +145,14 @@ function modifyUser(){
     var identity=$('#modify_user_dlg .identity_combobox').combobox("getValue");
     var number=$('#modify_user_dlg input[name=number]').val();
     var department_id=$('#modify_user_dlg .department_tree').combotree("getValue");
-    $.post("/bcms/proxy", {method:"put",url: "user/"+id,username:username,cn_name:cn_name,identity:identity,department_id:department_id, email:email,phone:phone,group_ids:groups.toString(),number:number,gender:gender,disk_size:disk_size,description:description}, function (result) {
+    $.post("/bcms/proxy", {method:"put",url: "user/"+id,username:username,cn_name:cn_name,identity:identity,department_id:department_id, email:email,phone:phone,group_ids:JSON.stringify(groups),number:number,gender:gender,disk_size:disk_size,description:description}, function (result) {
         var obj= $.parseJSON(result);
-        if (obj.success) {
-            $('#modify_user_dlg').dialog('close');
-            initUserGrid();
-        } else {
+        if (obj.success==false) {
             $('#modify_user_dlg').dialog('close');
             alert(obj.msg);
+        } else {
+            $('#modify_user_dlg').dialog('close');
+            initUserGrid();
         }
     });
 }
@@ -165,11 +162,10 @@ function initAddGroupCombotree() {
     $("#add_user_dlg .gender_combobox").combobox('loadData', [{"id": 1, "text": "男"}, {"id": 2, "text": "女"}]);
     $.post("/bcms/proxy", {method: "get", url: "group/"}, function (result) {
         var obj = $.parseJSON(result);
-        if (obj.success) {
-            var data = $.parseJSON(obj.data);
-            $("#add_user_dlg .group_tree").combotree('loadData', formatGroupListData(data));
-        } else {
+        if (obj.success==false) {
             alert(obj.msg);
+        } else {
+            $("#add_user_dlg .group_tree").combotree('loadData', formatGroupListData(obj));
         }
     });
 }
@@ -177,11 +173,10 @@ function initAddGroupCombotree() {
 function initAddDepartmentCombotree() {
     $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
         var obj = $.parseJSON(result);
-        if (obj.success) {
-            var data = $.parseJSON(obj.data);
-            $("#add_user_dlg .department_tree").combotree('loadData', formatTreeData(data));
-        } else {
+        if (obj.success==false) {
             alert(obj.msg);
+        } else {
+            $("#add_user_dlg .department_tree").combotree('loadData', formatTreeData(obj));
         }
     });
 }
@@ -194,10 +189,10 @@ function delUsers(){
                 for (var i = 0; i < rows.length; i++) {
                     $.post("/bcms/proxy", {method:"delete",url: "user/" + rows[i].id + "/"}, function (result) {
                         var obj= $.parseJSON(result);
-                        if (obj.success) {
-                            initUserGrid();
-                        } else {
+                        if (obj.success==false) {
                             alert("删除失败!");
+                        } else {
+                            initUserGrid();
                         }
                     });
                 }
@@ -217,10 +212,10 @@ function delUser(index){
             if(data) {
                 $.post("/bcms/proxy", {method: "delete", url: "user/" + row.id }, function (result) {
                     var obj= $.parseJSON(result);
-                    if (obj.success) {
-                        initUserGrid();
-                    } else {
+                    if (obj.success==false) {
                         alert("删除失败!");
+                    } else {
+                        initUserGrid();
                     }
                 });
             }

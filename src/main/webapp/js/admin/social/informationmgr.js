@@ -41,11 +41,10 @@ $(function () {
 function initDepartmentTree(){
     $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
-            $(".department_tree").combotree({multiple:true,data: formatTreeData(data)});
-        } else {
+        if (obj.success==false) {
             alert(obj.msg);
+        } else {
+            $(".department_tree").combotree({multiple:true,data: formatTreeData(obj)});
         }
     });
 }

@@ -41,16 +41,15 @@ function initModify(node) {
     $("#modify_role_dlg input[name=name]").val(node.name);
     $.get("/bcms/proxy", {url: "permission/"}, function (result) {
         var obj = $.parseJSON(result);
-        if (obj.success) {
-            var data = $.parseJSON(obj.data);
-            $("#modify_role_dlg .easyui-combobox").combobox('loadData', data);
+        if (obj.success==false) {
+            $.message.alert("提示",obj.msg,"info");
+        } else {
+            $("#modify_role_dlg .easyui-combobox").combobox('loadData', obj);
             var t=[];
             for(var i=0;i<node.permissions.length;i++){
                 t[i]=node.permissions[i].id;
             }
             $("#modify_role_dlg .easyui-combobox").combobox('setValues', t);
-        } else {
-            $.message.alert("提示",obj.msg,"info");
         }
     });
 
@@ -60,11 +59,10 @@ function initModify(node) {
 function initAuthCombobox(){
     $.get("/bcms/proxy", {url: "permission/"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var obj = jQuery.parseJSON(obj.data);
-            $("#add_role_dlg .easyui-combobox").combobox('loadData',obj);
-        } else {
+        if (obj.success==false) {
             alert(obj.msg);
+        } else {
+            $("#add_role_dlg .easyui-combobox").combobox('loadData',obj);
         }
     });
 }
@@ -72,15 +70,13 @@ function initAuthCombobox(){
 function initRoleTree() {
     $.post("/bcms/proxy", {method:"get",url: "role/"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        console.log(obj);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
-            $("#role_tree").tree({data: handle(data), onClick: function () {
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
+            $("#role_tree").tree({data: handle(obj), onClick: function () {
                 initAuthGridByNode();
             }
             });
-        } else {
-            alert(obj.msg);
         }
     });
 }
@@ -93,14 +89,14 @@ function initAuthGridByNode(){
 function saveRole(){
     var name = $("#add_role_dlg input[name=name]").val();
     var auths = $('#add_role_dlg .easyui-combobox').combobox('getValues');
-    $.post("/bcms/proxy", {method:"post",url: "role/",dataType:"json", name: name, permission_ids:auths.toString()}, function (result) {
+    $.post("/bcms/proxy", {method:"post",url: "role/",dataType:"json", name: name, permission_ids:JSON.stringify(auths)}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            $('#add_role_dlg').dialog('close');
-            initRoleTree();
-        } else {
+        if (obj.success==false) {
             $('#add_role_dlg').dialog('close');
             $.message.alert("提示",obj.msg,"info");
+        } else {
+            $('#add_role_dlg').dialog('close');
+            initRoleTree();
         }
     });
 }
@@ -109,15 +105,15 @@ function modifyRole(){
     var id= $("#modify_role_dlg input[name=id]").val();
     var name = $("#modify_role_dlg input[name=name]").val();
     var auths = $('#modify_role_dlg .easyui-combobox').combobox('getValues');
-    $.post("/bcms/proxy", {method:"put",url: "role/"+id, name: name, permission_ids:auths.toString()}, function (result) {
+    $.post("/bcms/proxy", {method:"put",url: "role/"+id, name: name, permission_ids:JSON.stringify(auths)}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
+        if (obj.success==false) {
+            $('#modify_role_dlg').dialog('close');
+            alert(obj.msg);
+        } else {
             $('#modify_role_dlg').dialog('close');
             initRoleTree();
             $("#role_auth_grid").datagrid('loadData', {total: 0, rows: []});
-        } else {
-            $('#modify_role_dlg').dialog('close');
-            alert(obj.msg);
         }
     });
 
@@ -130,11 +126,11 @@ function delRole() {
             if (data) {
                 $.post("/bcms/proxy", {method: "delete", url: "role/" + node.id + "/"}, function (result) {
                     var obj = jQuery.parseJSON(result);
-                    if (obj.success) {
+                    if (obj.success==false) {
+                        alert(obj.msg);
+                    } else {
                         $('#role_tree').tree('remove', node.target);
                         $("#auth_table").datagrid('loadData', {total: 0, rows: []});
-                    } else {
-                        alert(obj.msg);
                     }
                 });
             }

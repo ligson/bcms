@@ -52,16 +52,15 @@ $(function () {
 function initGroupTree() {
     $.get("/bcms/proxy", {url: "group/"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var obj = jQuery.parseJSON(obj.data);
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
             groupTree = formatGroupListData(obj);
             $("#group_tree").tree({
                 data: groupTree, onClick: function (node) {
                     initGridByGroup(node);
                 }
             });
-        } else {
-            alert(obj.msg);
         }
     });
 }
@@ -107,15 +106,14 @@ function clickAddGroupUser(){
 function initDepartmentTree(node) {
     $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
             $("#add_group_user_dlg #department_tree").tree({
-                data: formatTreeData(data), onClick: function (node) {
+                data: formatTreeData(obj), onClick: function (node) {
                     initUserListByDepartment(node);
                 }
             });
-        } else {
-            alert(obj.msg);
         }
     });
 }
@@ -131,22 +129,23 @@ function initDepartmentSelectUsers(node) {
 function initUserListByDepartment(node) {
     $.post("/bcms/proxy", {method: "get", url: "department/" + node.id + "/user/page/1"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
             var rows = $('#select_user_list').datalist("getData").rows;
-                for (var j = 0; j < rows.length; j++) {
-                    for (var x = 0; x < data.length; x++) {
-                        if (rows[j].id == data[x].id) {
-                            data[x].checked = true;
-                        }
+            for (var j = 0; j < rows.length; j++) {
+                for (var x = 0; x < obj.length; x++) {
+                    if (rows[j].id == obj[x].id) {
+                        obj[x].checked = true;
                     }
                 }
+            }
             $("#add_group_user_dlg #user_list").datalist({
                 checkbox: true,
                 singleSelect:false,
                 textField: 'cn_name',
                 valueField: 'id',
-                data: data,
+                data: obj,
                 onCheck: function (index, row) {
                     $("#select_user_list").datalist('appendRow', {'id': row.id, 'name': row.cn_name});
                 },
@@ -160,8 +159,6 @@ function initUserListByDepartment(node) {
                     }
                 }
             });
-        } else {
-            alert(obj.msg);
         }
     });
 }
@@ -186,12 +183,12 @@ function saveGroup(){
     var name = $("#add_group_dlg input[name=name]").val();
     $.post("/bcms/proxy", {method:"post",url: "group/", name: name}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            $('#add_group_dlg').dialog('close');
-            initGroupTree();
-        } else {
+        if (obj.success==false) {
             $('#add_group_dlg').dialog('close');
             $.message.alert("提示",obj.msg,"info");
+        } else {
+            $('#add_group_dlg').dialog('close');
+            initGroupTree();
         }
     });
 }
@@ -201,15 +198,15 @@ function saveGroupRole(){
     var group_id= $("#add_group_role_dlg input[name=group_id]").val();
     $.post("/bcms/proxy", {method:"post",url: "group/"+group_id+"/role/"+role_id}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
+        if (obj.success==false) {
+            $('#add_group_role_dlg').dialog('close');
+            $.message.alert("提示",obj.msg,"info");
+        } else {
             initGroupTree();
             $('#add_group_role_dlg').dialog('close');
             var groupNode=$("#group_tree").tree("find",group_id);
             $('#group_tree').tree('select',groupNode.target);
             initGridByGroup(groupNode);
-        } else {
-            $('#add_group_role_dlg').dialog('close');
-            $.message.alert("提示",obj.msg,"info");
         }
     });
 }
@@ -219,12 +216,12 @@ function modifyGroup(){
     var name = $("#modify_group_dlg input[name=name]").val();
     $.post("/bcms/proxy", {method:"put",url: "group/"+id, name: name}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            $('#modify_group_dlg').dialog('close');
-            initGroupTree();
-        } else {
+        if (obj.success==false) {
             $('#modify_group_dlg').dialog('close');
             $.message.alert("提示",obj.msg,"info");
+        } else {
+            $('#modify_group_dlg').dialog('close');
+            initGroupTree();
         }
     });
 }
@@ -232,11 +229,10 @@ function modifyGroup(){
 function initRoleTree() {
     $.post("/bcms/proxy", {method:"get",url: "role/"}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            var data = jQuery.parseJSON(obj.data);
-            $('#add_group_role_dlg .role_tree').combotree('loadData', formatGroupListData(data));
-        } else {
+        if (obj.success==false) {
             alert(obj.msg);
+        } else {
+            $('#add_group_role_dlg .role_tree').combotree('loadData', formatGroupListData(obj));
         }
     });
 }
@@ -254,10 +250,10 @@ function delGroupRole(index){
                         url: "group/" + node.id + "/role/" + row.id
                     }, function (result) {
                         var obj = jQuery.parseJSON(result);
-                        if (obj.success) {
-                            initGroupTree();
-                        } else {
+                        if (obj.success==false) {
                             $.message.alert("提示", obj.msg, "info");
+                        } else {
+                            initGroupTree();
                         }
                     });
                 }
@@ -279,10 +275,10 @@ function delGroup(){
             if (data) {
                 $.post("/bcms/proxy", {method: "delete", url: "group/" + node.id + "/"}, function (result) {
                     var obj = jQuery.parseJSON(result);
-                    if (obj.success) {
-                        $('#group_tree').tree('remove', node.target);
-                    } else {
+                    if (obj.success==false) {
                         alert(obj.msg);
+                    } else {
+                        $('#group_tree').tree('remove', node.target);
                     }
                 });
             }
@@ -302,12 +298,12 @@ function saveGroupUser(){
     }
     $.post("/bcms/proxy", {method:"put",url: "group/"+node.id, name: node.name,user_ids:uids.toString()}, function (result) {
         var obj = jQuery.parseJSON(result);
-        if (obj.success) {
-            $('#add_group_user_dlg').dialog('close');
-            initGroupTree();
-        } else {
+        if (obj.success==false) {
             $('#add_group_user_dlg').dialog('close');
             $.message.alert("提示",obj.msg,"info");
+        } else {
+            $('#add_group_user_dlg').dialog('close');
+            initGroupTree();
         }
 
     });

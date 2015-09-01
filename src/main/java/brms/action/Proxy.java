@@ -106,24 +106,15 @@ public class Proxy extends HttpServlet {
         Map<String, Object> result = new HashMap<>();
         for (NameValuePair nameValuePair : nameValuePairs) {
             if (!nameValuePair.getName().contains("url") && !nameValuePair.getName().contains("method") && !nameValuePair.getValue().isEmpty()) {
-                if (nameValuePair.getName().indexOf("_ids") > 0) {
-                    String[] idList = nameValuePair.getValue().split(",");
-                    List<Integer> list = new ArrayList();
-                    for (int i = 0; i < idList.length; i++) {
-                        list.add(Integer.parseInt(idList[i]));
+                if (nameValuePair.getValue().startsWith("[") && nameValuePair.getValue().endsWith("]")) {
+                    try {
+                        JSONArray jsonArray = new JSONArray(nameValuePair.getValue());
+                        result.put(nameValuePair.getName(), jsonArray);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                    result.put(nameValuePair.getName(), list);
                 } else {
-                    if (nameValuePair.getValue().startsWith("[") && nameValuePair.getValue().endsWith("]")) {
-                        try {
-                            JSONArray jsonArray = new JSONArray(nameValuePair.getValue());
-                            result.put(nameValuePair.getName(), jsonArray);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    } else {
-                        result.put(nameValuePair.getName(), nameValuePair.getValue());
-                    }
+                    result.put(nameValuePair.getName(), nameValuePair.getValue());
                 }
             }
         }

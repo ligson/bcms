@@ -48,6 +48,7 @@
 </div>
 
 
+
 <div id="modify_auth_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#modify_auth_dlg_buttons">
     <div class="ftitle">
@@ -62,13 +63,13 @@
         </div>
         <div class="fitem">
             <label>
-                目标部门</label>
+                范围类型</label>
             <input class="easyui-combotree department_tree" name="departments" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
                     />
         </div>
         <div class="fitem">
             <label>
-                目标资源库</label>
+                目标范围</label>
             <input class="easyui-combotree resourcelib_tree" name="resources" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
                     />
         </div>
@@ -85,10 +86,12 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#modify_auth_dlg').dialog('close')"
        iconcls="icon-cancel">取消</a>
 </div>
-<%--<div id="add_auth_dlg" class="easyui-dialog" style="width: 400px; height: 200px; padding: 10px 20px;"
+
+
+<div id="add_auth_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_auth_dlg_buttons">
     <div class="ftitle">
-        添加权限
+        添加权限范围
     </div>
     <form id="add_role_form" method="post">
         <div class="fitem">
@@ -99,19 +102,35 @@
         </div>
         <div class="fitem">
             <label>
+                权限
+            </label>
+            <input id="quanxian" class="easyui-combotree" data-options="required:true">
+        </div>
+        <div class="fitem">
+            <label>
+                范围类型</label>
+            <input class="easyui-combobox" id="fwlx" style="height: auto"
+                    />
+        </div>
+        <div class="fitem">
+            <label>
+                目标范围</label>
+            <input class="easyui-combotree" id="mbfw" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+                    />
+        </div>
+        <div class="fitem">
+            <label>
                 备注</label>
             <input name="description" class="easyui-validatebox" required="true" type="text" />
         </div>
     </form>
-</div>--%>
-<%--
+</div>
 <div id="add_auth_dlg_buttons">
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveAuth()" iconcls="icon-save">保存</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_auth_dlg').dialog('close')"
        iconcls="icon-cancel">取消</a>
 </div>
 
---%>
 
 </body>
 </html>
