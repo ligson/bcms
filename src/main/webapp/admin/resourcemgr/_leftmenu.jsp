@@ -37,12 +37,12 @@
                 <li><span><a href="roplog.jsp">操作日志</a></span></li>
             </ul>
         </div>
-        <div iconCls="icon-folder" title="文件管理">
+       <%-- <div iconCls="icon-folder" title="文件管理">
             <ul class="easyui-tree">
                 <li iconCls="icon-databases"><span><a href="filelist.jsp">所有文件</a></span></li>
                 <li iconCls="icon-star"><span><a href="myfilelist.jsp">我的文件</a></span></li>
             </ul>
-        </div>
+        </div>--%>
     </div>
 </div>
 <div id="addCategoryDlg" class="easyui-dialog" title="添加类库" data-options="iconCls:'icon-save'"
