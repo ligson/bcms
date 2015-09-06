@@ -6,18 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>编辑元数据</title>
-    <jsp:include page="_header.jsp"/>
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">编辑元数据</rapid:override>
+<rapid:override name="head">
     <link href="../../css/fillmeta.css" rel="stylesheet" type="text/css"/>
     <script type="text/javascript" src="../../js/admin/metadata/fillMeta.js"></script>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
-<jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'编辑元数据'" iconCls="icon-page_world">
+</rapid:override>
+<rapid:override name="mainName">编辑元数据</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
     <div id="mm" class="easyui-menu" style="width:120px;">
         <div onclick="append()" data-options="iconCls:'icon-add'">Append</div>
     </div>
@@ -268,7 +265,9 @@
         <a class="easyui-linkbutton" onclick="submitMetaForm()">提交</a>
         <a class="easyui-linkbutton" href="rmgr.jsp">跳过</a>
     </div>
-</div>
+</rapid:override>
 
-</body>
-</html>
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/rmgr-base.jsp" %>
+
+
