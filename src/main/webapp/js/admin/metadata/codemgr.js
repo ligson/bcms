@@ -27,6 +27,20 @@ function showAddEncodeTypeDlg() {
     $("#addEncodeTypeDlg").dialog("open");
 }
 
+function submitAddEncode() {
+    var name = $("#name1").textbox("getValue");
+    var code = $("#code1").textbox("getValue");
+    if ((name && (!name.isEmpty())) && (code && (!code.isEmpty()))) {
+        $.post("/bcms/proxy", {url: "encode/", method: "POST", name: name, code: code, parent_id: 0}, function (data) {
+            if (data.id != null) {
+                $("#addEncodeTypeDlg").dialog("close");
+                $("#metaGrid").treegrid("reload");
+            } else {
+                alert("创建失败!");
+            }
+        }, "json");
+    }
+}
 $(function () {
     $("#metaGrid").treegrid({
         idField: 'id',

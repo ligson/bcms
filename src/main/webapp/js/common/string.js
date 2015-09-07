@@ -7,7 +7,11 @@ String.prototype.trim = function () {
     return this.replace(/(^\s*)|(\s*$)/g, "");
 };
 String.prototype.isEmpty = function () {
-    return this.trim() == "";
+    if (this && (this + "").trim() != "") {
+        return false;
+    } else {
+        return false;
+    }
 };
 String.prototype.isEmail = function () {
     var pattern = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;

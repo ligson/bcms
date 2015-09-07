@@ -46,24 +46,24 @@
     <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
 </div>
 <div id="addEncodeTypeDlg" title="增加编码分类" class="easyui-dialog" closed="true"
-     style="width:300px;height:150px;padding:10px;">
-    <form>
-        <table>
+     style="width:300px;height:200px;padding:10px;">
+    <form id="addEncodeTypeForm">
+        <table class="table">
             <tr>
-                <td><label>中文名称:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><label>名称:</label></td>
+                <td><input type="text" class="easyui-textbox" id="name1" required="true"></td>
             </tr>
-            <tr>
+            <%--<tr>
                 <td><label>英文名称:</label></td>
                 <td><input type="text" class="easyui-textbox"></td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td><label>编码</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
+                <td><input type="text" class="easyui-textbox" id="code1" required="true"></td>
             </tr>
         </table>
-        <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
-        <a class="easyui-linkbutton" plain="false">取消</a>
+        <a class="easyui-linkbutton" plain="false" onclick="submitAddEncode()">提交</a>
+        <a class="easyui-linkbutton" plain="false" onclick="$('#addEncodeTypeDlg').dialog('close');">取消</a>
     </form>
 </div>
 
