@@ -6,41 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>用户组管理</title>
-    <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/user/auth.js" type="text/javascript"></script>
-    <style type="text/css">
-        #add_auth_form #modify_auth_form
-        {
-            margin: 0;
-            padding: 10px 30px;
-        }
-        .ftitle
-        {
-            font-size: 14px;
-            font-weight: bold;
-            padding: 5px 0;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .fitem
-        {
-            margin-bottom: 5px;
-        }
-        .fitem label
-        {
-            display: inline-block;
-            width: 80px;
-        }
-    </style>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
-<jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'权限管理'">
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">权限管理</rapid:override>
+<rapid:override name="head">
+    <script type="text/javascript" src="../../js/admin/user/auth.js"></script>
+</rapid:override>
+<rapid:override name="mainName">权限管理</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
+    <div data-options="region:'center',title:'权限管理'">
     <div id="container">
 
         <table id="auth_table"></table>
@@ -131,6 +105,7 @@
        iconcls="icon-cancel">取消</a>
 </div>
 
+</rapid:override>
 
-</body>
-</html>
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/umgr-base.jsp" %>

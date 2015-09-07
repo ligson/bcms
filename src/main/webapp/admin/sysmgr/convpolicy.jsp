@@ -6,33 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>转码策略管理</title>
-  <jsp:include page="../../layout/admin/adminheader.jsp"/>
-  <style type="text/css">
-    .ftitle
-    {
-      font-size: 14px;
-      font-weight: bold;
-      padding: 5px 0;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #ccc;
-    }
-    .fitem
-    {
-      margin-bottom: 5px;
-    }
-    .fitem label
-    {
-      display: inline-block;
-      width: 80px;
-    }
-  </style>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<jsp:include page="_leftmenu.jsp"/>
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">转码策略管理</rapid:override>
+<rapid:override name="head">
+  <script type="text/javascript" src="../../js/admin/rmgr.js"></script>
+</rapid:override>
+<rapid:override name="mainName">转码策略管理</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
 <div data-options="region:'center',title:'转码策略管理'" iconCls="icon-cdr_go">
   <div id="container">
     <table class="easyui-datagrid" title="转码策略"
@@ -221,5 +202,7 @@
   </form>
 </div>
 
-</body>
-</html>
+</rapid:override>
+
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/systemmgr-base.jsp" %>

@@ -1,47 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
-  User: ligson
+  User: libruy
   Date: 2015/8/11
   Time: 15:47
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>用户组管理</title>
-    <jsp:include page="_header.jsp"/>
-    <script src="../../js/admin/user/group.js" type="text/javascript"></script>
-    <style type="text/css">
-        #add_group_form #modify_group_form
-        {
-            margin: 0;
-            padding: 10px 30px;
-        }
-        .ftitle
-        {
-            font-size: 14px;
-            font-weight: bold;
-            padding: 5px 0;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .fitem
-        {
-            margin-bottom: 5px;
-        }
-        .fitem label
-        {
-            display: inline-block;
-            width: 80px;
-        }
-    </style>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
-<jsp:include page="_leftmenu.jsp"/>
-
-    <div region="center" style="overflow-y: hidden">
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">用户组管理</rapid:override>
+<rapid:override name="head">
+    <script type="text/javascript" src="../../js/admin/user/group.js"></script>
+</rapid:override>
+<rapid:override name="mainName">用户组管理</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
        <div class="easyui-layout" fit="true">
            <div region="west" title="用户组列表" style="width: 200px;">
                <div style="padding:5px;background:#fafafa;width:100%;border:1px solid #ccc">
@@ -66,7 +38,6 @@
                </div>
            </div>
        </div>
-    </div>
 
 <div id="add_group_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_group_dlg_buttons">
@@ -158,5 +129,7 @@
            iconcls="icon-cancel">取消</a>
     </div>
 </div>
-</body>
-</html>
+</rapid:override>
+
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/umgr-base.jsp" %>

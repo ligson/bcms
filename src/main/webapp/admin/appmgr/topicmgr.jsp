@@ -6,40 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>专题管理</title>
-    <jsp:include page="_header.jsp"/>
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">专题管理</rapid:override>
+<rapid:override name="head">
     <script type="text/javascript" src="../../js/admin/topicmgr.js"></script>
-    <style type="text/css">
-        #add_topic_form #modify_topic_form
-        {
-            margin: 0;
-            padding: 10px 30px;
-        }
-        .ftitle
-        {
-            font-size: 14px;
-            font-weight: bold;
-            padding: 5px 0;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .fitem
-        {
-            margin-bottom: 5px;
-        }
-        .fitem label
-        {
-            display: inline-block;
-            width: 80px;
-        }
-    </style>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
-<jsp:include page="_leftmenu.jsp"/>
+</rapid:override>
+<rapid:override name="mainName">专题管理</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
 <div id="rGridTbr" style="height:30px;line-height:30px;">
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addTopic()" plain="true"
        iconCls="icon-add"
@@ -78,7 +52,10 @@
             <label>
                 状态
             </label>
-            <input name="name" class="easyui-validatebox" required="true" type="text" value="" />
+            <select class="easyui-combobox" name="dept">
+                <option>启用</option>
+                <option>禁用</option>
+            </select>
         </div>
         <div class="fitem">
             <label>
@@ -200,6 +177,7 @@
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#modify_tag_dlg').dialog('close')"
        iconcls="icon-cancel">取消</a>
 </div>
+</rapid:override>
 
-</body>
-</html>
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/appmgr-base.jsp" %>

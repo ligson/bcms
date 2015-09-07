@@ -22,8 +22,7 @@ $(function () {
             text:'添加权限',iconCls:'icon-add',handler:function(){
                 addAuth();
             }
-        }
-        ]
+        }]
     });
     var themes = [
         {value:'default',text:'添加用户',group:'用户'},

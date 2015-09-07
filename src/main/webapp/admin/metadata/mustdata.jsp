@@ -6,10 +6,9 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>必选字段</title>
-    <jsp:include page="_header.jsp"/>
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">必选字段</rapid:override>
+<rapid:override name="head">
     <script src="../../js/admin/metadata/mustdata.js" type="text/javascript"></script>
     <style type="text/css">
         #add_must_form #modify_must_form {
@@ -34,11 +33,10 @@
             width: 80px;
         }
     </style>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
-<jsp:include page="_leftmenu.jsp"/>
+</rapid:override>
+<rapid:override name="mainName">必选字段</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
 <div data-options="region:'center'" title="必选数据">
     <div id="container">
         <div id="mustdata_table"></div>
@@ -197,5 +195,7 @@
        iconcls="icon-cancel">取消</a>
 </div>
 
-</body>
-</html>
+</rapid:override>
+
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/metadatamgr-base.jsp" %>

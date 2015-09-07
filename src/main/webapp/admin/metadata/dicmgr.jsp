@@ -6,21 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>词汇表管理</title>
-    <jsp:include page="_header.jsp"/>
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">词汇表管理</rapid:override>
+<rapid:override name="head">
     <script src="../../js/admin/metadata/dicmgr.js" type="text/javascript"></script>
     <style type="text/css">
         #addDicForm tr td {
             padding: 5px;
         }
     </style>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
-<jsp:include page="_leftmenu.jsp"/>
+</rapid:override>
+<rapid:override name="mainName">词汇表管理</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
 <div data-options="region:'center',title:'字段列表'" iconCls="icon-page_world">
     <div id="tbr" style="height:30px;line-height:30px;">
         <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddDicTypeDlg()">增加词汇表</a>
@@ -126,5 +124,7 @@
     </form>
 </div>
 
-</body>
-</html>
+</rapid:override>
+
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/metadatamgr-base.jsp" %>

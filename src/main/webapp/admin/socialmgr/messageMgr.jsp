@@ -6,35 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>站内消息管理</title>
-  <jsp:include page="_header.jsp"/>
-  <script src="../../js/admin/social/messagemgr.js" type="text/javascript"></script>
-  <script src="../../js/ckeditor/ckeditor.js" type="text/javascript"></script>
-  <style type="text/css">
-    .ftitle
-    {
-      font-size: 14px;
-      font-weight: bold;
-      padding: 5px 0;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #ccc;
-    }
-    .fitem
-    {
-      margin-bottom: 5px;
-    }
-    .fitem label
-    {
-      display: inline-block;
-      width: 80px;
-    }
-  </style>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<jsp:include page="_leftmenu.jsp"/>
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">站内消息管理</rapid:override>
+<rapid:override name="head">
+  <script type="text/javascript" src="../../js/admin/social/messagemgr.js"></script>
+  <script type="text/javascript" src="../../js/ckeditor/ckeditor.js"></script>
+</rapid:override>
+<rapid:override name="mainName">站内消息管理</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
 <div data-options="region:'center',title:'站内消息管理'">
   <div id="container">
     <table id="dg" class="easyui-datagrid"
@@ -130,7 +110,7 @@
   <div class="ftitle">添加站内消息</div>
   <form id="fm" method="post" novalidate>
     <div class="fitem">
-      <label>名称</label>
+      <label>标题</label>
       <input name="firstname" class="easyui-textbox" required="true">
     </div>
     <div class="fitem">
@@ -161,5 +141,7 @@
   <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="javascript:$('#add_message_dlg').dialog('close')" style="width:90px">发送</a>
   <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#add_message_dlg').dialog('close')" style="width:90px">取消</a>
 </div>
-</body>
-</html>
+</rapid:override>
+
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/socialmgr-base.jsp" %>

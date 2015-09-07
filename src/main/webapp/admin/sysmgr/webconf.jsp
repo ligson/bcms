@@ -6,16 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>系统配置</title>
-    <jsp:include page="../../layout/admin/adminheader.jsp"/>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
-<jsp:include page="_leftmenu.jsp"/>
-<div data-options="region:'center',title:'系统配置'" iconCls="icon-config">
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">Web服务配置</rapid:override>
+<rapid:override name="head">
+</rapid:override>
+<rapid:override name="mainName">Web服务配置</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
+<div data-options="region:'center',title:'Web服务配置'" iconCls="icon-config">
     <div id="container" style="padding:10px;">
         <form id="ff" method="post">
             <table cellpadding="5">
@@ -41,5 +39,7 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+</rapid:override>
+
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/systemmgr-base.jsp" %>

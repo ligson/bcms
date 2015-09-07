@@ -6,15 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>转码配置</title>
-    <jsp:include page="../../layout/admin/adminheader.jsp"/>
-</head>
-<body class="easyui-layout">
-<jsp:include page="../../layout/admin/adminbody.jsp"/>
-<%--<div data-options="region:'east',split:true" title="East" style="width:100px;"></div>--%>
-<jsp:include page="_leftmenu.jsp"/>
+<%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<rapid:override name="title">转码配置</rapid:override>
+<rapid:override name="head">
+</rapid:override>
+<rapid:override name="mainName">转码配置</rapid:override>
+<rapid:override name="mainIcon">icon-page_world</rapid:override>
+<rapid:override name="body">
 <div data-options="region:'center',title:'转码配置'" iconCls="icon-cdr_go">
     <div id="container">
         <form id="ff" method="post">
@@ -41,5 +39,7 @@
         </div>
     </div>
 </div>
-</body>
-</html>
+</rapid:override>
+
+<!-- extends from base.jsp -->
+<%@ include file="../../layout/admin/systemmgr-base.jsp" %>
