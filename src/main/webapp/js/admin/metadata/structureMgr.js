@@ -79,7 +79,7 @@ $(function () {
     var isFirst = true;
     var loadCount = 0;
     $("#metaGrid").treegrid({
-        url: "/bcms/proxy?url=metatype&method=GET&kind=3",
+        url: "/bcms/structureQueryProxy",
         idField: 'id',
         treeField: 'zh_name',
         fitColumns: true,

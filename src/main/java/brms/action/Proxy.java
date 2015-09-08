@@ -30,9 +30,9 @@ import org.json.JSONObject;
 public class Proxy extends HttpServlet {
     private static Logger logger = Logger.getLogger(Proxy.class);
     private static final long serialVersionUID = 1L;
-    private static String BASE_URL = "http://42.62.52.40:8000/";
-    private static HttpClient httpClient = HttpClientBuilder.create().build();
-    private static HttpContext context = new BasicHttpContext();
+    public final static String BASE_URL = "http://42.62.52.40:8000/";
+    public static HttpClient httpClient = HttpClientBuilder.create().build();
+    public static HttpContext context = new BasicHttpContext();
 
 
     /**
@@ -101,7 +101,7 @@ public class Proxy extends HttpServlet {
         executeMethod(httpDelete, response);
     }
 
-    private StringEntity parseToEntity(HttpServletRequest request) throws IOException {
+    private static StringEntity parseToEntity(HttpServletRequest request) throws IOException {
         List<NameValuePair> nameValuePairs = dealParams(request);
         Map<String, Object> result = new HashMap<>();
         for (NameValuePair nameValuePair : nameValuePairs) {
@@ -185,7 +185,7 @@ public class Proxy extends HttpServlet {
         //objectMapper.writeValue(response.getOutputStream(), result);
     }
 
-    private List<NameValuePair> dealParams(HttpServletRequest request) {
+    private static List<NameValuePair> dealParams(HttpServletRequest request) {
         List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
         Enumeration enumeration = request.getParameterNames();
         while (enumeration.hasMoreElements()) {

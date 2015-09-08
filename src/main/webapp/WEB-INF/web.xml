@@ -31,6 +31,15 @@
         <servlet-name>Proxy</servlet-name>
         <url-pattern>/proxy</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>structureQueryProxy</servlet-name>
+        <url-pattern>/structureQueryProxy</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>structureQueryProxy</servlet-name>
+        <servlet-class>brms.action.StructureQuery</servlet-class>
+    </servlet>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
