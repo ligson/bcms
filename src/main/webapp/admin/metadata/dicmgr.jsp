@@ -95,6 +95,7 @@
             <table class="table">
                 <tr>
                     <td><label>中文名称:</label></td>
+                    <input type="hidden" name="id">
                     <td><input type="text" class="easyui-textbox" name="zh_name" id="zh_name1"></td>
                 </tr>
                 <tr>
