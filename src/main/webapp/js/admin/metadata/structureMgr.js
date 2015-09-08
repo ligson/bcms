@@ -76,10 +76,27 @@ $(function () {
         }
     });
 
+    var isFirst = true;
+    var loadCount = 0;
     $("#metaGrid").treegrid({
+        url: "/bcms/proxy?url=metatype&method=GET&kind=3",
         idField: 'id',
         treeField: 'zh_name',
         fitColumns: true,
+        loadFilter: function (data, parentId) {
+            for (var i = 0; i < data.rows.length; i++) {
+                var row = data.rows[i];
+                if (row.kind == 3) {
+                    row.state = "closed";
+                }
+            }
+            return data;
+        },
+        onLoadSuccess: function (row, data) {
+            //var opt = $("#metaGrid").treegrid("options");
+            //opt.url = "/bcms/proxy?url=metatype&method=GET";
+            //alert(opt.url);
+        },
         columns: [
             [
                 {field: 'ckId', width: 30, checkbox: true},
@@ -130,14 +147,20 @@ $(function () {
 
 });
 function showAddItemDlg() {
-    $("#addMetaItemDlg").dialog("open");
+    var row = $("#metaGrid").treegrid("getSelected");
+    if (row && row.kind == 3) {
+        var dlg = $("#addMetaItemDlg");
+        dlg.dialog("open");
+        dlg.find("input[name='parent_id']").val(row.id);
+    }
+
 }
 
 function showEditItemDlg(rowId) {
     var mg = $("#metaGrid");
-    var data = mg.datagrid("getData");
-    mg.datagrid("selectRecord", rowId);
-    var row = mg.datagrid("getSelected");
+    var data = mg.treegrid("getData");
+    mg.treegrid("selectRecord", rowId);
+    var row = mg.treegrid("getSelected");
     if (row) {
         $("#id2").val(row.id);
         $("#zh_name2").textbox("setValue", row.zh_name);
@@ -164,7 +187,9 @@ function submitStructureForm() {
     var domain = $("#domain1").textbox("getValue");
     var example = $("#example1").textbox("getValue");
     var is_sorted = $("#is_sorted1").combobox("getValue");
-    $.post("/bcms/proxy", {
+    var parent_id = $("#addMetaItemDlg").find("input[name='parent_id']").val();
+    //增加子类型
+    var params = {
         method: "POST",
         url: "/metatype/",
         zh_name: zh_name,
@@ -177,11 +202,14 @@ function submitStructureForm() {
         lom_id: lom_id,
         collection: 3,
         kind: kind
-        //parent_id: null
-    }, function (data) {
+    };
+    if (parent_id) {
+        params.parent_id = parent_id;
+    }
+    $.post("/bcms/proxy", params, function (data) {
         if (data.id != null) {
             $('#addMetaItemDlg').dialog("close");
-            $("#metaGrid").datagrid("reload");
+            $("#metaGrid").treegrid("reload");
         } else {
             alert(data.msg);
         }
