@@ -7,20 +7,19 @@
     <jsp:include page="../../layout/admin/adminheader.jsp"/>
     <script src="../../js/admin/metadata/left_tree.js" type="text/javascript"></script>
     <style type="text/css">
-        .ftitle
-        {
+        .ftitle {
             font-size: 14px;
             font-weight: bold;
             padding: 5px 0;
             margin-bottom: 10px;
             border-bottom: 1px solid #ccc;
         }
-        .fitem
-        {
+
+        .fitem {
             margin-bottom: 5px;
         }
-        .fitem label
-        {
+
+        .fitem label {
             display: inline-block;
             width: 80px;
         }
@@ -83,21 +82,23 @@
 
 <div id="addMetaCategoryDlg" class="easyui-dialog" title="添加元数据标准分类" style="width:350px;height:250px;" closed="true">
     <form>
+        <input type="hidden" name="parent_id" value="">
         <table class="table">
             <tr>
                 <td><label>元数据分类名称:</label></td>
-                <td><input type="text" required="true" class="easyui-textbox"/></td>
+                <td><input type="text" required="true" id="categoryName1" class="easyui-textbox"/></td>
             </tr>
             <tr>
                 <td><label>元数据分类描述:</label></td>
-                <td><input type="text" required="true" class="easyui-textbox" multiline="true" style="height:60px"/>
+                <td><input type="text" required="true" id="categoryDesc1" class="easyui-textbox" multiline="true"
+                           style="height:60px"/>
                 </td>
             </tr>
 
             <tr>
                 <td colspan="2" style="text-align:center;">
-                    <a class="easyui-linkbutton">提交</a>
-                    <a class="easyui-linkbutton">取消</a>
+                    <a class="easyui-linkbutton" onclick="submitAddMetaCategory()">提交</a>
+                    <a class="easyui-linkbutton" onclick="$('#addMetaCategoryDlg').dialog('close')">取消</a>
                 </td>
             </tr>
         </table>

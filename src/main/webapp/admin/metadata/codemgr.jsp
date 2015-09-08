@@ -14,75 +14,76 @@
 <rapid:override name="mainName">编码管理</rapid:override>
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
-<div data-options="region:'center',title:'字段列表'" iconCls="icon-page_world">
-    <div id="tbr" style="height:30px;line-height:30px;">
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddEncodeTypeDlg()">增加编码分类</a>
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddEncodeItemDlg()">增加编码项</a>
-        <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除2</a>
-        <select class="easyui-combobox" editable="false" id="searchCondition">
-            <option>按名称</option>
-            <option>按编码</option>
-        </select>
-        <input type="text" class="easyui-textbox"/><a class="easyui-linkbutton" plain="true"
-                                                      iconCls="icon-search">搜索</a>
+    <div data-options="region:'center',title:'字段列表'" iconCls="icon-page_world">
+        <div id="tbr" style="height:30px;line-height:30px;">
+            <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddEncodeTypeDlg()">增加编码分类</a>
+            <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddEncodeItemDlg()">增加编码项</a>
+            <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除2</a>
+            <select class="easyui-combobox" editable="false" id="searchCondition">
+                <option>按名称</option>
+                <option>按编码</option>
+            </select>
+            <input type="text" class="easyui-textbox"/><a class="easyui-linkbutton" plain="true"
+                                                          iconCls="icon-search">搜索</a>
 
+        </div>
+        <table toolbar="#tbr" id="metaGrid" class="easyui-treegrid"
+               data-options="singleSelect:true,collapsible:true,url:'/bcms/proxy?url=encode&method=GET',method:'post'"
+               rownumbers="true"
+               pagination="true">
+
+        </table>
     </div>
-    <table toolbar="#tbr" id="metaGrid" class="easyui-treegrid"
-           data-options="singleSelect:true,collapsible:true,url:'./codemgr.json',method:'post'" rownumbers="true"
-           pagination="true">
+    <div id="ttbr">
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addItemToDlg()">提交</a>
+        <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">取消</a>
 
-    </table>
-</div>
-<div id="ttbr">
-    <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addItemToDlg()">提交</a>
-    <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">取消</a>
-
-    <p></p>
-</div>
-<div toolbar="#ttbr" id="selectItemDlg" title="选择字段" class="easyui-dialog" closed="true"
-     style="width:450px;height:400px;padding:10px;">
-    <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
-</div>
-<div id="addEncodeTypeDlg" title="增加编码分类" class="easyui-dialog" closed="true"
-     style="width:300px;height:200px;padding:10px;">
-    <form id="addEncodeTypeForm">
-        <table class="table">
-            <tr>
-                <td><label>名称:</label></td>
-                <td><input type="text" class="easyui-textbox" id="name1" required="true"></td>
-            </tr>
-            <%--<tr>
-                <td><label>英文名称:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
-            </tr>--%>
-            <tr>
-                <td><label>编码</label></td>
-                <td><input type="text" class="easyui-textbox" id="code1" required="true"></td>
-            </tr>
-        </table>
-        <a class="easyui-linkbutton" plain="false" onclick="submitAddEncode()">提交</a>
-        <a class="easyui-linkbutton" plain="false" onclick="$('#addEncodeTypeDlg').dialog('close');">取消</a>
-    </form>
-</div>
+        <p></p>
+    </div>
+    <div toolbar="#ttbr" id="selectItemDlg" title="选择字段" class="easyui-dialog" closed="true"
+         style="width:450px;height:400px;padding:10px;">
+        <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
+    </div>
+    <div id="addEncodeTypeDlg" title="增加编码分类" class="easyui-dialog" closed="true"
+         style="width:300px;height:200px;padding:10px;">
+        <form id="addEncodeTypeForm">
+            <table class="table">
+                <tr>
+                    <td><label>名称:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="name1" required="true"></td>
+                </tr>
+                    <%--<tr>
+                        <td><label>英文名称:</label></td>
+                        <td><input type="text" class="easyui-textbox"></td>
+                    </tr>--%>
+                <tr>
+                    <td><label>编码</label></td>
+                    <td><input type="text" class="easyui-textbox" id="code1" required="true"></td>
+                </tr>
+            </table>
+            <a class="easyui-linkbutton" plain="false" onclick="submitAddEncode()">提交</a>
+            <a class="easyui-linkbutton" plain="false" onclick="$('#addEncodeTypeDlg').dialog('close');">取消</a>
+        </form>
+    </div>
 
 
-<div id="addEncodeItemDlg" title="增加编码项" class="easyui-dialog" closed="true"
-     style="width:300px;height:150px;padding:10px;">
-    <form>
-        <table>
-            <tr>
-                <td><label>属性值:</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
-            </tr>
-            <tr>
-                <td><label>编码</label></td>
-                <td><input type="text" class="easyui-textbox"></td>
-            </tr>
-        </table>
-        <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
-        <a class="easyui-linkbutton" plain="false">取消</a>
-    </form>
-</div>
+    <div id="addEncodeItemDlg" title="增加编码项" class="easyui-dialog" closed="true"
+         style="width:300px;height:150px;padding:10px;">
+        <form>
+            <table>
+                <tr>
+                    <td><label>属性值:</label></td>
+                    <td><input type="text" class="easyui-textbox"></td>
+                </tr>
+                <tr>
+                    <td><label>编码</label></td>
+                    <td><input type="text" class="easyui-textbox"></td>
+                </tr>
+            </table>
+            <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
+            <a class="easyui-linkbutton" plain="false">取消</a>
+        </form>
+    </div>
 </rapid:override>
 
 <!-- extends from base.jsp -->

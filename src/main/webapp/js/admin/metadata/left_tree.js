@@ -23,3 +23,33 @@ function addMetaLib() {
 function addMetaCategory() {
     $("#addMetaCategoryDlg").dialog("open");
 }
+
+function submitAddMetaCategory() {
+    var name = $("#categoryName1").textbox("getValue");
+    var desc = $("#categoryDesc1").textbox("getValue");
+    var parent_id = $("#addMetaCategoryDlg").find("input[name=name]").val();
+    var params = {
+        url: "metalibrarycategory/",
+        method: "POST"
+    };
+    if (name) {
+        params.name = name;
+    } else {
+        return;
+    }
+    if (desc) {
+        params.description = desc;
+    }
+    if (parent_id) {
+        params.parent_id = parent_id;
+    }
+    $.post("/bcms/proxy", params, function (data) {
+        if (data.id != null) {
+            $("#addMetaCategoryDlg").dialog("close");
+        } else {
+            if (data.success != null && data.success == false) {
+                alert(data.msg);
+            }
+        }
+    }, "json");
+}

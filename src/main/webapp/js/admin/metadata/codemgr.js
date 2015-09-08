@@ -47,7 +47,7 @@ $(function () {
         treeField: 'name',
         fitColumns: true,
         columns: [[
-            {field: "id", title: "id", width: 100},
+            {field: "id", title: "id", width: 100, hidden: true},
             {field: "name", title: "属性", width: 100},
             {field: "code", title: "编码", width: 100},
             {
