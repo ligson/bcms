@@ -179,6 +179,12 @@ function submitStructureForm() {
         kind: kind
         //parent_id: null
     }, function (data) {
-        console.log(data);
-    });
+        if (data.id != null) {
+            $('#addMetaItemDlg').dialog("close");
+            $("#metaGrid").datagrid("reload");
+        } else {
+            alert(data.msg);
+        }
+        //console.log(data);
+    }, "json");
 }

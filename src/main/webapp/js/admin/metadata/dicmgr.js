@@ -26,6 +26,16 @@ function showAddDicItemDlg() {
 function showAddDicTypeDlg() {
     $("#addDicTypeDlg").dialog("open");
 }
+function deleteDic() {
+    var rows = $("#metaGrid").datagrid("getSelected");
+    if (rows) {
+        $.post("/bcms/proxy", {url: "vocabulary/" + rows.id, method: "DELETE"}, function (data) {
+            if (data.id != null) {
+                $("#metaGrid").datagrid("reload");
+            }
+        }, "json");
+    }
+}
 
 /****
  * "id": "FI-SW-01",
@@ -40,7 +50,7 @@ $(function () {
         url: "/bcms/proxy?url=vocabulary&method=GET",
         fitColumns: true,
         columns: [[
-            {field: "id", title: "id", width: 100},
+            {field: "id", title: "id", width: 100, hidden: true},
             {field: "zh_name", title: "中文名称", width: 100},
             {field: "en_name", title: "英文名称", width: 100},
             {field: "lom_id", title: "lom编号", width: 100},

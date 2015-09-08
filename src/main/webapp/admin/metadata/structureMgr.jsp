@@ -43,9 +43,9 @@
     <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
 </div>
 <div id="addMetaItemDlg" title="增加结构类型" class="easyui-dialog" closed="true"
-     style="width:450px;height:450px;padding:10px;">
+     style="width:450px;height:650px;padding:10px;">
     <form>
-        <table>
+        <table class="table">
             <tr>
                 <td><label>中文名称:</label></td>
                 <td><input type="text" class="easyui-textbox" name="zh_name" id="zh_name1"></td>
@@ -105,7 +105,7 @@
 
                 </td>
             </tr>
-            <tr>
+          <%--  <tr>
                 <td><label>约束:</label></td>
                 <td style="padding:10px;line-height:30px;">
                     <div>是否唯一:<input type="checkbox"></div>
@@ -116,7 +116,7 @@
 
                     <div>是否必备:<input type="checkbox"></div>
                 </td>
-            </tr>
+            </tr>--%>
         </table>
         <a class="easyui-linkbutton" plain="false" onclick="submitStructureForm()">提交</a>
         <a class="easyui-linkbutton" plain="false" onclick="$('#addMetaItemDlg').dialog('close')">取消</a>
