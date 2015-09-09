@@ -181,6 +181,7 @@ public class Proxy extends HttpServlet {
             e.printStackTrace();
         }
 
+        response.setCharacterEncoding("UTF-8");
         response.getWriter().println(content);
         //objectMapper.writeValue(response.getOutputStream(), result);
     }

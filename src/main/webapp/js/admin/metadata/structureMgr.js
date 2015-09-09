@@ -84,10 +84,12 @@ $(function () {
         treeField: 'zh_name',
         fitColumns: true,
         loadFilter: function (data, parentId) {
-            for (var i = 0; i < data.rows.length; i++) {
-                var row = data.rows[i];
-                if (row.kind == 3) {
-                    row.state = "closed";
+            if (data.rows) {
+                for (var i = 0; i < data.rows.length; i++) {
+                    var row = data.rows[i];
+                    if (row.kind == 3) {
+                        row.state = "closed";
+                    }
                 }
             }
             return data;
@@ -146,13 +148,19 @@ $(function () {
 
 
 });
-function showAddItemDlg() {
-    var row = $("#metaGrid").treegrid("getSelected");
-    if (row && row.kind == 3) {
+function showAddItemDlg(isTop) {
+    if (isTop) {
         var dlg = $("#addMetaItemDlg");
         dlg.dialog("open");
-        dlg.find("input[name='parent_id']").val(row.id);
+    } else {
+        var row = $("#metaGrid").treegrid("getSelected");
+        if (row && row.kind == 3) {
+            var dlg = $("#addMetaItemDlg");
+            dlg.dialog("open");
+            dlg.find("input[name='parent_id']").val(row.id);
+        }
     }
+
 
 }
 

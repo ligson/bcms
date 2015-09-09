@@ -16,8 +16,8 @@
 <rapid:override name="body">
     <div data-options="region:'center',title:'字段列表'" iconCls="icon-page_world">
         <div id="tbr" style="height:30px;line-height:30px;">
-            <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg()">增加结构类型</a>
-            <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg()">增加</a>
+            <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg(true)">增加结构类型</a>
+            <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg(false)">增加</a>
             <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除2</a>
             <select class="easyui-combobox" editable="false" id="searchCondition">
                 <option>按名称</option>
