@@ -40,6 +40,16 @@
         <servlet-name>structureQueryProxy</servlet-name>
         <servlet-class>brms.action.StructureQuery</servlet-class>
     </servlet>
+
+    <servlet-mapping>
+        <servlet-name>categoryTree</servlet-name>
+        <url-pattern>/categoryTree</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>categoryTree</servlet-name>
+        <servlet-class>brms.action.CategoryTree</servlet-class>
+    </servlet>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>

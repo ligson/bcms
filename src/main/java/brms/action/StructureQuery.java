@@ -37,6 +37,7 @@ public class StructureQuery extends HttpServlet {
                     if (jsonObject.has("children")) {
                         JSONArray jsonArray = jsonObject.getJSONArray("children");
                         resp.setContentType("text/json");
+                        System.out.println(jsonArray.toString());
                         resp.getWriter().println(jsonArray.toString());
                     } else {
                         resp.setContentType("text/json");
@@ -60,7 +61,7 @@ public class StructureQuery extends HttpServlet {
             HttpGet httpGet = new HttpGet(Proxy.BASE_URL + "metatype?kind=3&rows=10&page=" + page);
             HttpResponse response = Proxy.httpClient.execute(httpGet, Proxy.context);
             if (response.getStatusLine().getStatusCode() == 200) {
-                String jsonString = EntityUtils.toString(response.getEntity(),"UTF-8");
+                String jsonString = EntityUtils.toString(response.getEntity(), "UTF-8");
                 try {
                     JSONObject jsonObject = new JSONObject(jsonString);
                     //JSONArray jsonArray = jsonObject.getJSONArray("children");

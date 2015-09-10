@@ -60,20 +60,28 @@
 </div>
 <div id="addMetaLibDlg" class="easyui-dialog" title="添加元数据标准" style="width:300px;height:250px;" closed="true">
     <form>
+        <input type="hidden" name="category_id" value="" id="categoryId10">
         <table class="table">
             <tr>
                 <td><label>标准名称:</label></td>
-                <td><input type="text" required="true" class="easyui-textbox"/></td>
+                <td><input type="text" required="true" class="easyui-textbox" id="name10"/></td>
             </tr>
             <tr>
                 <td><label>标准描述:</label></td>
-                <td><input type="text" required="true" class="easyui-textbox" multiline="true" style="height:60px"/>
+                <td><input type="text" class="easyui-textbox" multiline="true" style="height:60px"
+                           id="desc10"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label>版本:</label></td>
+                <td><input type="text" required="true" class="easyui-textbox"
+                           id="version10" validType="number"/>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align:center;">
-                    <a class="easyui-linkbutton">提交</a>
-                    <a class="easyui-linkbutton">取消</a>
+                    <a class="easyui-linkbutton" onclick="submitAddMetaLib()">提交</a>
+                    <a class="easyui-linkbutton" onclick="$('#addMetaLibDlg').dialog('close')">取消</a>
                 </td>
             </tr>
         </table>

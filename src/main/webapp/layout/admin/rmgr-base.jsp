@@ -100,7 +100,7 @@
                 </td>
                 <td>
                     <input class="easyui-combotree"
-                           data-options="url:'../metadata/lefttree.json',method:'get',required:true"
+                           data-options="url:'/bcms/categoryTree',method:'get',required:true"
                            style="width:200px;"/>
                 </td>
             </tr>
