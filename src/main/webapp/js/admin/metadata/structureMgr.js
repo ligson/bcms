@@ -52,6 +52,7 @@ var dataTypes = [{name: "0", value: "多语言字符串"}, {name: "1", value: "�
 }, {name: "3", value: "结构类型"}, {name: "4", value: "时间"}];
 
 function addItemToDlg() {
+    alert("a");
     var aArr = $("#ttbr p").find("a");
     $("#structureItems").empty();
     for (var i = 0; i < aArr.length; i++) {
@@ -133,8 +134,9 @@ $(function () {
         ]
     });
 
-    $("#itemDateTypeSlt").combobox({
+    $("#kind1").combobox({
         onSelect: function (item) {
+            alert("a");
             $("#structureItems").empty();
             if (item.value == "structure") {
                 $("#selectItemDlg").dialog("open");
@@ -166,8 +168,7 @@ function showAddItemDlg(isTop) {
 
 function showEditItemDlg(rowId) {
     var mg = $("#metaGrid");
-    var data = mg.treegrid("getData");
-    mg.treegrid("selectRecord", rowId);
+    mg.treegrid("select", rowId);
     var row = mg.treegrid("getSelected");
     if (row) {
         $("#id2").val(row.id);

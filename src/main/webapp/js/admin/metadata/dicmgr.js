@@ -27,9 +27,9 @@ function showAddDicTypeDlg() {
     $("#addDicTypeDlg").dialog("open");
 }
 function deleteDic() {
-    var rows = $("#metaGrid").datagrid("getSelected");
-    if (rows) {
-        $.post("/bcms/proxy", {url: "vocabulary/" + rows.id, method: "DELETE"}, function (data) {
+    var row = $("#metaGrid").datagrid("getSelected");
+    if (row) {
+        $.post("/bcms/proxy", {url: "vocabulary/" + row.id, method: "DELETE"}, function (data) {
             if (data.id != null) {
                 $("#metaGrid").datagrid("reload");
             }

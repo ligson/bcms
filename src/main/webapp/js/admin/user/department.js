@@ -41,8 +41,20 @@ function initDepartmentTree() {
         } else {
             departmentTree = formatTreeData(obj)
             $("#department_tree").tree({
-                data: departmentTree, onClick: function (node) {
+                data: departmentTree,
+                onClick: function (node) {
                     initUserGridByDepartment(node);
+                    $.post("/bcms/proxy", {method: "get", url: "department/"+node.id}, function (result2) {
+                        var obj2 = jQuery.parseJSON(result2);
+                        if (obj2.success == false) {
+                            alert(obj2.msg);
+                        } else {
+                            $("#department_tree").tree('update', {
+                                parent : node.target,
+                                data : formatTreeData(obj2.children)
+                            });
+                        }
+                    });
                 }
             });
         }

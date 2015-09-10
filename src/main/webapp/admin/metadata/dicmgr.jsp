@@ -45,7 +45,7 @@
     </div>
 
     <div id="addDicTypeDlg" title="增加词汇" class="easyui-dialog" closed="true"
-         style="width:400px;height:350px;padding:10px;">
+         style="width:400px;height:auto;padding:10px;">
         <form id="addDicForm">
             <table class="table">
                 <tr>
@@ -70,7 +70,7 @@
                 </tr>
             </table>
             <a class="easyui-linkbutton" plain="false" onclick="submitDicForm()">提交</a>
-            <a class="easyui-linkbutton" plain="false">取消</a>
+            <a class="easyui-linkbutton" plain="false" onclick="$('#addDicTypeDlg').dialog('close');">取消</a>
         </form>
     </div>
 
@@ -85,7 +85,7 @@
                 </tr>
             </table>
             <a class="easyui-linkbutton" plain="false" onclick="showAddItemDlg()">提交</a>
-            <a class="easyui-linkbutton" plain="false">取消</a>
+            <a class="easyui-linkbutton" plain="false" onclick="$('#addDicItemDlg').dialog('close')">取消</a>
         </form>
     </div>
 
