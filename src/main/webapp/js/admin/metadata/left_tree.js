@@ -21,7 +21,7 @@ $(function () {
         loadFilter: function (data, parent) {
             //console.log(node.iconCls);
             for (var i = 0; i < data.length; i++) {
-                if (data[i].children_type == 2) {
+                if (data[i].node_type == 1) {
                     data[i].iconCls = "icon-06";
                 }
             }
@@ -31,14 +31,16 @@ $(function () {
 });
 function addMetaLib() {
     var node = $("#metadata_tree").tree("getSelected");
-    $("#categoryId10").val(node.id);
-    $("#addMetaLibDlg").dialog("open");
+    if (node.node_type == 1) {
+        $("#categoryId10").val(node.id);
+        $("#addMetaLibDlg").dialog("open");
+    }
 }
 function addMetaCategory() {
     var node = $("#metadata_tree").tree("getSelected");
     var dlg = $("#addMetaCategoryDlg");
     dlg.dialog("open");
-    if (node) {
+    if (node && node.node_type != 2) {
         dlg.find("input[name='parent_id']").val(node.id);
     }
 }
@@ -58,7 +60,7 @@ function submitAddMetaLib() {
                 category_id: categoryId10,
                 version: version10,
                 description: desc10,
-                meta_types:"[1]"
+                meta_types: "[1]"
             }, function (data) {
                 if (data.id != null) {
                     $("#addMetaLibDlg").dialog("close");

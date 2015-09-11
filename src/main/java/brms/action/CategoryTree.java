@@ -32,7 +32,7 @@ public class CategoryTree extends HttpServlet {
             HttpGet httpGet = new HttpGet(Proxy.BASE_URL + "metalibrarycategory/");
             HttpResponse response = Proxy.httpClient.execute(httpGet, Proxy.context);
             if (response.getStatusLine().getStatusCode() == 200) {
-                String json = EntityUtils.toString(response.getEntity());
+                String json = EntityUtils.toString(response.getEntity(),"UTF-8");
                 try {
                     JSONArray jsonArray = new JSONArray(json);
                     resp.getWriter().println(jsonArray.toString());
