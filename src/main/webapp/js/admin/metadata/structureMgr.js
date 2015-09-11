@@ -52,7 +52,6 @@ var dataTypes = [{name: "0", value: "多语言字符串"}, {name: "1", value: "�
 }, {name: "3", value: "结构类型"}, {name: "4", value: "时间"}];
 
 function addItemToDlg() {
-    alert("a");
     var aArr = $("#ttbr p").find("a");
     $("#structureItems").empty();
     for (var i = 0; i < aArr.length; i++) {
@@ -136,7 +135,6 @@ $(function () {
 
     $("#kind1").combobox({
         onSelect: function (item) {
-            alert("a");
             $("#structureItems").empty();
             if (item.value == "structure") {
                 $("#selectItemDlg").dialog("open");
@@ -178,9 +176,9 @@ function showEditItemDlg(rowId) {
         $("#lom_id2").textbox("setValue", row.lom_id);
         $("#val_num2").textbox("setValue", row.val_num);
         $("#example2").textbox("setValue", row.example);
-        $("#is_sorted2").combobox("setValue", row.is_sorted);
+        $("#is_sorted2").combobox("select", row.is_sorted);
         $("#domain2").textbox("setValue", row.domain);
-        $("#kind2").textbox("setValue", row.kind);
+        $("#kind2").combobox("select", row.kind);
         $("#editMetaItemDlg").dialog("open");
     }
 }
@@ -224,4 +222,59 @@ function submitStructureForm() {
         }
         //console.log(data);
     }, "json");
+}
+
+function submitModifyStructureForm() {
+    //var dlg = $("#addMetaItemDlg");
+    var id=$("#id2").val();
+    var zh_name = $("#zh_name2").textbox("getValue");
+    var en_name = $("#en_name2").textbox("getValue");
+    var description = $("#description2").textbox("getValue");
+    var lom_id = $("#lom_id2").textbox("getValue");
+    var val_num = $("#val_num2").textbox("getValue");
+    var kind = $("#kind2").combobox("getValue");
+    var domain = $("#domain2").textbox("getValue");
+    var example = $("#example2").textbox("getValue");
+    var is_sorted = $("#is_sorted2").combobox("getValue");
+    var parent_id = $("#editMetaItemDlg").find("input[name='parent_id']").val();
+    //增加子类型
+    var params = {
+        method: "put",
+        url: "/metatype/"+id,
+        zh_name: zh_name,
+        en_name: en_name,
+        description: description,
+        domain: domain,
+        val_num: val_num,
+        is_sorted: is_sorted,
+        example: example,
+        lom_id: lom_id,
+        collection: 3,
+        kind: kind
+    };
+    if (parent_id) {
+        params.parent_id = parent_id;
+    }
+    $.post("/bcms/proxy", params, function (data) {
+        if (data.id != null) {
+            $('#editMetaItemDlg').dialog("close");
+            $("#metaGrid").treegrid("reload");
+        } else {
+            alert(data.msg);
+        }
+        //console.log(data);
+    }, "json");
+}
+
+function delStructure(){
+    var row = $('#metaGrid').treegrid('getSelected');
+    if(row){
+        $.post("/bcms/proxy", {url: "metatype/" + row.id, method: "DELETE"}, function (data) {
+            if (data.id != null) {
+                $("#metaGrid").treegrid("reload");
+            }
+        }, "json");
+    }else{
+        alert("请选择要删除的数据");
+    }
 }

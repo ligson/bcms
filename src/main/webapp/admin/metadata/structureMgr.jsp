@@ -18,7 +18,7 @@
         <div id="tbr" style="height:30px;line-height:30px;">
             <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg(true)">增加结构类型</a>
             <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg(false)">增加</a>
-            <a class="easyui-linkbutton" plain="true" iconCls="icon-remove">删除2</a>
+            <a class="easyui-linkbutton" plain="true" iconCls="icon-remove" onclick="delStructure();">删除</a>
             <select class="easyui-combobox" editable="false" id="searchCondition">
                 <option>按名称</option>
                 <option>按编码</option>
@@ -204,8 +204,8 @@
                     </td>
                 </tr>
             </table>
-            <a class="easyui-linkbutton" plain="false" onclick="submitStructureForm()">提交</a>
-            <a class="easyui-linkbutton" plain="false" onclick="$('#addMetaItemDlg').dialog('close')">取消</a>
+            <a class="easyui-linkbutton" plain="false" onclick="submitModifyStructureForm()">提交</a>
+            <a class="easyui-linkbutton" plain="false" onclick="$('#editMetaItemDlg').dialog('close')">取消</a>
         </form>
     </div>
 </rapid:override>
