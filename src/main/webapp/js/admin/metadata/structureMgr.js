@@ -136,13 +136,20 @@ $(function () {
     $("#kind1").combobox({
         onSelect: function (item) {
             $("#structureItems").empty();
-            if (item.value == "structure") {
-                $("#selectItemDlg").dialog("open");
-            } else if (item.value == "vocabulary") {
-                $("#metadata_tree1").tree({url: "./jsondata/vocabulary/vocabularytree.json"});
-                $("#metadata_tree1").tree("reload");
-                $("#selectItemDlg").dialog("open");
+            if (item.value == "2") {
+                $("#vocabulary_item").show();
+            } else {
+                $("#vocabulary_item").hide();
             }
+        }
+    });
+
+    $("#vocabulary_id1").combobox({
+        url: "/bcms/proxy?url=vocabulary&method=GET&page=1&rows=50",
+        textField: "zh_name",
+        valueField: "id",
+        loadFilter: function (data) {
+            return data.rows;
         }
     });
 
@@ -195,6 +202,7 @@ function submitStructureForm() {
     var example = $("#example1").textbox("getValue");
     var is_sorted = $("#is_sorted1").combobox("getValue");
     var parent_id = $("#addMetaItemDlg").find("input[name='parent_id']").val();
+
     //增加子类型
     var params = {
         method: "POST",
@@ -213,6 +221,16 @@ function submitStructureForm() {
     if (parent_id) {
         params.parent_id = parent_id;
     }
+
+    if (kind == "2") {
+        var vocabulary_type_id = $("#vocabulary_id1").combobox("getValue");
+        if (vocabulary_type_id) {
+            params.vocabulary_type_id = vocabulary_type_id;
+        } else {
+            alert("请选择词汇表!");
+            return;
+        }
+    }
     $.post("/bcms/proxy", params, function (data) {
         if (data.id != null) {
             $('#addMetaItemDlg').dialog("close");
@@ -226,7 +244,7 @@ function submitStructureForm() {
 
 function submitModifyStructureForm() {
     //var dlg = $("#addMetaItemDlg");
-    var id=$("#id2").val();
+    var id = $("#id2").val();
     var zh_name = $("#zh_name2").textbox("getValue");
     var en_name = $("#en_name2").textbox("getValue");
     var description = $("#description2").textbox("getValue");
@@ -240,7 +258,7 @@ function submitModifyStructureForm() {
     //增加子类型
     var params = {
         method: "put",
-        url: "/metatype/"+id,
+        url: "/metatype/" + id,
         zh_name: zh_name,
         en_name: en_name,
         description: description,
@@ -266,15 +284,15 @@ function submitModifyStructureForm() {
     }, "json");
 }
 
-function delStructure(){
+function delStructure() {
     var row = $('#metaGrid').treegrid('getSelected');
-    if(row){
+    if (row) {
         $.post("/bcms/proxy", {url: "metatype/" + row.id, method: "DELETE"}, function (data) {
             if (data.id != null) {
                 $("#metaGrid").treegrid("reload");
             }
         }, "json");
-    }else{
+    } else {
         alert("请选择要删除的数据");
     }
 }

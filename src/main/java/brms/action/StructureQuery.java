@@ -4,6 +4,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,6 +21,7 @@ import java.util.Map;
  * Created by ligson on 2015/9/8.
  */
 public class StructureQuery extends HttpServlet {
+    private static final Logger logger = Logger.getLogger(StructureQuery.class);
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -58,7 +60,9 @@ public class StructureQuery extends HttpServlet {
             if (StringUtils.isNotBlank(pageString)) {
                 page = Integer.parseInt(pageString);
             }
-            HttpGet httpGet = new HttpGet(Proxy.BASE_URL + "metatype?kind=3&rows=10&page=" + page);
+            String url = Proxy.BASE_URL + "metatype?kind=3&rows=10&page=" + page+"&parent_id=0";
+            logger.debug(url);
+            HttpGet httpGet = new HttpGet(url);
             HttpResponse response = Proxy.httpClient.execute(httpGet, Proxy.context);
             if (response.getStatusLine().getStatusCode() == 200) {
                 String jsonString = EntityUtils.toString(response.getEntity(), "UTF-8");

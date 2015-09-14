@@ -97,12 +97,17 @@
                     <td>
                         <select required="true" class="easyui-combobox" name="kind" id="kind1">
                             <option value="0">多语言字符串</option>
-                                <%--<option value="string">字符串</option>--%>
                             <option value="1">数值</option>
                             <option value="2">词汇表</option>
                             <option value="3">结构类型</option>
                             <option value="4">时间</option>
                         </select>
+                    </td>
+                </tr>
+                <tr id="vocabulary_item" style="display:none;">
+                    <td><label>词汇表列表</label></td>
+                    <td>
+                        <input id="vocabulary_id1" class="easyui-combobox" data-options="panelHeight:'auto'">
                     </td>
                 </tr>
                 <tr>
