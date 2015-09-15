@@ -35,9 +35,9 @@
                onclick="addMetaCategory()">分类</a>
             <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="addMetaLib()">标准</a>
             <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-20130408025545236_easyicon_net_30"
-               onclick="addMetaLib()">删除</a>
+               onclick="delMeta();">删除</a>
             <a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-edit"
-               onclick="addMetaLib()">编辑</a>
+               onclick="editMeta();">编辑</a>
         </div>
         <ul id="metadata_tree" toolbar="#metatreebar">
         </ul>
@@ -88,6 +88,37 @@
     </form>
 </div>
 
+<div id="editMetaLibDlg" class="easyui-dialog" title="编辑元数据标准" style="width:300px;height:auto;" closed="true">
+    <form>
+        <input type="hidden" name="category_id" value="" id="categoryId11">
+        <input type="hidden" name="id11" id="id11">
+        <table class="table">
+            <tr>
+                <td><label>标准名称:</label></td>
+                <td><input type="text" required="true" class="easyui-textbox" id="name11"/></td>
+            </tr>
+            <tr>
+                <td><label>标准描述:</label></td>
+                <td><input type="text" class="easyui-textbox" multiline="true" style="height:60px"
+                           id="desc11"/>
+                </td>
+            </tr>
+            <tr>
+                <td><label>版本:</label></td>
+                <td><input type="text" required="true" class="easyui-textbox"
+                           id="version11" validType="number"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <a class="easyui-linkbutton" onclick="submitModifyMetaLib()">提交</a>
+                    <a class="easyui-linkbutton" onclick="$('#editMetaLibDlg').dialog('close')">取消</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
 <div id="addMetaCategoryDlg" class="easyui-dialog" title="添加元数据标准分类" style="width:350px;height:250px;" closed="true">
     <form>
         <input type="hidden" name="parent_id" value="">
@@ -107,6 +138,32 @@
                 <td colspan="2" style="text-align:center;">
                     <a class="easyui-linkbutton" onclick="submitAddMetaCategory()">提交</a>
                     <a class="easyui-linkbutton" onclick="$('#addMetaCategoryDlg').dialog('close')">取消</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="editMetaCategoryDlg" class="easyui-dialog" title="编辑元数据标准分类" style="width:350px;height:auto;" closed="true">
+    <form>
+        <input type="hidden" id="parent_id2" value="">
+        <input type="hidden" id="id2" value="">
+        <table class="table">
+            <tr>
+                <td><label>元数据分类名称:</label></td>
+                <td><input type="text" required="true" id="categoryName2" class="easyui-textbox"/></td>
+            </tr>
+            <tr>
+                <td><label>元数据分类描述:</label></td>
+                <td><input type="text" required="true" id="categoryDesc2" class="easyui-textbox" multiline="true"
+                           style="height:60px"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <a class="easyui-linkbutton" onclick="submitModifyMetaCategory()">提交</a>
+                    <a class="easyui-linkbutton" onclick="$('#editMetaCategoryDlg').dialog('close')">取消</a>
                 </td>
             </tr>
         </table>
