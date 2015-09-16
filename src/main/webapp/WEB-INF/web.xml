@@ -49,6 +49,14 @@
         <servlet-name>categoryTree</servlet-name>
         <servlet-class>brms.action.CategoryTree</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>metaTypeList</servlet-name>
+        <servlet-class>brms.action.MetaTypeList</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>metaTypeList</servlet-name>
+        <url-pattern>/metaTypeList</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>

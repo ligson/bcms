@@ -22,4 +22,39 @@ $(function () {
             showContextMenu(e, node);
         }
     });
+
+    $("#metatypetree").combotree({
+        url: "/bcms/categoryTree",
+        formatter: function (node) {
+            return node.name;
+        },
+        loadFilter: function (data, parent) {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].node_type == 1) {
+                    data[i].iconCls = "icon-06";
+                }
+            }
+            return data;
+        },
+        onSelect:function(node){
+            $("#metatypetree").combotree("setValue",node.id);
+        }
+    });
+
+    $("#addCategoryDlg").dialog({
+        buttons: [
+            {
+                text: "提交",
+                handler: function () {
+
+                }
+            },
+            {
+                text: "取消",
+                handler: function () {
+
+                }
+            }
+        ]
+    });
 });

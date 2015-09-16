@@ -57,19 +57,18 @@
     </div>
 </div>
 <div id="addCategoryDlg" class="easyui-dialog" title="添加类库" data-options="iconCls:'icon-save'"
-     style="width:400px;height:300px;padding:10px" closed="true">
+     style="width:400px;height:250px" closed="true">
     <form>
         <table class="table">
             <tr>
                 <td>类库名称:</td>
-                <td><input class="easyui-textbox" required="true" type="text" name="name"/></td>
+                <td><input class="easyui-textbox" required="true" type="text" name="name" id=""/></td>
             </tr>
             <tr>
                 <td>类库元数据标准:</td>
                 <td>
-                    <input class="easyui-combotree"
-                           data-options="url:'../metadata/lefttree.json',method:'get',required:true"
-                           style="width:200px;"/>
+                    <select class="easyui-combotree"
+                            data-options="method:'get',required:true" id="metatypetree"></select>
                 </td>
             </tr>
             <tr>
@@ -80,10 +79,6 @@
             </tr>
         </table>
     </form>
-    <div style="text-align:center;padding:5px">
-        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">提交</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">取消</a>
-    </div>
 </div>
 
 <div id="editCategoryDlg" class="easyui-dialog" title="编辑类库" data-options="iconCls:'icon-save'"
