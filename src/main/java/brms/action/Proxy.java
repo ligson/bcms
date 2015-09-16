@@ -65,6 +65,7 @@ public class Proxy extends HttpServlet {
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("UTF-8");
         String url = request.getParameter("url");
         String method = request.getParameter("method");
         logger.debug("请求url:" + BASE_URL + url);

@@ -58,7 +58,7 @@
         </ul>
     </div>
 </div>
-<div id="addMetaLibDlg" class="easyui-dialog" title="添加元数据标准" style="width:300px;height:250px;" closed="true">
+<div id="addMetaLibDlg" class="easyui-dialog" title="添加元数据标准" style="width:300px;height:280px;" closed="true">
     <form>
         <input type="hidden" name="category_id" value="" id="categoryId10">
         <table class="table">
@@ -88,7 +88,7 @@
     </form>
 </div>
 
-<div id="editMetaLibDlg" class="easyui-dialog" title="编辑元数据标准" style="width:300px;height:auto;" closed="true">
+<div id="editMetaLibDlg" class="easyui-dialog" title="编辑元数据标准" style="width:300px;height:350px;" closed="true">
     <form>
         <input type="hidden" name="category_id" value="" id="categoryId11">
         <input type="hidden" name="id11" id="id11">

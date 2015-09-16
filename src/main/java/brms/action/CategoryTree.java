@@ -28,6 +28,7 @@ public class CategoryTree extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
         String type = req.getParameter("type");
+        resp.setCharacterEncoding("UTF-8");
         if (id == null) {
             HttpGet httpGet = new HttpGet(Proxy.BASE_URL + "metalibrarycategory/");
             HttpResponse response = Proxy.httpClient.execute(httpGet, Proxy.context);

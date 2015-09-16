@@ -25,6 +25,7 @@ public class StructureQuery extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setCharacterEncoding("UTF-8");
         Map<String, Object> errorMsg = new HashMap<String, Object>();
         errorMsg.put("success", false);
         JSONObject errorJson = new JSONObject(errorMsg);

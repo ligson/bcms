@@ -77,7 +77,7 @@ $(function () {
                 {field: 'example', title: '举例', width: 50},
                 {field: 'domain', title: '值域', width: 50},
                 {field: 'val_num', title: '取值数', width: 50},
-                {field: 'parent_id', title: 'parent_id', width: 50},
+                /*{field: 'parent_id', title: 'parent_id', width: 50},*/
                 {
                     field: 'collection', title: '类别', width: 50, formatter: function (value, row, idx) {
                     if (row.collection == 3) {
@@ -124,22 +124,14 @@ $(function () {
         ]
     });
 
-    $("#kind1").combobox({
-        onSelect: function (item) {
-            if (item.value == 2) {
-                $("#dicBlock").show();
-            } else {
-                $("#dicBlock").hide();
-            }
-            /* $("#structureItems").empty();
-             if (item.value == "structure") {
-             $("#selectItemDlg").dialog("open");
-             } else if (item.value == "vocabulary") {
-             $("#metadata_tree1").tree({url: "./jsondata/vocabulary/vocabularytree.json"});
-             $("#metadata_tree1").tree("reload");
-             $("#selectItemDlg").dialog("open");
-             }*/
-        }
+    $("#vocabulary_type_id12").combobox({
+        url: "/bcms/proxy?url=vocabulary&&method=GET&&page=1&&rows=100",
+        loadFilter: function (data) {
+            return data.rows;
+        },
+        valueField: "id",
+        textField: "zh_name"
+
     });
 
     //增加结构类型字段
@@ -165,12 +157,18 @@ $(function () {
             text: '确定',
             iconCls: 'icon-ok',
             handler: function () {
-                //alert('ok');
+                if ($("#addDicItemDlg").find("form").form("validate")) {
+                    addDocItem();
+                } else {
+                    alert("数据格式有误");
+                }
             }
         }, {
             text: '关闭',
             handler: function () {
-                $("#addDicItemDlg").dialog("close");
+                var dlg = $("#addDicItemDlg");
+                dlg.find("form").form("reset");
+                dlg.dialog("close");
 
             }
         }]
@@ -182,25 +180,166 @@ $(function () {
             {
                 text: "提交",
                 handler: function () {
-                    showAddItemDlg();
+                    if ($("#addMetaItemDlg").find("form").form("validate")) {
+                        addNormalItem();
+                    } else {
+                        alert("数据格式有误");
+                    }
                 }
 
             },
             {
-                text: "关闭"
+                text: "关闭",
+                handler: function () {
+                    var dlg = $("#addMetaItemDlg");
+                    dlg.find("form").form("reset");
+                    dlg.dialog("close");
+                }
             }
         ]
     });
 
 
 });
+
+function addNormalItem() {
+    var zh_name = $("#zh_name11").textbox("getValue");
+    var en_name = $("#en_name11").textbox("getValue");
+    var lom_id = $("#lom_id11").textbox("getValue");
+    var val_num = $("#val_num11").textbox("getValue");
+    var example = $("#example11").textbox("getValue");
+    var is_sorted = $("#is_sorted11").combobox("getValue");
+    var kind = $("#kind11").combobox("getValue");
+    var collection = $("#collection11").combobox("getValue");
+    var description = $("#description11").textbox("getValue");
+    var domain = $("#domain11").textbox("getValue");
+    var params = {
+        method: "POST",
+        url: "metatype/",
+        zh_name: zh_name,
+        en_name: en_name,
+        val_num: val_num,
+        example: example,
+        is_sorted: is_sorted,
+        kind: kind,
+        collection: collection,
+        description: description,
+        domain: domain
+    };
+
+    if (lom_id) {
+        params.lom_id = lom_id;
+    }
+
+
+    $.post("/bcms/proxy", params, function (data) {
+        if (data.id != null) {
+            var dlg = $("#addMetaItemDlg");
+            dlg.find("form").form("reset");
+            dlg.dialog("close");
+            var node = $("#metadata_tree").tree("getSelected");
+            $.post("/bcms/proxy", {
+                url: "metalibrary/add_metatype",
+                method: "POST",
+                metatype_id: data.id,
+                meta_library_id: node.id
+            }, function (data2) {
+                if (data2.result) {
+                    alert("增加成功");
+                } else {
+                    alert("增加失败");
+                }
+            }, "json");
+
+        } else {
+            if (data.success == false) {
+                dlg.dialog("fail");
+            }
+        }
+    }, "json");
+
+
+}
+
+function addDocItem() {
+    var zh_name = $("#zh_name12").textbox("getValue");
+    var en_name = $("#en_name12").textbox("getValue");
+    var lom_id = $("#lom_id12").textbox("getValue");
+    var val_num = $("#val_num12").textbox("getValue");
+    var example = $("#example12").textbox("getValue");
+    var is_sorted = $("#is_sorted12").combobox("getValue");
+    var kind = 2;
+    var collection = $("#collection12").combobox("getValue");
+    var description = $("#description12").textbox("getValue");
+    var domain = $("#domain12").textbox("getValue");
+    var vocabulary_type_id = $("#vocabulary_type_id12").combobox("getValue");
+    var params = {
+        method: "POST",
+        url: "metatype/",
+        zh_name: zh_name,
+        en_name: en_name,
+        val_num: val_num,
+        example: example,
+        is_sorted: is_sorted,
+        kind: kind,
+        collection: collection,
+        description: description,
+        domain: domain,
+        vocabulary_type_id: vocabulary_type_id
+    };
+
+    if (lom_id) {
+        params.lom_id = lom_id;
+    }
+
+
+    $.post("/bcms/proxy", params, function (data) {
+        if (data.id != null) {
+            var dlg = $("#addDicItemDlg");
+            dlg.find("form").form("reset");
+            dlg.dialog("close");
+            var node = $("#metadata_tree").tree("getSelected");
+            $.post("/bcms/proxy", {
+                url: "metalibrary/add_metatype",
+                method: "POST",
+                metatype_id: data.id,
+                meta_library_id: node.id
+            }, function (data2) {
+                if (data2.result) {
+                    alert("增加成功");
+                } else {
+                    alert("增加失败");
+                }
+            }, "json");
+
+        } else {
+            if (data.success == false) {
+                dlg.dialog("fail");
+            }
+        }
+    }, "json");
+
+
+}
+
 function showAddItemDlg() {
-    $("#addMetaItemDlg").dialog("open");
+    var node = $("#metadata_tree").tree("getSelected");
+    if (node && (node.node_type != 1)) {
+        $("#addMetaItemDlg").dialog("open");
+    } else {
+        alert("请选择元数据标准");
+    }
+
 }
 function showAddStructureItemDlg() {
     $("#addStructureItemDlg").dialog("open");
 }
 
 function showAddDicItemDlg() {
-    $("#addDicItemDlg").dialog("open");
+    var node = $("#metadata_tree").tree("getSelected");
+    if (node && (node.node_type != 1)) {
+        $("#addDicItemDlg").dialog("open");
+    } else {
+        alert("请选择元数据标准");
+    }
 }
