@@ -14,6 +14,7 @@
     <script type="text/javascript" src="../../js/admin/rmgr.js"></script>
     <script type="text/javascript" src="../../js/spark-md5.js"></script>
     <script type="text/javascript" src="../../js/common/fileutils.js"></script>
+    <script type="text/javascript" src="http://42.62.52.40:8000/static/flow.js"></script>
     <script type="text/javascript" src="../../js/admin/resourcemgr/createresource.js"></script>
 </rapid:override>
 <rapid:override name="mainName">操作日志</rapid:override>
@@ -38,14 +39,15 @@
             </tr>
             <tr>
                 <td><label>资源库</label></td>
-                <td><input class="easyui-combotree" data-options="url:'./lefttree.json',method:'get',required:true"
-                           style="width:200px;"/></td>
+                <td><select id="resourceTree" url="/bcms/proxy?url=resourcelibrary/&method=GET" class="easyui-combotree"
+                            data-options="method:'POST',required:true"
+                            style="width:200px;"></select></td>
             </tr>
-            <tr id="parentResource">
-                <td><label>父资源:</label></td>
-                <td><input class="easyui-combotree" data-options="url:'./lefttree.json',method:'get',required:true"
-                           style="width:200px;"/></td>
-            </tr>
+                <%-- <tr id="parentResource">
+                     <td><label>父资源:</label></td>
+                     <td><input class="easyui-combotree" data-options="url:'./lefttree.json',method:'get',required:true"
+                                style="width:200px;"/></td>
+                 </tr>--%>
 
 
                 <%--<tr>

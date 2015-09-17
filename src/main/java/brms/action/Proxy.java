@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.*;
+import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicNameValuePair;
@@ -31,7 +33,7 @@ public class Proxy extends HttpServlet {
     private static Logger logger = Logger.getLogger(Proxy.class);
     private static final long serialVersionUID = 1L;
     public final static String BASE_URL = "http://42.62.52.40:8000/";
-    public static HttpClient httpClient = HttpClientBuilder.create().build();
+    public static HttpClient httpClient;
     public static HttpContext context = new BasicHttpContext();
 
 
@@ -45,6 +47,8 @@ public class Proxy extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
+        HttpClientBuilder builder = HttpClientBuilder.create();
+        httpClient = builder.build();
     }
 
     /**
@@ -53,7 +57,6 @@ public class Proxy extends HttpServlet {
      */
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
-        //String url = request.getParameter("url");
         HttpGet httpGet = new HttpGet(parseToUrl(request));
         executeMethod(httpGet, response);
     }
@@ -155,13 +158,13 @@ public class Proxy extends HttpServlet {
     private void executeMethod(HttpUriRequest httpUriRequest, HttpServletResponse response) throws IOException {
         Map<String, Object> result = new HashMap<String, Object>();
         try {
-            CloseableHttpResponse httpResponse = (CloseableHttpResponse) httpClient.execute(httpUriRequest, context);
+            HttpResponse httpResponse = httpClient.execute(httpUriRequest, context);
             logger.debug("返回http状态码:" + httpResponse.getStatusLine().getStatusCode());
+            logger.debug("返回结果:");
+            String content = EntityUtils.toString(httpResponse.getEntity());
             if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 //result.put("success", true);
                 //result.put("data", EntityUtils.toString(httpResponse.getEntity()));
-                logger.debug("返回结果:");
-                String content = EntityUtils.toString(httpResponse.getEntity());
                 logger.debug(content);
                 response.getWriter().println(content);
                 return;
@@ -169,7 +172,6 @@ public class Proxy extends HttpServlet {
                 result.put("success", false);
                 result.put("msg", EntityUtils.toString(httpResponse.getEntity()));
             }
-            httpResponse.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -39,7 +39,7 @@
                    plain="true">上传</a>
             </div>
 
-            <ul class="easyui-tree" url="./lefttree.json" id="categoryTree" toolbar="#categoryTreeTbr">
+            <ul class="easyui-tree" url="/bcms/proxy?url=resourcelibrary/&method=GET" id="categoryTree" toolbar="#categoryTreeTbr">
             </ul>
 
         </div>
@@ -62,19 +62,20 @@
         <table class="table">
             <tr>
                 <td>类库名称:</td>
-                <td><input class="easyui-textbox" required="true" type="text" name="name" id=""/></td>
+                <td><input class="easyui-textbox" required="true" type="text" name="name" id="name13"/></td>
             </tr>
             <tr>
                 <td>类库元数据标准:</td>
                 <td>
-                    <select class="easyui-combotree"
-                            data-options="method:'get',required:true" id="metatypetree"></select>
+                    <input url="/bcms/proxy?method=GET&url=metalibrary/page/1" class="easyui-combobox"
+                            data-options="method:'get',required:true" id="metatypetree"/>
                 </td>
             </tr>
             <tr>
                 <td>描述</td>
                 <td>
-                    <input class="easyui-textbox" name="message" data-options="multiline:true" style="height:60px"/>
+                    <input class="easyui-textbox" name="message" data-options="multiline:true" style="height:60px"
+                           id="description13"/>
                 </td>
             </tr>
         </table>

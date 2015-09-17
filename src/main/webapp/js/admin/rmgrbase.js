@@ -20,39 +20,69 @@ $(function () {
     $("#categoryTree").tree({
         onContextMenu: function (e, node) {
             showContextMenu(e, node);
+        },
+        loadFilter: function (data) {
+            for (var i = 0; i < data.rows.length; i++) {
+                data.rows[i].text = data.rows[i].name;
+            }
+            return data.rows;
         }
     });
 
-    $("#metatypetree").combotree({
-        url: "/bcms/categoryTree",
-        formatter: function (node) {
-            return node.name;
-        },
-        loadFilter: function (data, parent) {
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].node_type == 1) {
-                    data[i].iconCls = "icon-06";
-                }
-            }
-            return data;
-        },
-        onSelect:function(node){
-            $("#metatypetree").combotree("setValue",node.id);
-        }
+    $("#metatypetree").combobox({
+        textField: "name",
+        valueField: "id",
+        panelHeight: 'auto'
     });
+    /* $("#metatypetree").combotree({
+     url: "/bcms/categoryTree",
+     formatter: function (node) {
+     return node.name;
+     },
+     loadFilter: function (data, parent) {
+     for (var i = 0; i < data.length; i++) {
+     if (data[i].node_type == 1) {
+     data[i].iconCls = "icon-06";
+     }
+     }
+     return data;
+     },
+     onSelect: function (node) {
+     $("#metatypetree").combotree("setValue", node.id);
+     }
+     });*/
 
     $("#addCategoryDlg").dialog({
         buttons: [
             {
                 text: "提交",
                 handler: function () {
-
+                    if ($("#addCategoryDlg").find("form").form("validate")) {
+                        var name = $("#name13").textbox("getValue");
+                        var description = $("#description13").textbox("getValue");
+                        var metalibrary_id = $("#metatypetree").combobox("getValue");
+                        var params = {
+                            name: name,
+                            description: description,
+                            metalibrary_id: metalibrary_id,
+                            url: "resourcelibrary/",
+                            method: "POST"
+                        };
+                        $.post("/bcms/proxy", params, function (data) {
+                            if (data.id != null) {
+                                $("#categoryTree").tree("reload");
+                                $("#addCategoryDlg").dialog("close");
+                            } else {
+                                alert("失败了.你问问管理员,好吗?");
+                            }
+                        }, "json");
+                    }
                 }
             },
             {
                 text: "取消",
                 handler: function () {
-
+                    $("#addCategoryDlg").dialog("close");
                 }
             }
         ]

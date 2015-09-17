@@ -3,6 +3,7 @@ package brms.action;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
+import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,6 +20,8 @@ import java.util.List;
  * Created by ligson on 2015/9/10.
  */
 public class CategoryTree extends HttpServlet {
+    private static Logger logger = Logger.getLogger(CategoryTree.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         doPost(req, resp);
@@ -30,10 +33,16 @@ public class CategoryTree extends HttpServlet {
         String type = req.getParameter("type");
         resp.setCharacterEncoding("UTF-8");
         if (id == null) {
-            HttpGet httpGet = new HttpGet(Proxy.BASE_URL + "metalibrarycategory/");
+            String url = Proxy.BASE_URL + "metalibrarycategory/";
+            logger.debug("请求url:" + url);
+            logger.debug("请求方法:GET");
+            HttpGet httpGet = new HttpGet(url);
             HttpResponse response = Proxy.httpClient.execute(httpGet, Proxy.context);
-            if (response.getStatusLine().getStatusCode() == 200) {
-                String json = EntityUtils.toString(response.getEntity(),"UTF-8");
+            int state = response.getStatusLine().getStatusCode();
+            logger.debug("返回状态:" + state);
+            String json = EntityUtils.toString(response.getEntity(), "UTF-8");
+            logger.debug("返回结果:" + json);
+            if (state == 200) {
                 try {
                     JSONArray jsonArray = new JSONArray(json);
                     resp.getWriter().println(jsonArray.toString());
