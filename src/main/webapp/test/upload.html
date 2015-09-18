@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>xxx</title>
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../js/bootstrap-3.3.5-dist/css/bootstrap-theme.css">
+
+    <script type="text/javascript" src="../js/jquery-easyui-1.4.3/jquery.min.js"></script>
+    <script src="../js/jquery.cookie.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/spark-md5.js"></script>
+    <script type="text/javascript" src="../js/common/fileutils.js"></script>
+
+    <script>
+
+
+        function upload(file, hash, start, end) {
+            var data = file.slice(start, end);
+            var formData = new FormData();
+            formData.append("data", data);
+            formData.append("hash", hash);
+            formData.append("start", start);
+            formData.append("len", end);
+            $.ajax({
+                url: "http://192.168.1.251:8080/bcms/upload",
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (data1) {
+                    console.log(JSON.parse(data1).file);
+                },
+                error: function (data2) {
+                    alert(data2);
+                }
+            });
+        }
+        $(function () {
+            $("#file").change(function () {
+                var file = document.getElementById("file");
+                var obj = file.files[0];
+                calFile48Hash(obj, function (source, hash) {
+                    $("#fileList").append("<li class=\"list-group-item\">" + source.name + "(文件大小:" + source.size + "字节,hash:" + hash.toString().toUpperCase() + ")<span class=\"label label-success\">秒传成功</span></li>");
+                    var len = 1024 * 1024;
+                    var offset = 0;
+                    var end = 0;
+                    var process = 0;
+                    while (end <= source.size) {
+                        end = offset + len;
+                        end = end > source.size ? len : end;
+                        upload(source, hash, offset, end);
+                        offset += len;
+                        process = len * 100 / source.size;
+                        console.log(process);
+                    }
+                });
+
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="file" id="file">
+
+<ul id="fileList">
+
+</ul>
+
+</body>
+</html>
