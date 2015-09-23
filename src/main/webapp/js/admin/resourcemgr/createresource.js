@@ -1,6 +1,10 @@
 /**
  * Created by ligson on 2015/8/28.
  */
+var flow;
+function startUpload() {
+    flow.upload();
+}
 $(function () {
     $("#resourceTree").combotree({
         loadFilter: function (data) {
@@ -11,6 +15,27 @@ $(function () {
         }
     });
 
+    flow = new Flow({
+        target: 'http://42.62.52.40:8000/file/upload',
+        chunkSize: 1024 * 1024,
+        testChunks: false,
+        simultaneousUploads: 1,
+        method: "POST",
+        query: {
+            user_id: 1
+        }
+    });
+    var fileList = $("#fileList");
+    flow.on("fileAdded", function (file, event) {
+        var fileId = file.uniqueIdentifier;
+        calFile48Hash(file.file, function (source, hash) {
+            fileList.append("<li class=\"list-group-item\">" + source.name + "(文件大小:" + source.size + "字节,hash:" + hash.toUpperCase() + ",已上传:<span class=\"label label-info\" id=\"upload-" + fileId + "\">0%</span>)</li>");
+        });
+    });
+    flow.on("fileProgress", function (file, chunk) {
+        var fileId = file.uniqueIdentifier;
+        $("#upload-" + fileId).empty().append(chunk.offset + "%");
+    });
 
     $("#fileIpt").filebox({
         onChange: function () {
@@ -18,14 +43,11 @@ $(function () {
             var fileBoxId = $("#fileIpt").next().find("input[type='file']").attr("id");
             var fileIpt = document.getElementById(fileBoxId);
             var files = fileIpt.files;
-            var fileList = $("#fileList");
             for (var i = 0; i < files.length; i++) {
                 var file = files[i];
-                var fileName = file.name;
-                var fileSize = file.size;
-                /*calFile48Hash(file, function (source, hash) {
-                 fileList.append("<li class=\"list-group-item\">" + source.name + "(文件大小:" + source.size + "字节,hash:" + hash + ")<span class=\"label label-success\">秒传成功</span></li>");
-                 });*/
+                //var fileName = file.name;
+                //var fileSize = file.size;
+                flow.addFile(file);
 
                 /* var formData = new FormData();
                  formData.append("file", file);
@@ -54,27 +76,6 @@ $(function () {
             }
         }
     });
-
-    var flow = new Flow({
-        target: 'http://42.62.52.40:8000/file/upload'
-    });
-    var fileBoxId = $("#fileIpt").next().find("input[type='file']").attr("id");
-
-    flow.assignBrowse(document.getElementById(fileBoxId));
-    flow.on("fileAdded", function (file, e) {
-        //alert(file);
-        flow.upload();
-    });
-    flow.on("complete", function () {
-        console.log("----");
-    });
-    flow.on("fileSuccess", function (file, message) {
-        console.log(file);
-    });
-
-    /*$("#fileIpt").change(function () {
-
-     });*/
 
     //$("#.parentResource")
     $.post("/bcms/proxy", {url: "taglibrary/page/1", method: "GET"}, function (data) {

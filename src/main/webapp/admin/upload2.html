@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../js/jquery-easyui-1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://42.62.52.40:8000/static/flow.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var r = new Flow({
+                target: 'http://42.62.52.40:8000/file/upload',
+                chunkSize: 1024 * 1024,
+                testChunks: false,
+                simultaneousUploads: 1,
+                query: {
+                    user_id: 1
+                }
+            });
+            r.assignBrowse(document.getElementById('browseButton'));
+            r.on("fileAdded", function (file) {
+                alert(file);
+                r.upload();
+            });
+
+            r.on('complete', function () {
+                console.log("complete");
+            });
+            r.on('fileSuccess', function (file, message) {
+                console.log("success");
+            });
+            r.on('fileError', function (file, message) {
+                console.log(message);
+            });
+            r.on('fileProgress', function (file) {
+                console.log(file.progress());
+            });
+            r.on('uploadStart', function () {
+
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+<input type="file" id="browseButton">
+</body>
+</html>

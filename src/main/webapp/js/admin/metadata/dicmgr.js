@@ -53,26 +53,28 @@ $(function () {
             {field: "id", title: "id", width: 100, hidden: true},
             {field: "zh_name", title: "中文名称", width: 100},
             {field: "en_name", title: "英文名称", width: 100},
-            {field: "lom_id", title: "lom编号", width: 100},
-            {field: "source", title: "来源", width: 100},
+            {field: "lom_id", title: "lom编号", width: 50},
+            {field: "source", title: "来源", width: 50},
             {
                 field: "words", title: "词汇表", width: 100, formatter: function (value, row, idx) {
-                var words1 = "";
+                var words1 = "<select class='easyui-combobox' editable=\"false\" style=\"width:200px;\">";
                 if (row.words) {
                     for (var i = 0; i < row.words.length; i++) {
-                        words1 += "<span style='margin-left:2px;' about='" + row.words[i].id + "' class=\"label label-info\">" + row.words[i].name + "</span>";
+                        words1 += "<option value='" + row.words[i].id + "'>" + row.words[i].name + "</option>";
                     }
                 }
+                words1 += "</select>";
                 return words1;
             }
             },
             {
-                field: "edit", title: "编辑", width: 100, formatter: function (value, row, index) {
-                return "<a onclick='showEditDicItemDlg(\"" + index +"\")'>编辑</a>";
+                field: "edit", title: "编辑", width: 50, formatter: function (value, row, index) {
+                return "<a onclick='showEditDicItemDlg(\"" + index + "\")'>编辑</a>";
             }
             }
         ]],
         onLoadSuccess: function (data) {
+            $(".easyui-combobox").combobox();
             //alert(data);
             // $("#metaGrid").datagrid("loadData", {"rows": data.rows, "total": data.total});
         }
@@ -83,9 +85,9 @@ $(function () {
 function showEditDicItemDlg(index) {
     $('#metaGrid').datagrid('selectRow', index);
     var row = $('#metaGrid').datagrid('getSelected');
-    if(row) {
+    if (row) {
         var dlg = $("#editDicItemDlg");
-        $("#editDicItemDlg input[name=id]").val( row.id);
+        $("#editDicItemDlg input[name=id]").val(row.id);
         $("#editDicItemDlg #zh_name1").textbox("setText", row.zh_name);
         $("#editDicItemDlg #en_name1").textbox("setText", row.en_name);
         $("#editDicItemDlg #lom_id1").textbox("setText", row.lom_id);
@@ -130,7 +132,7 @@ function submitDicForm() {
     });
 }
 
-function editDicItemForm(){
+function editDicItemForm() {
     var form = $("#editDicItemDlg");
     var id = form.find("input[name='id']").val();
     var zh_name = form.find("input[name='zh_name']").val();
@@ -142,7 +144,7 @@ function editDicItemForm(){
     var ht = JSON.stringify(wdArr);
     $.post("/bcms/proxy", {
         method: "put",
-        url: "/vocabulary/"+id,
+        url: "/vocabulary/" + id,
         zh_name: zh_name,
         en_name: en_name,
         lom_id: lom_id,

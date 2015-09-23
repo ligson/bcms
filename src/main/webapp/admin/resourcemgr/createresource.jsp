@@ -73,7 +73,7 @@
             </tr>
             <tr>
                 <td><label>文件:</label></td>
-                <td><input type="text" class="easyui-filebox" buttonText="选择文件" id="fileIpt"></td>
+                <td><input type="text" class="easyui-filebox" buttonText="选择文件" id="fileIpt">&nbsp;&nbsp;<a class="easyui-linkbutton" onclick="startUpload()">上传</a></td>
             </tr>
             <tr>
                 <td></td>

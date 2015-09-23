@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="http://demo.boful.com:8080/bcms/js/jquery-easyui-1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://42.62.52.40:8000/static/flow.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var r = new Flow({
+                target: 'http://42.62.52.40:8000/file/upload',
+                chunkSize: 1024 * 1024,
+                testChunks: false,
+                simultaneousUploads: 1,
+				method:"octet",
+                query: {
+                    user_id: 1
+                }
+            });
+			if(!r.support){
+				alert("not support");
+			}
+            r.assignBrowse(document.getElementById('browseButton'));
+            r.on("fileAdded", function (file) {
+                console.log("add file  "+file.name);
+              
+            });
+
+            r.on('complete', function () {
+                console.log("complete");
+            });
+            r.on('fileSuccess', function (file, message) {
+                console.log("success");
+            });
+            r.on('fileError', function (file, message) {
+                console.log(message);
+            });
+            r.on('fileProgress', function (file) {
+                console.log(file.progress());
+            });
+            r.on('uploadStart', function () {
+				console.log("upload start");
+            });
+			
+			$("#upload").click(function(){
+				  r.upload();
+			});
+
+        });
+    </script>
+
+</head>
+<body>
+<input type="file" id="browseButton">
+
+<input type="button" id="upload" value="upload">
+</body>
+</html>
