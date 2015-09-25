@@ -3,6 +3,7 @@ $(function () {
         rownumbers: true,
         singleSelect:false,
         toolbar:"#tb",
+        url: "/bcms/proxy?url=user&method=GET",
         pagination:true,
         columns:[[
             {field:'id',width:'1%',checkbox:true,title:'ID'},
@@ -32,17 +33,16 @@ $(function () {
         ]]
     });
 
-    initUserGrid();
+    //initUserGrid();
 });
 
 function initUserGrid() {
-    $.post("/bcms/proxy", {method:"get",url: "user/"}, function (result) {
+    $.post("/bcms/proxy", {method:"get",url: "user&page=1&rows=10"}, function (result) {
         var data = jQuery.parseJSON(result);
         if (data.success==false) {
             alert(data.msg);
         } else {
-            var json = {total: data.length, rows: data};
-            $("#user_table").datagrid('loadData', json);
+            $("#user_table").datagrid('loadData', data);
         }
     });
 }
@@ -70,12 +70,11 @@ function saveUser(){
     var department_id=$('#add_user_dlg .department_tree').combotree("getValue");
     $.post("/bcms/proxy", {method:"post",url: "user/",number:number,identity:identity,department_id:department_id, username: username,cn_name:cn_name, password:password,email:email,phone:phone,group_ids:JSON.stringify(groups),gender:gender,disk_size:disk_size,description:description}, function (result) {
         var obj= $.parseJSON(result);
+        $('#add_user_dlg').dialog('close');
         if (obj.success==false) {
-            $('#add_user_dlg').dialog('close');
             alert(obj.msg);
         } else {
-            $('#add_user_dlg').dialog('close');
-            initUserGrid();
+            $("#user_table").datagrid('reload');
         }
     });
 }
@@ -85,7 +84,7 @@ function editUser(index){
     var row = $('#user_table').datagrid('getSelected');
     if (row) {
         initModify(row);
-        $('#modify_user_dlg').dialog('open');
+        $('#modify_user_dlg').dialog('open').dialog('setTitle', '编辑用户');;
     } else {
         $.messager.alert("提示", "请选择要编辑的行！", "info");
         return;
@@ -152,7 +151,7 @@ function modifyUser(){
             alert(obj.msg);
         } else {
             $('#modify_user_dlg').dialog('close');
-            initUserGrid();
+            $("#user_table").datagrid('reload');
         }
     });
 }
@@ -181,24 +180,24 @@ function initAddDepartmentCombotree() {
     });
 }
 
-function delUsers(){
+function delUsers() {
     var rows = $('#user_table').datagrid("getSelections");
     if (rows.length > 0) {
         $.messager.confirm('确认', '确认删除?', function (data) {
-            if(data) {
+            if (data) {
                 for (var i = 0; i < rows.length; i++) {
-                    $.post("/bcms/proxy", {method:"delete",url: "user/" + rows[i].id + "/"}, function (result) {
-                        var obj= $.parseJSON(result);
-                        if (obj.success==false) {
+                    $.post("/bcms/proxy", {method: "delete", url: "user/" + rows[i].id + "/"}, function (result) {
+                        var obj = $.parseJSON(result);
+                        if (obj.success == false) {
                             alert("删除失败!");
                         } else {
-                            initUserGrid();
+                            $("#user_table").datagrid('reload');
                         }
                     });
                 }
             }
         })
-    }else{
+    } else {
         $.messager.alert("提示", "请选择要删除的行！", "info");
         return;
     }
@@ -215,13 +214,13 @@ function delUser(index){
                     if (obj.success==false) {
                         alert("删除失败!");
                     } else {
-                        initUserGrid();
+                        $("#user_table").datagrid('reload');
                     }
                 });
             }
         })
     }else{
-        $.messager.alert("提示", "请选择要编辑的行！", "info");
+        $.messager.alert("提示", "请选择要删除的行！", "info");
         return;
     }
 }

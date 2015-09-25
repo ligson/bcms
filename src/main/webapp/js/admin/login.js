@@ -13,7 +13,16 @@ $(function () {
             if (obj.success==false) {
                 alert(obj.msg);
             } else {
-                location.href = "/bcms/admin/usermgr/userMgr.jsp";
+                $.post("/bcms/proxy", {method: "get", url: "login/user"}, function (result) {
+                    var obj=jQuery.parseJSON(result);
+                    if (obj.success==false) {
+                        alert(obj.msg);
+                    }else{
+                        $.cookie("bcms_user_id", obj.id,{path:'/'});
+                        $.cookie("bcms_user_name", obj.username,{path:'/'});
+                        location.href = "/bcms/admin/usermgr/userMgr.jsp";
+                    }
+                });
             }
         });
     });

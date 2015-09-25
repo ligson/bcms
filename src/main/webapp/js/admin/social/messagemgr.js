@@ -2,6 +2,33 @@
  * Created by Ruby on 2015/8/31.
  */
 $(function () {
+    $('#message_table').datagrid({
+        rownumbers: true,
+        singleSelect:false,
+        pagination:true,
+        //url:"information_table.json",
+        columns:[[
+            {field:'id',width:'1%',checkbox:true,title:'ID'},
+            {field:'name',width:'30%',align:'center',title:'标题'},
+            {field:'created_at',width:'15%',align:'center',title:'发送时间'},
+            {field:'pick_user_id',width:'20%',align:'center',title:'接收对象'},
+            {field:'send_user_id',width:'10%',align:'center',title:'发送人'},
+            {field:'reply_message_id',width:'10%',align:'center',title:'回复消息'},
+            {field:'_operate',width:'10%',align:'center',title:'操作',
+                formatter: function (value, row,index) {
+                    return '<a class="tablelink" href="#" onclick="editMessage('+ index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delMessage(' + index + ')">删除</a>';
+                }
+            }
+        ]],
+        toolbar:[{
+            text: '添加',
+            iconCls: 'icon-add',
+            handler: function () {
+                newInformation();
+            }
+        }]
+    });
+
     $("#select_user_list").datalist({
         textField: 'name',
         valueField: 'id'

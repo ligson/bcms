@@ -17,85 +17,9 @@
 <rapid:override name="body">
 <div data-options="region:'center',title:'站内消息管理'">
   <div id="container">
-    <table id="dg" class="easyui-datagrid"
+    <table id="message_table" class="easyui-datagrid"
            pagination="true" toolbar="#toolbar"
            rownumbers="true" fitColumns="true" singleSelect="true">
-      <thead>
-      <tr>
-        <th field="firstname" width="10%">名称</th>
-        <th field="lastname" width="50%">内容</th>
-        <th field="email" width="10%">发送时间</th>
-        <th field="playDate" width="5%">接收对象</th>
-        <th field="statu" width="5%">发送人</th>
-        <th field="messageId" width="5%">回复消息</th>
-        <th field="_opear" width="10%">操作</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>关于五一放假的通知</td>
-        <td>2015年五一劳动节放假安排已经出台，具体安排如下</td>
-        <td>2015-08-28</td>
-        <td>张三</td>
-        <td>李四</td>
-        <td>-</td>
-        <td><a>修改</a>&nbsp;&nbsp;<a>删除</a></td>
-      </tr>
-      <tr>
-        <td>关于五一放假的通知</td>
-        <td>2015年五一劳动节放假安排已经出台，具体安排如下</td>
-        <td>2015-08-28</td>
-        <td>张三</td>
-        <td>李四</td>
-        <td>-</td>
-        <td><a>修改</a>&nbsp;&nbsp;<a>删除</a></td>
-      </tr>
-      <tr>
-        <td>关于五一放假的通知</td>
-        <td>2015年五一劳动节放假安排已经出台，具体安排如下</td>
-        <td>2015-08-28</td>
-        <td>张三</td>
-        <td>李四</td>
-        <td>-</td>
-        <td><a>修改</a>&nbsp;&nbsp;<a>删除</a></td>
-      </tr>
-      <tr>
-        <td>关于五一放假的通知</td>
-        <td>2015年五一劳动节放假安排已经出台，具体安排如下</td>
-        <td>2015-08-28</td>
-        <td>张三</td>
-        <td>李四</td>
-        <td>-</td>
-        <td><a>修改</a>&nbsp;&nbsp;<a>删除</a></td>
-      </tr>
-      <tr>
-        <td>关于五一放假的通知</td>
-        <td>2015年五一劳动节放假安排已经出台，具体安排如下</td>
-        <td>2015-08-28</td>
-        <td>张三</td>
-        <td>李四</td>
-        <td>-</td>
-        <td><a>修改</a>&nbsp;&nbsp;<a>删除</a></td>
-      </tr>
-      <tr>
-        <td>关于五一放假的通知</td>
-        <td>2015年五一劳动节放假安排已经出台，具体安排如下</td>
-        <td>2015-08-28</td>
-        <td>张三</td>
-        <td>李四</td>
-        <td>-</td>
-        <td><a>修改</a>&nbsp;&nbsp;<a>删除</a></td>
-      </tr>
-      <tr>
-        <td>关于五一放假的通知</td>
-        <td>2015年五一劳动节放假安排已经出台，具体安排如下</td>
-        <td>2015-08-28</td>
-        <td>张三</td>
-        <td>李四</td>
-        <td>-</td>
-        <td><a>修改</a>&nbsp;&nbsp;<a>删除</a></td>
-      </tr>
-      </tbody>
     </table>
     <div id="toolbar">
       <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#add_message_dlg').dialog('open')">添加</a>

@@ -57,6 +57,7 @@ function initDepartmentTree() {
                     });
                 }
             });
+            $('#department_tree').tree('collapseAll');
         }
     });
 }

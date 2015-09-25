@@ -12,6 +12,7 @@
     <link href="../js/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link type="text/css" rel="stylesheet" href="../css/admin-login.css"/>
     <script type="text/javascript" src="../js/jquery-easyui-1.4.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
     <script type="text/javascript" src="../js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/admin/login.js"></script>
 </head>

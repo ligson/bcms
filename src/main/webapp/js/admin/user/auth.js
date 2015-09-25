@@ -5,6 +5,7 @@ $(function () {
         rownumbers: true,
         singleSelect:false,
         pagination:true,
+        url: "/bcms/proxy?url=permission&method=GET",
         columns:[[
             {field:'id',width:'8%',checkbox:true,title:'编号'},
             {field:'name',width:'10%',align:'center',title:'权限名称'},
@@ -102,23 +103,7 @@ $(function () {
             }
         }
     });
-
-
-initAuthGrid();
 });
-
-
-function initAuthGrid() {
-    $.post("/bcms/proxy", {method:"get",url: "permission/"}, function (result) {
-        var obj=jQuery.parseJSON(result);
-        if (obj.success==false) {
-            alert(obj.msg);
-        } else {
-            var json = {total: obj.length, rows: obj};
-            $("#auth_table").datagrid('loadData', json);
-        }
-    });
-}
 
 function editAuth(index) {
     $('#auth_table').datagrid('selectRow', index);
