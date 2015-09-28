@@ -20,16 +20,16 @@
 <rapid:override name="mainName">操作日志</rapid:override>
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
-    <form>
+    <form id="createResourceForm">
         <table class="table">
             <tr>
                 <td class="col-md-2"><label>资源名:</label></td>
-                <td class="col-md-10"><input type="text" class="easyui-textbox" required="true"/></td>
+                <td class="col-md-10"><input id="name10" type="text" class="easyui-textbox" required="true"/></td>
             </tr>
             <tr>
                 <td><label>类型:</label></td>
                 <td>
-                    <select class="easyui-combobox" editable="false">
+                    <select id="kind10" class="easyui-combobox" editable="false">
                         <option value="0">普通</option>
                         <option value="1">课程</option>
                         <option value="2">课时</option>
@@ -54,7 +54,7 @@
                     <td><label>资源标签:</label></td>
                     <td><input data-role="tagsinput" style="width:200px;" placeholder="回车输入" title="输入后点击回车键添加"/></td>
                 </tr>--%>
-            <tr>
+            <%--<tr>
                 <td><label>转码策略:</label></td>
                 <td>
                     <select id="cc" class="easyui-combobox" name="dept" style="width:200px;" editable="editable">
@@ -64,13 +64,7 @@
                         <option>策略3</option>
                     </select>
                 </td>
-            </tr>
-            <tr>
-                <td><label>描述:</label></td>
-                <td>
-                    <input type="text" class="easyui-textbox" multiline="true" style="height:50px;"/>
-                </td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td><label>文件:</label></td>
                 <td><input type="text" class="easyui-filebox" buttonText="选择文件" id="fileIpt">&nbsp;&nbsp;<a class="easyui-linkbutton" onclick="startUpload()">上传</a></td>
@@ -82,17 +76,17 @@
                     </ul>
                 </td>
             </tr>
-            <tr>
+           <%-- <tr>
                 <td><label>横版海报:</label></td>
                 <td><input type="text" class="easyui-filebox" buttonText="选择文件">(建议尺寸:120x90)</td>
             </tr>
             <tr>
                 <td><label>竖版海报:</label></td>
                 <td><input type="text" class="easyui-filebox" buttonText="选择文件">(建议尺寸:121x161)</td>
-            </tr>
+            </tr>--%>
             <tr>
                 <td colspan="2" style="text-align: center;padding:10px;">
-                    <a class="easyui-linkbutton" href="./editmeta.jsp">提交</a>
+                    <a class="easyui-linkbutton" onclick="submitForm()">提交</a>
                 </td>
             </tr>
         </table>

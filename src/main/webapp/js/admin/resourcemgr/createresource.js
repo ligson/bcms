@@ -3,8 +3,22 @@
  */
 var flow;
 function startUpload() {
-    flow.upload();
+    if (waitFile.file && waitFile.hash) {
+        $.post("/bcms/proxy", {
+            url: "file/" + waitFile.hash + "/checksum",
+            method: "GET"
+        }, function (data2) {
+            var fileId = data2.id;
+            if (fileId !== undefined) {
+                waitFile.id = fileId;
+            } else {
+                flow.upload();
+            }
+        }, "json");
+    }
 }
+
+var waitFile = {status: false};
 $(function () {
     $("#resourceTree").combotree({
         loadFilter: function (data) {
@@ -29,6 +43,8 @@ $(function () {
     flow.on("fileAdded", function (file, event) {
         var fileId = file.uniqueIdentifier;
         calFile48Hash(file.file, function (source, hash) {
+            waitFile.hash = hash.toUpperCase();
+            waitFile.file = source;
             fileList.append("<li class=\"list-group-item\">" + source.name + "(文件大小:" + source.size + "字节,hash:" + hash.toUpperCase() + ",已上传:<span class=\"label label-info\" id=\"upload-" + fileId + "\">0%</span>)</li>");
         });
     });
@@ -37,9 +53,23 @@ $(function () {
         $("#upload-" + fileId).empty().append(chunk.offset + "%");
     });
 
+    flow.on('fileSuccess', function (file, message) {
+        //console.log(file,message);
+        waitFile.status = true;
+    });
+
+    flow.on('fileError', function (file, message) {
+        //console.log(file, message);
+        waitFile.status = false;
+        alert(file.name + "上传失败!" + message);
+    });
+
     $("#fileIpt").filebox({
         onChange: function () {
             //var file = $("#fileIpt").find("input[type='file']");
+            if (fileList.find("li").length > 0) {
+                return;
+            }
             var fileBoxId = $("#fileIpt").next().find("input[type='file']").attr("id");
             var fileIpt = document.getElementById(fileBoxId);
             var files = fileIpt.files;
@@ -104,4 +134,60 @@ function formatTagLibTreeGridData(data) {
     }
     console.log(fin);
     return fin;
+}
+function submitForm() {
+    var ff = $("#createResourceForm");
+    if (!(waitFile.status && waitFile.hash)) {
+        alert("请上传文件");
+        return;
+    }
+    if (ff.form("validate")) {
+        var name = $("#name10").textbox("getValue");
+        var kind10 = $("#kind10").combobox("getValue");
+        var node = $("#resourceTree").combotree("getValue");
+        var committer = $.cookie("bcms_user_id");
+        $.post("/bcms/proxy", {
+            method: "POST",
+            url: "resource/",
+            name: name,
+            kind: kind10,
+            resourcelibrary_id: parseInt(node),
+            committer: parseInt(committer)
+        }, function (data) {
+            if (data.id != undefined) {
+                //alert("ok........");
+                if (waitFile.id != null) {
+                    $.post("/bcms/proxy", {
+                        url: "file/detail/" + fileId,
+                        method: "POST",
+                        resource_id: data.id
+                    }, function (data3) {
+                        if (data3.id != null) {
+                            alert("sssswss");
+                        }
+                    }, "json");
+                } else {
+                    $.post("/bcms/proxy", {
+                        url: "file/" + waitFile.hash + "/checksum",
+                        method: "GET"
+                    }, function (data2) {
+                        var fileId = data2.id;
+                        if (fileId) {
+                            $.post("/bcms/proxy", {
+                                url: "file/detail/" + fileId,
+                                method: "POST",
+                                resource_id: data.id
+                            }, function (data3) {
+                                if (data3.id != null) {
+                                    alert("ssszsss");
+                                }
+                            }, "json");
+                        }
+                    }, "json");
+                }
+            }
+        }, "json");
+    } else {
+
+    }
 }

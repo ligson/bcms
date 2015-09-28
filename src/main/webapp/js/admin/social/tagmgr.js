@@ -91,7 +91,7 @@ function clickAddTagLib(){
 //添加标签库保存
 function saveTagLib(){
     var name=$("#add_taglib_dlg input[name=name]").val();
-    $.post("/bcms/proxy", {method:"post",url: "taglibrary/",name:name}, function (result) {
+    $.post("/bcms/proxy", {method:"post",url: "tag/",name:name}, function (result) {
         var obj= $.parseJSON(result);
         if (obj.success==false) {
             $('#add_taglib_dlg').dialog('close');
