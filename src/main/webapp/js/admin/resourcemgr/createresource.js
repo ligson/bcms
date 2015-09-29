@@ -11,6 +11,8 @@ function startUpload() {
             var fileId = data2.id;
             if (fileId !== undefined) {
                 waitFile.id = fileId;
+                waitFile.status = true;
+                $("#upload-" + waitFile.fileId).empty().append("秒传!");
             } else {
                 flow.upload();
             }
@@ -45,6 +47,7 @@ $(function () {
         calFile48Hash(file.file, function (source, hash) {
             waitFile.hash = hash.toUpperCase();
             waitFile.file = source;
+            waitFile.fileId = fileId;
             fileList.append("<li class=\"list-group-item\">" + source.name + "(文件大小:" + source.size + "字节,hash:" + hash.toUpperCase() + ",已上传:<span class=\"label label-info\" id=\"upload-" + fileId + "\">0%</span>)</li>");
         });
     });
@@ -56,12 +59,16 @@ $(function () {
     flow.on('fileSuccess', function (file, message) {
         //console.log(file,message);
         waitFile.status = true;
+        var fileId = file.uniqueIdentifier;
+        $("#upload-" + fileId).empty().append("上传成功!");
     });
 
     flow.on('fileError', function (file, message) {
         //console.log(file, message);
         waitFile.status = false;
-        alert(file.name + "上传失败!" + message);
+        //alert(file.name + "上传失败!" + message);
+        var fileId = file.uniqueIdentifier;
+        $("#upload-" + fileId).empty().append("上传失败!");
     });
 
     $("#fileIpt").filebox({
@@ -158,12 +165,12 @@ function submitForm() {
                 //alert("ok........");
                 if (waitFile.id != null) {
                     $.post("/bcms/proxy", {
-                        url: "file/detail/" + fileId,
+                        url: "file/detail/" + waitFile.id,
                         method: "POST",
                         resource_id: data.id
                     }, function (data3) {
-                        if (data3.id != null) {
-                            alert("sssswss");
+                        if (data3.id != undefined) {
+                            submitSuccess(data3, data.id);
                         }
                     }, "json");
                 } else {
@@ -178,16 +185,25 @@ function submitForm() {
                                 method: "POST",
                                 resource_id: data.id
                             }, function (data3) {
-                                if (data3.id != null) {
-                                    alert("ssszsss");
-                                }
+                                submitSuccess(data3, data.id);
                             }, "json");
                         }
                     }, "json");
                 }
+            } else {
+                alert("资源创建失败!");
             }
         }, "json");
     } else {
+        alert("表单参数不完整!");
+    }
+}
 
+function submitSuccess(data3, resourceId) {
+    if (data3.id != undefined) {
+        //alert("资源创建成功!");
+        window.location.href = "/bcms/admin/resourcemgr/editmeta.jsp?id=" + resourceId;
+    } else {
+        alert("资源创建失败!");
     }
 }

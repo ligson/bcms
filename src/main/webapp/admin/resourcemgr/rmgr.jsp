@@ -26,7 +26,7 @@
            title="搜索"></a>
     </div>
     <table id="rGrid" class="easyui-datagrid"
-           data-options="rownumbers:true,singleSelect:true,url:'./resourcelist.json',method:'post'"
+           data-options="rownumbers:true,singleSelect:true,method:'post'"
            pagination="true" toolbar="#rGridTbr">
         <thead>
         </thead>

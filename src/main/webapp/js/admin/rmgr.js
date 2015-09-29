@@ -10,53 +10,46 @@
  */
 $(function () {
     $("#rGrid").datagrid({
+        url: "/bcms/proxy?url=resource&method=GET",
+        fitColumns: true,
+        autoRowHeight: true,
         columns: [
             [
                 {field: 'id', title: 'id', width: 100},
                 {field: 'name', title: '名称', width: 100, sortable: true},
-                {field: 'libId', title: '库id', width: 100},
-                {field: 'libName', title: '库名称', width: 100, sortable: true},
-                {field: 'categoryId', title: '分类id', width: 100},
-                {field: 'categoryName', title: '分类名称', width: 100, sortable: true},
-                {field: 'playNum', title: '点播数', width: 100, sortable: true},
-                {field: 'recommendNum', title: '推荐数', width: 100, sortable: true},
-                {field: 'collectNum', title: '收藏数', width: 100, sortable: true},
+                {field: 'resourcelibrary_id', title: '库id', width: 100, sortable: true},
+                {field: 'created_at', title: '创建日期', width: 100, sortable: true},
+                {field: 'kind', title: '类型', width: 100, sortable: true},
+                {field: 'status', title: '状态', width: 100, sortable: true},
                 {
-                    field: 'publishState',
-                    title: '发布状态',
-                    width: 100,
-                    sortable: true,
-                    formatter: function (value, row, index) {
-                        if (row.publishState) {
-                            return "已发布";
-                        } else {
-                            return "未发布";
-                        }
-                    }
+                    field: 'delOpt', title: '删除', width: 100, formatter: function (value, row, index) {
+                    return "<a class='easyui-linkbutton' onclick='delResource(" + row.id + ")'>删除</a>";
+                }
                 },
                 {
-                    field: 'applyState',
-                    title: '审核状态',
-                    width: 100,
-                    sortable: true,
-                    formatter: function (value, row, index) {
-                        if (row.applyState) {
-                            return "已审核";
-                        } else {
-                            return "未审核";
-                        }
-                    }
-                }, {
-                field: "editOpt"
-            }
+                    field: 'editOpt', title: '编辑', width: 100, formatter: function (value, row, index) {
+                    return "<a class='easyui-linkbutton' href=''>编辑</a>";
+                }
+                }
             ]
-        ]
+        ],
+        onLoadSuccess: function (target) {
+            $(".easyui-linkbutton").linkbutton();
+        }
     });
 });
+
+function delResource(metaId) {
+    $.post("/bcms/proxy?url=resource/" + metaId + "&method=DELETE", {}, function (data) {
+        if (data.id != undefined) {
+            $("#rGrid").datagrid("reload");
+        }
+    });
+}
 function addMetaItems() {
     $(".items-container").append("<div class='items'>" + $(".items").html() + "</div>");
 }
 
-function addField(){
+function addField() {
     $("#fieldHref").before("<br/><input type=\"text\" class=\"easyui-textbox\">");
 }

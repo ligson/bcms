@@ -26,6 +26,15 @@ $(function () {
                 data.rows[i].text = data.rows[i].name;
             }
             return data.rows;
+        },
+        onClick: function (node) {
+            //alert(node.id);
+            if (window.location.href.indexOf("rmgr.jsp") >= 0) {
+                $("#rGrid").datagrid({url: "/bcms/proxy?url=resource&method=GET&library_id=" + node.id});
+            } else {
+                window.location.href = "/bcms/admin/resourcemgr/rmgr.jsp";
+            }
+
         }
     });
 
