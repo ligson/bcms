@@ -131,7 +131,14 @@ $(function () {
         },
         valueField: "id",
         textField: "zh_name"
-
+    });
+    $("#structure_type_id14").combobox({
+        url: "/bcms/proxy?url=metatype&method=GET&page=1&rows=100&kind=3&collection=3",
+        loadFilter: function (data) {
+            return data.rows;
+        },
+        valueField: "id",
+        textField: "zh_name"
     });
 
     //增加结构类型字段

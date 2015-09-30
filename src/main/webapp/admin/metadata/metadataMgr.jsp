@@ -120,18 +120,73 @@
         </form>
     </div>
     <div id="addStructureItemDlg" class="easyui-dialog" title="选择结构类型" closed="true"
-         style="width:250px;height:150px;padding:10px;">
-        <select class="easyui-combobox" name="state" data-options="multiple:true,multiline:true"
-                style="width:200px;height:50px" editable="true">
-            <option>标识</option>
-            <option>贡献</option>
-            <option>分类路径</option>
-            <option>分类单元</option>
-            <option>技术要求</option>
-            <option>或组合</option>
-            <option>关系</option>
-            <option>资源</option>
-        </select>
+         style="width:400px;height:600px;padding:10px;">
+        <form>
+            <table class="table">
+                <tr>
+                    <td><label>中文名称:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="zh_name14" required="true"></td>
+                </tr>
+                <tr>
+                    <td><label>英文名称</label></td>
+                    <td><input type="text" class="easyui-textbox" id="en_name14" required="true"></td>
+                </tr>
+                <tr>
+                    <td><label>LOM编号:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="lom_id14"></td>
+                </tr>
+                <tr>
+                    <td><label>取值数:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="val_num14" required="true" validType="number">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><label>举例:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="example14" required="true"></td>
+                </tr>
+                <tr>
+                    <td><label>顺序:</label></td>
+                    <td>
+                        <select class="easyui-combobox" id="is_sorted14" required="true">
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>结构类型:</label></td>
+                    <td>
+                        <select style="width:150px;" class="easyui-combobox" name="kind" id="structure_type_id14"
+                                required="true">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>类别:</label></td>
+                    <td>
+                        <select class="easyui-combobox" id="collection14" required="true">
+                            <option value="0">必选数据</option>
+                            <option value="1">通用可选数据</option>
+                            <option value="2">分类数据</option>
+                            <option value="3">结构类型</option>
+                            <option value="4">自定义类型</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>解释:</label></td>
+                    <td><input type="text" multiple="true" style="height:50px;" class="easyui-textbox"
+                               id="description14" required="true"></td>
+                </tr>
+                <tr>
+                    <td><label>值域:</label></td>
+                    <td><input type="text" class="easyui-textbox" style="height:50px;" multiple="true" id="domain14"
+                               required="true"></td>
+                </tr>
+            </table>
+        </form>
     </div>
     <div id="addDicItemDlg" class="easyui-dialog" title="添加词汇表类型" closed="true"
          style="width:400px;height:600px;padding:10px;">
@@ -172,7 +227,8 @@
                 <tr>
                     <td><label>词汇表类型:</label></td>
                     <td>
-                        <select style="width:150px;" class="easyui-combobox" name="kind" id="vocabulary_type_id12" required="true">
+                        <select style="width:150px;" class="easyui-combobox" name="kind" id="vocabulary_type_id12"
+                                required="true">
                         </select>
                     </td>
                 </tr>

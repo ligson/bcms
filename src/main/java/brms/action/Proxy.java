@@ -12,11 +12,11 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.*;
-import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HttpContext;
@@ -33,7 +33,7 @@ public class Proxy extends HttpServlet {
     private static Logger logger = Logger.getLogger(Proxy.class);
     private static final long serialVersionUID = 1L;
     public final static String BASE_URL = "http://42.62.52.40:8000/";
-    public static HttpClient httpClient;
+    public static CloseableHttpClient httpClient;
     public static HttpContext context = new BasicHttpContext();
 
 
@@ -48,7 +48,15 @@ public class Proxy extends HttpServlet {
     @Override
     public void init() throws ServletException {
         HttpClientBuilder builder = HttpClientBuilder.create();
+        PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
+        // 将最大连接数增加到200
+        cm.setMaxTotal(200);
+        // 将每个路由基础的连接增加到20
+        cm.setDefaultMaxPerRoute(20);
+        //将目标主机的最大连接数增加到50
+        builder.setConnectionManager(cm);
         httpClient = builder.build();
+
     }
 
     /**
@@ -145,13 +153,15 @@ public class Proxy extends HttpServlet {
             stringBuilder.append("?");
         }
         for (NameValuePair nameValuePair : nameValuePairs) {
-            stringBuilder.append(nameValuePair.getName()).append("=").append(nameValuePair.getValue()).append("&");
-        }
-        if (nameValuePairs.size() > 0) {
-            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+            if (!(nameValuePair.getName().equalsIgnoreCase("url") || nameValuePair.getName().equalsIgnoreCase("method"))) {
+                stringBuilder.append(nameValuePair.getName()).append("=").append(nameValuePair.getValue()).append("&");
+            }
         }
         String uri = stringBuilder.toString();
-        System.out.println(uri);
+        if (uri.endsWith("&")) {
+            uri = stringBuilder.deleteCharAt(stringBuilder.length() - 1).toString();
+        }
+        logger.debug("GET Method URL:" + uri);
         return uri;
     }
 
