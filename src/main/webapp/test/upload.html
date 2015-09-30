@@ -19,11 +19,13 @@
             var data = file.slice(start, end);
             var formData = new FormData();
             formData.append("data", data);
-            formData.append("hash", hash);
+            formData.append("hash", hash.toString().toUpperCase());
             formData.append("start", start);
-            formData.append("len", end);
+            formData.append("end", end);
+            formData.append("fileName", file.name);
+            formData.append("fileSize", file.size);
             $.ajax({
-                url: "http://192.168.1.251:8080/bcms/upload",
+                url: "http://192.168.1.102:8080/bcms/upload",
                 type: 'POST',
                 data: formData,
                 processData: false,
@@ -46,13 +48,19 @@
                     var offset = 0;
                     var end = 0;
                     var process = 0;
-                    while (end <= source.size) {
+                    var fileSize = source.size;
+                    while (true) {
                         end = offset + len;
-                        end = end > source.size ? len : end;
-                        upload(source, hash, offset, end);
-                        offset += len;
-                        process = len * 100 / source.size;
+                        var isLast = end > fileSize;
+                        end = end > source.size ? source.size : end;
+                        console.log(offset + "---" + end + "==" + fileSize);
+                        process = end * 100 / fileSize;
                         console.log(process);
+                        upload(source, hash, offset, end);
+                        offset = offset + len + 1;
+                        if (isLast) {
+                            break;
+                        }
                     }
                 });
 
