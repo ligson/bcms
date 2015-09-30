@@ -50,6 +50,7 @@ $(function () {
     });
 
     $("#metaGrid").treegrid({
+        url:"/bcms/proxy?url=metatype&method=GET",
         idField: 'id',
         treeField: 'zh_name',
         fitColumns: true,
@@ -133,7 +134,7 @@ $(function () {
         textField: "zh_name"
     });
     $("#structure_type_id14").combobox({
-        url: "/bcms/proxy?url=metatype&method=GET&page=1&rows=100&kind=3&collection=3",
+        url: "/bcms/proxy?url=metatype&method=GET&page=1&rows=100&kind=3&collection=3&parent_id=0",
         loadFilter: function (data) {
             return data.rows;
         },
@@ -147,7 +148,12 @@ $(function () {
             text: '确定',
             iconCls: 'icon-ok',
             handler: function () {
-                //alert('ok');
+                if ($("#addStructureItemDlg").find("form").form("validate")) {
+                    //addDocItem();
+                    addStructureItem();
+                } else {
+                    alert("数据格式有误");
+                }
             }
         }, {
             text: '关闭',
@@ -247,7 +253,7 @@ function addNormalItem() {
             var node = $("#metadata_tree").tree("getSelected");
             $.post("/bcms/proxy", {
                 url: "metalibrary/add_metatype",
-                method: "POST",
+                method: "GET",
                 metatype_id: data.id,
                 meta_library_id: node.id
             }, function (data2) {
@@ -308,7 +314,68 @@ function addDocItem() {
             var node = $("#metadata_tree").tree("getSelected");
             $.post("/bcms/proxy", {
                 url: "metalibrary/add_metatype",
-                method: "POST",
+                method: "GET",
+                metatype_id: data.id,
+                meta_library_id: node.id
+            }, function (data2) {
+                if (data2.result) {
+                    alert("增加成功");
+                } else {
+                    alert("增加失败");
+                }
+            }, "json");
+
+        } else {
+            if (data.success == false) {
+                dlg.dialog("fail");
+            }
+        }
+    }, "json");
+
+
+}
+
+function addStructureItem() {
+    var zh_name = $("#zh_name14").textbox("getValue");
+    var en_name = $("#en_name14").textbox("getValue");
+    var lom_id = $("#lom_id14").textbox("getValue");
+    var val_num = $("#val_num14").textbox("getValue");
+    var example = $("#example14").textbox("getValue");
+    var is_sorted = $("#is_sorted14").combobox("getValue");
+    var kind = 3;
+    var collection = $("#collection14").combobox("getValue");
+    var description = $("#description14").textbox("getValue");
+    var domain = $("#domain14").textbox("getValue");
+    var vocabulary_type_id = $("#structure_type_id14").combobox("getValue");
+    var params = {
+        method: "POST",
+        url: "metatype/",
+        zh_name: zh_name,
+        en_name: en_name,
+        val_num: val_num,
+        example: example,
+        is_sorted: is_sorted,
+        kind: kind,
+        collection: collection,
+        description: description,
+        domain: domain,
+        structure_type_id: vocabulary_type_id
+    };
+
+    if (lom_id) {
+        params.lom_id = lom_id;
+    }
+
+
+    $.post("/bcms/proxy", params, function (data) {
+        if (data.id != null) {
+            var dlg = $("#addStructureItemDlg");
+            dlg.find("form").form("reset");
+            dlg.dialog("close");
+            var node = $("#metadata_tree").tree("getSelected");
+            $.post("/bcms/proxy", {
+                url: "metalibrary/add_metatype",
+                method: "GET",
                 metatype_id: data.id,
                 meta_library_id: node.id
             }, function (data2) {

@@ -61,7 +61,7 @@ public class StructureQuery extends HttpServlet {
             if (StringUtils.isNotBlank(pageString)) {
                 page = Integer.parseInt(pageString);
             }
-            String url = Proxy.BASE_URL + "metatype?kind=3&rows=10&page=" + page+"&parent_id=0";
+            String url = Proxy.BASE_URL + "metatype?kind=3&rows=10&page=" + page+"&parent_id=0&structure_type_id=0";
             logger.debug(url);
             HttpGet httpGet = new HttpGet(url);
             HttpResponse response = Proxy.httpClient.execute(httpGet, Proxy.context);

@@ -27,8 +27,14 @@ $(function () {
                 }
                 },
                 {
-                    field: 'editOpt', title: '编辑', width: 100, formatter: function (value, row, index) {
+                    field: 'editOpt', title: '基本信息', width: 100, formatter: function (value, row, index) {
                     return "<a class='easyui-linkbutton' href=''>编辑</a>";
+                }
+                },
+                {
+                    field: "editMeta", title: "元数据", width: 100, formatter: function (value, row, index) {
+                    var href = "/bcms/admin/resourcemgr/editmeta.jsp?id=" + row.id;
+                    return "<a class='easyui-linkbutton' href='"+href+"'>编辑</a>";
                 }
                 }
             ]

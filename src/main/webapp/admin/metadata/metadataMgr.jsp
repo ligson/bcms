@@ -159,7 +159,7 @@
                     <td><label>结构类型:</label></td>
                     <td>
                         <select style="width:150px;" class="easyui-combobox" name="kind" id="structure_type_id14"
-                                required="true">
+                                required="true" editable="false">
                         </select>
                     </td>
                 </tr>

@@ -7,10 +7,12 @@ $(function () {
         $(this).next().toggle();
         //alert("---");
     });
-
-
+    var href = window.location.href;
+    var idx = href.indexOf("id=");
+    var resourceId = href.substring(idx + 3);
     //	$('#dg').datagrid().datagrid('enableCellEditing');
     $("#metaGrid").treegrid({
+        url: "/bcms/proxy?url=resource/" + resourceId + "/meta&method=GET",
         idField: "id",
         treeField: "zh_name",
         fitColumns: true,
@@ -26,15 +28,15 @@ $(function () {
                 {
                     field: "value", title: "值", width: 200, formatter: function (value, row, idx) {
                     if (row.kind == 0) {
-                        return "<input type='text' class='easyui-textbox etextbox'>";
+                        return "<input type='text' class='easyui-textbox etextbox' id='fill-" + row.id + "'>";
                     } else if (row.kind == 1) {
-                        return "<input type='text' class='easyui-textbox etextbox'>";
+                        return "<input type='text' class='easyui-textbox etextbox' id='fill-" + row.id + "'>";
                     } else if (row.kind == 2) {
-                        return "<select class='easyui-combobox ecombobox'><option>xxxx</option><option>xxxx</option></select>";
+                        return "<select editable='false' style='width:200px;' class='easyui-combobox ecombobox' id='fill-" + row.id + "'></select>";
                     } else if (row.kind == 3) {
                         return "";
                     } else if (row.kind == 4) {
-                        return "<input type='text' class='easyui-datebox edatebox'>";
+                        return "<input type='text' class='easyui-datebox edatebox' id='fill-" + row.id + "'>";
                     }
                 }
                 },
@@ -72,10 +74,39 @@ $(function () {
             $(".easyui-datebox").datebox();
             $(".easyui-combobox").combobox();
             $(".easyui-linkbutton").linkbutton();
-            var data = $('#metaGrid').treegrid("getData");
-            $('#metaGrid').treegrid("loading");
-            loadDatas(data);
-            $('#metaGrid').treegrid("loaded");
+
+            var dt = $('#metaGrid').treegrid("getData");
+            for (var i = 0; i < dt.length; i++) {
+                var kind = dt[i].kind;
+                var rowId = dt[i].id;
+                if (kind == 2) {
+                    var vId = dt[i].vocabulary_type_id;
+                    var vBox = $("#fill-" + rowId);
+                    vBox.combobox({valueField: "id", textField: "name"});
+                    $.post("/bcms/proxy?url=vocabulary/" + vId + "&method=GET", {}, function (data1) {
+                        vBox.combobox("loadData", data1.words);
+                    }, "json");
+                } else if (kind == 3) {
+                    //var sId = dt[i].structure_type_id;
+
+                }
+                //console.log(dt[i].id);
+            }
+            //var data = $('#metaGrid').treegrid("getData");
+            //$('#metaGrid').treegrid("loading");
+            //loadDatas(data);
+            //$('#metaGrid').treegrid("loaded");
+        },
+        loadFilter: function (data, parentId) {
+            var data2 = {};
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].kind == 3) {
+                    data[i].state = "closed";
+                }
+            }
+            data2.rows = data;
+            data2.total = data.length;
+            return data2;
         }
     });
 });

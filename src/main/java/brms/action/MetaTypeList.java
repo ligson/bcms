@@ -59,6 +59,13 @@ public class MetaTypeList extends HttpServlet {
                 e.printStackTrace();
             }
 
+        } else {
+            result.put("success", false);
+            result.put("status", response1.getStatusLine().getStatusCode());
+            JSONObject jsonObject = new JSONObject(result);
+            String res = jsonObject.toString();
+            logger.debug("返回结果:" + res);
+            response.getWriter().println(res);
         }
     }
 

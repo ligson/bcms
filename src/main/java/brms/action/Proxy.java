@@ -161,6 +161,9 @@ public class Proxy extends HttpServlet {
         if (uri.endsWith("&")) {
             uri = stringBuilder.deleteCharAt(stringBuilder.length() - 1).toString();
         }
+        if(uri.endsWith("?")){
+            uri = uri.substring(0,uri.length()-1);
+        }
         logger.debug("GET Method URL:" + uri);
         return uri;
     }
