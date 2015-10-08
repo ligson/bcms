@@ -6,7 +6,7 @@ $(function () {
         rownumbers: true,
         singleSelect: false,
         pagination: true,
-        //url:"information_table.json",
+        url: "/bcms/proxy?url=information&method=GET",
         columns: [[
             {field: 'id', width: '1%', checkbox: true, title: 'ID'},
             {field: 'name', width: '30%', align: 'center', title: '资讯名称'},
@@ -47,7 +47,6 @@ $(function () {
             }
         }]
     });
-    initInformationGrid();
 });
 
 function closeTab(title) {
@@ -227,7 +226,7 @@ function delInformation(index){
                     if (obj.success==false) {
                         alert("删除失败!");
                     } else {
-                        initInformationGrid();
+                        $("#information_table").datagrid("reload");
                     }
                 });
             }
@@ -239,17 +238,6 @@ function delInformation(index){
 }
 
 
-function initInformationGrid(){
-    $.post("/bcms/proxy", {method:"get",url: "information/page/1"}, function (result) {
-        var data = jQuery.parseJSON(result);
-        if (data.success==false) {
-            alert(data.msg);
-        } else {
-            var json = {total: data.length, rows: data};
-            $("#information_table").datagrid('loadData', json);
-        }
-    });
-}
 
 function initAddRoleTree(){
     $.post("/bcms/proxy", {method: "get", url: "role/"}, function (result) {

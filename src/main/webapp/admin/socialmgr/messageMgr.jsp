@@ -17,14 +17,8 @@
 <rapid:override name="body">
 <div data-options="region:'center',title:'站内消息管理'">
   <div id="container">
-    <table id="message_table" class="easyui-datagrid"
-           pagination="true" toolbar="#toolbar"
-           rownumbers="true" fitColumns="true" singleSelect="true">
+    <table id="message_table">
     </table>
-    <div id="toolbar">
-      <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#add_message_dlg').dialog('open')">添加</a>
-      <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除</a>
-    </div>
   </div>
   </div>
 </div>

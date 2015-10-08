@@ -6,7 +6,7 @@ $(function () {
         rownumbers: true,
         singleSelect:false,
         pagination:true,
-        //url:"information_table.json",
+        url: "/bcms/proxy?url=message&method=GET",
         columns:[[
             {field:'id',width:'1%',checkbox:true,title:'ID'},
             {field:'name',width:'30%',align:'center',title:'标题'},
@@ -24,7 +24,7 @@ $(function () {
             text: '添加',
             iconCls: 'icon-add',
             handler: function () {
-                newInformation();
+                newMessage();
             }
         }]
     });
@@ -37,6 +37,10 @@ $(function () {
 
 });
 
+
+function newMessage(){
+
+}
 
 function initDepartmentTree() {
     $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {

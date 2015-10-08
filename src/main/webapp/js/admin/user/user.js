@@ -32,20 +32,7 @@ $(function () {
             }
         ]]
     });
-
-    //initUserGrid();
 });
-
-function initUserGrid() {
-    $.post("/bcms/proxy", {method:"get",url: "user&page=1&rows=10"}, function (result) {
-        var data = jQuery.parseJSON(result);
-        if (data.success==false) {
-            alert(data.msg);
-        } else {
-            $("#user_table").datagrid('loadData', data);
-        }
-    });
-}
 
 function newUser(){
     initAddGroupCombotree();
