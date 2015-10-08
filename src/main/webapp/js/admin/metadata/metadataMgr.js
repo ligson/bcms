@@ -134,7 +134,7 @@ $(function () {
         textField: "zh_name"
     });
     $("#structure_type_id14").combobox({
-        url: "/bcms/proxy?url=metatype&method=GET&page=1&rows=100&kind=3&collection=3&parent_id=0",
+        url: "/bcms/proxy?url=metatype&method=GET&page=1&rows=100&kind=3&collection=3&parent_id=0&structure_type_id=0",
         loadFilter: function (data) {
             return data.rows;
         },
@@ -246,7 +246,7 @@ function addNormalItem() {
 
 
     $.post("/bcms/proxy", params, function (data) {
-        if (data.id != null) {
+        if (data.id != undefined) {
             var dlg = $("#addMetaItemDlg");
             dlg.find("form").form("reset");
             dlg.dialog("close");

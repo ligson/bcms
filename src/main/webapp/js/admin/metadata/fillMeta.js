@@ -2,6 +2,15 @@
  * Created by Administrator on 2015/8/26.
  */
 var datas = [];
+function dealData(children, pId) {
+    for (var i = 0; i < children.length; i++) {
+        children[i].node_id = children[i].id;
+        children[i].id = pId + "-" + children[i].id;
+        if (children[i].children) {
+            dealData(children[i].children, children[i].id);
+        }
+    }
+}
 $(function () {
     $("thead").dblclick(function () {
         $(this).next().toggle();
@@ -11,8 +20,9 @@ $(function () {
     var idx = href.indexOf("id=");
     var resourceId = href.substring(idx + 3);
     //	$('#dg').datagrid().datagrid('enableCellEditing');
+
     $("#metaGrid").treegrid({
-        url: "/bcms/proxy?url=resource/" + resourceId + "/meta&method=GET",
+        url: "/bcms/resouceMetaQuery?id=" + resourceId,
         idField: "id",
         treeField: "zh_name",
         fitColumns: true,
@@ -45,12 +55,9 @@ $(function () {
                 },
                 {
                     field: "val_num", title: "取值数", width: 50
-                },
+                }/*,
                 {
                     field: "add", title: "增加", width: 50, formatter: function (value, row, idx) {
-                    //console.log(JSON.stringify(row));
-                    //var jsonString = JSON.stringify(row);
-                    //id, zh_name, en_name, kind, val_num, collection
                     if (row.id.toString().indexOf("-") > -1) {
                         return "--";
                     } else {
@@ -65,7 +72,7 @@ $(function () {
                         return "<a class='easyui-linkbutton' onclick='removeMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>移除</a>";
                     }
                 }
-            }
+            }*/
 
             ]
         ],
@@ -82,13 +89,20 @@ $(function () {
                 if (kind == 2) {
                     var vId = dt[i].vocabulary_type_id;
                     var vBox = $("#fill-" + rowId);
-                    vBox.combobox({valueField: "id", textField: "name"});
+                    vBox.combobox({valueField: "id", textField: "name", multiple: true});
                     $.post("/bcms/proxy?url=vocabulary/" + vId + "&method=GET", {}, function (data1) {
                         vBox.combobox("loadData", data1.words);
                     }, "json");
                 } else if (kind == 3) {
                     //var sId = dt[i].structure_type_id;
-
+                    var stid = dt[i].structure_type_id;
+                    var node = dt[i];
+                    /*$.post("/bcms/proxy", {method: "GET", url: "metatype/" + stid}, function (data2) {
+                     for (var j = 0; j < data2.children.length; j++) {
+                     data2.children[j].parent = node.id;
+                     }
+                     $("#metaGrid").treegrid("append", data2.children);
+                     }, "json");*/
                 }
                 //console.log(dt[i].id);
             }
@@ -98,15 +112,22 @@ $(function () {
             //$('#metaGrid').treegrid("loaded");
         },
         loadFilter: function (data, parentId) {
-            var data2 = {};
-            for (var i = 0; i < data.length; i++) {
-                if (data[i].kind == 3) {
-                    data[i].state = "closed";
+            for (var i = 0; i < data.rows.length; i++) {
+                data.rows[i].node_id = data.rows[i].id;
+                if (data.rows[i].children) {
+                    dealData(data.rows[i].children, data.rows[i].id);
                 }
             }
-            data2.rows = data;
-            data2.total = data.length;
-            return data2;
+            /*var data2 = {};
+             for (var i = 0; i < data.length; i++) {
+             if (data[i].kind == 3) {
+             data[i].state = "closed";
+             }
+             }
+             data2.rows = data;
+             data2.total = data.length;*/
+
+            return data;
         }
     });
 });

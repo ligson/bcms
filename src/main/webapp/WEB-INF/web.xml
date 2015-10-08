@@ -53,6 +53,14 @@
         <servlet-name>metaTypeList</servlet-name>
         <servlet-class>brms.action.MetaTypeList</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ResouceMetaQuery</servlet-name>
+        <servlet-class>brms.action.ResouceMetaQuery</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ResouceMetaQuery</servlet-name>
+        <url-pattern>/resouceMetaQuery</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>metaTypeList</servlet-name>
         <url-pattern>/metaTypeList</url-pattern>

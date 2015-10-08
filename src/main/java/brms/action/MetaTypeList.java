@@ -1,6 +1,7 @@
 package brms.action;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
@@ -32,6 +33,8 @@ public class MetaTypeList extends HttpServlet {
         logger.debug("访问url:" + url);
         logger.debug("访问方法:GET");
         HttpGet get = new HttpGet(url);
+        //get.setConfig(Proxy.requestConfig);
+
         HttpResponse response1 = Proxy.httpClient.execute(get, Proxy.context);
         if (response1.getStatusLine().getStatusCode() == 200) {
             String jsonString = EntityUtils.toString(response1.getEntity());
