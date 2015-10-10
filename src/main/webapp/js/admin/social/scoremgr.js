@@ -12,7 +12,7 @@ $(function () {
             {field:'target_id',width:'30%',align:'center',title:'关联资源'},
             {field:'_operate',width:'14%',align:'center',title:'操作',
                 formatter: function (value, row,index) {
-                    return '<a class="tablelink" href="#" onclick="editUser('+ index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delScore(' + index + ')">删除</a>';
+                    return '<a class="tablelink" href="#" onclick="delScore(' + index + ')">删除</a>';
                 }
             }
         ]]

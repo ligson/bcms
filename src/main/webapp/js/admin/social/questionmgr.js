@@ -22,7 +22,7 @@ $(function () {
                     {field:'is_adoptted',title:'是否采纳',width:'10%',align:'center'},
                     {field:'_operate',width:'14%',align:'center',title:'操作',
                         formatter: function (value, row,index) {
-                            return '<a class="tablelink" href="#" onclick="editAnswer('+ index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delAnswer('+row.question_id+',' + index + ')">删除</a>';
+                            return '<a class="tablelink" href="#" onclick="delAnswer('+row.question_id+',' + index + ')">删除</a>';
                         }
                     }
                 ]],
@@ -44,7 +44,7 @@ $(function () {
             {field:'target_id',width:'30%',align:'center',title:'关联资源'},
             {field:'_operate',width:'14%',align:'center',title:'操作',
                 formatter: function (value, row,index) {
-                    return '<a class="tablelink" href="#" onclick="editQuestion('+ index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delQuestion(' + index + ')">删除</a>';
+                    return '<a class="tablelink" href="#" onclick="delQuestion(' + index + ')">删除</a>';
                 }
             }
         ]]

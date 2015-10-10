@@ -15,50 +15,14 @@
 <rapid:override name="mainName">站内消息管理</rapid:override>
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
-<div data-options="region:'center',title:'站内消息管理'">
-  <div id="container">
-    <table id="message_table">
-    </table>
-  </div>
-  </div>
-</div>
 
-<div id="add_message_dlg" class="easyui-dialog" style="width:700px;height:630px;padding:10px 20px"
-     closed="true" buttons="#add_message_dlg-buttons">
-  <div class="ftitle">添加站内消息</div>
-  <form id="fm" method="post" novalidate>
-    <div class="fitem">
-      <label>标题</label>
-      <input name="firstname" class="easyui-textbox" required="true">
+  <div id="message_tabs" class="easyui-tabs">
+    <div title="消息列表" style="padding:10px">
+      <table id="message_table"></table>
     </div>
-    <div class="fitem">
-      <label>接收对象</label>
-      <div id="cc"  class="easyui-layout" style="width:630px;height:300px;">
-        <div data-options="region:'west',title:'部门',split:true" style="width:210px;">
-          <div id="department_tree"></div>
-        </div>
-        <div data-options="region:'center',title:'待选用户'" style="padding:5px;">
-          <ul id="user_list" class="easyui-datalist">
-          </ul>
-        </div>
-        <div data-options="region:'east',title:'已选用户',split:true" style="width:210px;">
-          <ul id="select_user_list" class="easyui-datalist">
 
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="fitem">
-      <label>内容</label>
-      <input name="content" class="easyui-validatebox" required="true" type="text" />
-      <script type="text/javascript">CKEDITOR.replace('content');</script>
-    </div>
-  </form>
-</div>
-<div id="add_message_dlg-buttons">
-  <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="javascript:$('#add_message_dlg').dialog('close')" style="width:90px">发送</a>
-  <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#add_message_dlg').dialog('close')" style="width:90px">取消</a>
-</div>
+  </div>
+
 </rapid:override>
 
 <!-- extends from base.jsp -->
