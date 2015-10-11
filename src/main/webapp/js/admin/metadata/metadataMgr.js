@@ -50,7 +50,7 @@ $(function () {
     });
 
     $("#metaGrid").treegrid({
-        url:"/bcms/proxy?url=metatype&method=GET",
+        url: "/bcms/proxy?url=metatype&method=GET",
         idField: 'id',
         treeField: 'zh_name',
         fitColumns: true,
@@ -415,5 +415,16 @@ function showAddDicItemDlg() {
         $("#addDicItemDlg").dialog("open");
     } else {
         alert("请选择元数据标准");
+    }
+}
+
+function deleteMetaItem() {
+    var node = $("#metaGrid").treegrid("getSelected");
+    if (node) {
+        $.post("/bcms/proxy", {url: "/metatype/" + node.id, method: "DELETE"}, function (data) {
+            if (data.id != undefined) {
+                $("#metaGrid").treegrid("reload");
+            }
+        }, "json");
     }
 }
