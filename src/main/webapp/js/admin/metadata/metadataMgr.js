@@ -64,7 +64,14 @@ $(function () {
                     for (var i = 0; i < dataTypes.length; i++) {
                         var data = dataTypes[i];
                         if (row.kind == data.name) {
-                            return data.value + "(" + data.name + ")";
+                            if (row.kind == 3) {
+                                return data.value + "(s_id:" + row.structure_type_id + ")";
+                            } else if (row.kind == 2) {
+                                return data.value + "(v_id:" + row.vocabulary_type_id + ")";
+                            } else {
+                                return data.value;
+                            }
+
                         }
                     }
                     return "未知数据类型";
