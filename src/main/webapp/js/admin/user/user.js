@@ -32,7 +32,35 @@ $(function () {
             }
         ]]
     });
+
+    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+        var obj = $.parseJSON(result);
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
+            $("#department_id").combotree('loadData', formatTreeData(obj));
+        }
+    });
 });
+
+function getQueryParams(queryParams){
+    var username=$("#username").val();
+    var number=$("#number").val();
+    var department_id=$("#department_id").combotree('getValue');
+    var identity=$("#identity").combobox('getValue');
+    queryParams.username=username;
+    queryParams.number=number;
+    queryParams.department_id=department_id;
+    queryParams.identity=identity;
+    return queryParams;
+}
+
+    function reloadgrid() {
+        var queryParams = $('#user_table').datagrid('options').queryParams;
+        getQueryParams(queryParams);
+        $('#user_table').datagrid('options').queryParams = queryParams;
+        $("#user_table").datagrid('reload');
+    }
 
 function newUser(){
     initAddGroupCombotree();

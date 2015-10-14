@@ -2,7 +2,6 @@
  * Created by Ruby on 2015/8/18.
  */
 $(function () {
-    var departmentTree;
     initDepartmentTree();
     $('#department_user_grid').datagrid({
         rownumbers: true,
@@ -39,9 +38,8 @@ function initDepartmentTree() {
         if (obj.success==false) {
             alert(obj.msg);
         } else {
-            departmentTree = formatTreeData(obj)
             $("#department_tree").tree({
-                data: departmentTree,
+                data: formatTreeData(obj),
                 onClick: function (node) {
                     initUserGridByDepartment(node);
                     $.post("/bcms/proxy", {method: "get", url: "department/"+node.id}, function (result2) {

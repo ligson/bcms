@@ -16,7 +16,7 @@ $(function () {
             {field:'reply_message_id',width:'10%',align:'center',title:'回复消息'},
             {field:'_operate',width:'10%',align:'center',title:'操作',
                 formatter: function (value, row,index) {
-                    return '<a class="tablelink" href="#" onclick="replyMessage('+ index + ')">回复</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delMessage(' + index + ')">删除</a>';
+                    return '<a class="tablelink" href="#" onclick="delMessage(' + index + ')">删除</a>';
                 }
             }
         ]],
@@ -39,6 +39,28 @@ $(function () {
 
 function closeTab(title) {
     $('#message_tabs').tabs('close', title);
+}
+
+function delMessage(index){
+    $('#message_table').datagrid('selectRow',index);// 关键在这里
+    var row = $('#message_table').datagrid('getSelected');
+    if(row) {
+        $.messager.confirm('确认', '确认删除?', function (data) {
+            if(data) {
+                $.post("/bcms/proxy", {method: "delete", url: "message/" + row.id }, function (result) {
+                    var obj= $.parseJSON(result);
+                    if (obj.success==false) {
+                        alert("删除失败!");
+                    } else {
+                        $("#message_table").datagrid('reload');
+                    }
+                });
+            }
+        })
+    }else{
+        $.messager.alert("提示", "请选择要删除的行！", "info");
+        return;
+    }
 }
 
 function newMessage(){

@@ -20,9 +20,25 @@
     </div>
 </div>
 <div id="tb" style="padding:3px">
-    <input class="easyui-searchbox" data-options="prompt:'请输入用户名或者邮箱'" style="width:200px;">
+    <div style="margin-bottom: 5px;">
     <a href="#" onclick=" newUser();" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
     <a href="#" onclick="delUsers();" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">删除</a>
+        </div>
+    <div>
+        <div>
+            姓名: <input class="easyui-textbox" style="width:150px" id="username">
+            教工号: <input class="easyui-textbox" style="width:150px" id="number">
+            部门:
+            <input class="easyui-combotree" panelHeight="200px" style="width:150px" id="department_id" />
+            身份:
+            <select class="easyui-combobox" panelHeight="auto" style="width:100px" id="identity">
+                <option value="">全部</option>
+                <option value="1">学生</option>
+                <option value="2">老师</option>
+            </select>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="reloadgrid();">搜索</a>
+        </div>
+    </div>
 </div>
 
 <div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"

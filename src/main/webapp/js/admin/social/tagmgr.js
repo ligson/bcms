@@ -23,7 +23,7 @@ $(function () {
             {
                 field: '_operate', width: '20%', align: 'center', title: '操作',
                 formatter: function (value, row, index) {
-                    return '<a class="tablelink" href="#" onclick="clickModifyTag(' + index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delTag(' + index + ')">删除</a>';
+                    return '<a class="tablelink" href="#" onclick="clickModifyTag(' + row.id + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delTag(' + row.id + ')">删除</a>';
                 }
             }
         ]]
@@ -31,13 +31,13 @@ $(function () {
 });
 
 //点击编辑标签
-function clickModifyTag(index){
-    $('#tag_tree_grid').treegrid('select', "tag"+id);
+function clickModifyTag(id){
+    $('#tag_tree_grid').treegrid('select', id);
     var row = $('#tag_tree_grid').treegrid('getSelected');
     if(row) {
         $('#modify_tag_dlg input[name=name]').val(row.name);
         $('#modify_tag_dlg input[name=id]').val(id);
-        $('#modify_tag_dlg input[name=library_id]').val(row.library_id);
+        $('#modify_tag_dlg input[name=parent_id]').val(row.parent_id);
         $('#modify_tag_dlg').dialog('open').dialog('setTitle', '编辑标签');
     }else{
         $.messager.alert("提示", "请选择要编辑的行！", "info");
@@ -48,21 +48,21 @@ function clickModifyTag(index){
 function modifyTag(){
     var id=$("#modify_tag_dlg input[name=id]").val();
     var name=$("#modify_tag_dlg input[name=name]").val();
-    var library_id=$("#modify_tag_dlg input[name=library_id]").val();
-    $.post("/bcms/proxy", {method:"put",url: "tag/"+id,name:name,library_id:library_id}, function (result) {
+    var parent_id=$("#modify_tag_dlg input[name=parent_id]").val();
+    $.post("/bcms/proxy", {method:"put",url: "tag/"+id,name:name,parent_id:arent_idli}, function (result) {
         var obj= $.parseJSON(result);
         if (obj.success==false) {
             $('#modify_tag_dlg').dialog('close');
             alert(obj.msg);
         } else {
             $('#modify_tag_dlg').dialog('close');
-            initTagTree();
+            $("#tag_tree_grid").treegrid("reload");
         }
     });
 }
 
-function delTag(index){
-    $('#tag_tree_grid').treegrid('select', "tag"+id);
+function delTag(id){
+    $('#tag_tree_grid').treegrid('select', id);
     var row = $('#tag_tree_grid').treegrid('getSelected');
     if(row) {
         $.messager.confirm('确认', '确认删除?', function (data) {
@@ -72,7 +72,7 @@ function delTag(index){
                     if (obj.success==false) {
                         alert("删除失败!");
                     } else {
-                        initTagTree();
+                        $("#tag_tree_grid").treegrid("reload");
                     }
                 });
             }
@@ -84,23 +84,35 @@ function delTag(index){
 }
 
 function clickAddTag() {
+    var row = $('#tag_tree_grid').treegrid('getSelected');
+    if(row) {
+        $('#add_tag_dlg input[name=parent_id]').val(row.id);
+    }else{
+        $('#add_tag_dlg input[name=parent_id]').val(0);
+    }
     $('#add_tag_dlg').dialog('open').dialog("setTitle", "添加标签");
 }
 
 function saveTag(){
     var name=$("#add_tag_dlg input[name=name]").val();
+    var parent_id=$("#add_tag_dlg input[name=parent_id]").val();
+    $.post("/bcms/proxy", {
+        method: "post",
+        url: "/tag/",
+        name: name,
+        parent_id: parent_id
+    }, function (data) {
+        var result = JSON.parse(data);
+        if (result.success==false) {
+            $('#add_tag_dlg').dialog('close');
+            alert(result.msg);
+        } else {
+            $('#add_tag_dlg').dialog('close');
+            $("#tag_tree_grid").treegrid("reload");
+        }
+    });
 }
 
-
-function clickAddNextTag(){
-    var node = $('#tag_tree_grid').treegrid('getSelected');
-    if (node) {
-        $('#add_tag_dlg').dialog('open').dialog("setTitle", "添加下级标签");
-    }else{
-        $.messager.alert("提示", "请选择上级标签！", "info");
-        return;
-    }
-}
 
 
 

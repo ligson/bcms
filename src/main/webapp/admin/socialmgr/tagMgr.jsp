@@ -18,7 +18,6 @@
       <div style="padding:5px;background:#fafafa;border:1px solid #ccc">
         <input id="search_tag" style="width: 300px;align-items: center; display: none;">
           <a href="#" onclick="clickAddTag();" class="easyui-linkbutton" plain="true" iconCls="icon-add">添加标签</a>
-          <a href="#" onclick="clickAddNextTag();" class="easyui-linkbutton" plain="true" iconCls="icon-add">添加下级标签</a>
       </div>
       <div id="tag_tree_grid"></div>
 
@@ -35,6 +34,7 @@
                 标签名
             </label>
             <input name="name" class="easyui-validatebox" required="true" type="text" />
+            <input name="parent_id" type="hidden"/>
         </div>
 
     </form>
@@ -56,7 +56,7 @@
             </label>
             <input name="name" class="easyui-validatebox" required="true" type="text" />
             <input name="id" type="hidden"/>
-            <input name="library_id" type="hidden"/>
+            <input name="parent_id" type="hidden"/>
         </div>
     </form>
 </div>
