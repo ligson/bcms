@@ -20,7 +20,7 @@ public class ApplicationListener implements ServletContextListener {
         //10分钟清理一下httpclean的dateformate线程池
         Timer timer = new Timer();
         long delay = 1000;
-        long period = delay * 10;
+        long period = delay * 60 * 10;
         timer.schedule(new CleanThreadLocalTask(), delay, period);
     }
 
