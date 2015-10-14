@@ -15,6 +15,9 @@
         <filter-name>BrowserFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <listener>
+        <listener-class>brms.listener.ApplicationListener</listener-class>
+    </listener>
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>brms.action.UploadServlet</servlet-class>
