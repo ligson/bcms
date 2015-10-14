@@ -13,12 +13,22 @@ $(function () {
         url: "/bcms/proxy?url=resource&method=GET",
         fitColumns: true,
         autoRowHeight: true,
+        fit:true,
         columns: [
             [
                 {field: 'id', title: 'id', width: 100},
                 {field: 'name', title: '名称', width: 100, sortable: true},
                 {field: 'resourcelibrary_id', title: '库id', width: 100, sortable: true},
-                {field: 'created_at', title: '创建日期', width: 100, sortable: true},
+                {
+                    field: 'created_at',
+                    title: '创建日期',
+                    width: 100,
+                    sortable: true,
+                    formatter: function (value, row, index) {
+                        var date = Date.parseFromText(row.created_at, "yyyy-MM-ddTHH:mm:ssZ");
+                        return date.format("yyyy-MM-dd HH:mm:ss");
+                    }
+                },
                 {field: 'kind', title: '类型', width: 100, sortable: true},
                 {field: 'status', title: '状态', width: 100, sortable: true},
                 {
@@ -34,7 +44,7 @@ $(function () {
                 {
                     field: "editMeta", title: "元数据", width: 100, formatter: function (value, row, index) {
                     var href = "/bcms/admin/resourcemgr/editmeta.jsp?id=" + row.id;
-                    return "<a class='easyui-linkbutton' href='"+href+"'>编辑</a>";
+                    return "<a class='easyui-linkbutton' href='" + href + "'>编辑</a>";
                 }
                 }
             ]
@@ -50,7 +60,7 @@ function delResource(metaId) {
         if (data.id != undefined) {
             $("#rGrid").datagrid("reload");
         }
-    });
+    }, "json");
 }
 function addMetaItems() {
     $(".items-container").append("<div class='items'>" + $(".items").html() + "</div>");

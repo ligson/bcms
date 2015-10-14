@@ -55,6 +55,20 @@ $(function () {
         }
     });
 
+    //currentTopMenu
+    var pathName = window.location.pathname;
+
+    var menuItems = $("#topmenu").find("a");
+    $.each(menuItems, function (idx, menu) {
+        var href = menu.href;
+        var arrays = href.split("/");
+        if (arrays.length > 6) {
+            var pathName2 = "/"+arrays[3] + "/" + arrays[4] + "/" + arrays[5];
+            if(pathName.indexOf(pathName2)>=0){
+                $(menu).addClass("currentTopMenu");
+            }
+        }
+    });
 
 });
 
