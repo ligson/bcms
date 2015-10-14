@@ -55,12 +55,12 @@ function getQueryParams(queryParams){
     return queryParams;
 }
 
-    function reloadgrid() {
+function reloadgrid() {
         var queryParams = $('#user_table').datagrid('options').queryParams;
         getQueryParams(queryParams);
         $('#user_table').datagrid('options').queryParams = queryParams;
         $("#user_table").datagrid('reload');
-    }
+}
 
 function newUser(){
     initAddGroupCombotree();

@@ -19,9 +19,12 @@
   <div title="资讯列表" style="padding:10px">
     <table id="information_table"></table>
   </div>
-
 </div>
-
+  <div id="tb" style="padding:3px">
+      <a href="#" onclick="newInformation();" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
+        标题: <input class="easyui-textbox" style="width:200px" id="name">
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="reloadgrid();">搜索</a>
+  </div>
 
 </rapid:override>
 

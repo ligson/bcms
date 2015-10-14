@@ -6,6 +6,7 @@ $(function () {
         rownumbers: true,
         singleSelect: false,
         pagination: true,
+        toolbar:"#tb",
         url: "/bcms/proxy?url=information&method=GET",
         columns: [[
             {field: 'id', width: '1%', checkbox: true, title: 'ID'},
@@ -38,16 +39,23 @@ $(function () {
                     return '<a class="tablelink" href="#" onclick="editInformation(' + index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delInformation(' + index + ')">删除</a>';
                 }
             }
-        ]],
-        toolbar: [{
-            text: '添加',
-            iconCls: 'icon-add',
-            handler: function () {
-                newInformation();
-            }
-        }]
+        ]]
     });
 });
+
+function getQueryParams(queryParams){
+    var name=$("#name").val();
+    queryParams.name=name;
+    return queryParams;
+}
+
+function reloadgrid() {
+    var queryParams = $('#information_table').datagrid('options').queryParams;
+    getQueryParams(queryParams);
+    console.log(queryParams);
+    $('#information_table').datagrid('options').queryParams = queryParams;
+    $("#information_table").datagrid('reload');
+}
 
 function closeTab(title) {
     $('#information_tabs').tabs('close', title);

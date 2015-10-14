@@ -24,7 +24,6 @@
     <a href="#" onclick=" newUser();" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
     <a href="#" onclick="delUsers();" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">删除</a>
         </div>
-    <div>
         <div>
             姓名: <input class="easyui-textbox" style="width:150px" id="username">
             教工号: <input class="easyui-textbox" style="width:150px" id="number">
@@ -38,7 +37,6 @@
             </select>
             <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="reloadgrid();">搜索</a>
         </div>
-    </div>
 </div>
 
 <div id="add_user_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
