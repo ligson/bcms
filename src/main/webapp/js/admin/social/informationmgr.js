@@ -52,7 +52,6 @@ function getQueryParams(queryParams){
 function reloadgrid() {
     var queryParams = $('#information_table').datagrid('options').queryParams;
     getQueryParams(queryParams);
-    console.log(queryParams);
     $('#information_table').datagrid('options').queryParams = queryParams;
     $("#information_table").datagrid('reload');
 }
