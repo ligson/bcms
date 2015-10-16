@@ -38,6 +38,7 @@ $(function () {
             $('#question_table').datagrid('fixDetailRowHeight',index);
         },
         url: "/bcms/proxy?url=question&method=GET",
+        toolbar:"#tb",
         columns:[[
             {field:'user_id',width:'25%',align:'center',title:'提交者'},
             {field:'content',width:'25%',align:'center',title:'内容'},
@@ -51,6 +52,19 @@ $(function () {
 
     });
 });
+
+function getQueryParams(queryParams){
+    var username=$("#username").val();
+    queryParams.username=username;
+    return queryParams;
+}
+
+function reloadgrid() {
+    var queryParams = $('#question_table').datagrid('options').queryParams;
+    getQueryParams(queryParams);
+    $('#question_table').datagrid('options').queryParams = queryParams;
+    $("#question_table").datagrid('reload');
+}
 
 function delQuestion(index){
     $('#question_table').datagrid('selectRow',index);

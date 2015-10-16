@@ -122,23 +122,23 @@ function editAuth(index) {
 }
 
 function initAddDepartmentTree() {
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
-        var obj = $.parseJSON(result);
-        if (obj.success==false) {
-            alert(obj.msg);
-        } else {
-            $("#modify_auth_dlg .department_tree").combotree('loadData', formatTreeData(obj));
+    $( '#modify_auth_dlg .department_tree' ).combotree ({
+        url: "/bcms/departmentTree",
+        lines: true,
+        loadFilter: function (data) {
+            return formatDepartmentTreeData(data);
         }
     });
 }
 
-function formatTreeData(data){
+function formatDepartmentTreeData(data){
     var fin = [];
     for (var i = 0; i < data.length; i++) {
         var obj = data[i];
         obj.text = obj.name;
+        obj.state="closed";
         if (obj.children && obj.children.length > 0) {
-            obj.children = formatTreeData(obj.children);
+            obj.children = formatDepartmentTreeData(obj.children);
         }
         fin.push(obj);
     }

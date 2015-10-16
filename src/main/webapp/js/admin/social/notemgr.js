@@ -6,6 +6,7 @@ $(function () {
         rownumbers: true,
         singleSelect: true,
         pagination: true,
+        toolbar:"#tb",
         url: "/bcms/proxy?url=note&method=GET",
         columns: [[
             {field: 'content', width: '60%', align: 'center', title: '笔记内容'},
@@ -31,6 +32,20 @@ $(function () {
 });
 
 
+function getQueryParams(queryParams){
+    var username=$("#username").val();
+    var is_public=$("#is_public").combobox('getValue');
+    queryParams.username=username;
+    queryParams.is_public=is_public;
+    return queryParams;
+}
+
+function reloadgrid() {
+    var queryParams = $('#note_table').datagrid('options').queryParams;
+    getQueryParams(queryParams);
+    $('#note_table').datagrid('options').queryParams = queryParams;
+    $("#note_table").datagrid('reload');
+}
 
 
 function delNote(index){

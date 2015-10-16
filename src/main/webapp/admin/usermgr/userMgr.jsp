@@ -169,7 +169,7 @@
         <div class="fitem">
             <label>
                 用户组</label>
-            <input class="easyui-combotree group_tree" required="true"  multiple="true" name="group"/>
+            <input class="easyui-combotree group_tree" multiple="true" name="group"/>
         </div>
         <div class="fitem">
             <label>

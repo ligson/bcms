@@ -6,6 +6,7 @@ $(function () {
         rownumbers: true,
         singleSelect:false,
         pagination:true,
+        toolbar:"#tb",
         url: "/bcms/proxy?url=message&method=GET",
         columns:[[
             {field:'id',width:'1%',checkbox:true,title:'ID'},
@@ -19,14 +20,7 @@ $(function () {
                     return '<a class="tablelink" href="#" onclick="delMessage(' + index + ')">删除</a>';
                 }
             }
-        ]],
-        toolbar:[{
-            text: '添加',
-            iconCls: 'icon-add',
-            handler: function () {
-                newMessage();
-            }
-        }]
+        ]]
     });
 
     $("#select_user_list").datalist({
@@ -36,6 +30,19 @@ $(function () {
     initDepartmentTree();
 
 });
+
+function getQueryParams(queryParams){
+    var name=$("#name").val();
+    queryParams.name=name;
+    return queryParams;
+}
+
+function reloadgrid() {
+    var queryParams = $('#message_table').datagrid('options').queryParams;
+    getQueryParams(queryParams);
+    $('#message_table').datagrid('options').queryParams = queryParams;
+    $("#message_table").datagrid('reload');
+}
 
 function closeTab(title) {
     $('#message_tabs').tabs('close', title);

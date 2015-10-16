@@ -45,6 +45,15 @@
     </servlet>
 
     <servlet-mapping>
+        <servlet-name>departmentTree</servlet-name>
+        <url-pattern>/departmentTree</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>departmentTree</servlet-name>
+        <servlet-class>brms.action.DepartmentTree</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
         <servlet-name>categoryTree</servlet-name>
         <url-pattern>/categoryTree</url-pattern>
     </servlet-mapping>

@@ -6,6 +6,7 @@ $(function () {
         rownumbers: true,
         singleSelect: true,
         pagination: true,
+        toolbar:"#tb",
         url: "/bcms/proxy?url=comment&method=GET",
         columns: [[
             {field: 'user_id', width: '20%', align: 'center', title: '提交者'},
@@ -30,6 +31,21 @@ $(function () {
         ]]
     });
 });
+
+function getQueryParams(queryParams){
+    var username=$("#username").val();
+    var is_blocked=$("#is_blocked").combobox('getValue');
+    queryParams.username=username;
+    queryParams.is_blocked=is_blocked;
+    return queryParams;
+}
+
+function reloadgrid() {
+    var queryParams = $('#comment_table').datagrid('options').queryParams;
+    getQueryParams(queryParams);
+    $('#comment_table').datagrid('options').queryParams = queryParams;
+    $("#comment_table").datagrid('reload');
+}
 
 function delComment(index){
     $('#comment_table').datagrid('selectRow',index);

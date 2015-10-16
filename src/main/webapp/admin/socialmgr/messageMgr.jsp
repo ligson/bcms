@@ -20,9 +20,14 @@
     <div title="消息列表" style="padding:10px">
       <table id="message_table"></table>
     </div>
-
   </div>
-
+  <div id="tb" style="padding:3px">
+    <div style="margin-bottom: 5px;">
+      <a href="#" onclick=" newMessage();" class="easyui-linkbutton" data-options="iconCls:'icon-add'">添加</a>
+      标题: <input class="easyui-textbox" style="width:150px" id="name">
+      <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="reloadgrid();">搜索</a>
+    </div>
+  </div>
 </rapid:override>
 
 <!-- extends from base.jsp -->

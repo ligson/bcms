@@ -4,6 +4,7 @@ $(function () {
         rownumbers: true,
         singleSelect:false,
         pagination:true,
+        toolbar:"#tb",
         url: "/bcms/proxy?url=score&method=GET",
         columns:[[
             {field:'id',width:'1%',checkbox:true,title:'ID'},
@@ -18,6 +19,19 @@ $(function () {
         ]]
     });
 });
+
+function getQueryParams(queryParams){
+    var username=$("#username").val();
+    queryParams.username=username;
+    return queryParams;
+}
+
+function reloadgrid() {
+    var queryParams = $('#score_table').datagrid('options').queryParams;
+    getQueryParams(queryParams);
+    $('#score_table').datagrid('options').queryParams = queryParams;
+    $("#score_table").datagrid('reload');
+}
 
 function delScore(index){
     $('#score_table').datagrid('selectRow',index);

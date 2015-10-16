@@ -12,7 +12,7 @@ $(function () {
         pagination:true,
         columns:[[
             {field:'id',width:'10%',checkbox:true,title:'ID'},
-            {field:'name',width:'10%',align:'center',title:'用户名'}
+            {field:'cn_name',width:'10%',align:'center',title:'用户名'}
         ]],
         toolbar:[{
             text: '用户组用户管理',

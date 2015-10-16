@@ -33,14 +33,14 @@ $(function () {
         ]]
     });
 
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
-        var obj = $.parseJSON(result);
-        if (obj.success==false) {
-            alert(obj.msg);
-        } else {
-            $("#department_id").combotree('loadData', formatTreeData(obj));
+    $('#department_id').combotree ({
+        url: "/bcms/departmentTree",
+        lines: true,
+        loadFilter: function (data) {
+            return formatDepartmentTreeData(data);
         }
     });
+
 });
 
 function getQueryParams(queryParams){
@@ -56,10 +56,10 @@ function getQueryParams(queryParams){
 }
 
 function reloadgrid() {
-        var queryParams = $('#user_table').datagrid('options').queryParams;
-        getQueryParams(queryParams);
-        $('#user_table').datagrid('options').queryParams = queryParams;
-        $("#user_table").datagrid('reload');
+    var queryParams = $('#user_table').datagrid('options').queryParams;
+    getQueryParams(queryParams);
+    $('#user_table').datagrid('options').queryParams = queryParams;
+    $("#user_table").datagrid('reload');
 }
 
 function newUser(){
@@ -264,6 +264,7 @@ function formatDepartmentTreeData(data){
     for (var i = 0; i < data.length; i++) {
         var obj = data[i];
         obj.text = obj.name;
+        obj.state="closed";
         if (obj.children && obj.children.length > 0) {
             obj.children = formatDepartmentTreeData(obj.children);
         }

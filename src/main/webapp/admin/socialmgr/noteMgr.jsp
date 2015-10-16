@@ -21,7 +21,18 @@
     </table>
   </div>
   </div>
-</div>
+  <div id="tb" style="padding:3px">
+    <div style="margin-bottom: 5px;">
+      创建者: <input class="easyui-textbox" style="width:150px" id="username">
+      是否公开:
+      <select class="easyui-combobox" panelHeight="auto" style="width:100px" id="is_public">
+        <option value="">全部</option>
+        <option value="true">是</option>
+        <option value="false">否</option>
+      </select>
+      <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="reloadgrid();">搜索</a>
+    </div>
+  </div>
 </rapid:override>
 
 <!-- extends from base.jsp -->
