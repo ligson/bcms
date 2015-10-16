@@ -5,7 +5,7 @@ window.alert = function (msg) {
     $.messager.alert('提示信息', msg);
 };
 $(function () {
-    $("#user_name").text($.cookie("bcms_user_name"));
+    $("#login_username").text($.cookie("bcms_user_name"));
     $(window).load(function () {
         $(".ui-mask").hide();
     });

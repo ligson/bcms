@@ -48,10 +48,7 @@ $(function () {
                 }
                 }
             ]
-        ],
-        onLoadSuccess: function (target) {
-            $(".easyui-linkbutton").linkbutton();
-        }
+        ]
     });
 });
 

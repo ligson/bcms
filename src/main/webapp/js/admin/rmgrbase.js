@@ -1,6 +1,20 @@
 /**
  * Created by ligson on 2015/8/17.
  */
+
+function formatCategoryTreeData(data){
+    var fin = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = data[i];
+        obj.text = obj.name;
+        if (obj.children && obj.children.length > 0) {
+            obj.children = formatCategoryTreeData(obj.children);
+        }
+        fin.push(obj);
+    }
+    return fin;
+}
+
 function addCategory() {
     //var tree = $("#categoryTree");
     //var selectNode = tree.tree("getSelected");
@@ -22,10 +36,7 @@ $(function () {
             showContextMenu(e, node);
         },
         loadFilter: function (data) {
-            for (var i = 0; i < data.rows.length; i++) {
-                data.rows[i].text = data.rows[i].name;
-            }
-            return data.rows;
+            return formatCategoryTreeData(data.rows);
         },
         onClick: function (node) {
             //alert(node.id);

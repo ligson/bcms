@@ -170,7 +170,6 @@
     </form>
 </div>
 
-
 <div data-options="region:'center',title:'<rapid:block name="mainName"/>'" iconCls="<rapid:block name="mainIcon"/>">
     <rapid:block name="body"/>
 </div>

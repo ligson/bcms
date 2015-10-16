@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ligson
-  Date: 2015/9/6
-  Time: 10:09
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
 <!DOCTYPE html>
@@ -14,6 +7,22 @@
     <jsp:include page="../../layout/admin/adminheader.jsp"/>
     <script type="text/javascript" src="../../js/admin/rmgrbase.js"></script>
     <style type="text/css">
+        .ftitle {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .fitem {
+            margin-bottom: 5px;
+        }
+
+        .fitem label {
+            display: inline-block;
+            width: 80px;
+        }
         #treeMenu .tree-title a {
             text-decoration: none;
             color: #000;
@@ -28,9 +37,8 @@
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
-<div data-options="region:'west',split:true" title="系统菜单" style="width:200px;" iconCls="icon-application_side_boxes">
-    <div class="easyui-accordion" style="width:100%;" id="treeMenu">
-        <div title="资源管理" style="overflow:auto;padding:5px;padding-top:0px;" iconCls="icon-cd_magnify">
+<div class="easyui-accordion" data-options="region:'west',split:true" title="系统管理" style="width:240px;">
+    <div title="资源管理" id="treeMenu" iconCls="icon-cd_magnify">
             <div id="categoryTreeTbr">
                 <a href="#" class="easyui-linkbutton" iconCls="icon-add" title="增加资源库" plain="true"
                    onclick="addCategory()">增加</a>
@@ -43,18 +51,17 @@
             </ul>
 
         </div>
-        <div iconCls="icon-script" title="资源日志">
+    <div iconCls="icon-script" title="资源日志">
             <ul class="easyui-tree">
                 <li><span><a href="roplog.jsp">操作日志</a></span></li>
             </ul>
-        </div>
+    </div>
         <%-- <div iconCls="icon-folder" title="文件管理">
              <ul class="easyui-tree">
                  <li iconCls="icon-databases"><span><a href="filelist.jsp">所有文件</a></span></li>
                  <li iconCls="icon-star"><span><a href="myfilelist.jsp">我的文件</a></span></li>
              </ul>
          </div>--%>
-    </div>
 </div>
 <div id="addCategoryDlg" class="easyui-dialog" title="添加类库" data-options="iconCls:'icon-save'"
      style="width:400px;height:250px" closed="true">
@@ -121,6 +128,5 @@
 <div data-options="region:'center',title:'<rapid:block name="mainName"/>'" iconCls="<rapid:block name="mainIcon"/>">
     <rapid:block name="body"/>
 </div>
-
 </body>
 </html>

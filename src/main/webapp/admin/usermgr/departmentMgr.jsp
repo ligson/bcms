@@ -14,7 +14,7 @@
 <rapid:override name="mainName">部门管理</rapid:override>
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
-  <div class="easyui-layout" fit="true">
+
     <div region="west" title="部门组结构树" style="width: 240px;">
       <div style="padding:5px;background:#fafafa;width:100%;border:1px solid #ccc">
         <a href="#" onclick="clickAddDepartment();" class="easyui-linkbutton" plain="true" iconCls="icon-add">添加</a>
@@ -28,7 +28,7 @@
       <div id="department_user_grid" fit="true">
       </div>
     </div>
-  </div>
+
 
 <div id="add_department_dlg" class="easyui-dialog" style="width: 400px; height: auto; padding: 10px 20px;"
      closed="true" buttons="#add_department_dlg_buttons">

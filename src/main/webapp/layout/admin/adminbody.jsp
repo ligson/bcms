@@ -40,9 +40,8 @@
                 </td>
                 <td style="padding-right:5px;text-align:right;vertical-align:bottom;">
                     <div id="user_toolbar">
-                        <p>欢迎你,<a style="color:#FFF" iconCls="icon-user" class="easyui-linkbutton" plain="true" id="user_name"></a>&nbsp;&nbsp;
-                            <a
-                                    style="color:#FFF" class="easyui-linkbutton" iconCls="icon-control_power_blue"
+                        <p>欢迎你,<a style="color:#FFF" iconCls="icon-user" class="easyui-linkbutton" plain="true" id="login_username"></a>&nbsp;&nbsp;
+                            <a style="color:#FFF" class="easyui-linkbutton" iconCls="icon-control_power_blue"
                                     plain="true" href="../../admin/login.jsp">退出</a></p>
                     </div>
                 </td>
