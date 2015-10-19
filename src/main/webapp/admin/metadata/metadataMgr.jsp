@@ -329,6 +329,76 @@
             </table>
         </form>
     </div>
+    <div id="editDicItemDlg" class="easyui-dialog" title="编辑词汇表类型" closed="true"
+         style="width:400px;height:600px;padding:10px;">
+        <form>
+            <input type="hidden" name="metaTypeId" value="">
+            <table class="table">
+                <tr>
+                    <td><label>中文名称:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="zh_name22" required="true"></td>
+                </tr>
+                <tr>
+                    <td><label>英文名称</label></td>
+                    <td><input type="text" class="easyui-textbox" id="en_name22" required="true"></td>
+                </tr>
+                <tr>
+                    <td><label>LOM编号:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="lom_id22"></td>
+                </tr>
+                <tr>
+                    <td><label>取值数:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="val_num22" required="true" validType="number">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><label>举例:</label></td>
+                    <td><input type="text" class="easyui-textbox" id="example22" required="true"></td>
+                </tr>
+                <tr>
+                    <td><label>顺序:</label></td>
+                    <td>
+                        <select class="easyui-combobox" id="is_sorted22" required="true">
+                            <option value="true">true</option>
+                            <option value="false">false</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>词汇表类型:</label></td>
+                    <td>
+                        <select style="width:150px;" class="easyui-combobox" name="kind" id="vocabulary_type_id22"
+                                required="true">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>类别:</label></td>
+                    <td>
+                        <select class="easyui-combobox" id="collection22" required="true">
+                            <option value="0">必选数据</option>
+                            <option value="1">通用可选数据</option>
+                            <option value="2">分类数据</option>
+                            <option value="3">结构类型</option>
+                            <option value="4">自定义类型</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>解释:</label></td>
+                    <td><input type="text" multiple="true" style="height:50px;" class="easyui-textbox"
+                               id="description22" required="true"></td>
+                </tr>
+                <tr>
+                    <td><label>值域:</label></td>
+                    <td><input type="text" class="easyui-textbox" style="height:50px;" multiple="true" id="domain22"
+                               required="true"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </rapid:override>
 
 <!-- extends from base.jsp -->

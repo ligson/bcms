@@ -140,6 +140,16 @@ $(function () {
         valueField: "id",
         textField: "zh_name"
     });
+
+    $("#vocabulary_type_id22").combobox({
+        url: "/bcms/proxy?url=vocabulary&&method=GET&&page=1&&rows=100",
+        loadFilter: function (data) {
+            return data.rows;
+        },
+        valueField: "id",
+        textField: "zh_name"
+    });
+
     $("#structure_type_id14").combobox({
         url: "/bcms/proxy?url=metatype&method=GET&page=1&rows=100&kind=3&collection=3&parent_id=0&structure_type_id=0",
         loadFilter: function (data) {
@@ -179,6 +189,30 @@ $(function () {
             handler: function () {
                 if ($("#addDicItemDlg").find("form").form("validate")) {
                     addDocItem();
+                } else {
+                    alert("数据格式有误");
+                }
+            }
+        }, {
+            text: '关闭',
+            handler: function () {
+                var dlg = $("#addDicItemDlg");
+                dlg.find("form").form("reset");
+                dlg.dialog("close");
+
+            }
+        }]
+    });
+
+    //增加词汇表类型字段
+    $("#editDicItemDlg").dialog({
+        buttons: [{
+            text: '确定',
+            iconCls: 'icon-ok',
+            handler: function () {
+                if ($("#editDicItemDlg").find("form").form("validate")) {
+                    var mTypeId = $("#editDicItemDlg").find("form").find("input[name='metaTypeId']").val();
+                    addDocItem(mTypeId);
                 } else {
                     alert("数据格式有误");
                 }
@@ -329,7 +363,7 @@ function addNormalItem(mtypeId) {
 
 }
 
-function addDocItem() {
+function addDocItem(mtypeId) {
     var zh_name = $("#zh_name12").textbox("getValue");
     var en_name = $("#en_name12").textbox("getValue");
     var lom_id = $("#lom_id12").textbox("getValue");
@@ -356,6 +390,34 @@ function addDocItem() {
         vocabulary_type_id: vocabulary_type_id
     };
 
+    if (mtypeId) {
+        zh_name = $("#zh_name22").textbox("getValue");
+        en_name = $("#en_name22").textbox("getValue");
+        lom_id = $("#lom_id22").textbox("getValue");
+        val_num = $("#val_num22").textbox("getValue");
+        example = $("#example22").textbox("getValue");
+        is_sorted = $("#is_sorted22").combobox("getValue");
+        kind = 2;
+        collection = $("#collection22").combobox("getValue");
+        description = $("#description22").textbox("getValue");
+        domain = $("#domain22").textbox("getValue");
+        vocabulary_type_id = $("#vocabulary_type_id22").combobox("getValue");
+        params = {
+            method: "PUT",
+            url: "metatype/" + mtypeId,
+            zh_name: zh_name,
+            en_name: en_name,
+            val_num: val_num,
+            example: example,
+            is_sorted: is_sorted,
+            kind: kind,
+            collection: collection,
+            description: description,
+            domain: domain,
+            vocabulary_type_id: vocabulary_type_id
+        };
+    }
+
     if (lom_id) {
         params.lom_id = lom_id;
     }
@@ -364,25 +426,31 @@ function addDocItem() {
     $.post("/bcms/proxy", params, function (data) {
         if (data.id != null) {
             var dlg = $("#addDicItemDlg");
+            if (mtypeId) {
+                dlg = $("#editDicItemDlg");
+                $("#metaGrid").treegrid("reload");
+            }
             dlg.find("form").form("reset");
             dlg.dialog("close");
-            var node = $("#metadata_tree").tree("getSelected");
-            $.post("/bcms/proxy", {
-                url: "metalibrary/add_metatype",
-                method: "GET",
-                metatype_id: data.id,
-                meta_library_id: node.id
-            }, function (data2) {
-                if (data2.result) {
-                    alert("增加成功");
-                } else {
-                    alert("增加失败");
-                }
-            }, "json");
+            if (mtypeId == undefined) {
+                var node = $("#metadata_tree").tree("getSelected");
+                $.post("/bcms/proxy", {
+                    url: "metalibrary/add_metatype",
+                    method: "GET",
+                    metatype_id: data.id,
+                    meta_library_id: node.id
+                }, function (data2) {
+                    if (data2.result) {
+                        alert("增加成功");
+                    } else {
+                        alert("增加失败");
+                    }
+                }, "json");
+            }
 
         } else {
             if (data.success == false) {
-                dlg.dialog("fail");
+                alert("失败");
             }
         }
     }, "json");
@@ -489,11 +557,29 @@ function editMetaData(rowId) {
     if (node.kind == 3) {
 
     } else if (node.kind == 2) {
-
+        showEditDicItemDlg(node);
     } else {
         showEditMetaItemDlg(node);
     }
 }
+
+function showEditDicItemDlg(node) {
+    var dlg = $("#editDicItemDlg");
+    var mId = dlg.find("input[name='metaTypeId']");
+    mId.val(node.id);
+    $("#zh_name22").textbox("setValue", node.zh_name);
+    $("#en_name22").textbox("setValue", node.en_name);
+    $("#lom_id22").textbox("setValue", node.lom_id);
+    $("#val_num22").textbox("setValue", node.val_num);
+    $("#example22").textbox("setValue", node.example);
+    $("#is_sorted22").combobox("setValue", node.is_sorted);
+    $("#collection22").combobox("setValue", node.collection);
+    $("#description22").textbox("setValue", node.description);
+    $("#domain22").textbox("setValue", node.domain);
+    $("#vocabulary_type_id22").combobox("setValue", node.vocabulary_type_id);
+    dlg.dialog("open");
+}
+
 
 function showEditMetaItemDlg(node) {
     var dlg = $("#editMetaItemDlg");
