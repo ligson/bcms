@@ -125,7 +125,7 @@ $(function () {
                  }
                  }*/, {
                 field: "edit", title: "编辑", formatter: function (value, row, index) {
-                    return "<a class='easyui-linkbutton' onclick='showAddItemDlg()'>编辑</a>";
+                    return "<a class='easyui-linkbutton' onclick='editMetaData(" + row.id + ")'>编辑</a>";
                 }
             }
             ]
@@ -194,7 +194,30 @@ $(function () {
         }]
     });
 
+    $("#editMetaItemDlg").dialog({
+        buttons: [
+            {
+                text: "提交",
+                handler: function () {
+                    if ($("#editMetaItemDlg").find("form").form("validate")) {
+                        var mtId = $("#editMetaItemDlg").find("form").find("input[name='metaTypeId']").val();
+                        addNormalItem(mtId);
+                    } else {
+                        alert("数据格式有误");
+                    }
+                }
 
+            },
+            {
+                text: "关闭",
+                handler: function () {
+                    var dlg = $("#editMetaItemDlg");
+                    dlg.find("form").form("reset");
+                    dlg.dialog("close");
+                }
+            }
+        ]
+    });
     $("#addMetaItemDlg").dialog({
         buttons: [
             {
@@ -222,7 +245,7 @@ $(function () {
 
 });
 
-function addNormalItem() {
+function addNormalItem(mtypeId) {
     var zh_name = $("#zh_name11").textbox("getValue");
     var en_name = $("#en_name11").textbox("getValue");
     var lom_id = $("#lom_id11").textbox("getValue");
@@ -233,6 +256,20 @@ function addNormalItem() {
     var collection = $("#collection11").combobox("getValue");
     var description = $("#description11").textbox("getValue");
     var domain = $("#domain11").textbox("getValue");
+
+    if (mtypeId) {
+        zh_name = $("#zh_name21").textbox("getValue");
+        en_name = $("#en_name21").textbox("getValue");
+        lom_id = $("#lom_id21").textbox("getValue");
+        val_num = $("#val_num21").textbox("getValue");
+        example = $("#example21").textbox("getValue");
+        is_sorted = $("#is_sorted21").combobox("getValue");
+        kind = $("#kind21").combobox("getValue");
+        collection = $("#collection21").combobox("getValue");
+        description = $("#description21").textbox("getValue");
+        domain = $("#domain21").textbox("getValue");
+    }
+
     var params = {
         method: "POST",
         url: "metatype/",
@@ -247,6 +284,11 @@ function addNormalItem() {
         domain: domain
     };
 
+    if (mtypeId) {
+        params.url = "metatype/" + mtypeId;
+        params.method = "PUT";
+    }
+
     if (lom_id) {
         params.lom_id = lom_id;
     }
@@ -255,22 +297,28 @@ function addNormalItem() {
     $.post("/bcms/proxy", params, function (data) {
         if (data.id != undefined) {
             var dlg = $("#addMetaItemDlg");
+            if (mtypeId) {
+                dlg = $("#editMetaItemDlg");
+                $("#metaGrid").treegrid("reload");
+            }
             dlg.find("form").form("reset");
             dlg.dialog("close");
-            var node = $("#metadata_tree").tree("getSelected");
-            $.post("/bcms/proxy", {
-                url: "metalibrary/add_metatype",
-                method: "GET",
-                metatype_id: data.id,
-                meta_library_id: node.id
-            }, function (data2) {
-                if (data2.result) {
-                    alert("增加成功");
-                } else {
-                    alert("增加失败");
-                }
-            }, "json");
 
+            if (mtypeId == undefined) {
+                var node = $("#metadata_tree").tree("getSelected");
+                $.post("/bcms/proxy", {
+                    url: "metalibrary/add_metatype",
+                    method: "GET",
+                    metatype_id: data.id,
+                    meta_library_id: node.id
+                }, function (data2) {
+                    if (data2.result) {
+                        alert("增加成功");
+                    } else {
+                        alert("增加失败");
+                    }
+                }, "json");
+            }
         } else {
             if (data.success == false) {
                 dlg.dialog("fail");
@@ -434,4 +482,32 @@ function deleteMetaItem() {
             }
         }, "json");
     }
+}
+
+function editMetaData(rowId) {
+    var node = $("#metaGrid").treegrid("find", rowId);
+    if (node.kind == 3) {
+
+    } else if (node.kind == 2) {
+
+    } else {
+        showEditMetaItemDlg(node);
+    }
+}
+
+function showEditMetaItemDlg(node) {
+    var dlg = $("#editMetaItemDlg");
+    var mId = dlg.find("input[name='metaTypeId']");
+    mId.val(node.id);
+    $("#zh_name21").textbox("setValue", node.zh_name);
+    $("#en_name21").textbox("setValue", node.en_name);
+    $("#lom_id21").textbox("setValue", node.lom_id);
+    $("#val_num21").textbox("setValue", node.val_num);
+    $("#example21").textbox("setValue", node.example);
+    $("#is_sorted21").combobox("setValue", node.is_sorted);
+    $("#kind21").combobox("setValue", node.kind);
+    $("#collection21").combobox("setValue", node.collection);
+    $("#description21").textbox("setValue", node.description);
+    $("#domain21").textbox("setValue", node.domain);
+    dlg.dialog("open");
 }
