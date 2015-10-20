@@ -156,7 +156,7 @@ function initDepartmentTree() {
 }
 
 function initUserListByDepartment(node) {
-    $.post("/bcms/proxy", {method: "get", url: "department/" + node.id + "/user/page/1"}, function (result) {
+    $.post("/bcms/proxy", {method: "get", url: "user/",department_id: node.id,page:1,rows:10000}, function (result) {
         var obj = jQuery.parseJSON(result);
         if (obj.success==false) {
             alert(obj.msg);

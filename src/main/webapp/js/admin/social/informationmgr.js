@@ -252,7 +252,7 @@ function initAddRoleTree(){
         if (obj.success==false) {
             alert(obj.msg);
         } else {
-            $(".add_role_tree").combotree({multiple:true,data: formatTreeData(obj)});
+            $(".add_role_tree").combotree({multiple:true,data: formatTreeData(obj.rows)});
         }
     });
 }
@@ -274,7 +274,7 @@ function initModifyRoleTree(values){
         if (obj.success==false) {
             alert(obj.msg);
         } else {
-            $(".modify_role_tree").combotree({multiple:true,data: formatTreeData(obj)});
+            $(".modify_role_tree").combotree({multiple:true,data: formatTreeData(obj.rows)});
             $(".modify_role_tree").combotree("setValues",values);
         }
     });
