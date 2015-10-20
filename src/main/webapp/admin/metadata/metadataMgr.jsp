@@ -403,6 +403,7 @@
     <div id="editStructureItemDlg" class="easyui-dialog" title="编辑结构类型" closed="true"
          style="width:400px;height:600px;padding:10px;">
         <form>
+            <input type="hidden" name="metaTypeId" value="">
             <table class="table">
                 <tr>
                     <td><label>中文名称:</label></td>
