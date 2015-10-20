@@ -124,8 +124,8 @@ function saveInformation(){
         created_at: create_date,
         published_at: published_at,
         end_at: end_at,
-        department_id:JSON.stringify(departments),
-        role_id:JSON.stringify(roles)
+        department_id:departments.toString(),
+        role_id:roles.toString()
     }, function (data) {
         var result = JSON.parse(data);
         if (!result.success) {
@@ -208,8 +208,8 @@ function modifyInformation(){
         created_at: create_date,
         published_at: published_at,
         end_at: end_at,
-        department_id:JSON.stringify(departments),
-        role_id:JSON.stringify(roles)
+        department_id:departments.toString(),
+        role_id:roles.toString()
     }, function (data) {
         var result = JSON.parse(data);
         if (!result.success) {

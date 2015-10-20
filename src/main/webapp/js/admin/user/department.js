@@ -3,47 +3,44 @@
  */
 $(function () {
     $("#department_tree").tree({
-        url: "/bcms/departmentTree",
+        url: "/bcms/proxy?url=department&method=GET",
         lines: true,
         loadFilter: function (data) {
             return formatDepartmentTreeData(data);
         },
         onClick: function (node) {
-            var queryParams = $('#department_user_grid').datagrid('options').queryParams;
-            queryParams.department_id=node.id;
-            $('#department_user_grid').datagrid('options').queryParams = queryParams;
-            $("#department_user_grid").datagrid('reload');
+            $('#department_user_grid').datagrid({
+                rownumbers: true,
+                singleSelect: false,
+                pagination: true,
+                url: "/bcms/proxy?url=user&method=GET&department_id="+node.id,
+                columns: [[
+                    {field:'id',width:'1%',checkbox:true,title:'ID'},
+                    {field:'username',width:'10%',align:'center',title:'用户名'},
+                    {field:'cn_name',width:'10%',align:'center',title:'中文名'},
+                    {field:'number',width:'10%',align:'center',title:'编号'},
+                    {field:'gender',width:'5%',align:'center',title:'性别',
+                        formatter: function (value,row,index) {
+                            var result = "";
+                            if (value == "1") {
+                                result = "男"
+                            } else {
+                                result = "女"
+                            }
+                            return result;
+                        }
+                    },
+                    {field:'email',width:'10%',align:'center',title:'邮箱'},
+                    {field:'department_id',width:'10%',align:'center',title:'部门'},
+                    {field:'phone',width:'10%',align:'center',title:'电话'},
+                    {field:'groups',width:'20%',align:'center',formatter:formatGroup,title:'用户组'}
+
+                ]]
+            });
         }
     });
 
-    $('#department_user_grid').datagrid({
-        rownumbers: true,
-        singleSelect: false,
-        pagination: true,
-        url: "/bcms/proxy?url=user&method=GET",
-        columns: [[
-            {field:'id',width:'1%',checkbox:true,title:'ID'},
-            {field:'username',width:'10%',align:'center',title:'用户名'},
-            {field:'cn_name',width:'10%',align:'center',title:'中文名'},
-            {field:'number',width:'10%',align:'center',title:'编号'},
-            {field:'gender',width:'5%',align:'center',title:'性别',
-                formatter: function (value,row,index) {
-                    var result = "";
-                    if (value == "1") {
-                        result = "男"
-                    } else {
-                        result = "女"
-                    }
-                    return result;
-                }
-            },
-            {field:'email',width:'10%',align:'center',title:'邮箱'},
-            {field:'department_id',width:'10%',align:'center',title:'部门'},
-            {field:'phone',width:'10%',align:'center',title:'电话'},
-            {field:'groups',width:'20%',align:'center',formatter:formatGroup,title:'用户组'}
 
-        ]]
-    });
 });
 
 
@@ -52,8 +49,8 @@ function formatDepartmentTreeData(data){
     for (var i = 0; i < data.length; i++) {
         var obj = data[i];
         obj.text = obj.name;
-        obj.state="closed";
         if (obj.children && obj.children.length > 0) {
+            obj.state="closed";
             obj.children = formatDepartmentTreeData(obj.children);
         }
         fin.push(obj);

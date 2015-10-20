@@ -34,7 +34,7 @@ $(function () {
     });
 
     $('#department_id').combotree ({
-        url: "/bcms/departmentTree",
+        url: "/bcms/proxy?url=department&method=GET",
         lines: true,
         loadFilter: function (data) {
             return formatDepartmentTreeData(data);
@@ -139,7 +139,7 @@ function initModify(row) {
         if (obj.success==false) {
             alert(obj.msg);
         } else {
-            $("#modify_user_dlg .department_tree").combotree('loadData', formatTreeData(obj));
+            $("#modify_user_dlg .department_tree").combotree('loadData', formatDepartmentTreeData(obj));
             $("#modify_user_dlg .department_tree").combotree('setValue', row.department_id);
         }
     });
@@ -190,7 +190,7 @@ function initAddDepartmentCombotree() {
         if (obj.success==false) {
             alert(obj.msg);
         } else {
-            $("#add_user_dlg .department_tree").combotree('loadData', formatTreeData(obj));
+            $("#add_user_dlg .department_tree").combotree('loadData', formatDepartmentTreeData(obj));
         }
     });
 }
@@ -264,68 +264,9 @@ function formatDepartmentTreeData(data){
     for (var i = 0; i < data.length; i++) {
         var obj = data[i];
         obj.text = obj.name;
-        obj.state="closed";
         if (obj.children && obj.children.length > 0) {
+            obj.state="closed";
             obj.children = formatDepartmentTreeData(obj.children);
-        }
-        fin.push(obj);
-    }
-    return fin;
-}
-
-function handle(list) {
-    var map = {};
-    for (var i = 0; i < list.length; i++) {
-        map[list[i].id] = list[i];
-    }
-    var fin = [];
-    for (var i = 0; i < list.length; i++) {
-        var obj = list[i];
-        if (!obj.parent || obj.parent == null) {
-            if (obj.children && obj.children.length > 0) {
-                var children = obj.children;
-                var childrenList = [];
-                for (var j = 0; j < children.length; j++) {
-                    childrenList.push(handleChildren(map[children[j]], map));
-                }
-                obj.children = childrenList;
-            }
-            obj.text = obj.name;
-            fin.push(obj);
-        }
-    }
-    return fin;
-}
-function handleChildren(childrenMap , map) {
-    if (childrenMap.children && childrenMap.children.length > 0) {
-        var children = childrenMap.children;
-        var childrenList = [];
-        for (var j = 0; j < children.length; j++) {
-            childrenList.push(handleChildren(map[children[j]], map));
-        }
-        childrenMap.children = childrenList;
-        childrenMap.text = childrenMap.name;
-        return childrenMap;
-    } else {
-        var children = childrenMap.children;
-        var childrenList = [];
-        for (var j = 0; j < children.length; j++) {
-            childrenList.push(map[children[j]]);
-        }
-        childrenMap.children = childrenList;
-        childrenMap.text = childrenMap.name;
-        return childrenMap;
-    }
-    return null;
-}
-
-function formatTreeData(data){
-    var fin = [];
-    for (var i = 0; i < data.length; i++) {
-        var obj = data[i];
-        obj.text = obj.name;
-        if (obj.children && obj.children.length > 0) {
-            obj.children = formatTreeData(obj.children);
         }
         fin.push(obj);
     }

@@ -37,14 +37,14 @@
         </div>
         <div class="fitem">
             <label>
-                范围类型</label>
-            <input class="easyui-combotree department_tree" name="departments" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+                目标部门</label>
+            <input class="easyui-combotree department_tree" name="departments" data-options="multiple:true,editable:false,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
                     />
         </div>
         <div class="fitem">
             <label>
-                目标范围</label>
-            <input class="easyui-combotree resourcelib_tree" name="resources" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+                目标资源库</label>
+            <input class="easyui-combotree resourcelib_tree" name="resources" data-options="multiple:true,editable:false,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
                     />
         </div>
         <div class="fitem">
@@ -76,20 +76,14 @@
         </div>
         <div class="fitem">
             <label>
-                权限
-            </label>
-            <input id="quanxian" class="easyui-combotree" data-options="required:true">
-        </div>
-        <div class="fitem">
-            <label>
-                范围类型</label>
-            <input class="easyui-combobox" id="fwlx" style="height: auto"
+                目标部门</label>
+            <input class="easyui-combotree department_tree" name="departments" data-options="multiple:true,editable:false,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
                     />
         </div>
         <div class="fitem">
             <label>
-                目标范围</label>
-            <input class="easyui-combotree" id="mbfw" data-options="multiple:true,editable:false,required:true,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+                目标资源库</label>
+            <input class="easyui-combotree resourcelib_tree" name="resources" data-options="multiple:true,editable:false,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
                     />
         </div>
         <div class="fitem">
@@ -100,7 +94,7 @@
     </form>
 </div>
 <div id="add_auth_dlg_buttons">
-    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveAuth()" iconcls="icon-save">保存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveAuth();" iconcls="icon-save">保存</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#add_auth_dlg').dialog('close')"
        iconcls="icon-cancel">取消</a>
 </div>

@@ -22,7 +22,7 @@ $(function () {
 
 function clickAddRole(){
     initAuthCombobox();
-    $('#add_role_dlg').dialog('open');
+    $('#add_role_dlg').dialog('open').dialog('setTitle','添加角色');
 }
 
 function clickModifyRole(){
@@ -39,12 +39,12 @@ function clickModifyRole(){
 function initModify(node) {
     $("#modify_role_dlg input[name=id]").val(node.id);
     $("#modify_role_dlg input[name=name]").val(node.name);
-    $.get("/bcms/proxy", {url: "permission/"}, function (result) {
+    $.get("/bcms/proxy", {url: "permission/",page:1,rows:1000}, function (result) {
         var obj = $.parseJSON(result);
         if (obj.success==false) {
             $.message.alert("提示",obj.msg,"info");
         } else {
-            $("#modify_role_dlg .easyui-combobox").combobox('loadData', obj);
+            $("#modify_role_dlg .easyui-combobox").combobox('loadData', obj.rows);
             var t=[];
             for(var i=0;i<node.permissions.length;i++){
                 t[i]=node.permissions[i].id;
@@ -57,12 +57,12 @@ function initModify(node) {
 }
 
 function initAuthCombobox(){
-    $.get("/bcms/proxy", {url: "permission/"}, function (result) {
+    $.get("/bcms/proxy", {url: "permission/",page:1,rows:1000}, function (result) {
         var obj = jQuery.parseJSON(result);
         if (obj.success==false) {
             alert(obj.msg);
         } else {
-            $("#add_role_dlg .easyui-combobox").combobox('loadData',obj);
+            $("#add_role_dlg .easyui-combobox").combobox('loadData',obj.rows);
         }
     });
 }
@@ -73,7 +73,7 @@ function initRoleTree() {
         if (obj.success==false) {
             alert(obj.msg);
         } else {
-            $("#role_tree").tree({data: handle(obj), onClick: function () {
+            $("#role_tree").tree({data: handle(obj.rows), onClick: function () {
                 initAuthGridByNode();
             }
             });

@@ -1,77 +1,79 @@
 $(function () {
     var groupTree;
-    initGroupTree();
+    //initGroupTree();
     $("#group_tabs").tabs({
         fit:true,
         plain:true
-    })
-    $('#group_user_grid').datagrid({
-        rownumbers: true,
-        title: '用户组对应用户列表',
-        singleSelect:false,
-        pagination:true,
-        columns:[[
-            {field:'id',width:'10%',checkbox:true,title:'ID'},
-            {field:'cn_name',width:'10%',align:'center',title:'用户名'}
-        ]],
-        toolbar:[{
-            text: '用户组用户管理',
-            iconCls: 'icon-add',
-            handler: function () {
-                clickAddGroupUser();
-            }
-        }]
     });
+    $("#group_tree").tree({
+        url: "/bcms/proxy?url=group&method=GET",
+        lines: true,
+        loadFilter: function (data) {
+            return formatGroupListData(data);
+        },
+        onClick: function (node) {
+            $('#group_user_grid').datagrid({
+                rownumbers: true,
+                url: "/bcms/proxy?url=user&method=GET&group_id="+node.id,
+                singleSelect:false,
+                pagination:true,
+                columns:[[
+                    {field:'id',width:'10%',checkbox:true,title:'ID'},
+                    {field:'username',width:'10%',align:'center',title:'用户名'},
+                    {field:'cn_name',width:'10%',align:'center',title:'中文名'},
+                    {field:'number',width:'10%',align:'center',title:'编号'},
+                    {field:'gender',width:'5%',align:'center',title:'性别',
+                        formatter: function (value,row,index) {
+                            var result = "";
+                            if (value == "1") {
+                                result = "男"
+                            } else {
+                                result = "女"
+                            }
+                            return result;
+                        }
+                    },
+                    {field:'email',width:'10%',align:'center',title:'邮箱'},
+                    {field:'department_id',width:'10%',align:'center',title:'部门'},
+                    {field:'phone',width:'10%',align:'center',title:'电话'},
+                ]],
+                toolbar:[{
+                    text: '用户管理',
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        clickAddGroupUser();
+                    }
+                }]
+            });
 
-    $('#group_role_grid').datagrid({
-        rownumbers: true,
-        title: '用户组对应角色列表',
-        singleSelect:false,
-        pagination:true,
-        columns:[[
-            {field:'id',width:'10%',checkbox:true,title:'ID'},
-            {field:'name',width:'10%',align:'center',title:'角色名'},
-            {field:'_operate',width:'10%',align:'center',title:'操作',
-                formatter: function (value, row,index) {
-                    return '<a class="tablelink" href="#" onclick="delGroupRole(' + index + ')">移除</a>';
-                }
-            }
-        ]],
-        toolbar:[{
-            text: '添加用户组角色',
-            iconCls: 'icon-add',
-            handler: function () {
-                clickAddGroupRole();
-            }
-        }]
-    });
-
-});
-
-
-function initGroupTree() {
-    $.get("/bcms/proxy", {url: "group/"}, function (result) {
-        var obj = jQuery.parseJSON(result);
-        if (obj.success==false) {
-            alert(obj.msg);
-        } else {
-            groupTree = formatGroupListData(obj);
-            $("#group_tree").tree({
-                data: groupTree, onClick: function (node) {
-                    initGridByGroup(node);
-                }
+            $('#group_role_grid').datagrid({
+                rownumbers: true,
+                singleSelect:false,
+                pagination:true,
+                url: "/bcms/proxy?url=role&method=GET&group_id="+node.id,
+                columns:[[
+                    {field:'id',width:'10%',checkbox:true,title:'ID'},
+                    {field:'name',width:'10%',align:'center',title:'角色名'},
+                    {field:'_operate',width:'10%',align:'center',title:'操作',
+                        formatter: function (value, row,index) {
+                            return '<a class="tablelink" href="#" onclick="delGroupRole(' + index + ')">移除</a>';
+                        }
+                    }
+                ]],
+                toolbar:[{
+                    text: '添加用户组角色',
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        clickAddGroupRole();
+                    }
+                }]
             });
         }
     });
-}
 
 
-function initGridByGroup(node){
-    var user_json = {total: node.users.length, rows: node.users};
-    var role_json={total:node.roles.length,rows:node.roles};
-    $("#group_role_grid").datagrid('loadData',role_json);
-    $("#group_user_grid").datagrid('loadData',user_json);
-}
+});
+
 
 function clickAddGroup(){
     $('#add_group_dlg').dialog('open').dialog("setTitle","添加用户组");
@@ -120,23 +122,23 @@ function initDepartmentTree(node) {
 
 function initDepartmentSelectUsers(node) {
     $("#select_user_list").datalist({
-        textField: 'name',
+        textField: 'cn_name',
         valueField: 'id',
         data: node.users
     });
 }
 
 function initUserListByDepartment(node) {
-    $.post("/bcms/proxy", {method: "get", url: "department/" + node.id + "/user/page/1"}, function (result) {
+    $.post("/bcms/proxy", {method: "get", url: "user/",department_id: node.id,page:1,rows:10000}, function (result) {
         var obj = jQuery.parseJSON(result);
         if (obj.success==false) {
             alert(obj.msg);
         } else {
             var rows = $('#select_user_list').datalist("getData").rows;
             for (var j = 0; j < rows.length; j++) {
-                for (var x = 0; x < obj.length; x++) {
-                    if (rows[j].id == obj[x].id) {
-                        obj[x].checked = true;
+                for (var x = 0; x < obj.rows.length; x++) {
+                    if (rows[j].id == obj.rows[x].id) {
+                        obj.rows[x].checked = true;
                     }
                 }
             }
@@ -147,7 +149,7 @@ function initUserListByDepartment(node) {
                 valueField: 'id',
                 data: obj,
                 onCheck: function (index, row) {
-                    $("#select_user_list").datalist('appendRow', {'id': row.id, 'name': row.cn_name});
+                    $("#select_user_list").datalist('appendRow', {'id': row.id, 'cn_name': row.cn_name});
                 },
                 onUncheck:function(index,row) {
                     var rows = $("#select_user_list").datalist('getRows');
@@ -188,7 +190,7 @@ function saveGroup(){
             $.message.alert("提示",obj.msg,"info");
         } else {
             $('#add_group_dlg').dialog('close');
-            initGroupTree();
+            $("#group_tree").tree("reload");
         }
     });
 }
@@ -202,11 +204,8 @@ function saveGroupRole(){
             $('#add_group_role_dlg').dialog('close');
             $.message.alert("提示",obj.msg,"info");
         } else {
-            initGroupTree();
             $('#add_group_role_dlg').dialog('close');
-            var groupNode=$("#group_tree").tree("find",group_id);
-            $('#group_tree').tree('select',groupNode.target);
-            initGridByGroup(groupNode);
+            $("#group_role_grid").datagrid('reload');
         }
     });
 }
@@ -221,7 +220,7 @@ function modifyGroup(){
             $.message.alert("提示",obj.msg,"info");
         } else {
             $('#modify_group_dlg').dialog('close');
-            initGroupTree();
+            $("#group_tree").tree("reload");
         }
     });
 }
@@ -232,7 +231,7 @@ function initRoleTree() {
         if (obj.success==false) {
             alert(obj.msg);
         } else {
-            $('#add_group_role_dlg .role_tree').combotree('loadData', formatGroupListData(obj));
+            $('#add_group_role_dlg .role_tree').combotree('loadData', formatGroupListData(obj.rows));
         }
     });
 }
@@ -253,7 +252,7 @@ function delGroupRole(index){
                         if (obj.success==false) {
                             $.message.alert("提示", obj.msg, "info");
                         } else {
-                            initGroupTree();
+                            $("#group_role_grid").datagrid('reload');
                         }
                     });
                 }
@@ -278,7 +277,7 @@ function delGroup(){
                     if (obj.success==false) {
                         alert(obj.msg);
                     } else {
-                        $('#group_tree').tree('remove', node.target);
+                        $("#group_tree").tree("reload");
                     }
                 });
             }
@@ -296,14 +295,14 @@ function saveGroupUser(){
     for(var i=0;i<rows.length;i++){
         uids.push(rows[i].id);
     }
-    $.post("/bcms/proxy", {method:"put",url: "group/"+node.id, name: node.name,user_ids:uids.toString()}, function (result) {
+    $.post("/bcms/proxy", {method:"put",url: "group/"+node.id, name: node.name,user_ids:JSON.stringify(uids)}, function (result) {
         var obj = jQuery.parseJSON(result);
         if (obj.success==false) {
             $('#add_group_user_dlg').dialog('close');
             $.message.alert("提示",obj.msg,"info");
         } else {
             $('#add_group_user_dlg').dialog('close');
-            initGroupTree();
+            $("#group_user_grid").datagrid('reload');
         }
 
     });
