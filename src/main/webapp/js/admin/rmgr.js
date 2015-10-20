@@ -13,7 +13,7 @@ $(function () {
         url: "/bcms/proxy?url=resource&method=GET",
         fitColumns: true,
         autoRowHeight: true,
-        fit:true,
+        fit: true,
         columns: [
             [
                 {field: 'id', title: 'id', width: 100},
@@ -38,7 +38,8 @@ $(function () {
                 },
                 {
                     field: 'editOpt', title: '基本信息', width: 100, formatter: function (value, row, index) {
-                    return "<a class='easyui-linkbutton' href=''>编辑</a>";
+                    var href = "/bcms/admin/resourcemgr/editresource.jsp?id=" + row.id;
+                    return "<a class='easyui-linkbutton' href='" + href + "'>编辑</a>";
                 }
                 },
                 {

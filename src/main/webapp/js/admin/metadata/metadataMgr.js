@@ -159,6 +159,14 @@ $(function () {
         textField: "zh_name"
     });
 
+    $("#structure_type_id24").combobox({
+        url: "/bcms/proxy?url=metatype&method=GET&page=1&rows=100&kind=3&collection=3&parent_id=0&structure_type_id=0",
+        loadFilter: function (data) {
+            return data.rows;
+        },
+        valueField: "id",
+        textField: "zh_name"
+    });
     //增加结构类型字段
     $("#addStructureItemDlg").dialog({
         buttons: [{
@@ -555,13 +563,31 @@ function deleteMetaItem() {
 function editMetaData(rowId) {
     var node = $("#metaGrid").treegrid("find", rowId);
     if (node.kind == 3) {
-
+        showEditStructureItemDlg(node);
     } else if (node.kind == 2) {
         showEditDicItemDlg(node);
     } else {
         showEditMetaItemDlg(node);
     }
 }
+
+function showEditStructureItemDlg(node) {
+    var dlg = $("#editStructureItemDlg");
+    var mId = dlg.find("input[name='metaTypeId']");
+    mId.val(node.id);
+    $("#zh_name24").textbox("setValue", node.zh_name);
+    $("#en_name24").textbox("setValue", node.en_name);
+    $("#lom_id24").textbox("setValue", node.lom_id);
+    $("#val_num24").textbox("setValue", node.val_num);
+    $("#example24").textbox("setValue", node.example);
+    $("#is_sorted24").combobox("setValue", node.is_sorted);
+    $("#collection24").combobox("setValue", node.collection);
+    $("#description24").textbox("setValue", node.description);
+    $("#domain24").textbox("setValue", node.domain);
+    $("#structure_type_id24").combobox("setValue", node.structure_type_id);
+    dlg.dialog("open");
+}
+
 
 function showEditDicItemDlg(node) {
     var dlg = $("#editDicItemDlg");
