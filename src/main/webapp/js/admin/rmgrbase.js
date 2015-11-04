@@ -14,7 +14,20 @@ function formatCategoryTreeData(data) {
     }
     return fin;
 }
-
+function removeCategory() {
+    var tree = $("#categoryTree");
+    var selectNode = tree.tree("getSelected");
+    if (selectNode) {
+        $.post("/bcms/proxy", {method: "DELETE", url: "resourcelibrary/" + selectNode.id}, function (data) {
+            if (data.id != undefined) {
+                alert("删除成功!");
+                tree.tree("reload");
+            } else {
+                alert("删除失败!");
+            }
+        }, "json");
+    }
+}
 function addCategory() {
     var tree = $("#categoryTree");
     var selectNode = tree.tree("getSelected");
