@@ -2,7 +2,7 @@
  * Created by ligson on 2015/8/17.
  */
 
-function formatCategoryTreeData(data){
+function formatCategoryTreeData(data) {
     var fin = [];
     for (var i = 0; i < data.length; i++) {
         var obj = data[i];
@@ -16,9 +16,12 @@ function formatCategoryTreeData(data){
 }
 
 function addCategory() {
-    //var tree = $("#categoryTree");
-    //var selectNode = tree.tree("getSelected");
+    var tree = $("#categoryTree");
+    var selectNode = tree.tree("getSelected");
     $("#addCategoryDlg").dialog("open");
+    if (selectNode) {
+        $("#parentCategoryId").val(selectNode.id);
+    }
 }
 function editCategory() {
     $("#editCategoryDlg").dialog("open");
@@ -88,6 +91,10 @@ $(function () {
                             url: "resourcelibrary/",
                             method: "POST"
                         };
+                        var pId = $("#parentCategoryId").val();
+                        if (pId != "" && pId != null) {
+                            params.parent_id = pId;
+                        }
                         $.post("/bcms/proxy", params, function (data) {
                             if (data.id != null) {
                                 $("#categoryTree").tree("reload");

@@ -66,6 +66,7 @@
 <div id="addCategoryDlg" class="easyui-dialog" title="添加类库" data-options="iconCls:'icon-save'"
      style="width:400px;height:250px" closed="true">
     <form>
+        <input type="hidden" id="parentCategoryId" value="">
         <table class="table">
             <tr>
                 <td>类库名称:</td>
