@@ -38,13 +38,13 @@
         <div class="fitem">
             <label>
                 目标部门</label>
-            <input class="easyui-combotree department_tree" name="departments" data-options="multiple:true,editable:false,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+            <input class="easyui-combotree department_tree" name="departments" style="height: auto"
                     />
         </div>
         <div class="fitem">
             <label>
                 目标资源库</label>
-            <input class="easyui-combotree resourcelib_tree" name="resources" data-options="multiple:true,editable:false,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+            <input class="easyui-combotree resourcelib_tree" name="resources" style="height: auto"
                     />
         </div>
         <div class="fitem">
@@ -77,13 +77,13 @@
         <div class="fitem">
             <label>
                 目标部门</label>
-            <input class="easyui-combotree department_tree" name="departments" data-options="multiple:true,editable:false,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+            <input class="easyui-combotree department_tree" name="departments" style="height: auto"
                     />
         </div>
         <div class="fitem">
             <label>
                 目标资源库</label>
-            <input class="easyui-combotree resourcelib_tree" name="resources" data-options="multiple:true,editable:false,valueField:'id',textField:'name',multiple:true,panelHeight:'100'" style="height: auto"
+            <input class="easyui-combotree resourcelib_tree" name="resources" style="height: auto"
                     />
         </div>
         <div class="fitem">

@@ -2,13 +2,17 @@
  * Created by ligson on 2015/8/11.
  */
 $(function () {
-    $('#container').highcharts({
+
+    var categories=['2010-2-3','2010-2-4'];
+    var data=[3,4];
+
+    var chart = $('#container').highcharts({
         title: {
-            text: '用户访问次数统计',
+            text: '用户访问量统计',
             x: -20 //center
         },
         xAxis: {
-            categories: ['一月份', '二月份', '三月份', '四月份', '五月份', '六月份', '七月份', '八月份', '九月份', '十月份']
+            categories: categories
         },
         yAxis: {
             title: {
@@ -31,7 +35,7 @@ $(function () {
         },
         series: [{
             name: '访问次数',
-            data: [100, 200, 11, 44, 1411, 44, 11, 4774, 1414, 7474]
+            data:data
         }]
-    });
+    }).highcharts();
 });

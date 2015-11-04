@@ -27,7 +27,6 @@ $(function () {
         textField: 'name',
         valueField: 'id'
     });
-    initDepartmentTree();
 
 });
 
@@ -141,16 +140,19 @@ function saveMessage(){
 }
 
 function initDepartmentTree() {
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
-        var obj = jQuery.parseJSON(result);
-        if (obj.success==false) {
-            alert(obj.msg);
-        } else {
-            $("#add_message_form #department_tree").tree({
-                data: formatTreeData(obj), onClick: function (node) {
-                    initUserListByDepartment(node);
-                }
-            });
+    $("#add_message_form #department_tree").tree({
+        url: "/bcms/proxy?url=department&method=GET",
+        lines: true,
+        onBeforeLoad: function (node, param) {
+            ajaxLoading();
+        },
+        loadFilter: function (data) {
+            return formatTreeData(data);
+        },
+        onLoadSuccess: function (node, data) {
+            ajaxLoadEnd();
+        }, onClick: function (node) {
+            initUserListByDepartment(node);
         }
     });
 }

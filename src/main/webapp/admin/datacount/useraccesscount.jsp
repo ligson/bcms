@@ -11,11 +11,10 @@
 <rapid:override name="head">
     <script src="../../js/admin/useraccesscount.js" type="text/javascript"></script>
 </rapid:override>
-<rapid:override name="mainName">资源库统计</rapid:override>
+<rapid:override name="mainName">访问量统计</rapid:override>
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
 <div data-options="region:'center',title:'访问量统计'" iconCls="icon-chart_line">
-    <jsp:include page="_searchtoolbar.jsp"/>
     <div id="container"></div>
 </div>
 

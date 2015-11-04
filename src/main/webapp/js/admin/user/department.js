@@ -5,8 +5,14 @@ $(function () {
     $("#department_tree").tree({
         url: "/bcms/proxy?url=department&method=GET",
         lines: true,
+        onBeforeLoad:function(node,param){
+            ajaxLoading();
+        },
         loadFilter: function (data) {
             return formatDepartmentTreeData(data);
+        },
+        onLoadSuccess:function(node,data){
+            ajaxLoadEnd();
         },
         onClick: function (node) {
             $('#department_user_grid').datagrid({
@@ -67,11 +73,8 @@ function formatGroup(val, row) {
 
 function clickAddDepartment(){
     $( '#add_department_dlg .department_tree' ).combotree ({
-        url: "/bcms/departmentTree",
-        lines: true,
-        loadFilter: function (data) {
-           return formatDepartmentTreeData(data);
-        }
+        data: $("#department_tree").tree("getRoots"),
+        lines: true
     });
     var node=$('#department_tree').tree('getSelected');
     if(node) {
@@ -96,11 +99,8 @@ function initMoidfyDepartment(node){
     $("#modify_department_dlg input[name=id]").val(node.id);
     $("#modify_department_dlg input[name=name]").val(node.name);
     $('#modify_department_dlg .department_tree').combotree ({
-        url: "/bcms/departmentTree",
-        lines: true,
-        loadFilter: function (data) {
-            return formatDepartmentTreeData(data);
-        }
+        data: $("#department_tree").tree("getRoots"),
+        lines: true
     });
     var parent_node=$('#department_tree').tree('getParent',node.target);
     if(parent_node) {

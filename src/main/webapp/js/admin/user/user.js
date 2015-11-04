@@ -1,45 +1,51 @@
+var department_tree;
 $(function () {
+    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+        var obj = $.parseJSON(result);
+        if (obj.success==false) {
+            alert(obj.msg);
+        } else {
+           department_tree= formatDepartmentTreeData(obj);
+            $('#department_id').combotree ({
+                data:department_tree,
+                lines: true
+            });
+        }
+    });
+
     $('#user_table').datagrid({
         rownumbers: true,
-        singleSelect:false,
-        toolbar:"#tb",
+        singleSelect: false,
+        toolbar: "#tb",
         url: "/bcms/proxy?url=user&method=GET",
-        pagination:true,
-        columns:[[
-            {field:'id',width:'1%',checkbox:true,title:'ID'},
-            {field:'username',width:'10%',align:'center',title:'用户名'},
-            {field:'cn_name',width:'10%',align:'center',title:'中文名'},
-            {field:'number',width:'10%',align:'center',title:'编号'},
-            {field:'gender',width:'5%',align:'center',title:'性别',
-                formatter: function (value,row,index) {
-                    var result = "";
-                    if (value == "1") {
-                        result = "男"
-                    } else {
-                        result = "女"
-                    }
-                    return result;
+        pagination: true,
+        columns: [[
+            {field: 'id', width: '1%', checkbox: true, title: 'ID'},
+            {field: 'username', width: '10%', align: 'center', title: '用户名'},
+            {field: 'cn_name', width: '10%', align: 'center', title: '中文名'},
+            {field: 'number', width: '10%', align: 'center', title: '编号'},
+            {
+                field: 'gender', width: '5%', align: 'center', title: '性别',
+                formatter: function (value, row, index) {
+                    return value == "2" ? '女' : '男';
                 }
             },
-            {field:'email',width:'10%',align:'center',title:'邮箱'},
-            {field:'department_id',width:'10%',align:'center',title:'部门'},
-            {field:'phone',width:'10%',align:'center',title:'电话'},
-            {field:'groups',width:'20%',align:'center',formatter:formatGroup,title:'用户组'},
-            {field:'_operate',width:'10%',align:'center',title:'操作',
-                 formatter: function (value, row,index) {
-                     return '<a class="tablelink" href="#" onclick="editUser('+ index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delUser(' + index + ')">删除</a>';
-                 }
+            {field: 'email', width: '10%', align: 'center', title: '邮箱'},
+            {
+                field: 'department_id', width: '10%', align: 'center', title: '部门'
+            },
+            {field: 'phone', width: '10%', align: 'center', title: '电话'},
+            {field: 'groups', width: '20%', align: 'center', formatter: formatGroup, title: '用户组'},
+            {
+                field: '_operate', width: '10%', align: 'center', title: '操作',
+                formatter: function (value, row, index) {
+                    return '<a class="tablelink" href="#" onclick="editUser(' + index + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delUser(' + index + ')">删除</a>';
+                }
             }
         ]]
     });
 
-    $('#department_id').combotree ({
-        url: "/bcms/proxy?url=department&method=GET",
-        lines: true,
-        loadFilter: function (data) {
-            return formatDepartmentTreeData(data);
-        }
-    });
+
 
 });
 
@@ -77,7 +83,6 @@ function saveUser(){
     var cn_name=$("#add_user_dlg input[name=cn_name]").val();
     var groups = $('#add_user_dlg .group_tree').combotree('getValues');
     var gender=$("#add_user_dlg .gender_combobox").combobox("getValue");
-    //var grade=$("#add_user_dlg .grade_combobox").combobox("getValue");
     var disk_size=$('#add_user_dlg input[name=disk_size]').val();
     var description=$('#add_user_dlg input[name=description]').val();
     var identity=$('#add_user_dlg .identity_combobox').combobox("getValue");
@@ -123,7 +128,7 @@ function initModify(row) {
     $('#modify_user_dlg input[name=description]').val(row.description);
     $.post("/bcms/proxy", {method: "get", url: "group/"}, function (result) {
         var obj = $.parseJSON(result);
-        if (obj.success==false) {
+        if (obj.success == false) {
             alert(obj.msg);
         } else {
             $("#modify_user_dlg .group_tree").combotree('loadData', formatGroupListData(obj));
@@ -134,15 +139,10 @@ function initModify(row) {
             $("#modify_user_dlg .group_tree").combotree('setValues', t);
         }
     });
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
-        var obj = $.parseJSON(result);
-        if (obj.success==false) {
-            alert(obj.msg);
-        } else {
-            $("#modify_user_dlg .department_tree").combotree('loadData', formatDepartmentTreeData(obj));
-            $("#modify_user_dlg .department_tree").combotree('setValue', row.department_id);
-        }
-    });
+
+    $("#modify_user_dlg .department_tree").combotree('loadData', department_tree);
+    $("#modify_user_dlg .department_tree").combotree('setValue', row.department_id);
+
 
 }
 
@@ -185,14 +185,7 @@ function initAddGroupCombotree() {
 }
 
 function initAddDepartmentCombotree() {
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
-        var obj = $.parseJSON(result);
-        if (obj.success==false) {
-            alert(obj.msg);
-        } else {
-            $("#add_user_dlg .department_tree").combotree('loadData', formatDepartmentTreeData(obj));
-        }
-    });
+    $("#add_user_dlg .department_tree").combotree('loadData', department_tree);
 }
 
 function delUsers() {
@@ -247,6 +240,7 @@ function formatGroup(val, row) {
     }
     return result;
 }
+
 
 function formatGroupListData(data){
     var fin = [];
