@@ -32,14 +32,16 @@ function displayVoc(node, boxId) {
         }
     }
 }
+var href = window.location.href;
+var idx = href.indexOf("id=");
+var resourceId = href.substring(idx + 3);
+
 $(function () {
     $("thead").dblclick(function () {
         $(this).next().toggle();
         //alert("---");
     });
-    var href = window.location.href;
-    var idx = href.indexOf("id=");
-    var resourceId = href.substring(idx + 3);
+
     //	$('#dg').datagrid().datagrid('enableCellEditing');
 
     $("#metaGrid").treegrid({
@@ -307,29 +309,39 @@ function append() {
 }
 var buffer = "";
 function dealRow(row, boxId) {
-    if(boxId=="#fill"){
-        boxId+="-"+row.id;
+    console.log(row.id + "---" + boxId);
+    if (row.kind != 3 && boxId == "#fill") {
+        boxId += "-" + row.id;
     }
     if (row.kind == 0) {
-        var value0 = $(boxId).textbox("getValue");
-        buffer += row.id + ":\"" + value0 + "\",";
+        var value0 = $("#fill-" + row.id).textbox("getValue");
+        if (value0 && value0 != "") {
+            buffer += row.node_id + ":\"" + value0 + "\",";
+        }
     } else if (row.kind == 1) {
-        var value1 = $(boxId).textbox("getValue");
-        if (value != "") {
-            buffer += row.id + ": " + parseInt(value1) + ",";
+        var value1 = $("#fill-" + row.id).textbox("getValue");
+        if (value1 && value1 != "") {
+            buffer += row.node_id + ": " + parseInt(value1) + ",";
         }
     } else if (row.kind == 2) {
-        var value2 = $(boxId).combobox("getValue");
-        buffer += row.id + ":\"" + value2 + "\",";
+        var value2 = $("#fill-" + row.id).combobox("getValue");
+        if (value2 && value2 != "") {
+            buffer += row.node_id + ":\"" + value2 + "\",";
+        }
     } else if (row.kind == 3) {
-        buffer += "{";
+        buffer += row.node_id+":{";
         for (var i = 0; i < row.children.length; i++) {
-            dealRow(row.children[i], boxId + "-" + row.children[i].id);
+            dealRow(row.children[i], boxId + "-" + row.children[i].node_id);
         }
         buffer += "},";
+        /*if(buffer.substring(buffer.length-3,buffer.length)=="{},"){
+            buffer = buffer.substring(0,buffer.length-3);
+        }*/
     } else if (row.kind == 4) {
-        var value4 = $(boxId).datebox("getValue");
-        buffer += row.id + ":\"" + value4 + "\",";
+        var value4 = $("#fill-" + row.id).datebox("getValue");
+        if (value4 && value4 != null) {
+            buffer += row.node_id + ":\"" + value4 + "\",";
+        }
     }
 }
 function submitMetaForm() {
@@ -339,11 +351,13 @@ function submitMetaForm() {
         buffer += "{";
         for (var i = 0; i < rows.length; i++) {
             var row = rows[i];
+            console.log(row.id + "==");
             dealRow(row, "#fill");
         }
         buffer += "}";
     }
-    console.log(buffer);
+    updateMeta(resourceId, buffer.replaceAll(",}","}"));
+    console.log();
     if (1 + 1 > 0) {
         return;
     }
@@ -390,11 +404,11 @@ function updateMeta(id, value) {
 
     var params = {
         method: "POST",
-        url: "resource/" + id + "/meta",
-
+        id:id,
+        value:value
     };
 
-    $.post("/bcms/proxy", params, function (data2) {
+    $.post("/bcms/editMetaValue", params, function (data2) {
         if (data2.result) {
             alert("增加成功");
         } else {
