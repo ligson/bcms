@@ -50,7 +50,7 @@ $(function () {
         url: "/bcms/proxy?url=vocabulary&method=GET",
         fitColumns: true,
         columns: [[
-            {field: "id", title: "id", width: 100, hidden: true},
+            {field: "id", title: "id", width: 100},
             {field: "zh_name", title: "中文名称", width: 100},
             {field: "en_name", title: "英文名称", width: 100},
             {field: "lom_id", title: "lom编号", width: 50},

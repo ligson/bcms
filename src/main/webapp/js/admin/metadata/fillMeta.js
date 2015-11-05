@@ -11,6 +11,27 @@ function dealData(children, pId) {
         }
     }
 }
+
+function displayVoc(node, boxId) {
+    if (node.children && node.children.length > 0) {
+
+        for (var i = 0; i < node.children.length; i++) {
+            console.log("-------ss-" + node.children[i]);
+            displayVoc(node.children[i], boxId + "-" + node.children[i].id);
+        }
+    } else {
+        if (node.kind == 2 && node.vocabulary_type_id != undefined) {
+            console.log("--------" + node.vocabulary_type_id);
+
+            $.post("/bcms/proxy", {method: "GET", url: "vocabulary/" + node.vocabulary_type_id}, function (data) {
+                if (data.id != undefined) {
+                    //console.log(data.words);
+                    $(boxId).combobox("loadData", data.words);
+                }
+            }, "json");
+        }
+    }
+}
 $(function () {
     $("thead").dblclick(function () {
         $(this).next().toggle();
@@ -56,38 +77,43 @@ $(function () {
                 {
                     field: "val_num", title: "取值数", width: 50
                 }/*,
-                {
-                    field: "add", title: "增加", width: 50, formatter: function (value, row, idx) {
-                    if (row.id.toString().indexOf("-") > -1) {
-                        return "--";
-                    } else {
-                        return "<a class='easyui-linkbutton' onclick='appendMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>增加</a>";
-                    }
-                }
-                }, {
-                field: "remove", title: "移除", width: 50, formatter: function (value, row, idx) {
-                    if (row.id.toString().indexOf("-") == -1) {
-                        return "--";
-                    } else {
-                        return "<a class='easyui-linkbutton' onclick='removeMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>移除</a>";
-                    }
-                }
-            }*/
+             {
+             field: "add", title: "增加", width: 50, formatter: function (value, row, idx) {
+             if (row.id.toString().indexOf("-") > -1) {
+             return "--";
+             } else {
+             return "<a class='easyui-linkbutton' onclick='appendMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>增加</a>";
+             }
+             }
+             }, {
+             field: "remove", title: "移除", width: 50, formatter: function (value, row, idx) {
+             if (row.id.toString().indexOf("-") == -1) {
+             return "--";
+             } else {
+             return "<a class='easyui-linkbutton' onclick='removeMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>移除</a>";
+             }
+             }
+             }*/
 
             ]
         ],
         onLoadSuccess: function (data) {
             $(".easyui-textbox").textbox();
             $(".easyui-datebox").datebox();
-            $(".easyui-combobox").combobox();
+            $(".easyui-combobox").combobox({
+                textField: "name",
+                valueField: "id"
+            });
             $(".easyui-linkbutton").linkbutton();
 
             var dt = $('#metaGrid').treegrid("getData");
             for (var i = 0; i < dt.length; i++) {
                 var kind = dt[i].kind;
                 var rowId = dt[i].id;
+
                 if (kind == 2) {
                     var vId = dt[i].vocabulary_type_id;
+                    //alert(rowId + "---" + rowId);
                     var vBox = $("#fill-" + rowId);
                     vBox.combobox({valueField: "id", textField: "name", multiple: true});
                     $.post("/bcms/proxy?url=vocabulary/" + vId + "&method=GET", {}, function (data1) {
@@ -97,7 +123,11 @@ $(function () {
                     //var sId = dt[i].structure_type_id;
                     var stid = dt[i].structure_type_id;
                     var node = dt[i];
-
+                    //console.log(node.zh_name);
+                    //var vBox = $("#fill-" + rowId);
+                    //alert(123+"---"+rowId);
+                    var boxId = "#fill";
+                    displayVoc(node, boxId);
                     /*$.post("/bcms/proxy", {method: "GET", url: "metatype/" + stid}, function (data2) {
                      for (var j = 0; j < data2.children.length; j++) {
                      data2.children[j].parent = node.id;
@@ -275,64 +305,96 @@ function append() {
         }]
     })
 }
-
+var buffer = "";
+function dealRow(row, boxId) {
+    if(boxId=="#fill"){
+        boxId+="-"+row.id;
+    }
+    if (row.kind == 0) {
+        var value0 = $(boxId).textbox("getValue");
+        buffer += row.id + ":\"" + value0 + "\",";
+    } else if (row.kind == 1) {
+        var value1 = $(boxId).textbox("getValue");
+        if (value != "") {
+            buffer += row.id + ": " + parseInt(value1) + ",";
+        }
+    } else if (row.kind == 2) {
+        var value2 = $(boxId).combobox("getValue");
+        buffer += row.id + ":\"" + value2 + "\",";
+    } else if (row.kind == 3) {
+        buffer += "{";
+        for (var i = 0; i < row.children.length; i++) {
+            dealRow(row.children[i], boxId + "-" + row.children[i].id);
+        }
+        buffer += "},";
+    } else if (row.kind == 4) {
+        var value4 = $(boxId).datebox("getValue");
+        buffer += row.id + ":\"" + value4 + "\",";
+    }
+}
 function submitMetaForm() {
+    buffer = "";
+    var rows = $('#metaGrid').treegrid("getData");
+    if (rows.length > 0) {
+        buffer += "{";
+        for (var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            dealRow(row, "#fill");
+        }
+        buffer += "}";
+    }
+    console.log(buffer);
+    if (1 + 1 > 0) {
+        return;
+    }
     var tboxes = $(".etextbox");
     var tbx = $(tboxes[0]);
-
-   // alert(datas.length);
-   // alert(tbx.textbox("getValue"));
+    //updateMeta(35, "");
+    // alert(datas.length);
+    // alert(tbx.textbox("getValue"));
     var id = $($($(".etextbox")[2]).parent().parent().parent()).find("td[field='id']").text();
-   // alert(id);
-    var idnew="";
-    var idnews="";
-    var idf="";
+    // alert(id);
+    var idnew = "";
+    var idnews = "";
+    var idf = "";
     var count;
     for (var i = 0; i < $(tboxes).length; i++) {
         var tbx = $(tboxes[i]);
         var id = $($($(".etextbox")[i]).parent().parent().parent()).find("td[field='id']").text();
         //alert(id+"----"+tbx.textbox("getValue"));
-        var ids =id.split("-");
+        var ids = id.split("-");
 
+        //if(ids.length>1) {
+        //    if(idf==""){
+        //        idf=ids[ids.length - 2];
+        //    }
+        //    if(idf==ids[ids.length - 2]) {
+        //        idnew += '"'+ids[ids.length - 1]+'":"'+tbx.textbox("getValue")+'"';
+        //    }else{
+        //        idnew += '{"'+ids[ids.length - 1]+'":"'+tbx.textbox("getValue")+'"}';
+        //    }
+        //    idf=ids[ids.length - 2];
+        //}else if(ids.length==1){
+        //
+        //}
 
-
-            //if(ids.length>1) {
-            //    if(idf==""){
-            //        idf=ids[ids.length - 2];
-            //    }
-            //    if(idf==ids[ids.length - 2]) {
-            //        idnew += '"'+ids[ids.length - 1]+'":"'+tbx.textbox("getValue")+'"';
-            //    }else{
-            //        idnew += '{"'+ids[ids.length - 1]+'":"'+tbx.textbox("getValue")+'"}';
-            //    }
-            //    idf=ids[ids.length - 2];
-            //}else if(ids.length==1){
-            //
-            //}
-
-        idnew += '{"'+id+'":"'+tbx.textbox("getValue")+'"},';
-        idnews += id+",";
-        count=ids.length;
+        idnew += '{"' + id + '":"' + tbx.textbox("getValue") + '"},';
+        idnews += id + ",";
+        count = ids.length;
     }
-    alert(idnew);
-    alert(idnews);
+    //alert(idnew);
+    //alert(idnews);
 }
 
-function updateMeta(id,value){
-    var params = {
+function updateMeta(id, value) {
 
+    var params = {
         method: "POST",
-        url: "metatype/",
-        id :id,
-        value:value
+        url: "resource/" + id + "/meta",
+
     };
 
-    $.post("/bcms/proxy", {
-        url: "resource/"+id+"/meta",
-        method: "POST",
-        metatype_id: data.id,
-        meta_library_id: node.id
-    }, function (data2) {
+    $.post("/bcms/proxy", params, function (data2) {
         if (data2.result) {
             alert("增加成功");
         } else {
