@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by ligson on 2015/10/8.
@@ -37,17 +35,35 @@ public class ResouceMetaQuery extends HttpServlet {
         if (statusCode == 200) {
             String jsonString = EntityUtils.toString(response1.getEntity());
             logger.debug("响应数据:" + jsonString);
+            List<JSONObject> rows = new ArrayList<>();
             try {
-                JSONObject jsonObject = new JSONObject(jsonString);
-                JSONArray jsonArray1 = new JSONArray();
-                Iterator iterator = jsonObject.keys();
+
+                JSONObject metalib = new JSONObject(jsonString);
+                JSONObject object =(JSONObject)metalib.get("data");
+
+                result.put("total", object.length());
+                Iterator iterator = object.keys();
                 while (iterator.hasNext()) {
                     String key = (String) iterator.next();
-                    Object o = jsonObject.get(key);
-                    System.out.println(o.getClass().getName());
+                    HttpGet httpGet = new HttpGet(Proxy.BASE_URL + "metatype/" + key);
+                    HttpResponse response2 = Proxy.httpClient.execute(httpGet, Proxy.context);
+                    if (200 == response2.getStatusLine().getStatusCode()) {
+                        String jsonString2 = EntityUtils.toString(response2.getEntity());
+                        JSONObject jsonObject = new JSONObject(jsonString2);
+                        rows.add(jsonObject);
+                    }
                 }
-                result.put("rows", jsonArray1);
-                result.put("total", jsonArray1.length());
+
+                //JSONObject jsonObject = new JSONObject(jsonString);
+//                JSONArray jsonArray1 = new JSONArray();
+//                Iterator iterator = jsonObject.keys();
+//                while (iterator.hasNext()) {
+//                    String key = (String) iterator.next();
+//                    Object o = jsonObject.get(key);
+//                    System.out.println(o.getClass().getName());
+//                }
+                result.put("rows", rows);
+                result.put("total", rows.size());
             } catch (Exception e) {
                 result.put("rows", new JSONArray());
                 result.put("total", 0);

@@ -97,6 +97,7 @@ $(function () {
                     //var sId = dt[i].structure_type_id;
                     var stid = dt[i].structure_type_id;
                     var node = dt[i];
+
                     /*$.post("/bcms/proxy", {method: "GET", url: "metatype/" + stid}, function (data2) {
                      for (var j = 0; j < data2.children.length; j++) {
                      data2.children[j].parent = node.id;
@@ -278,8 +279,64 @@ function append() {
 function submitMetaForm() {
     var tboxes = $(".etextbox");
     var tbx = $(tboxes[0]);
-    alert(tbx.textbox("getValue"));
-    var id = $($($(".etextbox")[0]).parent().parent().parent()).find("td[field='id']").text();
-    alert(id);
 
+   // alert(datas.length);
+   // alert(tbx.textbox("getValue"));
+    var id = $($($(".etextbox")[2]).parent().parent().parent()).find("td[field='id']").text();
+   // alert(id);
+    var idnew="";
+    var idnews="";
+    var idf="";
+    var count;
+    for (var i = 0; i < $(tboxes).length; i++) {
+        var tbx = $(tboxes[i]);
+        var id = $($($(".etextbox")[i]).parent().parent().parent()).find("td[field='id']").text();
+        //alert(id+"----"+tbx.textbox("getValue"));
+        var ids =id.split("-");
+
+
+
+            //if(ids.length>1) {
+            //    if(idf==""){
+            //        idf=ids[ids.length - 2];
+            //    }
+            //    if(idf==ids[ids.length - 2]) {
+            //        idnew += '"'+ids[ids.length - 1]+'":"'+tbx.textbox("getValue")+'"';
+            //    }else{
+            //        idnew += '{"'+ids[ids.length - 1]+'":"'+tbx.textbox("getValue")+'"}';
+            //    }
+            //    idf=ids[ids.length - 2];
+            //}else if(ids.length==1){
+            //
+            //}
+
+        idnew += '{"'+id+'":"'+tbx.textbox("getValue")+'"},';
+        idnews += id+",";
+        count=ids.length;
+    }
+    alert(idnew);
+    alert(idnews);
+}
+
+function updateMeta(id,value){
+    var params = {
+
+        method: "POST",
+        url: "metatype/",
+        id :id,
+        value:value
+    };
+
+    $.post("/bcms/proxy", {
+        url: "resource/"+id+"/meta",
+        method: "POST",
+        metatype_id: data.id,
+        meta_library_id: node.id
+    }, function (data2) {
+        if (data2.result) {
+            alert("增加成功");
+        } else {
+            alert("增加失败");
+        }
+    }, "json");
 }
