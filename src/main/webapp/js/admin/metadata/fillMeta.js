@@ -316,20 +316,20 @@ function dealRow(row, boxId) {
     if (row.kind == 0) {
         var value0 = $("#fill-" + row.id).textbox("getValue");
         if (value0 && value0 != "") {
-            buffer += row.node_id + ":\"" + value0 + "\",";
+            buffer += "\""+row.node_id + "\":\"" + value0 + "\",";
         }
     } else if (row.kind == 1) {
         var value1 = $("#fill-" + row.id).textbox("getValue");
         if (value1 && value1 != "") {
-            buffer += row.node_id + ": " + parseInt(value1) + ",";
+            buffer += "\""+row.node_id + "\": " + parseInt(value1) + ",";
         }
     } else if (row.kind == 2) {
         var value2 = $("#fill-" + row.id).combobox("getValue");
         if (value2 && value2 != "") {
-            buffer += row.node_id + ":\"" + value2 + "\",";
+            buffer += "\""+row.node_id + "\":\"" + value2 + "\",";
         }
     } else if (row.kind == 3) {
-        buffer += row.node_id+":{";
+        buffer += "\""+row.node_id + "\":{";
         for (var i = 0; i < row.children.length; i++) {
             dealRow(row.children[i], boxId + "-" + row.children[i].node_id);
         }
@@ -340,7 +340,7 @@ function dealRow(row, boxId) {
     } else if (row.kind == 4) {
         var value4 = $("#fill-" + row.id).datebox("getValue");
         if (value4 && value4 != null) {
-            buffer += row.node_id + ":\"" + value4 + "\",";
+            buffer += "\""+row.node_id + "\":\"" + value4 + "\",";
         }
     }
 }
@@ -357,62 +357,19 @@ function submitMetaForm() {
         buffer += "}";
     }
     updateMeta(resourceId, buffer.replaceAll(",}","}"));
-    console.log();
-    if (1 + 1 > 0) {
-        return;
-    }
-    var tboxes = $(".etextbox");
-    var tbx = $(tboxes[0]);
-    //updateMeta(35, "");
-    // alert(datas.length);
-    // alert(tbx.textbox("getValue"));
-    var id = $($($(".etextbox")[2]).parent().parent().parent()).find("td[field='id']").text();
-    // alert(id);
-    var idnew = "";
-    var idnews = "";
-    var idf = "";
-    var count;
-    for (var i = 0; i < $(tboxes).length; i++) {
-        var tbx = $(tboxes[i]);
-        var id = $($($(".etextbox")[i]).parent().parent().parent()).find("td[field='id']").text();
-        //alert(id+"----"+tbx.textbox("getValue"));
-        var ids = id.split("-");
-
-        //if(ids.length>1) {
-        //    if(idf==""){
-        //        idf=ids[ids.length - 2];
-        //    }
-        //    if(idf==ids[ids.length - 2]) {
-        //        idnew += '"'+ids[ids.length - 1]+'":"'+tbx.textbox("getValue")+'"';
-        //    }else{
-        //        idnew += '{"'+ids[ids.length - 1]+'":"'+tbx.textbox("getValue")+'"}';
-        //    }
-        //    idf=ids[ids.length - 2];
-        //}else if(ids.length==1){
-        //
-        //}
-
-        idnew += '{"' + id + '":"' + tbx.textbox("getValue") + '"},';
-        idnews += id + ",";
-        count = ids.length;
-    }
-    //alert(idnew);
-    //alert(idnews);
 }
 
 function updateMeta(id, value) {
-
     var params = {
         method: "POST",
         id:id,
         value:value
     };
-
     $.post("/bcms/editMetaValue", params, function (data2) {
-        if (data2.result) {
-            alert("增加成功");
+        if (data2.success!=false) {
+            alert("更新成功");
         } else {
-            alert("增加失败");
+            alert("更新失败");
         }
     }, "json");
 }
