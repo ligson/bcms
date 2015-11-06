@@ -81,6 +81,21 @@ function clearForm(){
     $("#editCategoryDlg").dialog("close");
 }
 
+function removeit(){
+    var tree = $("#categoryTree");
+    var selectNode = tree.tree("getSelected");
+    if (selectNode) {
+        $.post("/bcms/proxy", {method: "DELETE", url: "resourcelibrary/" + selectNode.id}, function (data) {
+            if (data.id != undefined) {
+                alert("删除成功!");
+                tree.tree("reload");
+            } else {
+                alert("删除失败!");
+            }
+        }, "json");
+    }
+}
+
 function showContextMenu(e, node) {
     e.preventDefault();
     $("#treeContextMenu").menu("show", {
