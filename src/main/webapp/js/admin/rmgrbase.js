@@ -37,8 +37,50 @@ function addCategory() {
     }
 }
 function editCategory() {
+    var tree = $("#categoryTree");
+    var selectNode = tree.tree("getSelected");
     $("#editCategoryDlg").dialog("open");
+    if (selectNode) {
+        $("#name14").textbox("setValue", selectNode.name);
+        $("#updateMetatypetree").combobox("setValue",selectNode.metalibrary_id);
+        $("#description14").textbox("setValue", selectNode.description);
+        $("#imagePath14").val(selectNode.image_path);
+        $("#parentCategoryId14").val(selectNode.id);
+    }else{
+        alert("选中要编辑的行！");
+    }
 }
+
+function submitForm(){
+    if ($("#editCategoryDlg").find("form").form("validate")) {
+        var name = $("#name14").textbox("getValue");
+        var description = $("#description14").textbox("getValue");
+        var metalibrary_id = $("#updateMetatypetree").combobox("getValue");
+        var image_path = $("#imagePath14").val();
+        var pId = $("#parentCategoryId14").val();
+        var params = {
+            name: name,
+            description: description,
+            image_path:image_path,
+            url: "resourcelibrary/"+pId,
+            method: "PUT"
+        };
+
+        $.post("/bcms/proxy", params, function (data) {
+            if (data.id != null) {
+                $("#categoryTree").tree("reload");
+                $("#editCategoryDlg").dialog("close");
+            } else {
+                alert("失败了.你问问管理员,好吗?");
+            }
+        }, "json");
+    }
+}
+
+function clearForm(){
+    $("#editCategoryDlg").dialog("close");
+}
+
 function showContextMenu(e, node) {
     e.preventDefault();
     $("#treeContextMenu").menu("show", {
@@ -66,6 +108,11 @@ $(function () {
     });
 
     $("#metatypetree").combobox({
+        textField: "name",
+        valueField: "id",
+        panelHeight: 'auto'
+    });
+    $("#updateMetatypetree").combobox({
         textField: "name",
         valueField: "id",
         panelHeight: 'auto'

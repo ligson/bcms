@@ -91,27 +91,28 @@
 </div>
 
 <div id="editCategoryDlg" class="easyui-dialog" title="编辑类库" data-options="iconCls:'icon-save'"
-     style="width:300px;height:250px;padding:10px" closed="true">
+     style="width:400px;height:250px" closed="true">
     <form>
-        <table>
+        <table class="table">
             <tr>
                 <td>名称</td>
-                <td><input class="easyui-textbox" required="true" type="text" name="name"></td>
+                <td><input class="easyui-textbox" required="true" type="text" name="name" id="name14"></td>
             </tr>
             <tr>
                 <td>
                     标准
                 </td>
                 <td>
-                    <input class="easyui-combotree"
-                           data-options="url:'/bcms/categoryTree',method:'get',required:true"
-                           style="width:200px;"/>
+                    <input url="/bcms/proxy?method=GET&url=metalibrary/page/1" class="easyui-combobox"
+                           data-options="method:'get',required:true" id="updateMetatypetree"/>
                 </td>
             </tr>
             <tr>
                 <td>描述</td>
-                <td><input class="easyui-textbox" name="message" data-options="multiline:true" style="height:60px"/>
+                <td><input class="easyui-textbox" name="message" data-options="multiline:true" id="description14" style="height:60px"/>
                 </td>
+                <input type="hidden" id="imagePath14" value="" />
+                <input type="hidden" id="parentCategoryId14" value="">
             </tr>
         </table>
     </form>
