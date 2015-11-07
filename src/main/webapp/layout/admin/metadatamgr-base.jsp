@@ -58,7 +58,7 @@
         </ul>
     </div>
 </div>
-<div id="addMetaLibDlg" class="easyui-dialog" title="添加元数据标准" style="width:300px;height:280px;" closed="true">
+<div id="addMetaLibDlg" class="easyui-dialog" title="添加元数据标准" style="width:300px;height:280px;" closed="true"  modal="true">
     <form>
         <input type="hidden" name="category_id" value="" id="categoryId10">
         <table class="table">
@@ -88,7 +88,7 @@
     </form>
 </div>
 
-<div id="editMetaLibDlg" class="easyui-dialog" title="编辑元数据标准" style="width:300px;height:350px;" closed="true">
+<div id="editMetaLibDlg" class="easyui-dialog" title="编辑元数据标准" style="width:300px;height:350px;" closed="true"  modal="true">
     <form>
         <input type="hidden" name="category_id" value="" id="categoryId11">
         <input type="hidden" name="id11" id="id11">
@@ -119,7 +119,7 @@
     </form>
 </div>
 
-<div id="addMetaCategoryDlg" class="easyui-dialog" title="添加元数据标准分类" style="width:350px;height:250px;" closed="true">
+<div id="addMetaCategoryDlg" class="easyui-dialog" title="添加元数据标准分类" style="width:350px;height:250px;" closed="true" modal="true">
     <form>
         <input type="hidden" name="parent_id" value="">
         <table class="table">
@@ -144,7 +144,7 @@
     </form>
 </div>
 
-<div id="editMetaCategoryDlg" class="easyui-dialog" title="编辑元数据标准分类" style="width:350px;height:auto;" closed="true">
+<div id="editMetaCategoryDlg" class="easyui-dialog" title="编辑元数据标准分类" style="width:350px;height:auto;" closed="true"  modal="true">
     <form>
         <input type="hidden" id="parent_id2" value="">
         <input type="hidden" id="id2" value="">

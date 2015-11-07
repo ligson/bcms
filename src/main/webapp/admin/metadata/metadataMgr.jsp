@@ -48,7 +48,7 @@
          style="width:450px;height:400px;padding:10px;">
         <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
     </div>
-    <div id="addMetaItemDlg" title="增加字段" class="easyui-dialog" closed="true"
+    <div id="addMetaItemDlg" title="增加字段(注意接口有问题，请确认你选择的是标准而不是分类！)" class="easyui-dialog" closed="true"
          style="width:450px;" modal="true">
         <form>
             <table class="table">

@@ -395,6 +395,7 @@ function addNormalItem(mtypeId) {
                 }, function (data2) {
                     if (data2.result) {
                         alert("增加成功");
+                        $("#metaGrid").treegrid("reload");
                     } else {
                         alert("增加失败");
                     }
@@ -489,6 +490,7 @@ function addDocItem(mtypeId) {
                 }, function (data2) {
                     if (data2.result) {
                         alert("增加成功");
+                        $("#metaGrid").treegrid("reload");
                     } else {
                         alert("增加失败");
                     }
@@ -587,6 +589,7 @@ function addStructureItem(mtypeId) {
                 }, function (data2) {
                     if (data2.result) {
                         alert("增加成功");
+                        $("#metaGrid").treegrid("reload");
                     } else {
                         alert("增加失败");
                     }
@@ -605,7 +608,8 @@ function addStructureItem(mtypeId) {
 
 function showAddItemDlg() {
     var node = $("#metadata_tree").tree("getSelected");
-    if (node && (node.node_type != 1)) {
+    //TODO && (node.node_type != 1)
+    if (node) {
         $("#addMetaItemDlg").dialog("open");
     } else {
         alert("请选择元数据标准");
