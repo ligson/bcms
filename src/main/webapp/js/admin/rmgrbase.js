@@ -45,7 +45,8 @@ function editCategory() {
         $("#updateMetatypetree").combobox("setValue",selectNode.metalibrary_id);
         $("#description14").textbox("setValue", selectNode.description);
         $("#imagePath14").val(selectNode.image_path);
-        $("#parentCategoryId14").val(selectNode.id);
+        $("#id14").val(selectNode.id);
+        $("#parentCategoryId14").val(selectNode.parent_id);
     }else{
         alert("选中要编辑的行！");
     }
@@ -55,14 +56,17 @@ function submitForm(){
     if ($("#editCategoryDlg").find("form").form("validate")) {
         var name = $("#name14").textbox("getValue");
         var description = $("#description14").textbox("getValue");
-        var metalibrary_id = $("#updateMetatypetree").combobox("getValue");
+        var metalibrary_id = parseInt($("#updateMetatypetree").combobox("getValue"));
         var image_path = $("#imagePath14").val();
-        var pId = $("#parentCategoryId14").val();
+        var parent_id = parseInt($("#parentCategoryId14").val());
+        var id = parseInt($("#id14").val());
         var params = {
             name: name,
             description: description,
+            metalibrary_id:metalibrary_id,
+            parent_id:parent_id,
             image_path:image_path,
-            url: "resourcelibrary/"+pId,
+            url: "resourcelibrary/"+id,
             method: "PUT"
         };
 

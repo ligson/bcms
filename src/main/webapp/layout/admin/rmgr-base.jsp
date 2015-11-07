@@ -117,6 +117,7 @@
                 </td>
                 <input type="hidden" id="imagePath14" value=""/>
                 <input type="hidden" id="parentCategoryId14" value="">
+                <input type="hidden" id="id14" value="">
             </tr>
         </table>
     </form>
