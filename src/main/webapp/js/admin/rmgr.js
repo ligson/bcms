@@ -29,8 +29,38 @@ $(function () {
                         return date.format("yyyy-MM-dd HH:mm:ss");
                     }
                 },
-                {field: 'kind', title: '类型', width: 100, sortable: true},
-                {field: 'status', title: '状态', width: 100, sortable: true},
+                {
+                    field: 'kind', title: '类型', width: 100, sortable: true, formatter: function (value, row, idx) {
+                    // 0 # 普通 1 # 课程 2 # 课时 3 # 素材
+                    if (row.kind == 0) {
+                        return "普通";
+                    } else if (row.kind == 1) {
+                        return "课程";
+                    } else if (row.kind == 2) {
+                        return "课时";
+                    } else if (row.kind == 3) {
+                        return "素材";
+                    } else {
+                        return row.kind;
+                    }
+                }
+                },
+                {
+                    field: 'status', title: '状态', width: 100, sortable: true, formatter: function (value, row, idx) {
+                    //默认是0 STATUS_EDIT = 0 STATUS_AUDIT = 1 STATUS_PASSED = 2 STATUS_REJECT = 3
+                    if (row.status == 0) {
+                        return "编辑";
+                    } else if (row.status == 1) {
+                        return "待审";
+                    } else if (row.status == 2) {
+                        return "通过";
+                    } else if (row.status == 3) {
+                        return "通过";
+                    } else {
+                        return row.status;
+                    }
+                }
+                },
                 {
                     field: 'delOpt', title: '删除', width: 100, formatter: function (value, row, index) {
                     return "<a class='easyui-linkbutton' onclick='delResource(" + row.id + ")'>删除</a>";

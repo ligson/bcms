@@ -1,6 +1,7 @@
 package brms.action;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.utils.DateUtils;
 import org.apache.http.util.EntityUtils;
@@ -32,6 +33,7 @@ public class CategoryTree extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
         String type = req.getParameter("type");
+        req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
         if (id == null) {
             String url = Proxy.BASE_URL + "metalibrarycategory/";

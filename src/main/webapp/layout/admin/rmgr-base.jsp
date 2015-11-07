@@ -23,6 +23,7 @@
             display: inline-block;
             width: 80px;
         }
+
         #treeMenu .tree-title a {
             text-decoration: none;
             color: #000;
@@ -39,32 +40,34 @@
 <jsp:include page="../../layout/admin/adminbody.jsp"/>
 <div class="easyui-accordion" data-options="region:'west',split:true" title="系统管理" style="width:240px;">
     <div title="资源管理" id="treeMenu" iconCls="icon-cd_magnify">
-            <div id="categoryTreeTbr">
-                <a href="#" class="easyui-linkbutton" iconCls="icon-add" title="增加资源库" plain="true"
-                   onclick="addCategory()">增加</a>
-                <a href="#" class="easyui-linkbutton" iconCls="icon-remove" title="删除资源库" plain="true" onclick="removeCategory()">删除</a>
-                <a href="./createresource.jsp" class="easyui-linkbutton" iconCls="icon-folder_up" title="上传"
-                   plain="true">上传</a>
-            </div>
-
-            <ul class="easyui-tree" url="/bcms/proxy?url=resourcelibrary/&method=GET" id="categoryTree" toolbar="#categoryTreeTbr">
-            </ul>
-
+        <div id="categoryTreeTbr">
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" title="增加资源库" plain="true"
+               onclick="addCategory()">增加</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" title="删除资源库" plain="true"
+               onclick="removeCategory()">删除</a>
+            <a href="./createresource.jsp" class="easyui-linkbutton" iconCls="icon-folder_up" title="上传"
+               plain="true">上传</a>
         </div>
-    <div iconCls="icon-script" title="资源日志">
-            <ul class="easyui-tree">
-                <li><span><a href="roplog.jsp">操作日志</a></span></li>
-            </ul>
+
+        <ul class="easyui-tree" url="/bcms/proxy?url=resourcelibrary/&method=GET" id="categoryTree"
+            toolbar="#categoryTreeTbr">
+        </ul>
+
     </div>
-        <%-- <div iconCls="icon-folder" title="文件管理">
-             <ul class="easyui-tree">
-                 <li iconCls="icon-databases"><span><a href="filelist.jsp">所有文件</a></span></li>
-                 <li iconCls="icon-star"><span><a href="myfilelist.jsp">我的文件</a></span></li>
-             </ul>
-         </div>--%>
+    <div iconCls="icon-script" title="资源日志">
+        <ul class="easyui-tree">
+            <li><span><a href="roplog.jsp">操作日志</a></span></li>
+        </ul>
+    </div>
+    <%-- <div iconCls="icon-folder" title="文件管理">
+         <ul class="easyui-tree">
+             <li iconCls="icon-databases"><span><a href="filelist.jsp">所有文件</a></span></li>
+             <li iconCls="icon-star"><span><a href="myfilelist.jsp">我的文件</a></span></li>
+         </ul>
+     </div>--%>
 </div>
 <div id="addCategoryDlg" class="easyui-dialog" title="添加类库" data-options="iconCls:'icon-save'"
-     style="width:400px;height:250px" closed="true">
+     style="width:400px;height:250px" closed="true" modal="true">
     <form>
         <input type="hidden" id="parentCategoryId" value="">
         <table class="table">
@@ -76,7 +79,7 @@
                 <td>类库元数据标准:</td>
                 <td>
                     <input url="/bcms/proxy?method=GET&url=metalibrary/page/1" class="easyui-combobox"
-                            data-options="method:'get',required:true" id="metatypetree"/>
+                           data-options="method:'get',required:true" id="metatypetree"/>
                 </td>
             </tr>
             <tr>
@@ -91,7 +94,7 @@
 </div>
 
 <div id="editCategoryDlg" class="easyui-dialog" title="编辑类库" data-options="iconCls:'icon-save'"
-     style="width:400px;height:250px" closed="true">
+     style="width:400px;height:250px" closed="true" modal="true">
     <form>
         <table class="table">
             <tr>
@@ -109,9 +112,10 @@
             </tr>
             <tr>
                 <td>描述</td>
-                <td><input class="easyui-textbox" name="message" data-options="multiline:true" id="description14" style="height:60px"/>
+                <td><input class="easyui-textbox" name="message" data-options="multiline:true" id="description14"
+                           style="height:60px"/>
                 </td>
-                <input type="hidden" id="imagePath14" value="" />
+                <input type="hidden" id="imagePath14" value=""/>
                 <input type="hidden" id="parentCategoryId14" value="">
             </tr>
         </table>
@@ -122,7 +126,7 @@
     </div>
 </div>
 <div id="treeContextMenu" class="easyui-menu" style="width:120px;">
-    <div onclick="append()" data-options="iconCls:'icon-add'">添加</div>
+    <div onclick="addCategory()" data-options="iconCls:'icon-add'">添加</div>
     <div onclick="removeit()" data-options="iconCls:'icon-remove'">删除</div>
     <div onclick="editCategory()" data-options="iconCls:'icon-edit'">编辑</div>
 </div>
