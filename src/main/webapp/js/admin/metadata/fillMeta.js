@@ -113,7 +113,7 @@ $(function () {
                         var rowId = dt[i].id;
                         var node = dt[i];
                         var vBox = $("#fill-" + rowId);
-                        if(kind==0)
+                        if(kind==0||kind==4)
                             vBox.textbox("setValue", data2.data[rowId]);
                         if(kind==2)
                             vBox.combobox("setValue", data2.data[rowId]);
@@ -150,7 +150,7 @@ function dataSet(node, boxId,data){
         }
     } else {
 
-            if(node.kind==0)
+            if(node.kind==0||kind==4)
                 $(boxId).textbox("setValue", data);
             if(node.kind==2)
                 $(boxId).combobox("setValue", data);
