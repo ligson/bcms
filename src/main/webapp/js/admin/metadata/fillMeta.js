@@ -16,13 +16,10 @@ function displayVoc(node, boxId) {
     if (node.children && node.children.length > 0) {
 
         for (var i = 0; i < node.children.length; i++) {
-            console.log("-------ss-" + node.children[i]);
             displayVoc(node.children[i], boxId + "-" + node.children[i].id);
         }
     } else {
         if (node.kind == 2 && node.vocabulary_type_id != undefined) {
-            console.log("--------" + node.vocabulary_type_id);
-
             $.post("/bcms/proxy", {method: "GET", url: "vocabulary/" + node.vocabulary_type_id}, function (data) {
                 if (data.id != undefined) {
                     //console.log(data.words);
@@ -39,17 +36,12 @@ var resourceId = href.substring(idx + 3);
 $(function () {
     $("thead").dblclick(function () {
         $(this).next().toggle();
-        //alert("---");
     });
-
-    //	$('#dg').datagrid().datagrid('enableCellEditing');
-
     $("#metaGrid").treegrid({
         url: "/bcms/resouceMetaQuery?id=" + resourceId,
         idField: "id",
         treeField: "zh_name",
         fitColumns: true,
-        //onContextMenu: onContextMenu,
         columns: [
             [
                 {
@@ -78,24 +70,7 @@ $(function () {
                 },
                 {
                     field: "val_num", title: "取值数", width: 50
-                }/*,
-             {
-             field: "add", title: "增加", width: 50, formatter: function (value, row, idx) {
-             if (row.id.toString().indexOf("-") > -1) {
-             return "--";
-             } else {
-             return "<a class='easyui-linkbutton' onclick='appendMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>增加</a>";
-             }
-             }
-             }, {
-             field: "remove", title: "移除", width: 50, formatter: function (value, row, idx) {
-             if (row.id.toString().indexOf("-") == -1) {
-             return "--";
-             } else {
-             return "<a class='easyui-linkbutton' onclick='removeMetaRow(\"" + row.id + "\",\"" + row.zh_name + "\",\"" + row.en_name + "\"," + row.kind + "," + row.val_num + "," + row.collection + ",\"" + row.example + "\")'>移除</a>";
-             }
-             }
-             }*/
+                }
 
             ]
         ],
@@ -115,7 +90,6 @@ $(function () {
 
                 if (kind == 2) {
                     var vId = dt[i].vocabulary_type_id;
-                    //alert(rowId + "---" + rowId);
                     var vBox = $("#fill-" + rowId);
                     vBox.combobox({valueField: "id", textField: "name", multiple: true});
                     $.post("/bcms/proxy?url=vocabulary/" + vId + "&method=GET", {}, function (data1) {
@@ -125,20 +99,28 @@ $(function () {
                     //var sId = dt[i].structure_type_id;
                     var stid = dt[i].structure_type_id;
                     var node = dt[i];
-                    //console.log(node.zh_name);
-                    //var vBox = $("#fill-" + rowId);
-                    //alert(123+"---"+rowId);
                     var boxId = "#fill";
                     displayVoc(node, boxId);
-                    /*$.post("/bcms/proxy", {method: "GET", url: "metatype/" + stid}, function (data2) {
-                     for (var j = 0; j < data2.children.length; j++) {
-                     data2.children[j].parent = node.id;
-                     }
-                     $("#metaGrid").treegrid("append", data2.children);
-                     }, "json");*/
+
                 }
                 //console.log(dt[i].id);
             }
+
+            $.post("/bcms/proxy", {method: "GET", url: "resource/" + resourceId + "/meta"}, function (data2) {
+                console.log(data2.data);
+                    for (var i = 0; i < dt.length; i++) {
+                        var kind = dt[i].kind;
+                        var rowId = dt[i].id;
+                        var node = dt[i];
+                        var vBox = $("#fill-" + rowId);
+                        if(kind==0)
+                            vBox.textbox("setValue", data2.data[rowId]);
+                        if(kind==2)
+                            vBox.combobox("setValue", data2.data[rowId]);
+                        if(kind==3)
+                            dataSet(node,"#fill",data2.data[rowId]);
+                    }
+             }, "json");
             //var data = $('#metaGrid').treegrid("getData");
             //$('#metaGrid').treegrid("loading");
             //loadDatas(data);
@@ -151,19 +133,28 @@ $(function () {
                     dealData(data.rows[i].children, data.rows[i].id);
                 }
             }
-            /*var data2 = {};
-             for (var i = 0; i < data.length; i++) {
-             if (data[i].kind == 3) {
-             data[i].state = "closed";
-             }
-             }
-             data2.rows = data;
-             data2.total = data.length;*/
-
             return data;
         }
     });
 });
+
+function dataSet(node, boxId,data){
+    if (boxId == "#fill") {
+        boxId += "-" + node.id;
+    }
+    if (node.children && node.children.length > 0) {
+
+        for (var i = 0; i < node.children.length; i++) {
+            dataSet(node.children[i], boxId + "-" + node.children[i].node_id,data[node.children[i].node_id]);
+        }
+    } else {
+
+            if(node.kind==0)
+                $(boxId).textbox("setValue", data);
+            if(node.kind==2)
+                $(boxId).combobox("setValue", data);
+    }
+}
 
 function loadDatas(data) {
     for (var i = 0; i < data.length; i++) {
