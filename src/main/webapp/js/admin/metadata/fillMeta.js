@@ -150,7 +150,7 @@ function dataSet(node, boxId,data){
         }
     } else {
 
-            if(node.kind==0||kind==4)
+            if(node.kind==0||node.kind==4)
                 $(boxId).textbox("setValue", data);
             if(node.kind==2)
                 $(boxId).combobox("setValue", data);
