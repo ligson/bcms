@@ -49,7 +49,7 @@
         <ul id="metadata_tree1" class="easyui-tree" url="./lefttree.json" checkbox="true"></ul>
     </div>
     <div id="addMetaItemDlg" title="增加字段" class="easyui-dialog" closed="true"
-         style="width:450px;">
+         style="width:450px;" modal="true">
         <form>
             <table class="table">
                 <tr>
@@ -120,7 +120,7 @@
         </form>
     </div>
     <div id="addStructureItemDlg" class="easyui-dialog" title="选择结构类型" closed="true"
-         style="width:400px;height:600px;padding:10px;">
+         style="width:400px;height:600px;padding:10px;" modal="true">
         <form>
             <table class="table">
                 <tr>
@@ -189,7 +189,7 @@
         </form>
     </div>
     <div id="addDicItemDlg" class="easyui-dialog" title="添加词汇表类型" closed="true"
-         style="width:400px;height:600px;padding:10px;">
+         style="width:400px;height:600px;padding:10px;" modal="true">
         <form>
             <table class="table">
                 <tr>
@@ -258,7 +258,7 @@
         </form>
     </div>
     <div id="editMetaItemDlg" title="编辑字段" class="easyui-dialog" closed="true"
-         style="width:450px;">
+         style="width:450px;" modal="true">
         <form>
             <input type="hidden" name="metaTypeId" value=""/>
             <table class="table">
@@ -330,7 +330,7 @@
         </form>
     </div>
     <div id="editDicItemDlg" class="easyui-dialog" title="编辑词汇表类型" closed="true"
-         style="width:400px;height:600px;padding:10px;">
+         style="width:400px;height:600px;padding:10px;" modal="true">
         <form>
             <input type="hidden" name="metaTypeId" value="">
             <table class="table">
@@ -401,7 +401,7 @@
     </div>
 
     <div id="editStructureItemDlg" class="easyui-dialog" title="编辑结构类型" closed="true"
-         style="width:400px;height:600px;padding:10px;">
+         style="width:400px;height:600px;padding:10px;" modal="true">
         <form>
             <input type="hidden" name="metaTypeId" value="">
             <table class="table">
