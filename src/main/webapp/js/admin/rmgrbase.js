@@ -64,11 +64,13 @@ function submitForm(){
             name: name,
             description: description,
             metalibrary_id:metalibrary_id,
-            parent_id:parent_id,
             image_path:image_path,
             url: "resourcelibrary/"+id,
             method: "PUT"
         };
+        if(parent_id){
+            params.parent_id = parent_id;
+        }
 
         $.post("/bcms/proxy", params, function (data) {
             if (data.id != null) {
