@@ -18,7 +18,12 @@ $(function () {
             [
                 {field: 'id', title: 'id', width: 100},
                 {field: 'name', title: '名称', width: 100, sortable: true},
-                {field: 'resourcelibrary_id', title: '库id', width: 100, sortable: true},
+                {field: 'resourcelibrary_id', title: '库id', width: 100, sortable: true,
+                    formatter: function (value, row, index) {
+                        var data = $('#categoryTree').tree("find", value);
+                        return data==null?"null(id:"+value+")":data.name+"(id:"+value+")";
+                    }
+                },
                 {
                     field: 'created_at',
                     title: '创建日期',
@@ -77,9 +82,22 @@ $(function () {
                     var href = "/bcms/admin/resourcemgr/editmeta.jsp?id=" + row.id;
                     return "<a class='easyui-linkbutton' href='" + href + "'>编辑</a>";
                 }
+                },
+                {
+                    field: "subMeta", title: "子资源", width: 100, formatter: function (value, row, index) {
+                    var href = "/bcms/admin/resourcemgr/createresource.jsp?id=" + row.id;
+                    var href1 = "/bcms/admin/resourcemgr/manageresource.jsp?id=" + row.id;
+                    return "<a class='easyui-linkbutton' href='" + href + "'>添加</a>"
+                        +"<a class='easyui-linkbutton' href='" + href1 + "'>管理</a>";
                 }
+                }
+
             ]
-        ]
+        ],
+        onLoadSuccess: function (data) {
+            $(".easyui-linkbutton").linkbutton();
+
+        }
     });
 });
 

@@ -43,6 +43,7 @@
                             data-options="method:'POST',required:true"
                             style="width:200px;"></select></td>
             </tr>
+            <input id="subMeta10" type="hidden" value=""/>
                 <%-- <tr id="parentResource">
                      <td><label>父资源:</label></td>
                      <td><input class="easyui-combotree" data-options="url:'./lefttree.json',method:'get',required:true"

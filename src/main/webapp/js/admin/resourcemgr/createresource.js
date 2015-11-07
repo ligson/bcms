@@ -1,6 +1,13 @@
 /**
  * Created by ligson on 2015/8/28.
  */
+
+var href = window.location.href;
+var idx = href.indexOf("id=");
+var resourceId = undefined;
+if(idx>0) {
+    resourceId = href.substring(idx + 3);
+}
 var flow;
 function startUpload() {
     if (waitFile.file && waitFile.hash) {
@@ -22,6 +29,7 @@ function startUpload() {
 
 var waitFile = {status: false};
 $(function () {
+
     $("#resourceTree").combotree({
         loadFilter: function (data) {
             for (var i = 0; i < data.rows.length; i++) {
@@ -30,7 +38,7 @@ $(function () {
             return data.rows;
         }
     });
-
+    $("#subMeta10").val(resourceId);
     flow = new Flow({
         target: 'http://42.62.52.40:8000/file/upload',
         chunkSize: 1024 * 1024,
@@ -153,14 +161,20 @@ function submitForm() {
         var kind10 = $("#kind10").combobox("getValue");
         var node = $("#resourceTree").combotree("getValue");
         var committer = $.cookie("bcms_user_id");
-        $.post("/bcms/proxy", {
+        var parent_id = $("#subMeta10").val();
+
+        var params={
             method: "POST",
             url: "resource/",
             name: name,
             kind: kind10,
             resourcelibrary_id: parseInt(node),
             committer: parseInt(committer)
-        }, function (data) {
+        };
+        if(parent_id){
+            params.parent_id=parent_id;
+        }
+        $.post("/bcms/proxy", params, function (data) {
             if (data.id != undefined) {
                 //alert("ok........");
                 if (waitFile.id != null) {
