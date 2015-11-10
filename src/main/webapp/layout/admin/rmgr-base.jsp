@@ -47,6 +47,7 @@
                onclick="removeCategory()">删除</a>
             <a href="./createresource.jsp" class="easyui-linkbutton" iconCls="icon-folder_up" title="上传"
                plain="true">上传</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-user_home" title="所有" plain="true" onclick="loadAllRes()">所有</a>
         </div>
 
         <ul class="easyui-tree" url="/bcms/proxy?url=resourcelibrary/&method=GET" id="categoryTree"

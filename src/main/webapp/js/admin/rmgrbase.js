@@ -42,17 +42,17 @@ function editCategory() {
     $("#editCategoryDlg").dialog("open");
     if (selectNode) {
         $("#name14").textbox("setValue", selectNode.name);
-        $("#updateMetatypetree").combobox("setValue",selectNode.metalibrary_id);
+        $("#updateMetatypetree").combobox("setValue", selectNode.metalibrary_id);
         $("#description14").textbox("setValue", selectNode.description);
         $("#imagePath14").val(selectNode.image_path);
         $("#id14").val(selectNode.id);
         $("#parentCategoryId14").val(selectNode.parent_id);
-    }else{
+    } else {
         alert("选中要编辑的行！");
     }
 }
 
-function submitForm(){
+function submitForm() {
     if ($("#editCategoryDlg").find("form").form("validate")) {
         var name = $("#name14").textbox("getValue");
         var description = $("#description14").textbox("getValue");
@@ -63,12 +63,12 @@ function submitForm(){
         var params = {
             name: name,
             description: description,
-            metalibrary_id:metalibrary_id,
-            image_path:image_path,
-            url: "resourcelibrary/"+id,
+            metalibrary_id: metalibrary_id,
+            image_path: image_path,
+            url: "resourcelibrary/" + id,
             method: "PUT"
         };
-        if(parent_id){
+        if (parent_id) {
             params.parent_id = parent_id;
         }
 
@@ -83,11 +83,11 @@ function submitForm(){
     }
 }
 
-function clearForm(){
+function clearForm() {
     $("#editCategoryDlg").dialog("close");
 }
 
-function removeit(){
+function removeit() {
     var tree = $("#categoryTree");
     var selectNode = tree.tree("getSelected");
     if (selectNode) {
@@ -108,6 +108,15 @@ function showContextMenu(e, node) {
         left: e.pageX,
         top: e.pageY
     });
+}
+
+function loadAllRes() {
+    //alert(node.id);
+    if (window.location.href.indexOf("rmgr.jsp") >= 0) {
+        $("#rGrid").datagrid({url: "/bcms/proxy?url=resource&method=GET"});
+    } else {
+        window.location.href = "/bcms/admin/resourcemgr/rmgr.jsp";
+    }
 }
 $(function () {
     $("#categoryTree").tree({
