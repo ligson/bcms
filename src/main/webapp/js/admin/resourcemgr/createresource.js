@@ -26,7 +26,14 @@ function startUpload() {
         }, "json");
     }
 }
-
+function setData(data){
+    if(data!=undefined){
+        for (var i = 0; i < data.length; i++) {
+            data[i].text = data[i].name;
+            setData(data[i].children);
+        }
+    }
+}
 var waitFile = {status: false};
 $(function () {
 
@@ -34,6 +41,7 @@ $(function () {
         loadFilter: function (data) {
             for (var i = 0; i < data.rows.length; i++) {
                 data.rows[i].text = data.rows[i].name;
+                setData(data.rows[i].children);
             }
             return data.rows;
         }
