@@ -46,6 +46,15 @@ $(function () {
             return data.rows;
         }
     });
+    $("#tagTree").combotree({
+        loadFilter: function (data) {
+            for (var i = 0; i < data.rows.length; i++) {
+                data.rows[i].text = data.rows[i].name;
+                setData(data.rows[i].children);
+            }
+            return data.rows;
+        }
+    });
     $("#subMeta10").val(resourceId);
     flow = new Flow({
         target: 'http://42.62.52.40:8000/file/upload',
@@ -170,6 +179,7 @@ function submitForm() {
         var node = $("#resourceTree").combotree("getValue");
         var committer = $.cookie("bcms_user_id");
         var parent_id = $("#subMeta10").val();
+        var tag = $("#tagTree").combobox("getValue");
 
         var params={
             method: "POST",
@@ -177,6 +187,7 @@ function submitForm() {
             name: name,
             kind: kind10,
             resourcelibrary_id: parseInt(node),
+            tag_ids:'['+tag+']',
             committer: parseInt(committer)
         };
         if(parent_id){
