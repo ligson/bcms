@@ -43,6 +43,12 @@
                             data-options="method:'POST',required:true"
                             style="width:200px;"></select></td>
             </tr>
+            <tr>
+                <td><label>标签库</label></td>
+                <td><select id="tagTree" url="/bcms/proxy?url=tag/&method=GET" class="easyui-combotree" multiple="true" onlyLeafCheck="true"
+                            data-options="method:'POST',required:true"
+                            style="width:200px;"></select></td>
+            </tr>
             <input id="subMeta10" type="hidden" value=""/>
                 <%-- <tr id="parentResource">
                      <td><label>父资源:</label></td>

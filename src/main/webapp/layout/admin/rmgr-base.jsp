@@ -68,7 +68,7 @@
      </div>--%>
 </div>
 <div id="addCategoryDlg" class="easyui-dialog" title="添加类库" data-options="iconCls:'icon-save'"
-     style="width:400px;height:250px" closed="true" modal="true">
+     style="width:400px;height:290px" closed="true" modal="true">
     <form>
         <input type="hidden" id="parentCategoryId" value="">
         <table class="table">
@@ -84,6 +84,11 @@
                 </td>
             </tr>
             <tr>
+                <td>标签库</td>
+                <td><select id="tagTree13" url="/bcms/proxy?url=tag/&method=GET" class="easyui-combotree" multiple="true" onlyLeafCheck="true"
+                            data-options="method:'POST',required:true" ></select></td>
+            </tr>
+            <tr>
                 <td>描述</td>
                 <td>
                     <input class="easyui-textbox" name="message" data-options="multiline:true" style="height:60px"
@@ -95,7 +100,7 @@
 </div>
 
 <div id="editCategoryDlg" class="easyui-dialog" title="编辑类库" data-options="iconCls:'icon-save'"
-     style="width:400px;height:250px" closed="true" modal="true">
+     style="width:400px;height:290px" closed="true" modal="true">
     <form>
         <table class="table">
             <tr>
@@ -110,6 +115,11 @@
                     <input url="/bcms/proxy?method=GET&url=metalibrary/page/1" class="easyui-combobox"
                            data-options="method:'get',required:true" id="updateMetatypetree"/>
                 </td>
+            </tr>
+            <tr>
+                <td><label>标签库</label></td>
+                <td><select id="tagTree14" url="/bcms/proxy?url=tag/&method=GET" class="easyui-combotree" multiple="true" onlyLeafCheck="true"
+                            data-options="method:'POST',required:true" ></select></td>
             </tr>
             <tr>
                 <td>描述</td>

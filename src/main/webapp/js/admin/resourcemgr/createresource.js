@@ -5,7 +5,7 @@
 var href = window.location.href;
 var idx = href.indexOf("id=");
 var resourceId = undefined;
-if(idx>0) {
+if (idx > 0) {
     resourceId = href.substring(idx + 3);
 }
 var flow;
@@ -26,8 +26,8 @@ function startUpload() {
         }, "json");
     }
 }
-function setData(data){
-    if(data!=undefined){
+function setData(data) {
+    if (data != undefined) {
         for (var i = 0; i < data.length; i++) {
             data[i].text = data[i].name;
             setData(data[i].children);
@@ -53,7 +53,13 @@ $(function () {
                 setData(data.rows[i].children);
             }
             return data.rows;
+        },
+        onBeforeSelect: function (node) {
+            if(node.children&&node.children.length>0){
+                return false;
+            }
         }
+
     });
     $("#subMeta10").val(resourceId);
     flow = new Flow({
@@ -179,19 +185,19 @@ function submitForm() {
         var node = $("#resourceTree").combotree("getValue");
         var committer = $.cookie("bcms_user_id");
         var parent_id = $("#subMeta10").val();
-        var tag = $("#tagTree").combobox("getValue");
+        var tag = $("#tagTree").combobox("getValues");
 
-        var params={
+        var params = {
             method: "POST",
             url: "resource/",
             name: name,
             kind: kind10,
             resourcelibrary_id: parseInt(node),
-            tag_ids:'['+tag+']',
+            tag_ids: "["+tag+"]",
             committer: parseInt(committer)
         };
-        if(parent_id){
-            params.parent_id=parent_id;
+        if (parent_id) {
+            params.parent_id = parent_id;
         }
         $.post("/bcms/proxy", params, function (data) {
             if (data.id != undefined) {

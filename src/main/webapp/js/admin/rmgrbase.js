@@ -43,6 +43,7 @@ function editCategory() {
     if (selectNode) {
         $("#name14").textbox("setValue", selectNode.name);
         $("#updateMetatypetree").combobox("setValue", selectNode.metalibrary_id);
+        $("#tagtree14").combobox("setValues", selectNode.tag_ids);
         $("#description14").textbox("setValue", selectNode.description);
         $("#imagePath14").val(selectNode.image_path);
         $("#id14").val(selectNode.id);
@@ -57,6 +58,7 @@ function submitForm() {
         var name = $("#name14").textbox("getValue");
         var description = $("#description14").textbox("getValue");
         var metalibrary_id = parseInt($("#updateMetatypetree").combobox("getValue"));
+        var tag_ids = $("#tagTree14").combobox("getValues");
         var image_path = $("#imagePath14").val();
         var parent_id = parseInt($("#parentCategoryId14").val());
         var id = parseInt($("#id14").val());
@@ -64,6 +66,7 @@ function submitForm() {
             name: name,
             description: description,
             metalibrary_id: metalibrary_id,
+            tag_ids:"["+tag_ids+"]",
             image_path: image_path,
             url: "resourcelibrary/" + id,
             method: "PUT"
@@ -126,6 +129,14 @@ function loadAllRes() {
         window.location.href = "/bcms/admin/resourcemgr/rmgr.jsp";
     }
 }
+function setData(data) {
+    if (data != undefined) {
+        for (var i = 0; i < data.length; i++) {
+            data[i].text = data[i].name;
+            setData(data[i].children);
+        }
+    }
+};
 $(function () {
     $("#categoryTree").tree({
         onContextMenu: function (e, node) {
@@ -155,6 +166,25 @@ $(function () {
         valueField: "id",
         panelHeight: 'auto'
     });
+
+    $("#tagTree13").combotree({
+        loadFilter: function (data) {
+            for (var i = 0; i < data.rows.length; i++) {
+                data.rows[i].text = data.rows[i].name;
+                setData(data.rows[i].children);
+            }
+            return data.rows;
+        }
+    });
+    $("#tagTree14").combotree({
+        loadFilter: function (data) {
+            for (var i = 0; i < data.rows.length; i++) {
+                data.rows[i].text = data.rows[i].name;
+                setData(data.rows[i].children);
+            }
+            return data.rows;
+        }
+    });
     /* $("#metatypetree").combotree({
      url: "/bcms/categoryTree",
      formatter: function (node) {
@@ -182,10 +212,12 @@ $(function () {
                         var name = $("#name13").textbox("getValue");
                         var description = $("#description13").textbox("getValue");
                         var metalibrary_id = $("#metatypetree").combobox("getValue");
+                        var tag_ids = $("#tagTree13").combobox("getValues");
                         var params = {
                             name: name,
                             description: description,
                             metalibrary_id: metalibrary_id,
+                            tag_ids:"["+tag_ids+"]",
                             url: "resourcelibrary/",
                             method: "POST"
                         };
