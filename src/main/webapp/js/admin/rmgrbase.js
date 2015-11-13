@@ -43,7 +43,7 @@ function editCategory() {
     if (selectNode) {
         $("#name14").textbox("setValue", selectNode.name);
         $("#updateMetatypetree").combobox("setValue", selectNode.metalibrary_id);
-        $("#tagtree14").combobox("setValues", selectNode.tag_ids);
+        $("#tagTree14").combotree("setValues", selectNode.tag_ids);
         $("#description14").textbox("setValue", selectNode.description);
         $("#imagePath14").val(selectNode.image_path);
         $("#id14").val(selectNode.id);
