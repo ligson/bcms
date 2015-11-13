@@ -10,7 +10,7 @@
 <%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
 <rapid:override name="title">提问管理</rapid:override>
 <rapid:override name="head">
-  <script type="text/javascript" src="http://www.jeasyui.com/easyui/datagrid-detailview.js"></script>
+  <script type="text/javascript" src="../../js/jquery-easyui-1.4.3/plugins/datagrid-detailview.js"></script>
   <script type="text/javascript" src="../../js/admin/social/questionmgr.js"></script>
   <script type="text/javascript" src="../../js/ckeditor/ckeditor.js"></script>
 </rapid:override>
