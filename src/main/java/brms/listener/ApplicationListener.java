@@ -3,8 +3,16 @@ package brms.listener; /**
  * 系统坚挺
  */
 
+import brms.action.DepartmentTree;
+import brms.action.Proxy;
+import brms.common.JSONCommon;
 import brms.job.CleanThreadLocalTask;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -16,7 +24,6 @@ public class ApplicationListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         logger.info("系统正常启动!");
-
         //10分钟清理一下httpclean的dateformate线程池
         Timer timer = new Timer();
         long delay = 1000;
@@ -28,4 +35,5 @@ public class ApplicationListener implements ServletContextListener {
     public void contextDestroyed(ServletContextEvent sce) {
         logger.info("系统正常退出!");
     }
+
 }

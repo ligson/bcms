@@ -1,5 +1,6 @@
 package brms.action;
 
+import brms.common.JSONCommon;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
@@ -16,6 +17,7 @@ import java.io.IOException;
 
 public class DepartmentTree extends HttpServlet {
     private static Logger logger = Logger.getLogger(DepartmentTree.class);
+    private static JSONCommon jsonCommon=new JSONCommon();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,9 +26,11 @@ public class DepartmentTree extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String id = req.getParameter("id");
+        String type = req.getParameter("type");
+        req.setCharacterEncoding("UTF-8");
         resp.setCharacterEncoding("UTF-8");
-        if (id == null) {
+        String departments=new JSONCommon().ReadFile(req.getSession().getServletContext().getRealPath("/")+"js\\department.json");
+        if (departments==""||type!=null) {
             String url = Proxy.BASE_URL + "department/";
             logger.debug("请求url:" + url);
             logger.debug("请求方法:GET");
@@ -39,24 +43,16 @@ public class DepartmentTree extends HttpServlet {
             if (state == 200) {
                 try {
                     JSONArray jsonArray = new JSONArray(json);
-                    resp.getWriter().println(jsonArray.toString());
+                    new JSONCommon().writeFile(req.getSession().getServletContext().getRealPath("/")+"js\\department.json",jsonArray.toString());
+                    if(type==null){
+                        resp.getWriter().println(jsonArray.toString());
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-        } else {
-            HttpGet httpGet = new HttpGet(Proxy.BASE_URL + "department/" + id);
-            HttpResponse response = Proxy.httpClient.execute(httpGet, Proxy.context);
-            if (response.getStatusLine().getStatusCode() == 200) {
-                String json = EntityUtils.toString(response.getEntity());
-                try {
-                    JSONObject jsonObject = new JSONObject(json);
-                    JSONArray jsonArray = jsonObject.getJSONArray("children");
-                    resp.getWriter().println(jsonArray.toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
+        }else {
+            resp.getWriter().println(departments);
         }
     }
 }

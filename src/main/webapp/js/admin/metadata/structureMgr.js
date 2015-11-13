@@ -87,9 +87,7 @@ $(function () {
             if (data.rows) {
                 for (var i = 0; i < data.rows.length; i++) {
                     var row = data.rows[i];
-                    if (row.kind == 3) {
-                        row.state = "closed";
-                    }
+                   row.children=[];
                 }
             }
             return data;

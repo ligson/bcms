@@ -258,7 +258,7 @@ function initAddRoleTree(){
 }
 
 function initAddDepartmentTree(){
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+    $.post("/bcms/departmentTree", function (result) {
         var obj = jQuery.parseJSON(result);
         if (obj.success==false) {
             alert(obj.msg);
@@ -281,7 +281,7 @@ function initModifyRoleTree(values){
 }
 
 function initModifyDepartmentTree(values){
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+    $.post("/bcms/departmentTree", function (result) {
         var obj = jQuery.parseJSON(result);
         if (obj.success==false) {
             alert(obj.msg);
@@ -298,6 +298,7 @@ function formatTreeData(data){
         var obj = data[i];
         obj.text = obj.name;
         if (obj.children && obj.children.length > 0) {
+            obj.state="closed";
             obj.children = formatTreeData(obj.children);
         }
         fin.push(obj);

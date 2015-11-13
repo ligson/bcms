@@ -15,9 +15,21 @@ $(function () {
     $("#tag_tree_grid").treegrid({
         idField: 'id',
         treeField: 'name',
+        parentField : 'parent_id',
         rownumbers: true,
-        pagination: true,
+        fitColumns: true,
         url: "/bcms/proxy?url=tag&method=GET",
+        loadFilter: function (data, parentId) {
+            if (data.rows) {
+                for (var i = 0; i < data.rows.length; i++) {
+                    var row = data.rows[i];
+                    if (row.kind == 3) {
+                        row.state = "closed";
+                    }
+                }
+            }
+            return data;
+        },
         columns: [[
             {field: 'name', width: '75%', title: '名称'},
             {
@@ -29,6 +41,12 @@ $(function () {
         ]]
     });
 });
+
+function formatData(data){
+    for(var i=0;i<data.length;i++){
+        
+    }
+}
 
 //点击编辑标签
 function clickModifyTag(id){

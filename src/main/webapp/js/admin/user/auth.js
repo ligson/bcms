@@ -1,6 +1,6 @@
 var department_tree;
 $(function () {
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+    $.post("/bcms/departmentTree", function (result) {
         var obj = $.parseJSON(result);
         if (obj.success==false) {
         } else {

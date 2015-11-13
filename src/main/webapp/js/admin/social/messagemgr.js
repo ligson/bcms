@@ -141,7 +141,7 @@ function saveMessage(){
 
 function initDepartmentTree() {
     $("#add_message_form #department_tree").tree({
-        url: "/bcms/proxy?url=department&method=GET",
+        url: "/bcms/departmentTree",
         lines: true,
         onBeforeLoad: function (node, param) {
             ajaxLoading();
@@ -165,9 +165,9 @@ function initUserListByDepartment(node) {
         } else {
             var rows = $('#select_user_list').datalist("getData").rows;
             for (var j = 0; j < rows.length; j++) {
-                for (var x = 0; x < obj.length; x++) {
-                    if (rows[j].id == obj[x].id) {
-                        obj[x].checked = true;
+                for (var x = 0; x < obj.rows.length; x++) {
+                    if (rows[j].id == obj.rows[x].id) {
+                        obj.rows[x].checked = true;
                     }
                 }
             }

@@ -1,6 +1,6 @@
 var department_tree;
 $(function () {
-    $.post("/bcms/proxy", {method: "get", url: "department/"}, function (result) {
+    $.post("/bcms/departmentTree", function (result) {
         var obj = $.parseJSON(result);
         if (obj.success==false) {
             alert(obj.msg);
@@ -148,7 +148,6 @@ function initModify(row) {
 
 function modifyUser(){
     var id=$('#modify_user_dlg input[name=id]').val();
-    var username= $('#modify_user_dlg input[name=name]').val();
     var cn_name = $('#modify_user_dlg input[name=cn_name]').val();
     var email = $('#modify_user_dlg input[name=email]').val();
     var phone = $('#modify_user_dlg input[name=phone]').val();
@@ -159,7 +158,7 @@ function modifyUser(){
     var identity=$('#modify_user_dlg .identity_combobox').combobox("getValue");
     var number=$('#modify_user_dlg input[name=number]').val();
     var department_id=$('#modify_user_dlg .department_tree').combotree("getValue");
-    $.post("/bcms/proxy", {method:"put",url: "user/"+id,username:username,cn_name:cn_name,identity:identity,department_id:department_id, email:email,phone:phone,group_ids:JSON.stringify(groups),number:number,gender:gender,disk_size:disk_size,description:description}, function (result) {
+    $.post("/bcms/proxy", {method:"put",url: "user/"+id,cn_name:cn_name,identity:identity,department_id:department_id, email:email,phone:phone,group_ids:JSON.stringify(groups),number:number,gender:gender,disk_size:disk_size,description:description}, function (result) {
         var obj= $.parseJSON(result);
         if (obj.success==false) {
             $('#modify_user_dlg').dialog('close');
