@@ -86,7 +86,7 @@
             <tr>
                 <td>标签库</td>
                 <td><select id="tagTree13" url="/bcms/proxy?url=tag/&method=GET" class="easyui-combotree" multiple="true" onlyLeafCheck="true"
-                            data-options="method:'POST',required:true" ></select></td>
+                            data-options="method:'POST'" ></select></td>
             </tr>
             <tr>
                 <td>描述</td>
@@ -119,7 +119,7 @@
             <tr>
                 <td>标签库</td>
                 <td><select id="tagTree14" url="/bcms/proxy?url=tag/&method=GET" class="easyui-combotree" multiple="true" onlyLeafCheck="true"
-                            data-options="method:'POST',required:true" ></select></td>
+                            data-options="method:'POST'" ></select></td>
             </tr>
             <tr>
                 <td>描述</td>
