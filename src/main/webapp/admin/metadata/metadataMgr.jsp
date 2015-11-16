@@ -20,17 +20,20 @@
             <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddDicItemDlg()">选择词汇表类型</a>
             <a class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="showAddItemDlg()">增加普通类型</a>
             <a class="easyui-linkbutton" plain="true" iconCls="icon-remove" onclick="deleteMetaItem()">删除</a>
-            <select class="easyui-combobox" editable="false">
-                <option>必须元素</option>
-                <option>可选元素</option>
-                <option>分类元素</option>
+            <select class="easyui-combobox" editable="false" id="collectionSel">
+                <option value="0">必选数据</option>
+                <option value="1">通用可选数据</option>
+                <option value="2">分类数据</option>
+                <option value="3">结构类型</option>
+                <option value="4">自定义数据</option>
             </select>
             <select class="easyui-combobox" editable="false" id="searchCondition">
                 <option>按名称</option>
                 <option>按编码</option>
             </select>
-            <input type="text" class="easyui-textbox"/><a class="easyui-linkbutton" plain="true"
-                                                          iconCls="icon-search">搜索</a>
+            <input type="text" class="easyui-textbox" id="metaTypeNameTxt"/><a class="easyui-linkbutton" plain="true"
+                                                                               iconCls="icon-search"
+                                                                               onclick="searchMetaType()">搜索</a>
 
         </div>
         <table toolbar="#tbr" id="metaGrid" class="easyui-treegrid"
