@@ -10,7 +10,7 @@
  */
 $(function () {
     $("#rGrid").datagrid({
-        url: "/bcms/proxy?url=resource&method=GET",
+        url: "/bcms/proxy?url=resource&method=GET&sort=created_at&order=desc",
         fitColumns: true,
         autoRowHeight: true,
         fit: true,

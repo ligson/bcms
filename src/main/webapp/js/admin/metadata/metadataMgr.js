@@ -703,3 +703,11 @@ function showEditMetaItemDlg(node) {
     $("#domain21").textbox("setValue", node.domain);
     dlg.dialog("open");
 }
+//search metatype
+function searchMetaType() {
+    //$("#metaGrid").treegrid("");
+    var col = $("#collectionSel").combobox("getValue");
+    var name = $("#metaTypeNameTxt").textbox("getValue");
+    //alert(col+"---"+name);\
+    $("#metaGrid").treegrid("reload", {zh_name: name, collection: col});
+}
