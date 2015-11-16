@@ -18,6 +18,14 @@ function removeCategory() {
     var tree = $("#categoryTree");
     var selectNode = tree.tree("getSelected");
     if (selectNode) {
+        if(selectNode.children&&selectNode.children.length>0){
+            alert("请手动删除子分类或者标准!");
+            return;
+        }
+        if(selectNode.resources&&selectNode.resources.length>0){
+            alert("请手动删除该标准下的所有资源!");
+            return;
+        }
         $.post("/bcms/proxy", {method: "DELETE", url: "resourcelibrary/" + selectNode.id}, function (data) {
             if (data.id != undefined) {
                 alert("删除成功!");

@@ -44,7 +44,7 @@
                             style="width:200px;"></select></td>
             </tr>
             <tr>
-                <td><label>标签库</label></td>
+                <td><label>标签</label></td>
                 <td><select id="tagTree" url="/bcms/proxy?url=tag/&method=GET" class="easyui-combotree" multiple="true" onlyLeafCheck="true"
                             data-options="method:'POST',required:true"
                             style="width:200px;"></select></td>
