@@ -44,13 +44,24 @@
                             data-options="method:'POST',required:true"
                             style="width:200px;"></select></td>
             </tr>
-
+            <tr>
+                <td><label>标签</label></td>
+                <td><select id="tagTree" url="/bcms/proxy?url=tag/&method=GET" class="easyui-combotree" multiple="true"
+                            data-options="method:'POST',required:true"
+                            style="width:200px;"></select></td>
+            </tr>
             <tr>
                 <td colspan="2" style="text-align: center;padding:10px;">
                     <a class="easyui-linkbutton" onclick="submitForm()">提交</a>
                 </td>
             </tr>
         </table>
+        <input type="hidden" id="status10" value="">
+        <input type="hidden" id="resourcelibrary_id10" value="">
+        <input type="hidden" id="parent_id10" value="">
+        <input type="hidden" id="recommend_number10" value="">
+        <input type="hidden" id="click_number10" value="">
+        <input type="hidden" id="id10" value="">
     </form>
 </rapid:override>
 

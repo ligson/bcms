@@ -53,13 +53,7 @@ $(function () {
                 setData(data.rows[i].children);
             }
             return data.rows;
-        },
-        onBeforeSelect: function (node) {
-            if(node.children&&node.children.length>0){
-                return false;
-            }
         }
-
     });
     $("#subMeta10").val(resourceId);
     flow = new Flow({
