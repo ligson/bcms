@@ -34,6 +34,7 @@
                 权限名称
             </label>
             <input name="name" class="easyui-validatebox" required="true" type="text" />
+            <input name="id" type="hidden" />
         </div>
         <div class="fitem">
             <label>
@@ -56,7 +57,7 @@
 </div>
 
 <div id="modify_auth_dlg_buttons">
-    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#modify_auth_dlg').dialog('close')" iconcls="icon-save">保存</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="modifyAuth();" iconcls="icon-save">保存</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#modify_auth_dlg').dialog('close')"
        iconcls="icon-cancel">取消</a>
 </div>

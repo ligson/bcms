@@ -20,20 +20,13 @@ $(function () {
         fitColumns: true,
         url: "/bcms/proxy?url=tag&method=GET",
         loadFilter: function (data, parentId) {
-            if (data.rows) {
-                for (var i = 0; i < data.rows.length; i++) {
-                    var row = data.rows[i];
-                    if (row.kind == 3) {
-                        row.state = "closed";
-                    }
-                }
-            }
+
             return data;
         },
         columns: [[
             {field: 'name', width: '75%', title: '名称'},
             {
-                field: '_operate', width: '20%', align: 'center', title: '操作',
+                field: '_operate', width: '20%', align: 'center', title: '操作' ,
                 formatter: function (value, row, index) {
                     return '<a class="tablelink" href="#" onclick="clickModifyTag(' + row.id + ')">修改</a>&nbsp;&nbsp;<a class="tablelink" href="#" onclick="delTag(' + row.id + ')">删除</a>';
                 }

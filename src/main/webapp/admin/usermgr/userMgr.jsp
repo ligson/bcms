@@ -25,7 +25,7 @@
     <a href="#" onclick="delUsers();" class="easyui-linkbutton" data-options="iconCls:'icon-cancel'">删除</a>
         </div>
         <div>
-            姓名: <input class="easyui-textbox" style="width:150px" id="username">
+            用户名: <input class="easyui-textbox" style="width:150px" id="username">
             教工号: <input class="easyui-textbox" style="width:150px" id="number">
             部门:
             <input class="easyui-combotree" panelHeight="200px" style="width:150px" id="department_id" />

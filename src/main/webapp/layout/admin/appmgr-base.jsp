@@ -37,11 +37,11 @@
                             <a href="topicmgr.jsp">专题管理</a>
                         </span>
                 </li>
-                <li iconCls="icon-application_view_gallery">
+                <%--<li iconCls="icon-application_view_gallery">
                         <span>
                             <a href="goodcoursemgr.jsp">精品课程管理</a>
                         </span>
-                </li>
+                </li>--%>
             </ul>
         </div>
 

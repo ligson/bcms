@@ -32,7 +32,7 @@
                         <a href="../../admin/resourcemgr/rmgr.jsp">资源管理</a>
                         <a href="../../admin/metadata/metadataMgr.jsp">元数据管理</a>
                         <a href="../../admin/appmgr/topicmgr.jsp">应用管理</a>
-                        <a href="../../admin/datacount/datacout.jsp">数据统计</a>
+                        <a href="../../admin/datacount/resourceplaycount.jsp">数据统计</a>
                         <a href="../../admin/sysmgr/webconf.jsp">服务管理</a>
                         <a href="../../admin/socialmgr/informationMgr.jsp">社会化功能管理</a>
                     </div>

@@ -27,9 +27,7 @@
 </div>
 <div data-options="region:'center',title:'专题管理'" iconCls="icon-page_world">
     <div id="container">
-        <table id="rGrid" class="easyui-datagrid"
-               data-options="rownumbers:true,singleSelect:true,url:'./caseliblist.json',method:'post'" pagination="true"
-               toolbar="#rGridTbr">
+        <table id="rGrid">
             <thead>
             </thead>
         </table>

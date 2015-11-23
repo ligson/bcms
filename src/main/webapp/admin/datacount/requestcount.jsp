@@ -7,14 +7,14 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
-<rapid:override name="title">资源点播统计</rapid:override>
+<rapid:override name="title">请求数量统计</rapid:override>
 <rapid:override name="head">
-    <script src="../../js/admin/datacount/resourceplaycount.js" type="text/javascript"></script>
+    <script src="../../js/admin/datacount/requestcount.js" type="text/javascript"></script>
 </rapid:override>
-<rapid:override name="mainName">资源点播统计</rapid:override>
+<rapid:override name="mainName">请求数量统计</rapid:override>
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
-<div data-options="region:'center',title:'资源播放排行'" iconCls="icon-page_world">
+<div data-options="region:'center',title:'请求数量统计'" iconCls="icon-chart_line">
     <div id="container"></div>
 </div>
 

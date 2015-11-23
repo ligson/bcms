@@ -33,6 +33,7 @@ public class Proxy extends HttpServlet {
     private static Logger logger = Logger.getLogger(Proxy.class);
     private static final long serialVersionUID = 1L;
     public final static String BASE_URL = "http://42.62.52.40:8000/";
+    public final static String STATISTICAL_URL="http://42.62.77.189:8000/";
     public static CloseableHttpClient httpClient;
     public static HttpContext context = new BasicHttpContext();
 
@@ -79,7 +80,9 @@ public class Proxy extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         String url = request.getParameter("url");
         String method = request.getParameter("method");
-        logger.debug("请求url:" + BASE_URL + url);
+        String isStatsticalQuery=request.getParameter("isStatsticalQuery");
+        String end_url=isStatsticalQuery==null?BASE_URL+url:STATISTICAL_URL+url;
+        logger.debug("请求url:" + end_url);
         logger.debug("请求方法:" + method);
         if (method.equalsIgnoreCase("get")) {
             doGet(request, response);
@@ -88,8 +91,8 @@ public class Proxy extends HttpServlet {
         } else if (method.equalsIgnoreCase("delete")) {
             doDelete(request, response);
         } else {
-            //String url = request.getParameter("url");
-            HttpPost httpPost = new HttpPost(BASE_URL + url);
+
+            HttpPost httpPost = new HttpPost(end_url);
             HttpEntity entity = parseToEntity(request);
             httpPost.setEntity(entity);
             executeMethod(httpPost, response);
@@ -107,7 +110,6 @@ public class Proxy extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //String uri = parseToUrl(request);
         String url = request.getParameter("url");
         HttpDelete httpDelete = new HttpDelete(BASE_URL + url);
         executeMethod(httpDelete, response);
@@ -117,7 +119,7 @@ public class Proxy extends HttpServlet {
         List<NameValuePair> nameValuePairs = dealParams(request);
         Map<String, Object> result = new HashMap<>();
         for (NameValuePair nameValuePair : nameValuePairs) {
-            if (!nameValuePair.getName().contains("url") && !nameValuePair.getName().contains("method") && !nameValuePair.getValue().isEmpty()) {
+            if (!nameValuePair.getName().contains("url") && !nameValuePair.getName().contains("method")&& !nameValuePair.getName().contains("isStatsticalQuery") && !nameValuePair.getValue().isEmpty()) {
                 if (nameValuePair.getValue().startsWith("[") && nameValuePair.getValue().endsWith("]")) {
                     try {
                         JSONArray jsonArray = new JSONArray(nameValuePair.getValue());
