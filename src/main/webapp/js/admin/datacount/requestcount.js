@@ -7,11 +7,10 @@ $(function () {
     var data=[];
     var end_date=GetDateStr(0);
     var start_date=GetDateStr(-30);
-    $.post("/bcms/proxy", {method:"post",url: "/log/web_request_count",isStatsticalQuery:true,begin_time:start_date,end_time:end_date,Internal:"day"}, function (result) {
+    $.post("/bcms/proxy", {method:"get",url: "query/web_request_count",isStatsticalQuery:true,start_at:start_date,end_at:end_date,internal:"day"}, function (result) {
         var obj = jQuery.parseJSON(result);
         if (obj.success == true) {
             $.each(obj.data, function (i, item) {
-                console.log(i);
                 categories.push(GetDateStr((i-30)));
                 data.push(item);
             });

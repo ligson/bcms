@@ -15,7 +15,6 @@
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
 <div data-options="region:'center',title:'资源量统计'" iconCls="icon-chart_curve">
-    <jsp:include page="_searchtoolbar.jsp"/>
     <div id="container"></div>
 </div>
 

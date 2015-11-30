@@ -1,0 +1,108 @@
+/*---head部分---*/
+.pan-logo a{
+    display: block;
+    text-align: center;
+    line-height: 50px;
+}
+
+.commen-head{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 50px;
+    display: block;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.6);
+}
+.pan-logo{
+    width: 180px;
+    height: 50px;
+}
+.pan-nav{
+    width: 365px;
+    height: 50px;
+}
+.nav-item{
+    width: 90px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.nav-item a{
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    overflow: hidden;
+}
+
+.nav-item a:hover{
+    color: #FFF;
+    background: #04142d;
+}
+
+.lin-r{
+    border-right:1px solid rgba(255, 255, 255, 0.1);
+    height: 50px;
+    line-height: 50px;
+}
+
+.user-box{
+    width:365px;
+    height: 50px;
+    padding-top: 15px;
+}
+
+.user-item{
+    display: block;
+    width:365px;
+    height: 25px;
+}
+
+.user-name{
+    width: 120px;
+    height: 25px;
+    border-right: 1px solid rgba(255, 255, 255,0.2 );
+
+}
+.user-name p,
+.more-list p,
+.user-massage p{
+    margin: 0;
+    height: 25px;
+    line-height: 25px;
+}
+
+.user-name p a,
+.more-list p a,
+.user-massage p a{
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.user-name p a:hover,
+.more-list p a:hover,
+.user-massage p a:hover{
+    color: #FFF;
+    text-decoration: underline;
+}
+
+.user-massage{
+    border-right: 1px solid rgba(255, 255, 255,0.2 );
+}
+
+.user-massage,
+.more-list{
+    width: 120px;
+    height: 25px;
+}
+
+.user-list{
+    background: none;
+    color: #FFF;
+    border: 0;
+}
+
+.user-name .dropdown-menu{
+    margin-top: 15px;
+}

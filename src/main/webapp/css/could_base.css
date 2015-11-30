@@ -1,0 +1,149 @@
+/*--字体样式--*/
+.fnn{
+    font-style: normal;
+}
+
+.fnb{
+    font-weight:bold;
+}
+
+*{
+    font-family: "微软雅黑","Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a:hover{
+    text-decoration: none;
+}
+/*--字体大小--*/
+.fn10{
+    font-size: 10px;
+}
+.fn12{
+    font-size: 12px;
+}
+.fn14{
+    font-size: 14px;
+}
+.fn16{
+    font-size: 16px;
+}
+.fn18{
+    font-size: 18px;
+}
+.fn20{
+    font-size: 18px;
+}
+.fn30{
+    font-size: 30px;
+}
+.fn40{
+    font-size: 40px;
+}
+/*--字体颜色--*/
+.col071{
+    color: #071938;
+}
+
+.cole15{
+    color:#e15f00
+}
+
+.colFFF{
+    color: #FFF;
+}
+
+.col333{
+    color: #333;
+}
+
+.clo999{
+    color: #999;
+}
+
+.col666{
+    color: #666;
+}
+.clo1ab{
+    color:#1ABC9C;
+}
+
+.col06c{
+    color: #06c;
+}
+
+/*--主题颜色--*/
+.bg071{
+    background: #071938;
+}
+
+.bgeee{
+    background: #eeeeee;
+}
+
+.bg06c{
+    background: #06c;
+}
+
+.bg1AB{
+    background:#1ABC9C;
+}
+
+.bg16A{
+    background: #16A085;
+}
+
+.bg2C3{
+    background:#2C3E50;
+}
+.bg334{
+    background:#34495e;
+}
+
+.bgd1d{
+   background: #D1D1D3
+}
+.bg061{
+    background: #06142d;
+}
+
+.bgFFF{
+    background: #FFF;
+}
+
+.bgf5f{
+    background: #f5f5f5;
+}
+
+/*--浮动--*/
+.f-l{
+    float: left;
+}
+
+.f-r{
+    float: right;
+}
+
+/*--行高--*/
+.lin20{
+    line-height: 20px;
+}
+.lin30{
+    line-height: 30px;
+}
+.lin50{
+    line-height: 50px;
+}
+
+/*--透明度--*/
+.op8{
+    opacity: 0.8;
+}
+.op6{
+    opacity: 0.6;
+}
+
+
+/*---------------------------*/
+h1, h2, h3, h4, h5, h6{
+    font-weight:normal;
+}
+

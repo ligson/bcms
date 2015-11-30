@@ -25,6 +25,7 @@
         }
     </style>
     <rapid:block name="head"/>
+
 </head>
 <body class="easyui-layout">
 <jsp:include page="../../layout/admin/adminbody.jsp"/>

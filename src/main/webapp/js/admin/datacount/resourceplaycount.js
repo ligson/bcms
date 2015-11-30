@@ -3,19 +3,26 @@
  */
 $(function () {
     var colors = Highcharts.getOptions().colors,
-        categories =[],
+        categories = [],
         name = '点播分布',
         data = [];
-    var start_date=GetDateStr(0);
-    var end_date=GetDateStr(-1);
-    $.post("/bcms/proxy", {method:"post",url: "log/hot_request_resource/",isStatsticalQuery:true,begin_time:start_date,end_time:end_date}, function (result) {
+    var start_date = GetDateStr(0);
+    var end_date = GetDateStr(-1);
+    $.post("/bcms/proxy", {
+        method: "get",
+        url: "query/top_request_resource",
+        isStatsticalQuery: true,
+        start_at: start_date,
+        end_at: end_date,
+        size: 10
+    }, function (result) {
         var obj = jQuery.parseJSON(result);
-        if(obj.success==true){
-            $.each(obj.data,function(i,item){
+        if (obj.success == true) {
+            $.each(obj.data, function (i, item) {
                 categories.push(item.file_name);
-                var comment={};
-                comment.y=item.play_number;
-                comment.color=colors[i];
+                var comment = {};
+                comment.y = item.play_number;
+                comment.color = colors[i];
                 data.push(comment);
             });
 
@@ -43,8 +50,8 @@ $(function () {
                             style: {
                                 fontWeight: 'bold'
                             },
-                            formatter: function() {
-                                return this.y +'次';
+                            formatter: function () {
+                                return this.y + '次';
                             }
                         }
                     }
@@ -62,16 +69,13 @@ $(function () {
     });
 
 
-
-
 });
 
-function GetDateStr(number)
-{
+function GetDateStr(number) {
     var dd = new Date();
-    dd.setDate(dd.getDate()+number);//获取AddDayCount天后的日期
+    dd.setDate(dd.getDate() + number);//获取AddDayCount天后的日期
     var y = dd.getFullYear();
-    var m = dd.getMonth()+1;//获取当前月份的日期
+    var m = dd.getMonth() + 1;//获取当前月份的日期
     var d = dd.getDate();
-    return y+"-"+m+"-"+d;
+    return y + "-" + m + "-" + d;
 }

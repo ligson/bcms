@@ -9,7 +9,7 @@
 <%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
 <rapid:override name="title">资源类型统计</rapid:override>
 <rapid:override name="head">
-    <script src="../../js/admin/mediatypecount.js" type="text/javascript"></script>
+    <script src="../../js/admin/datacount/mediatypecount.js" type="text/javascript"></script>
 </rapid:override>
 <rapid:override name="mainName">资源类型统计</rapid:override>
 <rapid:override name="mainIcon">icon-page_world</rapid:override>

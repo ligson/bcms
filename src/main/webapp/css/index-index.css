@@ -1,0 +1,397 @@
+/*--内容部分--*/
+
+.main-top{
+    width: 840px;
+    height: 91px;
+    margin: 0 auto;
+}
+.main-share{
+    left: 0;
+    top: 0;
+    zoom: 1;
+    width: 490px;
+    background-color: #FAFAFA;
+    text-align: left;
+    position: relative;
+    height: 76px;
+    font-size: 12px;
+    margin: 15px 0 0 13px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+
+.m-s{
+    padding: 16px 12px 8px;
+    height: 68px;
+    width: 77px;
+    text-align: center;
+    cursor: pointer;
+    border-left: 1px solid #f2f2f4;
+}
+
+.m-s:hover{
+    color: #06c;
+}
+
+.main-user{
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #bebec4\0;
+    color: #666;
+    height: 76px;
+    font-size: 12px;
+    margin: 15px 0 0 13px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    -ms-filter: 'progid:DXImageTransform.Microsoft.Shadow(color=#cacaca,direction=180,strength=3)';
+
+}
+
+.m-i{
+    background: url("../images/icon-all.png") no-repeat;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    position: relative;
+}
+
+.s-alum{
+    background-position: 0 -130px;
+}
+
+.s-img{
+    background-position: -30px -130px;
+}
+
+.s-video{
+    background-position: -60px -130px;
+}
+
+.s-doc{
+    background-position: 0 -190px;
+}
+
+.s-audio{
+    background-position: -30px -190px;
+}
+
+.s-other{
+    background-position: -60px -190px;
+}
+
+.arrow-r{
+    display: inline-block;
+    float: left;
+    background: url('../images/arrow-r.png') no-repeat;
+    height: 19px;
+    width: 11px;
+    position: relative;
+    top: 25px;
+    left: -13px;
+    left: -19px\9;
+    z-index: 2;
+}
+
+.share-cnt{
+    display: inline-block;
+    float: left;
+    text-align: center;
+    padding: 14px 5px 13px;
+    font-size: 13px;
+    min-width: 51px;
+    _width: 41px;
+
+}
+.head-img{
+    margin: 10px 10px 0 0;
+    padding: 0;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    border: #D3D5DD 1px solid;
+}
+
+.head-img a img {
+    width: 56px;
+    height: 56px;
+}
+
+.share-cnt {
+    display: inline-block;
+    float: left;
+    padding: 14px 5px 13px;
+    font-size: 13px;
+    /* min-width: 41px;
+     _width: 41px;*/
+}
+
+.share-cnt p {
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+}
+
+.user-o{
+    width: 60px;
+}
+
+.user-o a{
+    display: block;
+    overflow: hidden;
+    width: 60px;
+}
+
+
+
+/*---瀑布流样式---*/
+.container-fluids {
+    padding: 20px 10px;
+}
+.box {
+    margin-bottom: 20px;
+    background: #FFF;
+    float: left;
+    width: 250px;
+    margin-left: 15px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+
+.share-file{
+    padding: 10px 10px 0 10px;
+}
+
+.box img {
+    max-width: 100%
+}
+
+.wid-img{
+    width: 30px;
+    height: 30px;
+}
+
+.share-file{
+    display: block;
+    overflow: hidden;
+}
+
+.w1{
+    width: 230px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.share-user,
+.album-infor{
+    height: 75px;
+    padding: 10px;
+}
+
+.share-user a:hover,
+.album-infor a:hover{
+    text-decoration: underline;
+}
+.share-user p img,
+.album-infor p img{
+    margin-right: 10px;
+}
+
+.w2{
+    padding: 0 15px;
+    word-wrap: break-word;
+    word-break: break-all;
+
+}
+
+/*---tab---*/
+.lin-h{
+    height: 1px ;
+    background: #e0e0e0;
+    position: relative;
+    z-index: 10;
+    margin-top: -31px;
+}
+
+.resource_main ul{
+    height: 40px;
+    width: 440px;
+    border-bottom: 1px solid #e0e0e0;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+.resource_main{
+    padding: 20px 0 0 0;
+}
+.resource_main > .nav-tabs > li > a{
+    border: none;
+    width: 60px;
+    height: 40px;
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    padding: 0;
+    background: none;
+    -webkit-transition:all 0.2s ease-out 0s; ;
+    -moz-transition: all 0.2s ease-out 0s;;
+    -ms-transition: all 0.2s ease-out 0s;;
+    -o-transition: all 0.2s ease-out 0s;;
+    transition: all 0.2s ease-out 0s;;
+}
+/*.resource_main >.nav-tabs >li{
+    float: left;
+}*/
+.resource_main >.nav-tabs > li > a:hover,
+.resource_main >.nav-tabs > li.active > a:hover,
+.resource_main >.nav-tabs > li.active > a:focus,
+.resource_main > .nav-tabs > li.active > a{
+    border-bottom:3px #27ae60 solid;
+    background: none;
+    color: #27ae60;
+    font-size: 14px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+.al-icon{
+    position: absolute;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    background: url("../images/album-bg.png") no-repeat;
+}
+
+.al-icon a img{
+    width: 46px;
+    height: 46px;
+    display: block;
+    margin: 5px 9px 9px 5px;
+}
+
+.album-inc{
+    padding: 10px 10px 10px 10px;
+}
+
+.al-name{
+    padding-left: 70px;
+}
+
+.album-poster{
+    padding: 0 10px 10px 10px;
+}
+
+.album-poster a img{
+    width: 230px;
+    height: 160px;
+}
+
+.al-name p{
+    line-height: 20px;
+    margin: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/*---栏目部分---*/
+.space-clum{
+    position: fixed;
+    width: 180px;
+    min-height: 1000px;
+    left: 0;
+}
+
+.space-main{
+    width: 100%;
+    min-height: 1000px;
+    padding-left: 200px;
+    display: block;
+}
+
+.clum-top{
+    padding: 23px 0 10px 0;
+}
+
+.clum-item{
+    padding-left: 44px;
+    height: 34px;
+    line-height: 34px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cl-line{
+    border-top: 1px solid rgba(255, 255, 255,0.2 );
+    width: 180px;
+    height: 0;
+    text-align: center;
+    font-size: 1px;
+}
+.um-item{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    display: block;
+    height: 20px;
+    width: 20px;
+    background: url("../images/frame-icon.png") no-repeat;
+}
+
+.dy-ic{
+    background-position: -25px -48px;
+}
+
+.share-ic{
+    background-position: 0 -68px;
+}
+
+.voi-ic{
+    background-position: 0 -108px;
+}
+
+.space-content{
+    padding-top: 50px;
+}
+.clum-btm{
+    display: block;
+}
+
+.clum-item:hover,
+.clum-item a:hover,
+.clt-item a:hover{
+    color: #FFF;
+    background: #041023;
+}
+
+.clt-item{
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+    margin: 5px 0;
+}
+.clt-item a{
+    padding-left: 44px;
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.tm-item{
+    display: block;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 7px;
+    left: 14px;
+    background: url("../images/clum-icon.png") no-repeat;
+}
+
+.wp{
+    background-position: 0 -22px;
+}
+
+
+

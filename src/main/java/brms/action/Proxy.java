@@ -91,7 +91,6 @@ public class Proxy extends HttpServlet {
         } else if (method.equalsIgnoreCase("delete")) {
             doDelete(request, response);
         } else {
-
             HttpPost httpPost = new HttpPost(end_url);
             HttpEntity entity = parseToEntity(request);
             httpPost.setEntity(entity);
@@ -149,7 +148,9 @@ public class Proxy extends HttpServlet {
 
     private String parseToUrl(HttpServletRequest request) {
         String url = request.getParameter("url");
-        StringBuilder stringBuilder = new StringBuilder(BASE_URL + url);
+        String isStatsticalQuery=request.getParameter("isStatsticalQuery");
+        String end_url=isStatsticalQuery==null?BASE_URL+url:STATISTICAL_URL+url;
+        StringBuilder stringBuilder = new StringBuilder(end_url);
         List<NameValuePair> nameValuePairs = dealParams(request);
         if (nameValuePairs.size() > 0) {
             stringBuilder.append("?");
