@@ -7,7 +7,7 @@ $(function () {
     var data = [];
     $.post("/bcms/proxy", {
         method: "get",
-        url: "query/user_uploaded_file_number",
+        url: "query/user_uploaded_file_count",
         isStatsticalQuery: true,
         start_at: start_date,
         end_at: end_date

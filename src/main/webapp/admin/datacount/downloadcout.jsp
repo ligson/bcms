@@ -15,7 +15,6 @@
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
 <div data-options="region:'center',title:'下载统计'" iconCls="icon-package_down">
-    <jsp:include page="_searchtoolbar.jsp"/>
     <div id="container"></div>
 </div>
 

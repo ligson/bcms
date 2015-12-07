@@ -15,7 +15,6 @@
 <rapid:override name="mainIcon">icon-page_world</rapid:override>
 <rapid:override name="body">
 <div data-options="region:'center',title:'资源评论列表'" iconCls="icon-comments">
-    <%--<jsp:include page="_searchtoolbar.jsp"/>--%>
     <table id="dataGrid">
     </table>
 </div>

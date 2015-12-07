@@ -11,9 +11,12 @@
 <rapid:override name="head">
   <link rel="stylesheet" type="text/css" href="../css/could_index.css">
   <link rel="stylesheet" type="text/css" href="../js/jstree/dist/themes/default/style.min.css">
-
   <script type="text/javascript" src="../js/bootstrap-3.3.5-dist/js/bootstrap-contextmenu.js"></script>
   <script type="text/javascript" src="../js/jstree/dist/jstree.min.js"></script>
+  <script type="text/javascript" src="../js/spark-md5.js"></script>
+  <script type="text/javascript" src="../js/common/fileutils.js"></script>
+  <script type="text/javascript" src="http://42.62.52.40:8000/static/flow.js"></script>
+  <script type="text/javascript" src="../js/userspace/uploadfile.js"></script>
   <%--<script type="text/javascript" src="${resource(dir: 'js/boful/pan', file: 'index.js')}"></script>--%>
 </rapid:override>
 <rapid:override name="body">
@@ -22,12 +25,13 @@
     <div class="col-md-12 ">
       <div class="up-load">
         <div class="btn-item">
-          <button id="selectFileBtn" class="up-btn"></button>
+          <span class="btn btn-success glyphicon glyphicon-level-up" id="btn_flow">&nbsp;上传文件<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
+          <%--<button class="btn btn-success flow-browse"><span
+                  class="glyphicon glyphicon-level-up"></span>上传文件</button>--%>
         </div>
 
         <div class="btn-item">
-          <button class="btn btn-default" id="addFolder"><span
-                  class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;新建文件夹</button>
+         <span id="addFolder" class="btn btn-default glyphicon glyphicon-folder-open">&nbsp;新建文件夹</span>
         </div>
 
       <%--  %{--<div class="btn-item">
@@ -172,12 +176,7 @@
 
 
 <script type="text/javascript" language="JavaScript">
-  var params=[];
-  params.accountId='${session.account.id}';
-  params.api_key='${session.account.apiKey}';
-  params.mediaType=100;
-  initBfUpload(baseUrl + "api/uploadFile", params);
-  getFileList(100,"pan/getFiles",1);
+  //getFileList(100,"pan/getFiles",1);
   var winH = $(window).height(); //页面可视区域高度
   var i = 2;
   $(window).scroll(function () {
@@ -185,7 +184,7 @@
     var scrollT = $(window).scrollTop(); //滚动条top
     var aa = (pageH - winH - scrollT) / winH;
     if (aa < 0.02) {
-      getFileList(100,"pan/getFiles",i);
+      //getFileList(100,"pan/getFiles",i);
       i++;
     }
   });

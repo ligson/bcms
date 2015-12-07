@@ -32,7 +32,7 @@ import org.json.JSONObject;
 public class Proxy extends HttpServlet {
     private static Logger logger = Logger.getLogger(Proxy.class);
     private static final long serialVersionUID = 1L;
-    public final static String BASE_URL = "http://42.62.52.40:8000/";
+    public final static String BASE_URL = "http://42.62.77.189:8000/";
     public final static String STATISTICAL_URL="http://42.62.77.189:8000/";
     public static CloseableHttpClient httpClient;
     public static HttpContext context = new BasicHttpContext();
