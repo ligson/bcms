@@ -7,6 +7,7 @@ import brms.action.DepartmentTree;
 import brms.action.Proxy;
 import brms.common.JSONCommon;
 import brms.job.CleanThreadLocalTask;
+import brms.utils.CommUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
@@ -24,11 +25,14 @@ public class ApplicationListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         logger.info("系统正常启动!");
+        Proxy.BASE_URL= CommUtils.readUrl("BASE_URL");
+        Proxy.STATISTICAL_URL=CommUtils.readUrl("STATISTICAL_URL");
         //10分钟清理一下httpclean的dateformate线程池
         Timer timer = new Timer();
         long delay = 1000;
         long period = delay * 60 * 10;
         timer.schedule(new CleanThreadLocalTask(), delay, period);
+
     }
 
     @Override

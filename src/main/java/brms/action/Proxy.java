@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import brms.utils.CommUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -32,8 +33,8 @@ import org.json.JSONObject;
 public class Proxy extends HttpServlet {
     private static Logger logger = Logger.getLogger(Proxy.class);
     private static final long serialVersionUID = 1L;
-    public final static String BASE_URL = "http://42.62.77.189:8000/";
-    public final static String STATISTICAL_URL="http://42.62.77.189:8000/";
+    public static String BASE_URL = null;
+    public static String STATISTICAL_URL=null;
     public static CloseableHttpClient httpClient;
     public static HttpContext context = new BasicHttpContext();
 

@@ -57,7 +57,7 @@ $(function () {
     });
     $("#subMeta10").val(resourceId);
     flow = new Flow({
-        target: 'http://42.62.77.189:8000/file/upload',
+        target: 'http://demo.boful.com/api/file/upload',
         chunkSize: 1024 * 1024,
         testChunks: false,
         simultaneousUploads: 1,
